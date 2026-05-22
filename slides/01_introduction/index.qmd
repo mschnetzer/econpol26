@@ -1,0 +1,248 @@
+---
+metadata-files: 
+    - ../../_variables.yml
+title: |
+    <span class='fa-stack course-icon'>
+        <i class='fas {{< var course.icon-bg >}} fa-stack-2x blue'></i>
+        <i class='fas {{< var course.icon >}} fa-stack-1x fa-inverse' style='margin-top:-5pt'></i>
+      </span><br>
+    {{< var course.subtitle >}}
+author: '{{< var instructor.name >}}'
+subtitle: Introduction
+date: October 06, 2025
+date-format: long
+from: markdown+emoji
+bibliography: ../../data/lit/wipol_advanced.bib
+csl: ../../data/lit/wipol.csl
+execute:
+  echo: true
+format:
+  revealjs:
+    theme: ../econpol_slides.scss
+    footer: '{{< var course.number >}} {{< var course.title >}} | {{< var course.semester >}}'
+    logo: ../../data/img/wu-logo-simple.png
+    header-includes: |
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
+    slide-number: true
+    show-slide-number: all
+    transition: fade
+    progress: true
+    multiplex: false
+    scrollable: true
+    preview-links: false
+    hide-inactive-cursor: true
+    highlight-style: printing
+    pause: true
+---
+
+## Course info {.smaller}
+
+::: columns
+::: {.column width="30%"}
+![](img/profile-pic.jpg){.absolute top="20%" left="7%" style="display: inline-block; width: 150px; height: 150px;border-radius:50%;"}
+
+::: {.absolute top="60%" left="5%" style="display: block; font-size: 5.5rem;"}
+<span class='fa-stack'>
+  <i class='fas {{< var course.icon-bg >}} fa-stack-2x blue'></i>
+  <i class='fas {{< var course.icon >}} fa-stack-1x fa-inverse' style='margin-top:-5pt'></i>
+ </span>
+:::
+
+:::
+::: {.column width="70%" .iconlist}
+::: {.absolute top="120"}
+- <i class="fa-solid fa-user icon"></i> {{< var instructor.name-wo-title >}}
+- <i class="fa-solid fa-building icon"></i> {{< var instructor.employer >}}
+- <i class="fa-solid fa-envelope icon"></i> [{{< var instructor.email >}}](mailto:{{< var instructor.email >}})
+- <i class="fa-solid fa-globe icon"></i> [{{< var instructor.url >}}]({{< var instructor.url >}})
+- <i class="fa-brands fa-twitter icon"></i> [{{< var instructor.twitter >}}](https://www.twitter.com/{{< var instructor.twitter >}})
+
+<div><br></div>
+- <i class="fa-solid fa-calendar-alt icon"></i> {{< var course.dates >}}
+- <i class="fa-solid fa-clock icon"></i> {{< var course.time >}}
+- <i class="fa-solid fa-location-dot icon"></i> {{< var course.location >}}
+- <i class="fa-solid fa-link icon"></i> [{{< var course.url >}}]({{< var course.url >}})
+:::
+:::
+:::
+
+## About this course {.medium}
+
+::: {.secfont style="font-size:2.3rem;text-align:center;"}
+"A picture is worth a thousand words"
+:::
+
+This course approaches contemporary issues of economic policy by analyzing innovative or iconic data visualizations. We analyse selected illustrations, discuss the underlying data, the theoretical background and policy implications. We will assemble plots in class and study the basics of data visualization.
+
+You will gain:
+
+- an overview of [contemporary debates in economic policy]{.marker-hl} 
+- a basic understanding of [principles of data visualization]{.marker-hl}
+- knowledge how to [enrich academic publications]{.marker-hl} with informative graphs
+
+## Who are you?
+
+![](img/group3.png){.absolute bottom="0%" left="0%" height="400px"}
+![](img/group2.png){.absolute bottom="0%" left="15%" height="400px"}
+![](img/group1.png){.absolute bottom="0%" left="33%" height="400px"}
+![](img/group4.png){.absolute bottom="0%" left="50%" height="400px"}
+
+[What do you expect of this course? Do you already have some coding experience in R?]{.bubble .bubble-bottom-right .absolute top="15%" right="0%" style="max-width:400px;--bubcol: var(--bubcol-dred); font-size:1.8rem;"}
+
+## Schedule
+
+```{r packages}
+#| include: false
+library(tidyverse)
+library(readxl)
+library(glue)
+library(gt)
+
+Sys.setlocale(locale="en_US.UTF-8")
+schedule <- read_xlsx("../../data/schedule/schedule.xlsx")
+```
+
+```{r table}
+#| echo: false
+#| results: 'asis'
+library(gtExtras)
+schedule |> arrange(Date) |> select(-c(Chart,Slides,Code,Data)) |>
+  mutate(Assignment = ifelse(!is.na(Assignment), "pen", "circle-xmark"), 
+        Date = format(Date, '%b %d, %Y')) |>
+        gt() |> 
+        fmt_icon(Assignment, height = "1em", fill_color = c("pen" = "black", "circle-xmark" = "#bdbebd")) |> 
+        opt_table_font(font = google_font("Roboto Slab")) |>
+        tab_options(
+              column_labels.font.size = "20px",
+              column_labels.font.weight = "bold"
+          ) |>
+        tab_style(location = cells_body(),
+                  style = cell_text(weight = 200)) |>
+        fmt_index(columns = Content, pattern = "{x}.") |>
+        cols_width(1:3 ~pct(15),
+                    4 ~ pct(25),
+                    5 ~ pct(15)) |>
+        cols_align(align = "left") |>
+        cols_align(align = "center", columns = 5) |>
+        as_raw_html(inline_css = FALSE) 
+```
+
+## Assignments {.medium}
+
+Assignment 1 provides the setup of the R infrastructure that is required in this course. There are no points for this assignment. 
+
+Assignments 2 to 4 are recreations of examplary figures. These examples are related to figures that are discussed in class. Students should then try to [reproduce the plots at home]{.marker-hl} and improve their individual coding skills. 
+
+The raw data for the figures are available as CSV files. The charts should then be uploaded to the [learning platform](https://learn.wu.ac.at) [**before 9 a.m.**]{.marker-hl} on the day of the deadline.
+
+## Assignments {.medium}
+
+::: {.r-stack}
+
+![](../../data/assignments/lines.png){.fragment .fade-up width="800"} 
+
+![](../../data/assignments/dumbbell.png){.fragment .fade-up width="800"}
+
+![](../../data/assignments/waffle.png){.fragment .fade-up width="1000"}
+
+:::
+
+
+## Chart & Report {.smaller}
+
+::: columns
+::: {.column width="50%"}
+### Chart presentation
+::: {.altlist}
+- Research question [Which economic policy question do you want to answer with your chart?]{style="font-size:1.3rem"}
+- Data
+- Chart 
+- Conclusion [What can we learn from the data visualization for economic policy?]{style="font-size:1.3rem"}
+:::
+[**Deadline: January 18, 2026**]{.marker-hl}
+:::
+
+::: {.column width="50%"}
+### RMarkdown (or Quarto) Report
+::: {.altlist}
+- Title 
+- Author 
+- Introduction
+- Research question
+- Data
+- Result
+- Conclusion
+- Code
+:::
+[**Deadline: January 31, 2026**]{.marker-hl}
+:::
+:::
+
+
+## Grading {.medium}
+
+<br>
+<i class="fa-solid fa-home icon"></i> Assignments: 30\% [(0-10 points for each visualization)]{.grey600 style="font-size:1.5rem;"}
+<br>
+<br>
+
+. . .
+
+<i class="fa-solid fa-person-chalkboard icon"></i>  Chart presentation: 30\% [(0-20 points for the quality of the presentation, 0-10 for the preliminary chart)]{.grey600 style="font-size:1.5rem;"} 
+<br>
+<br>
+
+. . .
+
+<i class="fa-solid fa-file-pen icon"></i> Written report: 40\% [(0-40 points for the report and the final chart)]{.grey600 style="font-size:1.5rem;"}
+
+
+::: aside
+::: { style="font-size:1.5rem" }
+{{< fa regular face-grin-stars >}} &nbsp; 100-90: Excellent &emsp;
+{{< fa regular face-grin >}} &nbsp; 89-80: Good &emsp;
+{{< fa regular face-meh >}} &nbsp; 79-65: Satisfactory &emsp;
+{{< fa regular face-grimace >}} &nbsp; 64-50: Sufficient <br>
+[All single tasks have to be passed]{.marker-hl} (50% threshold each).
+:::
+:::
+
+## Visualizations by students {.smaller}
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));grid-gap: 1em;"}
+
+![](img/gall1.png){group="my-gallery"}
+
+![](img/gall2.png){group="my-gallery"}
+
+![](img/gall3.png){group="my-gallery"}
+
+![](img/gall4.png){group="my-gallery"}
+
+![](img/gall5.png){group="my-gallery"}
+
+![](img/gall6.png){group="my-gallery"}
+
+:::
+
+## Feedback, cooperation and help {.smaller}
+
+Let me know your [feedback]{.marker-hl} on the course anytime. If possible, I will try to incorporate your feedback immediately. At least, I will consider it for future courses. 
+
+As some of you might already have advanced coding skills in R, please support each other and collaborate. This does not mean that one person does all the coding and shares with all colleagues. Students should have an intrinsic motivation to improve their coding skills but [cooperate to learn from each other]{.marker-hl}. 
+
+There is a forum on the learning platform for exchange among students. Please also consult support platforms like [Stack Overflow](https://stackoverflow.com) or take a look at the cheatsheets:
+
+::: {style="text-align:center;"}
+[![](../../data/img/tidyr.png){width=140}](https://posit.co/wp-content/uploads/2022/10/tidyr.pdf) [![](../../data/img/dplyr.png){width=140}](https://posit.co/wp-content/uploads/2022/10/data-transformation-1.pdf) [![](../../data/img/ggplot2.png){width=140}](https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf) [![](../../data/img/rmarkdown.png){width=140}](https://posit.co/wp-content/uploads/2022/10/rmarkdown-1.pdf)
+:::
+
+## Recommended Literature
+
+::: {.tbl-larger .recommended-lit}
+|   |   |
+|---|---|
+| ![](../../data/img/schwabish.jpg) | **Jonathan Schwabish** <br> *Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks* <br> Columbia University Press <br> ISBN-13: 9780231193115 |
+| ![](../../data/img/spiegelhalter.jpeg) | **David Spiegelhalter** <br> *The Art of Statistics: Learning from Data* <br> Penguin Books UK <br> ISBN-13: 9780241258767 |
+: {tbl-colwidths="[20,80]"}
+:::

@@ -1,0 +1,8 @@
+/.quarto/
+/_site/
+/data/gallery/
+
+/.luarc.json
+.Rproj.user
+
+**/*.quarto_ipynb

@@ -1,0 +1,17 @@
+Parents,Children,Share
+Compulsory school,Compulsory school,36.2
+Compulsory school,Apprenticeship/Lower secondary,42.3
+Compulsory school,Higher secondary,12.1
+Compulsory school,Tertiary education,9.4
+Apprenticeship/Lower secondary,Compulsory school,8.9
+Apprenticeship/Lower secondary,Apprenticeship/Lower secondary,54.1
+Apprenticeship/Lower secondary,Higher secondary,18.7
+Apprenticeship/Lower secondary,Tertiary education,18.3
+Higher secondary,Compulsory school,5.9
+Higher secondary,Apprenticeship/Lower secondary,20.8
+Higher secondary,Higher secondary,30.8
+Higher secondary,Tertiary education,42.5
+Tertiary education,Compulsory school,5.8
+Tertiary education,Apprenticeship/Lower secondary,11.7
+Tertiary education,Higher secondary,21.2
+Tertiary education,Tertiary education,61.3

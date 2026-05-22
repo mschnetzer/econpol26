@@ -1,0 +1,49 @@
+---
+title: "Selected student work"
+page-layout: full
+css: layout/css/adveconpol.scss
+filter:
+    - lightbox
+lightbox: auto
+---
+
+<br>
+
+::: {style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));grid-gap: 2em;"}
+
+![Victoria Bauer](data/gallery/bauer.png){group="my-gallery"}
+
+![Koen Berben](data/gallery/berben.png){group="my-gallery"}
+
+![Roopsa Chakraborty](data/gallery/chakraborty.png){group="my-gallery"}
+
+![Sofia Evtushenko](data/gallery/evtushenko.png){group="my-gallery"}
+
+![Tobias Gerstmayr](data/gallery/gerstmayr.png){group="my-gallery"}
+
+![Antonia Hittmair](data/gallery/hittmair.png){group="my-gallery"}
+
+![Eva-Maria Mooslechner](data/gallery/mooslechner.png){group="my-gallery"}
+
+![Wilhelm Hartung](data/gallery/hartung.png){group="my-gallery"}
+
+![Zulian Marecos Amarillas](data/gallery/marecos.png){group="my-gallery"}
+
+![Elizaveta Minaeva](data/gallery/minaeva.png){group="my-gallery"}
+
+![Teodor Nedev](data/gallery/nedev.png){group="my-gallery"}
+
+![Teodor Nikolov](data/gallery/nikolov.png){group="my-gallery"}
+
+![Victor Novy](data/gallery/novy.png){group="my-gallery"}
+
+![Maria Pessoa Dias da Silva](data/gallery/pessoa.png){group="my-gallery"}
+
+![Sarah Rabong](data/gallery/rabong.png){group="my-gallery"}
+
+![Nina Schöller](data/gallery/schoeller.png){group="my-gallery"}
+
+![Anastasiia Skliankina](data/gallery/skliankina.png){group="my-gallery"}
+
+![Manuel Stahl](data/gallery/stahl.png){group="my-gallery"}
+:::

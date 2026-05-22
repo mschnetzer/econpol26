@@ -1,0 +1,40 @@
+author: Matthias Schnetzer
+
+instructor1:
+  name: Dr. Matthias Schnetzer
+  name-wo-title: Matthias Schnetzer
+  employer: "Vienna Chamber of Labour & WU Vienna"
+  email: <mschnetz@wu.ac.at>
+  url: "https://mschnetzer.github.io"
+  github: mschnetzer
+
+instructor2:
+  name: Patrick Mokre, PhD
+  name-wo-title: Patrick Mokre
+  employer: "Vienna Chamber of Labour & WU Vienna"
+  email: <patrick.mokre@akwien.at>
+  url: "https://www.patrickmokre.com"
+  github: patrickmokre
+
+course:
+  title: Economic Policy (Applied track)
+  subtitle: Monetary Policy Visualization
+  icon: fa-chart-column
+  icon-bg: fa-comment
+  number: "PI 0588"
+  semester: "Winter term 2026"
+  days: "Mondays"
+  time: "10:00–12:00"
+  location: "WU Campus"
+  dates: "Oct 5, 2026 – Jan 25, 2026"
+  students: 30
+  url: "https://mschnetzer.github.io/econpol26"
+  copyright_year: "2026"
+  contact_policy: | 
+    Please contact both lecturers via e-mail. Note that we use the WU Canvas platform [canvas.wu.ac.at](https://canvas.wu.ac.at) for all assignments in this course.
+
+university:
+  name: Vienna University of Economics and Business
+  department: Department of Economics
+  url: "https://www.wu.ac.at"
+  

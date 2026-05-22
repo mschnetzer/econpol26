@@ -1,0 +1,492 @@
+---
+metadata-files: 
+    - ../../_variables.yml
+title: |
+    <span class='fa-stack course-icon'>
+        <i class='fas {{< var course.icon-bg >}} fa-stack-2x blue'></i>
+        <i class='fas {{< var course.icon >}} fa-stack-1x fa-inverse' style='margin-top:-5pt'></i>
+      </span><br>
+    {{< var course.subtitle >}}
+author: '{{< var instructor.name >}}'
+subtitle: Data
+date: October 13, 2025
+date-format: long
+from: markdown+emoji
+bibliography: ../../data/lit/wipol_advanced.bib
+csl: ../../data/lit/wipol.csl
+execute:
+  echo: true
+format:
+  revealjs:
+    theme: ../econpol_slides.scss
+    footer: '{{< var course.number >}} {{< var course.title >}} | {{< var course.semester >}}'
+    logo: ../../data/img/wu-logo-simple.png
+    header-includes: |
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
+    slide-number: true
+    show-slide-number: all
+    transition: fade
+    progress: true
+    multiplex: false
+    scrollable: true
+    preview-links: false
+    hide-inactive-cursor: true
+    highlight-style: printing
+    pause: true
+---
+
+## The era of evidence in economics {.smaller}
+
+![](img/era_of_evidence.png){fig-align="center" height="390"}
+
+::: {style="font-size:1.5rem;font-weight:100;" .secfont}
+The figure shows the evolution of economics literature by text mining the 500 most-cited titles in top journals by decade. There is a shift from advancing theory towards [empirical evidence]{.hl .hl-dred}.
+:::
+
+::: {.aside}
+Source: @brice:2019
+:::
+
+## The rise of empirical articles {.smaller}
+
+::: {.tbl-larger .recommended-lit}
+|   |   |
+|---|---|
+| ![](img/empirical.png) | There is a distinct [rise of empirical papers]{.hl .hl-dred} in economics. In the 1980s, around one third of publications was empirical. Today, it's more than half. This trend is present in all sub-fields of the discipline (labor, finance, macro, etc.). <br><br> The analyis is based on 134,892 papers published in 80 journals between 1980 and 2015. Papers are labeled as empirical if they use data to estimate economically meaningful parameters. |
+: {tbl-colwidths="[50,50]"}
+:::
+
+::: {.aside}
+Source: @angrist:2017
+:::
+
+## Evidence-based economic policy {.smaller}
+
+::: {.incremental}
+- [Data collection:]{.secfont .hl .hl-blue} Collection of relevant and high-quality data (administrative data, surveys, interviews, observations, etc.). Researchers should be aware of the qualities but also of the flaws of the data.
+- [Data analysis:]{.secfont .hl .hl-blue} The design and type of analysis depends on the question being asked and resources available. The methods range from qualitative to quantitative analysis. The choice of application might unwittingly involve normative reflections by the researcher.
+- [Policy suggestions:]{.secfont .hl .hl-blue} A major goal of empirical economics is to serve and improve policy making. The findings should, however, be carefully interpreted with regard to the limitations of empirical analyis. Economic policy, even if it's evidence-based, is affected by norms, beliefs, etc.
+:::
+
+# Mind the (data) gap!
+
+<center>
+![](../../data/img/avatar_finger.png){height=350}
+</center>
+
+::: footer
+:::
+
+## The limits of data {.medium}
+
+::: {.columns}
+::: {.column width=30%}
+![](img/bias.png)
+:::
+::: {.column width=70%}
+- Data is never a perfect reflection of the world!
+- It's only a subset: not crime but [reported]{.hl .hl-dred} crime
+- Information is collected by humans and processed by machines: imprecisions and errors are [inevitable]{.hl .hl-blue}!
+- Be aware of potential (cognitive and statistical) biases!
+:::
+:::
+
+::: {.aside}
+Source: [XKCD](https://xkcd.com/2618/)
+:::
+
+## Invisible women
+
+::: {.tbl-larger .recommended-lit}
+|   |   |
+|---|---|
+| ![](img/perez.jpg) | **Caroline Criado Perez** <br> *Exposing Data Bias in a World Designed for Men* <br> Random House Uk <br> ISBN: 978-1-78470-628-9 <br><br> The world we live in is built around male data, preferences, and assumptions. There are numerous examples of how the [gender data gap]{.hl .hl-dred} has led to women being overlooked and undervalued in areas ranging from medicine to urban planning. To create a more just and equal society, we need to take into account the different experiences and needs of women and other marginalized groups in our data collection and decision-making processes. |
+: {tbl-colwidths="[20,80]"}
+:::
+
+## Invisible rich {.smaller}
+
+::: {.tbl-larger .recommended-lit}
+|   |   |
+|---|---|
+| ![](img/rlmap_col.png) | Survey data are based on representative samples drawn from total population. However, the probability of drawing one of the few very rich households into the sample is infinitesimal. Moreover, participation in surveys is mostly voluntary and there is a higher refusal rate at the top. This [poor coverage of the top]{.hl .hl-dred} in wealth and income surveys conceals the extent of inequality. <br><br> The figure shows the gap between the richest observation in wealth survey data (HFCS) and the "poorest" observation in national rich lists created by magazines. |
+: {tbl-colwidths="[50,50]"}
+:::
+
+::: {.aside}
+Source: @disslbacher:2020
+:::
+
+## Discuss with your neighbour {.smaller}
+
+[What other potential flaws and challenges of data collection come to your mind?]{.bubble .bubble-bottom-left .absolute top="20%" left="25%" style="max-width:500px;--bubcol: var(--bubcol-blue);font-size:1.5rem;"}
+
+[How could these flaws be tackled by the researcher?]{.bubble .bubble-bottom-right .absolute top="40%" left="35%" style="max-width:350px;--bubcol: var(--bubcol-dred);font-size:1.5rem;"}
+
+![](img/discuss1.png){.absolute bottom="0px" left="5%" height="450px"}
+![](img/discuss2.png){.absolute bottom="0px" right="5%" height="450px" style="transform: rotateY(180deg);"}
+
+::: footer
+Illustrations by [https://openpeeps.com](https://openpeeps.com).
+:::
+
+# Disparities in data acquisition and definitions
+
+<center>
+![](../../data/img/avatar_laptop.png){height=350}
+</center>
+
+::: footer
+:::
+
+## Administrative and survey data
+
+::: {.tbl-classic}
+|            | **Administrative Data** | **Survey Data** |
+|------------|-------------------------|-----------------|
+| **Purpose** | Collected also for non-statistical purposes (e.g., taxation, regulation). | Collected specifically for statistical analysis. |
+| **Coverage** | Can cover large populations (e.g., entire tax base or workforce). | Often based on samples, though some are nationally representative. |
+| **Frequency** | Often collected regularly (e.g., monthly, annually). | Can be periodic (quarterly, annually, sometimes even every few years). |
+| **Accuracy** | High for administrative processes (e.g., tax filing) but may not capture informal sectors (many estimations!). | High precision for sample groups but subject to sampling error and response bias. |
+| **Timeliness** | May have delays in processing or availability for statistical use. | Data collection timelines can be long, but surveys are often designed for quick use. |
+| **Cost** | Generally lower cost, since the data is already being collected. | Higher cost, as it requires specific planning, data collection, and processing. |
+| **Adaptability** | Limited flexibility; cannot be easily tailored for specific statistical needs. | Can be customized to gather specific data, but requires careful design and execution. |
+: {tbl-colwidths="[10,45,45]"}
+:::
+
+## Survey modes {.smaller}
+
+- [Survey modes:]{.secfont .hl .hl-dred} Computer-assisted personal interviews (CAPI), telephone interviews (CATI), web interviews (CAWI)
+- [Mixed-mode survey:]{.secfont .hl .hl-dred} *Improve coverage* (several modes to contact hard-to-reach respondents) and *reduce non-response* (respondents may choose preferential mode)
+- [Caveats:]{.secfont .hl .hl-dred} *Selection effects*, i.e. different types of respondents choose different modes, and *measurement effects*, i.e. respondents give different answers in different modes [@vannieuwenhuyze:2010] 
+
+The survey mode might be important for critical questions, for instance, party preferences. @aichholzer:2018 finds that survey responses of voting for far right FPÖ is higher in CAWI among other things due to lower effects of social desirability.
+
+## Income according to Canberra Group {.smaller}
+
+```{r packages}
+#| echo: false
+#| warning: false
+librarian::shelf(tidyverse, knitr, kableExtra, datasauRus)
+options(knitr.kable.NA = '')
+```
+
+::: {.tbl-larger}
+```{r canberra}
+#| echo: false
+#| results: 'asis'
+tribble(
+  ~ID, ~Concept, ~Aggregate,
+  "1", "Income from employment", "1a + 1b",
+  "&nbsp; 1a", "Employee income", NA_character_,
+  "&nbsp; 1b", "Income from self-employment", NA_character_,
+  "2", "Property income", NA_character_,
+  "3", "Income from household production", NA_character_,
+  "4", "Current transfers received", NA_character_,
+  "5", "Income from production", "1 + 3",
+  "6", "Primary income", "1 + 2 + 3",
+  "7", "Current transfers paid (taxes, fees, etc.)", NA_character_,
+  "8", "Disposable income", "6 + 4 - 7"
+) %>%
+kbl(escape = FALSE, align = "llr") %>%
+kable_classic(full_width = F)
+```
+:::
+
+::: aside 
+Source: @un:2011, 11
+:::
+
+## Income according to the National Accounts
+
+::: {.tbl-larger}
+```{r sna}
+#| echo: false
+#| results: 'asis'
+tribble(
+  ~ID, ~Concept,
+  "D.1", "Compensation of employees",
+  "&nbsp; D.11", "Wages and salaries",
+  "&nbsp; D.12", "Employers social contributions",
+  "B.2G", "Operating surplus, gross",
+  "B.3G", "Mixed income, gross",
+  "D.4", "Property income",
+  "&nbsp; D.41", "Interest",
+  "&nbsp; D.42", "Distributed income of corporations",
+  "&nbsp; D.43", "Reinvested earnings on foreign direct investment",
+  "&nbsp; D.44", "Investment income disbursements (e.g. insurances)",
+  "&nbsp; D.45", "Rent"
+) %>%
+kbl(escape = FALSE, align = "ll") %>%
+kable_classic(full_width = F)
+```
+:::
+
+## Income according to the Austrian tax law
+
+::: {.tbl-larger}
+```{r tax}
+#| echo: false
+#| results: 'asis'
+tribble(
+  ~ID, ~Concept, ~Description,
+  1, "Income from agriculture and forestry", "Farmers, forest managers",
+  2, "Income from self-employment", "E.g. Freelancers, Architects, Lawyer, Doctors, Consultants, CEO if she holds > 25%",
+  3, "Business income", "All other self-employed activities",
+  4, "Employee income", "Employees, retirees",
+  5, "Renting and lease of land", "Particularly renting of real estate properties",
+  6, "Property income", "Savings accounts, dividends (final taxation with capital income tax)",
+  7, "Other income", "Income from speculation, income from selling private property, etc."
+) %>%
+kbl(escape = FALSE, align = "ll") %>%
+kable_classic(full_width = F)
+```
+:::
+
+## Income data sources in Austria
+
+::: {.tbl-classic .tbl-larger}
+| Income Type | Long-term aggregate | Long-term distribution | Short-term distribution |
+|-------------|-----------------------|------------------------|----------------------|
+| Employee income | [WTD]{.hl .hl-dred} [SSD]{.hl .hl-dred} | [WTD]{.hl .hl-dred} [SSD]{.hl .hl-dred} | [WTD]{.hl .hl-dred} [SSD]{.hl .hl-dred} [SES]{.hl .hl-blue} [EU-SILC]{.hl .hl-diagonal} [HFCS]{.hl .hl-blue} |
+| Self-employed | [ITD]{.hl .hl-dred} [(IWITD)]{.hl .hl-dred} | [ITD]{.hl .hl-dred} [(IWITD)]{.hl .hl-dred} | [ITD]{.hl .hl-dred} [(IWITD)]{.hl .hl-dred} [EU-SILC]{.hl .hl-diagonal} [HFCS]{.hl .hl-blue} |
+| Property income | [CGT]{.hl .hl-dred} [(ITD)]{.hl .hl-dred} | | [EU-SILC]{.hl .hl-diagonal} [HFCS]{.hl .hl-blue} |
+| Transfers | [Various admin. sources]{.hl .hl-dred} | | [EU-SILC]{.hl .hl-diagonal} [HFCS]{.hl .hl-blue} |
+| Disposable household income | [SNA]{.hl .hl-dred} | | [HBS]{.hl .hl-blue} [EU-SILC]{.hl .hl-diagonal} [HFCS]{.hl .hl-blue} |
+
+: {tbl-colwidths="[25,25,20,30]"}
+:::
+
+::: {.tbl-note}
+[Administrative]{.hl .hl-dred} and [survey]{.hl .hl-blue} data sources: Wage tax data (WTD), Income tax data (ITD), Integrated wage and income tax data (IWITD), Social security data (SSD), Capital gains tax data (CGT), System of National Accounts (SNA), European Survey of Income and Living Conditions (EU-SILC), Household Finance and Consumption Survey (HFCS), Household Budgetary Survey (HBS), Structure of Earnings Survey (SES)
+:::
+
+
+# Be aware of differences between data sources!
+
+<center>
+![](../../data/img/avatar_read.png){height=350}
+</center>
+
+::: footer
+:::
+
+## Income data in EU-SILC {.smaller}
+
+::: columns
+::: {.column style="font-size:1.4rem"}
+[**Individual level:**]{.red style="font-size:1.7rem"}
+
+- [employee cash or near cash income]{.hl .hl-blue}
+- cash benefits or losses from self-employment
+- pension from individual private plans
+- [unemployment benefits]{.hl .hl-blue}
+- [old-age benefits]{.hl .hl-blue}
+- [survivor benefits]{.hl .hl-blue}
+- [sickness benefits]{.hl .hl-blue}
+- [disability benefits]{.hl .hl-blue}
+- [education-related allowances]{.hl .hl-blue}
+:::
+
+::: {.column style="font-size:1.4rem"}
+[**Household level:**]{.red style="font-size:1.7rem"}
+
+- income from rental of a property or land
+- [family/children related allowances]{.hl .hl-blue}
+- social exclusion not elsewhere classified
+- housing allowances
+- regular inter-household cash transfers received
+- alimonies received
+- interest, dividends, profit from capital investments in incorporated business
+- [income received by people aged under 16]{.hl .hl-blue}
+:::
+:::
+
+::: aside
+Note: Variables that use [administrative data]{.hl .hl-blue} are highlighted.
+:::
+
+## Administrative versus survey data {.smaller}
+
+::: {.absolute top="10%" left="0"}
+![](img/admsvy1.png)
+:::
+
+::: {.absolute top="30%" left="27%" .textbox .fragment .fade-up .altlist}
+### Impact on response behavior:
+
+- Social desirability
+- Sociodemographic characteristics
+- Survey design
+- Learning effect
+:::
+
+::: aside
+Source: @angel:2019
+:::
+
+## Mean reverting errors {.smaller}
+
+![](img/admsvy2.png)
+
+::: aside
+Source: @angel:2019
+:::
+
+## How do we explain the mismatch? {.smaller}
+
+![](img/admsvy3.png)
+
+::: aside
+Source: @angel:2019
+:::
+
+# Why should we plot data?
+
+<center>
+![](../../data/img/avatar_shrug.png){height=350}
+</center>
+
+::: footer
+:::
+
+
+## Anscombe's quartet
+
+```{r anscomedata}
+#| echo: false
+anscombe_m <- data.frame()
+
+for(i in 1:4) {
+  anscombe_m <- rbind(anscombe_m, data.frame(x=anscombe[,i], y=anscombe[,i+4]))}
+  
+anscombe_m <- anscombe_m |> 
+  mutate(set = c(rep("I",11),rep("II",11),rep("III",11),rep("IV",11)))
+
+means <- anscombe |> 
+  select(x1,y1,x2,y2,x3,y3,x4,y4) |> 
+  summarise(across(everything(), mean))
+
+sd <- anscombe |> 
+  select(x1,y1,x2,y2,x3,y3,x4,y4) |> 
+  summarise(across(everything(), sd))
+
+cor <- anscombe |>
+  summarise(x1=cor(x1,y1), x2=cor(x2,y2), x3=cor(x3,y3), x4=cor(x4,y4))
+
+anscombe |> 
+  mutate(obs = as.character(1:n())) |> 
+  select(obs,x1,y1,x2,y2,x3,y3,x4,y4) |>
+  add_row(obs="Mean",round(means,2)) |>
+  add_row(obs="SD",round(sd,2)) |>
+  add_row(obs="Corr",round(cor,2)) |>
+  kbl(escape = FALSE, col.names = c("Obs.", rep(c("X","Y"),4)), align="rcccccccc") |>
+  column_spec(1, border_right = T, bold = T) |>
+  column_spec(seq(3,7,2), border_right = T) |>
+  row_spec(11, extra_css = "border-bottom: 3px solid") |>
+  add_header_above(c(" " = 1, "I" = 2, "II"=2, "III"=2, "IV"=2)) |>
+  kable_classic(full_width = F)
+```
+
+
+## What do we learn when plotting the data?
+
+```{r anscombe}
+#| echo: false
+ggplot(anscombe_m, aes(x, y)) +  
+geom_text(aes(x = 15, y = 5, label=set), family = "Alfa Slab One", size=36, color = "gray95") + 
+geom_smooth(method="lm", fill=NA, fullrange=TRUE, color = "black", linewidth=0.5) + 
+geom_point(size=3.5, color="black", fill="red", alpha=0.8, shape=21) +
+facet_wrap(~set, ncol=2, scales = "free") +
+scale_x_continuous(limits = c(0,20)) +
+scale_y_continuous(limits = c(0,15)) +
+labs(x = NULL, y = NULL) +
+coord_cartesian(expand = F) +
+theme_minimal() +
+theme(strip.text = element_blank(),
+axis.text = element_blank(),
+panel.border = element_rect(linewidth = 0.1, fill = NA))
+```
+
+## Do you see correlation?
+
+```{r datasaurus}
+#| echo: false
+#| fig-align: center
+datasaurus_dozen |>
+  filter(dataset %in% c("slant_down", "dino")) |>
+  mutate(dataset = ifelse(dataset == "dino", "B", "A")) |>
+  ggplot(aes(x = x, y = y, colour = dataset))+
+  geom_point() +
+  scale_color_manual(values = c("#C32402", "#0234C3")) +
+  facet_wrap(~dataset, ncol = 2) +
+  labs(x=NULL, y=NULL) +
+  theme_minimal() +
+  theme(legend.position = "none",
+  strip.text = element_blank(),
+  panel.border = element_rect(linewidth = 0.1, fill = NA))
+```
+
+. . .
+
+::: {.columns}
+::: {.column style="text-align:center;"}
+[Correlation: -0.07]{.secfont style="font-size:1.5rem;color:#C32402;"}
+:::
+::: {.column style="text-align:center;"}
+[Correlation: -0.07]{.secfont style="font-size:1.5rem;color:#0234C3;"}
+:::
+:::
+
+
+## Same same but different
+
+```{r dinolpots}
+#| echo: false
+#| fig-align: center
+datasaurus_dozen |>
+  filter(!dataset == "dino") |>
+  ggplot(aes(x = x, y = y, colour = dataset))+
+  geom_point() +
+  geom_text(aes(x = 50, y = -10, label = glue::glue("Cor.: {round(cor(x,y),2)}")), hjust = 0.5) +
+  facet_wrap(~dataset, nrow = 2) +
+  labs(x=NULL, y=NULL) +
+  theme_minimal() +
+  theme(legend.position = "none",
+  strip.text = element_blank(),
+  axis.text = element_blank(),
+  panel.border = element_rect(linewidth = 0.1, fill = NA))
+```
+
+# Let's start coding with the penguins
+
+<center>
+![](img/penguins.png)
+</center>
+
+::: footer
+:::
+
+## The Palmer Penguins {.smaller}
+
+::: {.columns}
+::: {.column}
+![](img/penguins1.png)
+:::
+::: {.column}
+![](img/penguins2.png)
+:::
+:::
+
+::: {style="font-size:1.5rem;font-weight:100;" .secfont}
+The [data](https://allisonhorst.github.io/palmerpenguins/index.html) was collected from 2007-2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program. The dataset contains data for 344 penguins. There are 3 different species of penguins, collected from 3 islands in the Palmer Archipelago, Antarctica.
+:::
+
+::: {.aside}
+Source: @gorman:2014
+:::
+
+## Bibliography {.bibstyle}
+
+:::footer
+:::

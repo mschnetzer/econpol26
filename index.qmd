@@ -1,0 +1,69 @@
+---
+title: '{{< var course.title >}}'
+subtitle: '{{< var course.subtitle >}}'
+details: |
+    {{< var course.number >}} • {{< var course.semester >}} <br> {{< var university.name >}}
+course-icon: '{{< var course.icon >}}'
+course-icon-bg: '{{< var course.icon-bg >}}'
+page-layout: full
+format:
+  html:
+    template-partials: layout/partials/title-block.html
+    css: layout/css/adveconpol.scss
+---
+
+::: {.home}
+
+::: {.grid .course-info}
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+#### Lecturer
+
+- {{< fa user >}} &nbsp; {{< var instructor1.name >}}
+- {{< fa globe >}} &nbsp; [{{< var instructor1.url >}}]({{< var instructor1.url >}})
+- {{< fa envelope >}} &nbsp; {{< var instructor1.email >}}
+- {{< fa brands github >}} &nbsp; [{{< var instructor1.github >}}](https://www.github.com/{{< var instructor1.github >}})
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+#### Lecturer
+
+- {{< fa user >}} &nbsp; {{< var instructor2.name >}}
+- {{< fa globe >}} &nbsp; [{{< var instructor2.url >}}]({{< var instructor2.url >}})
+- {{< fa envelope >}} &nbsp; {{< var instructor2.email >}}
+- {{< fa brands github >}} &nbsp; [{{< var instructor2.github >}}](https://www.github.com/{{< var instructor2.github >}})
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+#### Course details
+
+- {{< fa calendar-alt >}} &nbsp; {{< var course.dates >}}
+- {{< fa calendar >}} &nbsp; {{< var course.days >}}
+- {{< fa clock >}} &nbsp; {{< var course.time >}}
+- {{< fa location-dot >}} &nbsp; {{< var course.location >}}
+:::
+
+:::
+
+
+#### Summary
+
+“A picture is worth a thousand words”. This course approaches contemporary issues of monetary policy by analyzing and creating data visualizations. We discuss theoretical backgrounds, empirical evidence and policy implications of monetary policy. In a second step, we assemble plots in class and study the basics of data visualization for policy design and evaluation. As a special feature, we will have a collaboration with the [Austrian National Bank](https://www.oenb.at). The national bank will exclusively provide datasets for this class to create data visualizations. Students are required to recreate figures at home to improve their skills in coding. The main task is that students will design a comprehensive data visualization in R and draft a report around that figure in [RMarkdown](https://rmarkdown.rstudio.com) (or [Quarto](https://quarto.org)). Student will need to bring their laptop to class and prior knowledge of data handling in R is beneficial.
+
+\
+
+::: {style="text-align:center;"}
+![](data/img/wu-logo-simple.png){height="95px"} &emsp; &emsp; ![](data/img/oenb.png){height="100px"}
+:::
+
+\
+
+To sum up, students will gain:
+
+::: {.summary-points}
+- an overview of contemporary debates in monetary policy based on recent empirical research
+- an understanding of the basics of data visualization for policy design and evaluation
+- knowledge how to enrich academic journal publications with informative figures
+:::
+
+:::

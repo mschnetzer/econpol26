@@ -1,0 +1,43 @@
+project:
+  type: website
+  
+format:
+  html:
+    theme: 
+      - litera
+      - layout/css/adveconpol.scss
+
+bibliography: data/lit/wipol_advanced.bib
+csl: data/lit/wipol.csl
+
+website:
+  title: "PI 0588 Economic Policy"
+  site-url: "https://mschnetzer.github.io/econpol26/"
+  
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "<span style='font-size:0.8em;'>**Registration via LPIS opens in October 2026**</span>"
+    type: primary
+    position: above-navbar
+
+  navbar:
+    pinned: true
+    background: light
+    foreground: "#5d8198"
+    collapse: true
+    right:
+      - href: index.qmd
+        text: About
+      - href: syllabus.qmd
+        text: Syllabus
+      - href: schedule.qmd
+        text: Schedule
+      - href: visualization.qmd
+        text: Chart & Report
+
+  page-footer:
+    right: |
+      {{< fa brands creative-commons >}} {{< var course.copyright_year >}} by {{< var author >}}
+    left: |
+      Made with {{< fa heart >}} and {{< fa brands r-project >}} [Quarto](https://quarto.org/)
