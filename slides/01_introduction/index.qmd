@@ -7,7 +7,7 @@ title: |
         <i class='fas {{< var course.icon >}} fa-stack-1x fa-inverse' style='margin-top:-5pt'></i>
       </span><br>
     {{< var course.subtitle >}}
-author: '{{< var instructor.name >}}'
+author: '{{< var instructor1.name >}}'
 subtitle: Introduction
 date: October 06, 2025
 date-format: long
