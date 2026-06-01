@@ -431,7 +431,7 @@
     "href": "slides/02_data/index.html#income-according-to-canberra-group",
     "title": "    Monetary Policy Visualization",
     "section": "Income according to Canberra Group",
-    "text": "Income according to Canberra Group\n\n\n\nDie heruntergeladenen Binärpakete sind in \n    /var/folders/6m/wxgmtq_j2cjfx_y12qxtgsc40000gn/T//RtmpFjhcVg/downloaded_packages\n\n\n\n\n\n\nID\nConcept\nAggregate\n\n\n\n\n1\nIncome from employment\n1a + 1b\n\n\n  1a\nEmployee income\n\n\n\n  1b\nIncome from self-employment\n\n\n\n2\nProperty income\n\n\n\n3\nIncome from household production\n\n\n\n4\nCurrent transfers received\n\n\n\n5\nIncome from production\n1 + 3\n\n\n6\nPrimary income\n1 + 2 + 3\n\n\n7\nCurrent transfers paid (taxes, fees, etc.)\n\n\n\n8\nDisposable income\n6 + 4 - 7\n\n\n\n\n\n\nSource: United Nations (2011), 11"
+    "text": "Income according to Canberra Group\n\n\n\n\nID\nConcept\nAggregate\n\n\n\n\n1\nIncome from employment\n1a + 1b\n\n\n  1a\nEmployee income\n\n\n\n  1b\nIncome from self-employment\n\n\n\n2\nProperty income\n\n\n\n3\nIncome from household production\n\n\n\n4\nCurrent transfers received\n\n\n\n5\nIncome from production\n1 + 3\n\n\n6\nPrimary income\n1 + 2 + 3\n\n\n7\nCurrent transfers paid (taxes, fees, etc.)\n\n\n\n8\nDisposable income\n6 + 4 - 7\n\n\n\n\n\n\nSource: United Nations (2011), 11"
   },
   {
     "objectID": "slides/02_data/index.html#income-according-to-the-national-accounts",
