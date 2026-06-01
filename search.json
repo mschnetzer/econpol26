@@ -298,56 +298,56 @@
     "href": "slides/03_visualization/index.html#first-steps",
     "title": "    Monetary Policy Visualization",
     "section": "First steps",
-    "text": "First steps\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm)) +\n  geom_point(size = 1.5, alpha = 0.5)"
+    "text": "First steps\n\n\ndata |&gt; ggplot(aes(x = bill_len, \n                  y = bill_dep)) +\n  geom_point(size = 1.5, alpha = 0.5)"
   },
   {
     "objectID": "slides/03_visualization/index.html#colors",
     "href": "slides/03_visualization/index.html#colors",
     "title": "    Monetary Policy Visualization",
     "section": "Colors",
-    "text": "Colors\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  theme_minimal()"
+    "text": "Colors\n\n\ndata |&gt; ggplot(aes(x = bill_len, \n                  y = bill_dep, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  theme_minimal()"
   },
   {
     "objectID": "slides/03_visualization/index.html#scales",
     "href": "slides/03_visualization/index.html#scales",
     "title": "    Monetary Policy Visualization",
     "section": "Scales",
-    "text": "Scales\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  theme_minimal()"
+    "text": "Scales\n\n\ndata |&gt; ggplot(aes(x = bill_len, \n                  y = bill_dep, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  theme_minimal()"
   },
   {
     "objectID": "slides/03_visualization/index.html#labels",
     "href": "slides/03_visualization/index.html#labels",
     "title": "    Monetary Policy Visualization",
     "section": "Labels",
-    "text": "Labels\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal()"
+    "text": "Labels\n\n\ndata |&gt; ggplot(aes(x = bill_len, \n                  y = bill_dep, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal()"
   },
   {
     "objectID": "slides/03_visualization/index.html#annotation-rather-than-legend",
     "href": "slides/03_visualization/index.html#annotation-rather-than-legend",
     "title": "    Monetary Policy Visualization",
     "section": "Annotation rather than legend",
-    "text": "Annotation rather than legend\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  annotate(\"text\", x = c(34.7, 55.7, 50.7), y = c(20.7, 19, 13.6), \n  color = MetBrewer::met.brewer(\"Lakota\")[1:3], \n  label = c(\"Adélie\",\"Chinstrap\",\"Gentoo\"), fontface = \"bold\", size = 4) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
+    "text": "Annotation rather than legend\n\n\ndata |&gt; ggplot(aes(x = bill_len, \n                  y = bill_dep, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  annotate(\"text\", x = c(34.7, 55.7, 50.7), y = c(20.7, 19, 13.6), \n  color = MetBrewer::met.brewer(\"Lakota\")[1:3], \n  label = c(\"Adélie\",\"Chinstrap\",\"Gentoo\"), fontface = \"bold\", size = 4) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
   },
   {
     "objectID": "slides/03_visualization/index.html#themes",
     "href": "slides/03_visualization/index.html#themes",
     "title": "    Monetary Policy Visualization",
     "section": "Themes",
-    "text": "Themes\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  annotate(\"text\", x = c(34.7, 55.7, 50.7), y = c(20.7, 19, 13.6), \n  color = MetBrewer::met.brewer(\"Lakota\")[1:3], \n  label = c(\"Adélie\",\"Chinstrap\",\"Gentoo\"), fontface = \"bold\", size = 4) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal() +\n  theme(legend.position = \"none\",\n  plot.title.position = \"plot\",\n  plot.title = element_text(size = 16, face=\"bold\"),\n  plot.subtitle = element_text(size = 13),\n  panel.grid.minor = element_blank())"
+    "text": "Themes\n\n\ndata |&gt; ggplot(aes(x = bill_len, \n                  y = bill_dep, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  annotate(\"text\", x = c(34.7, 55.7, 50.7), y = c(20.7, 19, 13.6), \n  color = MetBrewer::met.brewer(\"Lakota\")[1:3], \n  label = c(\"Adélie\",\"Chinstrap\",\"Gentoo\"), fontface = \"bold\", size = 4) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal() +\n  theme(legend.position = \"none\",\n  plot.title.position = \"plot\",\n  plot.title = element_text(size = 16, face=\"bold\"),\n  plot.subtitle = element_text(size = 13),\n  panel.grid.minor = element_blank())"
   },
   {
     "objectID": "slides/03_visualization/index.html#calculate-median-and-standard-deviation",
     "href": "slides/03_visualization/index.html#calculate-median-and-standard-deviation",
     "title": "    Monetary Policy Visualization",
     "section": "Calculate median and standard deviation",
-    "text": "Calculate median and standard deviation\n\ndata_summary &lt;- data |&gt;\n  group_by(species) |&gt;\n  summarise(across(c(bill_length_mm, bill_depth_mm),\n  list(median = ~median(., na.rm = TRUE), \n       sd = ~sd(., na.rm = TRUE))))\n\ndata_summary\n\n\n\n# A tibble: 3 × 5\n  species   bill_length_mm_median bill_length_mm_sd bill_depth_mm_median\n  &lt;fct&gt;                     &lt;dbl&gt;             &lt;dbl&gt;                &lt;dbl&gt;\n1 Adelie                     38.8              2.66                 18.4\n2 Chinstrap                  49.6              3.34                 18.4\n3 Gentoo                     47.3              3.08                 15  \n# ℹ 1 more variable: bill_depth_mm_sd &lt;dbl&gt;"
+    "text": "Calculate median and standard deviation\n\ndata_summary &lt;- data |&gt;\n  group_by(species) |&gt;\n  summarise(across(c(bill_len, bill_dep),\n  list(median = ~median(., na.rm = TRUE), \n       sd = ~sd(., na.rm = TRUE))))\n\ndata_summary\n\n\n\n# A tibble: 3 × 5\n  species   bill_len_median bill_len_sd bill_dep_median bill_dep_sd\n  &lt;fct&gt;               &lt;dbl&gt;       &lt;dbl&gt;           &lt;dbl&gt;       &lt;dbl&gt;\n1 Adelie               38.8        2.66            18.4       1.22 \n2 Chinstrap            49.6        3.34            18.4       1.14 \n3 Gentoo               47.3        3.08            15         0.981"
   },
   {
     "objectID": "slides/03_visualization/index.html#median",
     "href": "slides/03_visualization/index.html#median",
     "title": "    Monetary Policy Visualization",
     "section": "Median",
-    "text": "Median\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  geom_errorbar(\n    data = data_summary,\n    aes(x = bill_length_mm_median,\n      ymin = bill_depth_mm_median - bill_depth_mm_sd,\n      ymax = bill_depth_mm_median + bill_depth_mm_sd,\n      color = species,\n      color = after_scale(colorspace::darken(color, .2, space = \"combined\"))), \n      inherit.aes = FALSE, width = .5, size = .8) +\n  geom_errorbar(\n    data = data_summary,\n    aes(y = bill_depth_mm_median,\n      xmin = bill_length_mm_median - bill_length_mm_sd,\n      xmax = bill_length_mm_median + bill_length_mm_sd,\n      color = species,\n      color = after_scale(colorspace::darken(color, .2, space = \"combined\"))), \n      inherit.aes = FALSE, width = .25, size = .8) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  annotate(\"text\", x = c(34.7, 55.7, 50.7), y = c(20.7, 19, 13.6), color = MetBrewer::met.brewer(\"Lakota\")[1:3], label = c(\"Adélie\",\"Chinstrap\",\"Gentoo\"), fontface = \"bold\", size = 4) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal() +\n  theme(legend.position = \"none\",\n  plot.title.position = \"plot\",\n  plot.title = element_text(size = 16, face=\"bold\"),\n  plot.subtitle = element_text(size = 13),\n  panel.grid.minor = element_blank())"
+    "text": "Median\n\n\ndata |&gt; ggplot(aes(x = bill_len, \n                  y = bill_dep, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  geom_errorbar(\n    data = data_summary,\n    aes(x = bill_len_median,\n      ymin = bill_dep_median - bill_dep_sd,\n      ymax = bill_dep_median + bill_dep_sd,\n      color = species,\n      color = after_scale(colorspace::darken(color, .2, space = \"combined\"))), \n      inherit.aes = FALSE, width = .5, size = .8) +\n  geom_errorbar(\n    data = data_summary,\n    aes(y = bill_dep_median,\n      xmin = bill_len_median - bill_len_sd,\n      xmax = bill_len_median + bill_len_sd,\n      color = species,\n      color = after_scale(colorspace::darken(color, .2, space = \"combined\"))), \n      inherit.aes = FALSE, width = .25, size = .8) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  annotate(\"text\", x = c(34.7, 55.7, 50.7), y = c(20.7, 19, 13.6), color = MetBrewer::met.brewer(\"Lakota\")[1:3], label = c(\"Adélie\",\"Chinstrap\",\"Gentoo\"), fontface = \"bold\", size = 4) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal() +\n  theme(legend.position = \"none\",\n  plot.title.position = \"plot\",\n  plot.title = element_text(size = 16, face=\"bold\"),\n  plot.subtitle = element_text(size = 13),\n  panel.grid.minor = element_blank())"
   },
   {
     "objectID": "slides/03_visualization/index.html#final-plot",

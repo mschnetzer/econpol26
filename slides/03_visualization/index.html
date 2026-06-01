@@ -9,7 +9,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-709e903f7486fc15c5f7f9cf283d35df.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <meta name="author" content="?var:instructor.name">
+  <meta name="author" content="Dr.&nbsp;Matthias Schnetzer">
   <meta name="dcterms.date" content="2025-10-20">
   <title>PI 0588 Economic Policy –      Monetary Policy Visualization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -225,7 +225,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<strong>?var:instructor.name</strong> 
+Dr.&nbsp;Matthias Schnetzer 
 </div>
 </div>
 </div>
@@ -748,8 +748,8 @@
 <h2>First steps</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb2-2"><a></a>                  <span class="at">y =</span> bill_depth_mm)) <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb2-2"><a></a>                  <span class="at">y =</span> bill_dep)) <span class="sc">+</span></span>
 <span id="cb2-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
@@ -765,8 +765,8 @@
 <h2>Colors</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-code-line-numbers="3,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb3-2"><a></a>                  <span class="at">y =</span> bill_depth_mm, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-code-line-numbers="3,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb3-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
 <span id="cb3-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
 <span id="cb3-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb3-5"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -784,8 +784,8 @@
 <h2>Scales</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="5,6,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb4-2"><a></a>                  <span class="at">y =</span> bill_depth_mm, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="5,6,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb4-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
 <span id="cb4-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
 <span id="cb4-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb4-5"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
@@ -806,8 +806,8 @@
 <h2>Labels</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="8,9,10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb5-2"><a></a>                  <span class="at">y =</span> bill_depth_mm, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="8,9,10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb5-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
 <span id="cb5-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
 <span id="cb5-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb5-5"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
@@ -831,8 +831,8 @@
 <h2>Annotation rather than legend</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-code-line-numbers="8,9,10,15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb6-2"><a></a>                  <span class="at">y =</span> bill_depth_mm, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-code-line-numbers="8,9,10,15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb6-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
 <span id="cb6-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
 <span id="cb6-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb6-5"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
@@ -860,8 +860,8 @@
 <h2>Themes</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-code-line-numbers="16,17,18,19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb7-2"><a></a>                  <span class="at">y =</span> bill_depth_mm, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-code-line-numbers="16,17,18,19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb7-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
 <span id="cb7-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
 <span id="cb7-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb7-5"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
@@ -894,7 +894,7 @@
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>data_summary <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
 <span id="cb8-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">c</span>(bill_length_mm, bill_depth_mm),</span>
+<span id="cb8-3"><a></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">c</span>(bill_len, bill_dep),</span>
 <span id="cb8-4"><a></a>  <span class="fu">list</span>(<span class="at">median =</span> <span class="sc">~</span><span class="fu">median</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
 <span id="cb8-5"><a></a>       <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>))))</span>
 <span id="cb8-6"><a></a></span>
@@ -903,12 +903,11 @@
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 5
-  species   bill_length_mm_median bill_length_mm_sd bill_depth_mm_median
-  &lt;fct&gt;                     &lt;dbl&gt;             &lt;dbl&gt;                &lt;dbl&gt;
-1 Adelie                     38.8              2.66                 18.4
-2 Chinstrap                  49.6              3.34                 18.4
-3 Gentoo                     47.3              3.08                 15  
-# ℹ 1 more variable: bill_depth_mm_sd &lt;dbl&gt;</code></pre>
+  species   bill_len_median bill_len_sd bill_dep_median bill_dep_sd
+  &lt;fct&gt;               &lt;dbl&gt;       &lt;dbl&gt;           &lt;dbl&gt;       &lt;dbl&gt;
+1 Adelie               38.8        2.66            18.4       1.22 
+2 Chinstrap            49.6        3.34            18.4       1.14 
+3 Gentoo               47.3        3.08            15         0.981</code></pre>
 </div>
 </div>
 </section>
@@ -916,23 +915,23 @@
 <h2>Median</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
-<span id="cb10-2"><a></a>                  <span class="at">y =</span> bill_depth_mm, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb10-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
 <span id="cb10-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
 <span id="cb10-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
 <span id="cb10-5"><a></a>  <span class="fu">geom_errorbar</span>(</span>
 <span id="cb10-6"><a></a>    <span class="at">data =</span> data_summary,</span>
-<span id="cb10-7"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm_median,</span>
-<span id="cb10-8"><a></a>      <span class="at">ymin =</span> bill_depth_mm_median <span class="sc">-</span> bill_depth_mm_sd,</span>
-<span id="cb10-9"><a></a>      <span class="at">ymax =</span> bill_depth_mm_median <span class="sc">+</span> bill_depth_mm_sd,</span>
+<span id="cb10-7"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> bill_len_median,</span>
+<span id="cb10-8"><a></a>      <span class="at">ymin =</span> bill_dep_median <span class="sc">-</span> bill_dep_sd,</span>
+<span id="cb10-9"><a></a>      <span class="at">ymax =</span> bill_dep_median <span class="sc">+</span> bill_dep_sd,</span>
 <span id="cb10-10"><a></a>      <span class="at">color =</span> species,</span>
 <span id="cb10-11"><a></a>      <span class="at">color =</span> <span class="fu">after_scale</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(color, .<span class="dv">2</span>, <span class="at">space =</span> <span class="st">"combined"</span>))), </span>
 <span id="cb10-12"><a></a>      <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">width =</span> .<span class="dv">5</span>, <span class="at">size =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
 <span id="cb10-13"><a></a>  <span class="fu">geom_errorbar</span>(</span>
 <span id="cb10-14"><a></a>    <span class="at">data =</span> data_summary,</span>
-<span id="cb10-15"><a></a>    <span class="fu">aes</span>(<span class="at">y =</span> bill_depth_mm_median,</span>
-<span id="cb10-16"><a></a>      <span class="at">xmin =</span> bill_length_mm_median <span class="sc">-</span> bill_length_mm_sd,</span>
-<span id="cb10-17"><a></a>      <span class="at">xmax =</span> bill_length_mm_median <span class="sc">+</span> bill_length_mm_sd,</span>
+<span id="cb10-15"><a></a>    <span class="fu">aes</span>(<span class="at">y =</span> bill_dep_median,</span>
+<span id="cb10-16"><a></a>      <span class="at">xmin =</span> bill_len_median <span class="sc">-</span> bill_len_sd,</span>
+<span id="cb10-17"><a></a>      <span class="at">xmax =</span> bill_len_median <span class="sc">+</span> bill_len_sd,</span>
 <span id="cb10-18"><a></a>      <span class="at">color =</span> species,</span>
 <span id="cb10-19"><a></a>      <span class="at">color =</span> <span class="fu">after_scale</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(color, .<span class="dv">2</span>, <span class="at">space =</span> <span class="st">"combined"</span>))), </span>
 <span id="cb10-20"><a></a>      <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">width =</span> .<span class="dv">25</span>, <span class="at">size =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
