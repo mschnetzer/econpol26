@@ -1,4 +1,4 @@
-author: Matthias Schnetzer
+author: Matthias Schnetzer & Patrick Mokre
 
 instructor1:
   name: Dr. Matthias Schnetzer
@@ -19,7 +19,7 @@ instructor2:
 course:
   title: Economic Policy (Applied track)
   subtitle: Monetary Policy Visualization
-  icon: fa-chart-column
+  icon: fa-money-bill-1
   icon-bg: fa-comment
   number: "PI 0588"
   semester: "Winter term 2026"
