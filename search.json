@@ -1,0 +1,534 @@
+[
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "In this table you find the dates and contents of all classes.\n\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\nDate\nTime\nRoom\nContent\nSlides\nCode\nData\nAssignment\n\n\n\n\nOct 05, 2026\n10:00-12:00\ntba\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2026\n10:00-12:00\ntba\nMonetary regimes · Data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOct 19, 2026\n10:00-12:00\ntba\nFinancialization · Geometries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 02, 2026\n10:00-12:00\ntba\nQuantitative Easing · Scales\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 09, 2026\n10:00-12:00\ntba\ntba · Colors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 16, 2026\n10:00-12:00\ntba\ntba · Labels\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 23, 2026\n10:00-12:00\ntba\nOeNB data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 30, 2026\n10:00-12:00\ntba\nOeNB data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDec 14, 2026\n10:00-12:00\ntba\nMonetary inequalities · Maps\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 11, 2027\n10:00-12:00\ntba\nStudent presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 18, 2027\n10:00-12:00\ntba\nStudent presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 25, 2027\n10:00-12:00\ntba\nAward ceremony\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignments\nAssignment [1] provides the setup of the R infrastructure that is required in this course. There are no points for this assignment. Assignments [2] to [4] are recreations of examplary figures provided below. These examples are related to figures that are discussed in class. Students should then try to reproduce the plots at home and improve their individual coding skills. The raw data for the figures are available as *.csv files below.\n\nHomework 1\n\n\n\n\n\n\n\nInstall the latest R version (&gt; v4.5.0)\nInstall the latest version of RStudio Desktop\nOpen RStudio, copy the following code into the console and execute: install.packages(c(\"tidyverse\", \"rmarkdown\", \"scales\", \"lubridate\", \"colorspace\", \"devtools\")); sessionInfo()\nClick on Help &gt; About RStudio\nMake sure that both the R version (Console) and the RStudio version are visible, take a screenshot and upload it to the learning platform before October 12, 2026 at 9 a.m.\n\n\n\n\n\nHomework 2\n\n\n\n\n\n\nPlease submit your chart before November 09, 2026 at 9 a.m. The data for this assignment is available here: \n\n\n\n\nHomework 3\n\n\n\n\n\n\nPlease submit your chart before November 23, 2026 at 9 a.m. The data for this assignment is available here: \n\n\n\n\nHomework 4\n\n\n\n\n\n\nPlease submit your chart before December 14, 2026 at 9 a.m. The data for this assignment is available here:"
+  },
+  {
+    "objectID": "visualization.html",
+    "href": "visualization.html",
+    "title": "Chart & Report",
+    "section": "",
+    "text": "Data visualization\nStudents will create a preliminary chart addressing a relevant problem of economic policy for an in-class presentation. The presentation should provide an intuition of the research question, the underlying data of the chart and considerations behind the style of the chart. The time slot for the presentation is five minutes. Afterwards we will have a brief Q&A in class. The presentation should only have a small number of slides with little text to lead the audience through the process of chart creation, e.g.\n\nResearch question: Which issue in economic policy do you want to address with your chart?\nData: What data did you use?\nChart: What does the chart show? What were your thoughts when choosing this style?\nConclusion: What can we learn from this data visualization for economic policy?\n\n\n\nRMarkdown report\nStudents are required to draft a short report around the chart, containing the economic policy background and the most important information about chart creation. The final version of the report is due on January 31, 2027. You should work with RMarkdown (or Quarto) which is a handy and simple tool to compose reports based on R code. It is recommended to edit the document in RStudio and compile it in HTML format. The final report should be structured as follows:\n\nIntroduction: Explain why the topic you chose is important and interesting for the academic/public debate.\nResearch question: What is the specific research question that you want to address with your visualization?\nData: What data did you use? What are the limitations of the data? If helpful, you might want to include some descriptive statistics as a table.\nResult: Present and describe the chart that you have created.\nConclusion: What are the policy conclusions of your chart?\nCode: Provide the full code for your data visualization as a code block in the appendix of the report.\n\n\n\nCheatsheets\n   \n\n\nAdditional online resources\n\n\n\n\n\n\n\n\n\nKieran Healy  Data Visualization: A Practical Introduction  Princeton University Press  ISBN-13: 9780691181622  Link\n\n\n\nClaus O. Wilke  Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures  O’Reilly Media  ISBN-13: 9781492031086  Link\n\n\n\nJack Dougherty and Ilya Ilyankou  Hands-On Data Visualization: Interactive Storytelling from Spreadsheets to Code  O’Reilly Media  ISBN-13: 9781492086000  Link"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#course-info",
+    "href": "slides/01_introduction/index.html#course-info",
+    "title": "    Monetary Policy Visualization",
+    "section": "Course info",
+    "text": "Course info\n\n\n\n\n   \n\n\n\n\n ?var:instructor.name-wo-title\n ?var:instructor.employer\n ?var:instructor.email\n ?var:instructor.url\n ?var:instructor.twitter\n\n\n\n\n\n Oct 5, 2026 – Jan 25, 2026\n 10:00–12:00\n WU Campus\n https://mschnetzer.github.io/econpol26"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#about-this-course",
+    "href": "slides/01_introduction/index.html#about-this-course",
+    "title": "    Monetary Policy Visualization",
+    "section": "About this course",
+    "text": "About this course\n\n“A picture is worth a thousand words”\n\nThis course approaches contemporary issues of economic policy by analyzing innovative or iconic data visualizations. We analyse selected illustrations, discuss the underlying data, the theoretical background and policy implications. We will assemble plots in class and study the basics of data visualization.\nYou will gain:\n\nan overview of contemporary debates in economic policy\na basic understanding of principles of data visualization\nknowledge how to enrich academic publications with informative graphs"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#who-are-you",
+    "href": "slides/01_introduction/index.html#who-are-you",
+    "title": "    Monetary Policy Visualization",
+    "section": "Who are you?",
+    "text": "Who are you?\n   \nWhat do you expect of this course? Do you already have some coding experience in R?"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#schedule",
+    "href": "slides/01_introduction/index.html#schedule",
+    "title": "    Monetary Policy Visualization",
+    "section": "Schedule",
+    "text": "Schedule\n\n  \n  \n\n\n\n\n\n\n\n\n\n\nDate\nTime\nRoom\nContent\nAssignment\n\n\n\n\nOct 05, 2026\n10:00-12:00\ntba\nIntroduction\n\n\n\nCircle Xmark\n\n\n\n\n\n\nOct 12, 2026\n10:00-12:00\ntba\nMonetary regimes · Data\n\n\n\nPen\n\n\n\n\n\n\nOct 19, 2026\n10:00-12:00\ntba\nFinancialization · Geometries\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 02, 2026\n10:00-12:00\ntba\nQuantitative Easing · Scales\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 09, 2026\n10:00-12:00\ntba\ntba · Colors\n\n\n\nPen\n\n\n\n\n\n\nNov 16, 2026\n10:00-12:00\ntba\ntba · Labels\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 23, 2026\n10:00-12:00\ntba\nOeNB data\n\n\n\nPen\n\n\n\n\n\n\nNov 30, 2026\n10:00-12:00\ntba\nOeNB data\n\n\n\nCircle Xmark\n\n\n\n\n\n\nDec 14, 2026\n10:00-12:00\ntba\nMonetary inequalities · Maps\n\n\n\nPen\n\n\n\n\n\n\nJan 11, 2027\n10:00-12:00\ntba\nStudent presentations\n\n\n\nCircle Xmark\n\n\n\n\n\n\nJan 18, 2027\n10:00-12:00\ntba\nStudent presentations\n\n\n\nCircle Xmark\n\n\n\n\n\n\nJan 25, 2027\n10:00-12:00\ntba\nAward ceremony\n\n\n\nCircle Xmark"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#assignments",
+    "href": "slides/01_introduction/index.html#assignments",
+    "title": "    Monetary Policy Visualization",
+    "section": "Assignments",
+    "text": "Assignments\nAssignment 1 provides the setup of the R infrastructure that is required in this course. There are no points for this assignment.\nAssignments 2 to 4 are recreations of examplary figures. These examples are related to figures that are discussed in class. Students should then try to reproduce the plots at home and improve their individual coding skills.\nThe raw data for the figures are available as CSV files. The charts should then be uploaded to the learning platform before 9 a.m. on the day of the deadline."
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#assignments-1",
+    "href": "slides/01_introduction/index.html#assignments-1",
+    "title": "    Monetary Policy Visualization",
+    "section": "Assignments",
+    "text": "Assignments"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#chart-report",
+    "href": "slides/01_introduction/index.html#chart-report",
+    "title": "    Monetary Policy Visualization",
+    "section": "Chart & Report",
+    "text": "Chart & Report\n\n\nChart presentation\n\n\nResearch question Which economic policy question do you want to answer with your chart?\nData\nChart\nConclusion What can we learn from the data visualization for economic policy?\n\n\nDeadline: January 18, 2026\n\nRMarkdown (or Quarto) Report\n\n\nTitle\nAuthor\nIntroduction\nResearch question\nData\nResult\nConclusion\nCode\n\n\nDeadline: January 31, 2026"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#grading",
+    "href": "slides/01_introduction/index.html#grading",
+    "title": "    Monetary Policy Visualization",
+    "section": "Grading",
+    "text": "Grading\n  Assignments: 30% (0-10 points for each visualization)  \n\n Chart presentation: 30% (0-20 points for the quality of the presentation, 0-10 for the preliminary chart)  \n\n\n Written report: 40% (0-40 points for the report and the final chart)\n\n\n\n\n   100-90: Excellent      89-80: Good      79-65: Satisfactory      64-50: Sufficient  All single tasks have to be passed (50% threshold each)."
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#visualizations-by-students",
+    "href": "slides/01_introduction/index.html#visualizations-by-students",
+    "title": "    Monetary Policy Visualization",
+    "section": "Visualizations by students",
+    "text": "Visualizations by students"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#feedback-cooperation-and-help",
+    "href": "slides/01_introduction/index.html#feedback-cooperation-and-help",
+    "title": "    Monetary Policy Visualization",
+    "section": "Feedback, cooperation and help",
+    "text": "Feedback, cooperation and help\nLet me know your feedback on the course anytime. If possible, I will try to incorporate your feedback immediately. At least, I will consider it for future courses.\nAs some of you might already have advanced coding skills in R, please support each other and collaborate. This does not mean that one person does all the coding and shares with all colleagues. Students should have an intrinsic motivation to improve their coding skills but cooperate to learn from each other.\nThere is a forum on the learning platform for exchange among students. Please also consult support platforms like Stack Overflow or take a look at the cheatsheets:"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#recommended-literature",
+    "href": "slides/01_introduction/index.html#recommended-literature",
+    "title": "    Monetary Policy Visualization",
+    "section": "Recommended Literature",
+    "text": "Recommended Literature\n\n\n\n\n\n\n\n\n\nJonathan Schwabish  Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks  Columbia University Press  ISBN-13: 9780231193115\n\n\n\nDavid Spiegelhalter  The Art of Statistics: Learning from Data  Penguin Books UK  ISBN-13: 9780241258767"
+  },
+  {
+    "objectID": "gallery.html",
+    "href": "gallery.html",
+    "title": "Selected student work",
+    "section": "",
+    "text": "Victoria Bauer\n\n\n\n\n\nKoen Berben\n\n\n\n\n\nRoopsa Chakraborty\n\n\n\n\n\nSofia Evtushenko\n\n\n\n\n\nTobias Gerstmayr\n\n\n\n\n\nAntonia Hittmair\n\n\n\n\n\nEva-Maria Mooslechner\n\n\n\n\n\nWilhelm Hartung\n\n\n\n\n\nZulian Marecos Amarillas\n\n\n\n\n\nElizaveta Minaeva\n\n\n\n\n\nTeodor Nedev\n\n\n\n\n\nTeodor Nikolov\n\n\n\n\n\nVictor Novy\n\n\n\n\n\nMaria Pessoa Dias da Silva\n\n\n\n\n\nSarah Rabong\n\n\n\n\n\nNina Schöller\n\n\n\n\n\nAnastasiia Skliankina\n\n\n\n\n\nManuel Stahl"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "\n            Monetary Policy Visualization\n        ",
+    "section": "",
+    "text": "Economic Policy (Applied track)\n        \n        \n            Monetary Policy Visualization\n        \n        \n            PI 0588 • Winter term 2026  Vienna University of Economics and Business\n        \n    \n    \n          \n            \n            \n          \n        \n\n\n\n\n\n\nLecturer\n\n   Dr. Matthias Schnetzer\n   https://mschnetzer.github.io\n   mschnetz@wu.ac.at\n   mschnetzer\n\n\n\nLecturer\n\n   Patrick Mokre, PhD\n   https://www.patrickmokre.com\n   patrick.mokre@akwien.at\n   patrickmokre\n\n\n\nCourse details\n\n   Oct 5, 2026 – Jan 25, 2026\n   Mondays\n   10:00–12:00\n   WU Campus\n\n\n\n\nSummary\n“A picture is worth a thousand words”. This course approaches contemporary issues of monetary policy by analyzing and creating data visualizations. We discuss theoretical backgrounds, empirical evidence and policy implications of monetary policy. In a second step, we assemble plots in class and study the basics of data visualization for policy design and evaluation. As a special feature, we will have a collaboration with the Austrian National Bank. The national bank will exclusively provide datasets for this class to create data visualizations. Students are required to recreate figures at home to improve their skills in coding. The main task is that students will design a comprehensive data visualization in R and draft a report around that figure in RMarkdown (or Quarto). Student will need to bring their laptop to class and prior knowledge of data handling in R is beneficial.\n\n\n\n     \n\n\n\nTo sum up, students will gain:\n\n\nan overview of contemporary debates in monetary policy based on recent empirical research\nan understanding of the basics of data visualization for policy design and evaluation\nknowledge how to enrich academic journal publications with informative figures"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#william-playfair-1759-1823",
+    "href": "slides/03_visualization/index.html#william-playfair-1759-1823",
+    "title": "    Monetary Policy Visualization",
+    "section": "William Playfair (1759-1823)",
+    "text": "William Playfair (1759-1823)\n\n\n\n\n\n\n\n[created: 1786]"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#john-snow-1813-1858",
+    "href": "slides/03_visualization/index.html#john-snow-1813-1858",
+    "title": "    Monetary Policy Visualization",
+    "section": "John Snow (1813-1858)",
+    "text": "John Snow (1813-1858)\n\n\n\n\n\n\n\n\n[created: 1854]"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#charles-joseph-minard-1781-1870",
+    "href": "slides/03_visualization/index.html#charles-joseph-minard-1781-1870",
+    "title": "    Monetary Policy Visualization",
+    "section": "Charles Joseph Minard (1781-1870)",
+    "text": "Charles Joseph Minard (1781-1870)\n\n\n\n\n\n\n\n[created: 1869]"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#w.e.b.-du-bois-1868-1963",
+    "href": "slides/03_visualization/index.html#w.e.b.-du-bois-1868-1963",
+    "title": "    Monetary Policy Visualization",
+    "section": "W.E.B. Du Bois (1868-1963)",
+    "text": "W.E.B. Du Bois (1868-1963)\n\n\n\n\n\n\n\n\n[created: 1890]"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#otto-neurath-1882-1945",
+    "href": "slides/03_visualization/index.html#otto-neurath-1882-1945",
+    "title": "    Monetary Policy Visualization",
+    "section": "Otto Neurath (1882-1945)",
+    "text": "Otto Neurath (1882-1945)\n\n\n\n\n\n\n\n[created: 1943]"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#choose-the-adequate-type-of-graph",
+    "href": "slides/03_visualization/index.html#choose-the-adequate-type-of-graph",
+    "title": "    Monetary Policy Visualization",
+    "section": "1. Choose the adequate type of graph",
+    "text": "1. Choose the adequate type of graph\n\n\nBad:\n\n\n\n\n\n Good:\n\n\n\n\n\nChoose a chart type with respect to your data (numeric, categorical, ranking, time series etc.)\nWhat would you like to show: comparison, distribution, composition, relationship?\nTo help you find the adequate type from a myriad of alternatives, you can also take a look at https://www.data-to-viz.com and https://datavizproject.com"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#a-simple-decision-tree-of-chart-types",
+    "href": "slides/03_visualization/index.html#a-simple-decision-tree-of-chart-types",
+    "title": "    Monetary Policy Visualization",
+    "section": "A simple decision tree of chart types",
+    "text": "A simple decision tree of chart types"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#visualize-data-accurately-and-faithfully",
+    "href": "slides/03_visualization/index.html#visualize-data-accurately-and-faithfully",
+    "title": "    Monetary Policy Visualization",
+    "section": "2. Visualize data accurately and faithfully",
+    "text": "2. Visualize data accurately and faithfully\n\n\nBad:   Good: \n\n\nPrioritize data accuracy, clarity, and integrity\nAvoid misleading the reader by truncating the y-axis, using two different y-axis, cherry-picking data, not providing context, etc.\nA good story based on data visualization does not involve deceptive manipulation of the data!\n\n\n\n\nSource: Dougherty/Ilyankou (2021)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#example",
+    "href": "slides/03_visualization/index.html#example",
+    "title": "    Monetary Policy Visualization",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Patient"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#another-example",
+    "href": "slides/03_visualization/index.html#another-example",
+    "title": "    Monetary Policy Visualization",
+    "section": "Another example",
+    "text": "Another example"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#a-third-example",
+    "href": "slides/03_visualization/index.html#a-third-example",
+    "title": "    Monetary Policy Visualization",
+    "section": "A third example",
+    "text": "A third example\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: The Correspondent"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#integrate-graphics-and-text",
+    "href": "slides/03_visualization/index.html#integrate-graphics-and-text",
+    "title": "    Monetary Policy Visualization",
+    "section": "3. Integrate graphics and text",
+    "text": "3. Integrate graphics and text\n\n\nBad:   Good: \n\n\nDon’t make people turn their head to read labels\nThink about a logical order of the chart (alphabetical, values)\nAdd direct labels rather than a legend\nChoose a meaningful title that focuses on your message\n\n\n\n\nSource: Dougherty/Ilyankou (2021)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#best-practice",
+    "href": "slides/03_visualization/index.html#best-practice",
+    "title": "    Monetary Policy Visualization",
+    "section": "Best practice",
+    "text": "Best practice\n\n\n\n\n\n\n\n\nSources: Washington Post, chezVoila"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#reduce-the-clutter",
+    "href": "slides/03_visualization/index.html#reduce-the-clutter",
+    "title": "    Monetary Policy Visualization",
+    "section": "4. Reduce the clutter",
+    "text": "4. Reduce the clutter\n\n\nBad:   Good: \n\n\nUnnecessary visual elements distract the readers from the central data\nAvoid elements that do not contain information!\nBasic elements like heavy tick marks or gridlines should be removed\nThink carefully which visual elements are really needed to read the chart\n\n\n\n\nSource: Dougherty/Ilyankou (2021)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#best-practice-1",
+    "href": "slides/03_visualization/index.html#best-practice-1",
+    "title": "    Monetary Policy Visualization",
+    "section": "Best practice",
+    "text": "Best practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSources: BlueGranite"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#avoid-the-spaghetti-chart-and-start-with-gray",
+    "href": "slides/03_visualization/index.html#avoid-the-spaghetti-chart-and-start-with-gray",
+    "title": "    Monetary Policy Visualization",
+    "section": "5. Avoid the spaghetti chart and start with gray",
+    "text": "5. Avoid the spaghetti chart and start with gray\n\n\nBad:\n\n\n\n Good:\n\n\n\n\n\nWhen the graph contains too much information, it looks like spaghetti\nTry to break overloaded single charts into smaller parts (facets, small multiples) or highlight the relevant information\nStart with gray: you are forced to be strategic in the use of color, labels, etc."
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#best-practice-2",
+    "href": "slides/03_visualization/index.html#best-practice-2",
+    "title": "    Monetary Policy Visualization",
+    "section": "Best practice",
+    "text": "Best practice\n\n\n\n\n\n\n\n\nSource: Schwabish (2014)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#deceptive-graphs",
+    "href": "slides/03_visualization/index.html#deceptive-graphs",
+    "title": "    Monetary Policy Visualization",
+    "section": "Deceptive graphs",
+    "text": "Deceptive graphs\n\n\n\n\n\n\n\n\nQuelle: Lauer/O'Brien (2020)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#deceptive-graphs-1",
+    "href": "slides/03_visualization/index.html#deceptive-graphs-1",
+    "title": "    Monetary Policy Visualization",
+    "section": "Deceptive graphs",
+    "text": "Deceptive graphs\n\n\n\n\n\n\n\n\nQuelle: Lauer/O'Brien (2020)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#misleading-titles",
+    "href": "slides/03_visualization/index.html#misleading-titles",
+    "title": "    Monetary Policy Visualization",
+    "section": "Misleading titles",
+    "text": "Misleading titles\n\n\n\nQuelle: Lauer/O'Brien (2020)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#deceptive-graphs-meet-their-goal",
+    "href": "slides/03_visualization/index.html#deceptive-graphs-meet-their-goal",
+    "title": "    Monetary Policy Visualization",
+    "section": "Deceptive graphs meet their goal",
+    "text": "Deceptive graphs meet their goal\n\n\n\nQuelle: Lauer/O'Brien (2020)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#what-are-the-gestalt-principles",
+    "href": "slides/03_visualization/index.html#what-are-the-gestalt-principles",
+    "title": "    Monetary Policy Visualization",
+    "section": "What are the Gestalt Principles?",
+    "text": "What are the Gestalt Principles?\nGestalt Principles describe how humans group similar elements, recognize patterns and simplify complex images. “Gestalt” is German for “unified whole”.\n\n\n\n\n\nThe question is how humans typically gain meaningful perceptions from the chaotic stimuli around them. The idea is that the mind “informs” what the eye sees by perceiving a series of individual elements as a whole."
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#which-chart-is-random-and-which-has-structure-in-it",
+    "href": "slides/03_visualization/index.html#which-chart-is-random-and-which-has-structure-in-it",
+    "title": "    Monetary Policy Visualization",
+    "section": "Which chart is random and which has structure in it?",
+    "text": "Which chart is random and which has structure in it?\n\n\n\n\n\n\n\n\nSource: Healy (2018)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#gestalt-rules",
+    "href": "slides/03_visualization/index.html#gestalt-rules",
+    "title": "    Monetary Policy Visualization",
+    "section": "Gestalt rules",
+    "text": "Gestalt rules\n\nProximity Things that are spatially near to one another seem to be related.\nSimilarity Things that look alike seem to be related.\nConnection Things that are visually tied to one another seem to be related.\nContinuity Partially hidden objects are completed into familiar shapes.\nClosure Incomplete shapes are perceived as complete.\nFigure and Ground Visual elements are taken to be either in the foreground or the background.\nCommon Fate Elements sharing a direction of movement are perceived as a unit.\n\n\n\nSource: Healy (2018)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#our-brains-look-for-structure",
+    "href": "slides/03_visualization/index.html#our-brains-look-for-structure",
+    "title": "    Monetary Policy Visualization",
+    "section": "Our brains look for structure",
+    "text": "Our brains look for structure\n\n\n\n\n\n\n\nSource: Healy (2018)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#the-grammar-of-ggplot",
+    "href": "slides/03_visualization/index.html#the-grammar-of-ggplot",
+    "title": "    Monetary Policy Visualization",
+    "section": "The grammar of {ggplot}",
+    "text": "The grammar of {ggplot}\n\n\n\n\n\n\n\n\n\nComponent\nFunction\nExplanation\n\n\n\n\nData\nggplot(data)\nThe raw data that you want to visualise.\n\n\nAesthetics\naes()\nAesthetic mappings between variables and visual properties.\n\n\nGeometries\ngeom_*()\nThe geometric shapes representing the data.\n\n\nStatistics\nstat_*()\nThe statistical transformations applied to the data.\n\n\nScales\nscale_*()\nMaps between the data and the aesthetic dimensions.\n\n\nCoordinate System\ncoord_*()\nMaps data into the plane of the data rectangle.\n\n\nFacets\nfacet_*()\nThe arrangement of the data into a grid of plots.\n\n\nVisual Themes\ntheme()\nThe overall visual defaults of a plot.\n\n\n\n\n\n\nSource: Scherer (2022)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#geometries-and-aesthetic-mapping",
+    "href": "slides/03_visualization/index.html#geometries-and-aesthetic-mapping",
+    "title": "    Monetary Policy Visualization",
+    "section": "Geometries and aesthetic mapping",
+    "text": "Geometries and aesthetic mapping\n\ndata |&gt;  \n  ggplot(aes(x = year, y = value, color = category)) +\n  geom_point(alpha = 0.5, shape = 21) +\n  scale_color_manual(values = c(\"red\", \"blue\", \"yellow\"))\n\n\n\n\n\n\n\n\n\n\n\n\nGeometries\nAesthetics\nScales\nDimensions\n\n\n\n\npoints\npositions (x, y)\nscale_x_*(), scale_y_*()\nposition (continuous, discrete, reverse, log10, sqrt, date)\n\n\nlines\ncolors (color, fill)\nscale_color_*(),  scale_fill_*()\ncolors (continuous, discrete, manual, gradient, gradient2, brewer)\n\n\npolygons\nshapes (shape, linetype)\nscale_shape_*(), scale_linetype_*()\nshapes (continuous, discrete, manual, ordinal)\n\n\ntext\nsize (size)\nscale_size_*(), scale_radius_*()\nsizes (continuous, discrete, manual, ordinal, area, date)\n\n\nboxplot\ntransparency (alpha)\nscale_alpha_*()\ntransparency (continuous, discrete, manual, ordinal, date)\n\n\n…many more!\ngroupings (group)\n\n\n\n\n\n\n\n\nSource: Scherer (2022)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#first-steps",
+    "href": "slides/03_visualization/index.html#first-steps",
+    "title": "    Monetary Policy Visualization",
+    "section": "First steps",
+    "text": "First steps\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm)) +\n  geom_point(size = 1.5, alpha = 0.5)"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#colors",
+    "href": "slides/03_visualization/index.html#colors",
+    "title": "    Monetary Policy Visualization",
+    "section": "Colors",
+    "text": "Colors\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#scales",
+    "href": "slides/03_visualization/index.html#scales",
+    "title": "    Monetary Policy Visualization",
+    "section": "Scales",
+    "text": "Scales\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#labels",
+    "href": "slides/03_visualization/index.html#labels",
+    "title": "    Monetary Policy Visualization",
+    "section": "Labels",
+    "text": "Labels\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#annotation-rather-than-legend",
+    "href": "slides/03_visualization/index.html#annotation-rather-than-legend",
+    "title": "    Monetary Policy Visualization",
+    "section": "Annotation rather than legend",
+    "text": "Annotation rather than legend\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  annotate(\"text\", x = c(34.7, 55.7, 50.7), y = c(20.7, 19, 13.6), \n  color = MetBrewer::met.brewer(\"Lakota\")[1:3], \n  label = c(\"Adélie\",\"Chinstrap\",\"Gentoo\"), fontface = \"bold\", size = 4) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#themes",
+    "href": "slides/03_visualization/index.html#themes",
+    "title": "    Monetary Policy Visualization",
+    "section": "Themes",
+    "text": "Themes\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  annotate(\"text\", x = c(34.7, 55.7, 50.7), y = c(20.7, 19, 13.6), \n  color = MetBrewer::met.brewer(\"Lakota\")[1:3], \n  label = c(\"Adélie\",\"Chinstrap\",\"Gentoo\"), fontface = \"bold\", size = 4) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal() +\n  theme(legend.position = \"none\",\n  plot.title.position = \"plot\",\n  plot.title = element_text(size = 16, face=\"bold\"),\n  plot.subtitle = element_text(size = 13),\n  panel.grid.minor = element_blank())"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#calculate-median-and-standard-deviation",
+    "href": "slides/03_visualization/index.html#calculate-median-and-standard-deviation",
+    "title": "    Monetary Policy Visualization",
+    "section": "Calculate median and standard deviation",
+    "text": "Calculate median and standard deviation\n\ndata_summary &lt;- data |&gt;\n  group_by(species) |&gt;\n  summarise(across(c(bill_length_mm, bill_depth_mm),\n  list(median = ~median(., na.rm = TRUE), \n       sd = ~sd(., na.rm = TRUE))))\n\ndata_summary\n\n\n\n# A tibble: 3 × 5\n  species   bill_length_mm_median bill_length_mm_sd bill_depth_mm_median\n  &lt;fct&gt;                     &lt;dbl&gt;             &lt;dbl&gt;                &lt;dbl&gt;\n1 Adelie                     38.8              2.66                 18.4\n2 Chinstrap                  49.6              3.34                 18.4\n3 Gentoo                     47.3              3.08                 15  \n# ℹ 1 more variable: bill_depth_mm_sd &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#median",
+    "href": "slides/03_visualization/index.html#median",
+    "title": "    Monetary Policy Visualization",
+    "section": "Median",
+    "text": "Median\n\n\ndata |&gt; ggplot(aes(x = bill_length_mm, \n                  y = bill_depth_mm, \n                  color = species)) +\n  geom_point(size = 1.5, alpha = 0.5) +\n  geom_errorbar(\n    data = data_summary,\n    aes(x = bill_length_mm_median,\n      ymin = bill_depth_mm_median - bill_depth_mm_sd,\n      ymax = bill_depth_mm_median + bill_depth_mm_sd,\n      color = species,\n      color = after_scale(colorspace::darken(color, .2, space = \"combined\"))), \n      inherit.aes = FALSE, width = .5, size = .8) +\n  geom_errorbar(\n    data = data_summary,\n    aes(y = bill_depth_mm_median,\n      xmin = bill_length_mm_median - bill_length_mm_sd,\n      xmax = bill_length_mm_median + bill_length_mm_sd,\n      color = species,\n      color = after_scale(colorspace::darken(color, .2, space = \"combined\"))), \n      inherit.aes = FALSE, width = .25, size = .8) +\n  scale_color_manual(values = MetBrewer::met.brewer(\"Lakota\")) +\n  scale_x_continuous(limits = c(30,60), breaks = seq(30,60,10)) +\n  scale_y_continuous(limits = c(12,21), breaks = seq(12,21,3)) +\n  annotate(\"text\", x = c(34.7, 55.7, 50.7), y = c(20.7, 19, 13.6), color = MetBrewer::met.brewer(\"Lakota\")[1:3], label = c(\"Adélie\",\"Chinstrap\",\"Gentoo\"), fontface = \"bold\", size = 4) +\n  labs(x = \"Bill length (in mm)\", y = \"Bill depth (in mm)\",\n      title = \"Penguins are awesome\",\n      subtitle = \"Depth and length of bills\") +\n  theme_minimal() +\n  theme(legend.position = \"none\",\n  plot.title.position = \"plot\",\n  plot.title = element_text(size = 16, face=\"bold\"),\n  plot.subtitle = element_text(size = 13),\n  panel.grid.minor = element_blank())"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#final-plot",
+    "href": "slides/03_visualization/index.html#final-plot",
+    "title": "    Monetary Policy Visualization",
+    "section": "Final plot",
+    "text": "Final plot"
+  },
+  {
+    "objectID": "slides/03_visualization/index.html#bibliography",
+    "href": "slides/03_visualization/index.html#bibliography",
+    "title": "    Monetary Policy Visualization",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\n\n\n\n\n\nDougherty, Jack/Ilyankou, Ilya (2021). Hands-on data visualization: Interactive storytelling from spreadsheets to code. O’Reilly Media.\n\n\nHealy, Kieran (2018). Data visualization: A practical introduction. Princeton University Press.\n\n\nLauer, Claire/O'Brien, Shaun (2020). How People Are Influenced by Deceptive Tactics in Everyday Charts and Graphs. IEEE Transactions on Professional Communication, 63(4), 327–340. DOI: 10.1109/tpc.2020.3032053\n\n\nScherer, Cédric (2022). Graphic Design with Ggplot2. https://rstudio-conf-2022.github.io/ggplot2-graphic-design/\n\n\nSchwabish, Jonathan A. (2014). An Economist’s Guide to Visualizing Data. Journal of Economic Perspectives, 28(1), 209–234. DOI: 10.1257/jep.28.1.209"
+  },
+  {
+    "objectID": "slides/02_data/index.html#the-era-of-evidence-in-economics",
+    "href": "slides/02_data/index.html#the-era-of-evidence-in-economics",
+    "title": "    Monetary Policy Visualization",
+    "section": "The era of evidence in economics",
+    "text": "The era of evidence in economics\n\n\n\n\n\n\nThe figure shows the evolution of economics literature by text mining the 500 most-cited titles in top journals by decade. There is a shift from advancing theory towards empirical evidence.\n\n\n\nSource: Brice/Montesinos-Yufa (2019)"
+  },
+  {
+    "objectID": "slides/02_data/index.html#the-rise-of-empirical-articles",
+    "href": "slides/02_data/index.html#the-rise-of-empirical-articles",
+    "title": "    Monetary Policy Visualization",
+    "section": "The rise of empirical articles",
+    "text": "The rise of empirical articles\n\n\n\n\n\n\n\n\n\nThere is a distinct rise of empirical papers in economics. In the 1980s, around one third of publications was empirical. Today, it’s more than half. This trend is present in all sub-fields of the discipline (labor, finance, macro, etc.).  The analyis is based on 134,892 papers published in 80 journals between 1980 and 2015. Papers are labeled as empirical if they use data to estimate economically meaningful parameters.\n\n\n\n\n\n\nSource: Angrist et al. (2017)"
+  },
+  {
+    "objectID": "slides/02_data/index.html#evidence-based-economic-policy",
+    "href": "slides/02_data/index.html#evidence-based-economic-policy",
+    "title": "    Monetary Policy Visualization",
+    "section": "Evidence-based economic policy",
+    "text": "Evidence-based economic policy\n\nData collection: Collection of relevant and high-quality data (administrative data, surveys, interviews, observations, etc.). Researchers should be aware of the qualities but also of the flaws of the data.\nData analysis: The design and type of analysis depends on the question being asked and resources available. The methods range from qualitative to quantitative analysis. The choice of application might unwittingly involve normative reflections by the researcher.\nPolicy suggestions: A major goal of empirical economics is to serve and improve policy making. The findings should, however, be carefully interpreted with regard to the limitations of empirical analyis. Economic policy, even if it’s evidence-based, is affected by norms, beliefs, etc."
+  },
+  {
+    "objectID": "slides/02_data/index.html#the-limits-of-data",
+    "href": "slides/02_data/index.html#the-limits-of-data",
+    "title": "    Monetary Policy Visualization",
+    "section": "The limits of data",
+    "text": "The limits of data\n\n\n\n\n\nData is never a perfect reflection of the world!\nIt’s only a subset: not crime but reported crime\nInformation is collected by humans and processed by machines: imprecisions and errors are inevitable!\nBe aware of potential (cognitive and statistical) biases!\n\n\n\n\nSource: XKCD"
+  },
+  {
+    "objectID": "slides/02_data/index.html#invisible-women",
+    "href": "slides/02_data/index.html#invisible-women",
+    "title": "    Monetary Policy Visualization",
+    "section": "Invisible women",
+    "text": "Invisible women\n\n\n\n\n\n\n\n\n\nCaroline Criado Perez  Exposing Data Bias in a World Designed for Men  Random House Uk  ISBN: 978-1-78470-628-9  The world we live in is built around male data, preferences, and assumptions. There are numerous examples of how the gender data gap has led to women being overlooked and undervalued in areas ranging from medicine to urban planning. To create a more just and equal society, we need to take into account the different experiences and needs of women and other marginalized groups in our data collection and decision-making processes."
+  },
+  {
+    "objectID": "slides/02_data/index.html#invisible-rich",
+    "href": "slides/02_data/index.html#invisible-rich",
+    "title": "    Monetary Policy Visualization",
+    "section": "Invisible rich",
+    "text": "Invisible rich\n\n\n\n\n\n\n\n\n\nSurvey data are based on representative samples drawn from total population. However, the probability of drawing one of the few very rich households into the sample is infinitesimal. Moreover, participation in surveys is mostly voluntary and there is a higher refusal rate at the top. This poor coverage of the top in wealth and income surveys conceals the extent of inequality.  The figure shows the gap between the richest observation in wealth survey data (HFCS) and the “poorest” observation in national rich lists created by magazines.\n\n\n\n\n\n\nSource: Disslbacher et al. (2020)"
+  },
+  {
+    "objectID": "slides/02_data/index.html#discuss-with-your-neighbour",
+    "href": "slides/02_data/index.html#discuss-with-your-neighbour",
+    "title": "    Monetary Policy Visualization",
+    "section": "Discuss with your neighbour",
+    "text": "Discuss with your neighbour\nWhat other potential flaws and challenges of data collection come to your mind?\nHow could these flaws be tackled by the researcher?\n \n\nIllustrations by https://openpeeps.com."
+  },
+  {
+    "objectID": "slides/02_data/index.html#administrative-and-survey-data",
+    "href": "slides/02_data/index.html#administrative-and-survey-data",
+    "title": "    Monetary Policy Visualization",
+    "section": "Administrative and survey data",
+    "text": "Administrative and survey data\n\n\n\n\n\n\n\n\n\n\nAdministrative Data\nSurvey Data\n\n\n\n\nPurpose\nCollected also for non-statistical purposes (e.g., taxation, regulation).\nCollected specifically for statistical analysis.\n\n\nCoverage\nCan cover large populations (e.g., entire tax base or workforce).\nOften based on samples, though some are nationally representative.\n\n\nFrequency\nOften collected regularly (e.g., monthly, annually).\nCan be periodic (quarterly, annually, sometimes even every few years).\n\n\nAccuracy\nHigh for administrative processes (e.g., tax filing) but may not capture informal sectors (many estimations!).\nHigh precision for sample groups but subject to sampling error and response bias.\n\n\nTimeliness\nMay have delays in processing or availability for statistical use.\nData collection timelines can be long, but surveys are often designed for quick use.\n\n\nCost\nGenerally lower cost, since the data is already being collected.\nHigher cost, as it requires specific planning, data collection, and processing.\n\n\nAdaptability\nLimited flexibility; cannot be easily tailored for specific statistical needs.\nCan be customized to gather specific data, but requires careful design and execution."
+  },
+  {
+    "objectID": "slides/02_data/index.html#survey-modes",
+    "href": "slides/02_data/index.html#survey-modes",
+    "title": "    Monetary Policy Visualization",
+    "section": "Survey modes",
+    "text": "Survey modes\n\nSurvey modes: Computer-assisted personal interviews (CAPI), telephone interviews (CATI), web interviews (CAWI)\nMixed-mode survey: Improve coverage (several modes to contact hard-to-reach respondents) and reduce non-response (respondents may choose preferential mode)\nCaveats: Selection effects, i.e. different types of respondents choose different modes, and measurement effects, i.e. respondents give different answers in different modes (Vannieuwenhuyze et al., 2010)\n\nThe survey mode might be important for critical questions, for instance, party preferences. Aichholzer (2018) finds that survey responses of voting for far right FPÖ is higher in CAWI among other things due to lower effects of social desirability."
+  },
+  {
+    "objectID": "slides/02_data/index.html#income-according-to-canberra-group",
+    "href": "slides/02_data/index.html#income-according-to-canberra-group",
+    "title": "    Monetary Policy Visualization",
+    "section": "Income according to Canberra Group",
+    "text": "Income according to Canberra Group\n\n\n\nDie heruntergeladenen Binärpakete sind in \n    /var/folders/6m/wxgmtq_j2cjfx_y12qxtgsc40000gn/T//RtmpFjhcVg/downloaded_packages\n\n\n\n\n\n\nID\nConcept\nAggregate\n\n\n\n\n1\nIncome from employment\n1a + 1b\n\n\n  1a\nEmployee income\n\n\n\n  1b\nIncome from self-employment\n\n\n\n2\nProperty income\n\n\n\n3\nIncome from household production\n\n\n\n4\nCurrent transfers received\n\n\n\n5\nIncome from production\n1 + 3\n\n\n6\nPrimary income\n1 + 2 + 3\n\n\n7\nCurrent transfers paid (taxes, fees, etc.)\n\n\n\n8\nDisposable income\n6 + 4 - 7\n\n\n\n\n\n\nSource: United Nations (2011), 11"
+  },
+  {
+    "objectID": "slides/02_data/index.html#income-according-to-the-national-accounts",
+    "href": "slides/02_data/index.html#income-according-to-the-national-accounts",
+    "title": "    Monetary Policy Visualization",
+    "section": "Income according to the National Accounts",
+    "text": "Income according to the National Accounts\n\n\n\n\nID\nConcept\n\n\n\n\nD.1\nCompensation of employees\n\n\n  D.11\nWages and salaries\n\n\n  D.12\nEmployers social contributions\n\n\nB.2G\nOperating surplus, gross\n\n\nB.3G\nMixed income, gross\n\n\nD.4\nProperty income\n\n\n  D.41\nInterest\n\n\n  D.42\nDistributed income of corporations\n\n\n  D.43\nReinvested earnings on foreign direct investment\n\n\n  D.44\nInvestment income disbursements (e.g. insurances)\n\n\n  D.45\nRent"
+  },
+  {
+    "objectID": "slides/02_data/index.html#income-according-to-the-austrian-tax-law",
+    "href": "slides/02_data/index.html#income-according-to-the-austrian-tax-law",
+    "title": "    Monetary Policy Visualization",
+    "section": "Income according to the Austrian tax law",
+    "text": "Income according to the Austrian tax law\n\n\n\n\nID\nConcept\nDescription\n\n\n\n\n1\nIncome from agriculture and forestry\nFarmers, forest managers\n\n\n2\nIncome from self-employment\nE.g. Freelancers, Architects, Lawyer, Doctors, Consultants, CEO if she holds &gt; 25%\n\n\n3\nBusiness income\nAll other self-employed activities\n\n\n4\nEmployee income\nEmployees, retirees\n\n\n5\nRenting and lease of land\nParticularly renting of real estate properties\n\n\n6\nProperty income\nSavings accounts, dividends (final taxation with capital income tax)\n\n\n7\nOther income\nIncome from speculation, income from selling private property, etc."
+  },
+  {
+    "objectID": "slides/02_data/index.html#income-data-sources-in-austria",
+    "href": "slides/02_data/index.html#income-data-sources-in-austria",
+    "title": "    Monetary Policy Visualization",
+    "section": "Income data sources in Austria",
+    "text": "Income data sources in Austria\n\n\n\n\n\n\n\n\n\n\nIncome Type\nLong-term aggregate\nLong-term distribution\nShort-term distribution\n\n\n\n\nEmployee income\nWTD SSD\nWTD SSD\nWTD SSD SES EU-SILC HFCS\n\n\nSelf-employed\nITD (IWITD)\nITD (IWITD)\nITD (IWITD) EU-SILC HFCS\n\n\nProperty income\nCGT (ITD)\n\nEU-SILC HFCS\n\n\nTransfers\nVarious admin. sources\n\nEU-SILC HFCS\n\n\nDisposable household income\nSNA\n\nHBS EU-SILC HFCS\n\n\n\n\n\nAdministrative and survey data sources: Wage tax data (WTD), Income tax data (ITD), Integrated wage and income tax data (IWITD), Social security data (SSD), Capital gains tax data (CGT), System of National Accounts (SNA), European Survey of Income and Living Conditions (EU-SILC), Household Finance and Consumption Survey (HFCS), Household Budgetary Survey (HBS), Structure of Earnings Survey (SES)"
+  },
+  {
+    "objectID": "slides/02_data/index.html#income-data-in-eu-silc",
+    "href": "slides/02_data/index.html#income-data-in-eu-silc",
+    "title": "    Monetary Policy Visualization",
+    "section": "Income data in EU-SILC",
+    "text": "Income data in EU-SILC\n\n\nIndividual level:\n\nemployee cash or near cash income\ncash benefits or losses from self-employment\npension from individual private plans\nunemployment benefits\nold-age benefits\nsurvivor benefits\nsickness benefits\ndisability benefits\neducation-related allowances\n\n\nHousehold level:\n\nincome from rental of a property or land\nfamily/children related allowances\nsocial exclusion not elsewhere classified\nhousing allowances\nregular inter-household cash transfers received\nalimonies received\ninterest, dividends, profit from capital investments in incorporated business\nincome received by people aged under 16\n\n\n\n\nNote: Variables that use administrative data are highlighted."
+  },
+  {
+    "objectID": "slides/02_data/index.html#administrative-versus-survey-data",
+    "href": "slides/02_data/index.html#administrative-versus-survey-data",
+    "title": "    Monetary Policy Visualization",
+    "section": "Administrative versus survey data",
+    "text": "Administrative versus survey data\n\n\n\n\nImpact on response behavior:\n\nSocial desirability\nSociodemographic characteristics\nSurvey design\nLearning effect\n\n\n\n\nSource: Angel et al. (2019)"
+  },
+  {
+    "objectID": "slides/02_data/index.html#mean-reverting-errors",
+    "href": "slides/02_data/index.html#mean-reverting-errors",
+    "title": "    Monetary Policy Visualization",
+    "section": "Mean reverting errors",
+    "text": "Mean reverting errors\n\n\n\nSource: Angel et al. (2019)"
+  },
+  {
+    "objectID": "slides/02_data/index.html#how-do-we-explain-the-mismatch",
+    "href": "slides/02_data/index.html#how-do-we-explain-the-mismatch",
+    "title": "    Monetary Policy Visualization",
+    "section": "How do we explain the mismatch?",
+    "text": "How do we explain the mismatch?\n\n\n\nSource: Angel et al. (2019)"
+  },
+  {
+    "objectID": "slides/02_data/index.html#anscombes-quartet",
+    "href": "slides/02_data/index.html#anscombes-quartet",
+    "title": "    Monetary Policy Visualization",
+    "section": "Anscombe’s quartet",
+    "text": "Anscombe’s quartet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nI\n\n\nII\n\n\nIII\n\n\nIV\n\n\n\nObs.\nX\nY\nX\nY\nX\nY\nX\nY\n\n\n\n\n1\n10.00\n8.04\n10.00\n9.14\n10.00\n7.46\n8.00\n6.58\n\n\n2\n8.00\n6.95\n8.00\n8.14\n8.00\n6.77\n8.00\n5.76\n\n\n3\n13.00\n7.58\n13.00\n8.74\n13.00\n12.74\n8.00\n7.71\n\n\n4\n9.00\n8.81\n9.00\n8.77\n9.00\n7.11\n8.00\n8.84\n\n\n5\n11.00\n8.33\n11.00\n9.26\n11.00\n7.81\n8.00\n8.47\n\n\n6\n14.00\n9.96\n14.00\n8.10\n14.00\n8.84\n8.00\n7.04\n\n\n7\n6.00\n7.24\n6.00\n6.13\n6.00\n6.08\n8.00\n5.25\n\n\n8\n4.00\n4.26\n4.00\n3.10\n4.00\n5.39\n19.00\n12.50\n\n\n9\n12.00\n10.84\n12.00\n9.13\n12.00\n8.15\n8.00\n5.56\n\n\n10\n7.00\n4.82\n7.00\n7.26\n7.00\n6.42\n8.00\n7.91\n\n\n11\n5.00\n5.68\n5.00\n4.74\n5.00\n5.73\n8.00\n6.89\n\n\nMean\n9.00\n7.50\n9.00\n7.50\n9.00\n7.50\n9.00\n7.50\n\n\nSD\n3.32\n2.03\n3.32\n2.03\n3.32\n2.03\n3.32\n2.03\n\n\nCorr\n0.82\n\n0.82\n\n0.82\n\n0.82"
+  },
+  {
+    "objectID": "slides/02_data/index.html#what-do-we-learn-when-plotting-the-data",
+    "href": "slides/02_data/index.html#what-do-we-learn-when-plotting-the-data",
+    "title": "    Monetary Policy Visualization",
+    "section": "What do we learn when plotting the data?",
+    "text": "What do we learn when plotting the data?"
+  },
+  {
+    "objectID": "slides/02_data/index.html#do-you-see-correlation",
+    "href": "slides/02_data/index.html#do-you-see-correlation",
+    "title": "    Monetary Policy Visualization",
+    "section": "Do you see correlation?",
+    "text": "Do you see correlation?\n\n\n\n\nCorrelation: -0.07\n\nCorrelation: -0.07"
+  },
+  {
+    "objectID": "slides/02_data/index.html#same-same-but-different",
+    "href": "slides/02_data/index.html#same-same-but-different",
+    "title": "    Monetary Policy Visualization",
+    "section": "Same same but different",
+    "text": "Same same but different"
+  },
+  {
+    "objectID": "slides/02_data/index.html#the-palmer-penguins",
+    "href": "slides/02_data/index.html#the-palmer-penguins",
+    "title": "    Monetary Policy Visualization",
+    "section": "The Palmer Penguins",
+    "text": "The Palmer Penguins\n\n\n\n\n\n\n\nThe data was collected from 2007-2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program. The dataset contains data for 344 penguins. There are 3 different species of penguins, collected from 3 islands in the Palmer Archipelago, Antarctica.\n\n\n\nSource: Gorman et al. (2014)"
+  },
+  {
+    "objectID": "slides/02_data/index.html#bibliography",
+    "href": "slides/02_data/index.html#bibliography",
+    "title": "    Monetary Policy Visualization",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\n\n\n\n\n\nAichholzer, Julian (2018). Verschiedene Befragungsmodi, Unterschiedliche Ergebnisse? Moduseffekte Und Soziale Erwünschtheit Am Beispiel Wahl Der FPÖ. Österreichische Zeitschrift für Politikwissenschaft, 47(2), 21–33. DOI: 10.15203/OZP.2017.VOL47ISS2\n\n\nAngel, Stefan/Disslbacher, Franziska/Humer, Stefan/Schnetzer, Matthias (2019). What Did You Really Earn Last Year?: Explaining Measurement Error in Survey Income Data. Journal of the Royal Statistical Society: Series A (Statistics in Society). DOI: 10.1111/rssa.12463\n\n\nAngrist, Joshua/Azoulay, Pierre/Ellison, Glenn/Hill, Ryan/Lu, Susan Feng (2017). Economic Research Evolves: Fields and Styles. American Economic Review, 107(5), 293–297. DOI: 10.1257/aer.p20171117\n\n\nBrice, Brandon D./Montesinos-Yufa, Hugo M. (2019). The era of empirical evidence. Mimeo.\n\n\nDisslbacher, Franziska/Ertl, Michael/List, Emanuel/Mokre, Patrick/Schnetzer, Matthias (2020). On top of the top - adjusting wealth distributions using national rich lists (Working Paper Series No. 20). INEQ.\n\n\nGorman, Kristen B./Williams, Tony D./Fraser, William R. (2014). Ecological Sexual Dimorphism and Environmental Variability Within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE, 9(3), e90081. DOI: 10.1371/journal.pone.0090081\n\n\nUnited Nations (2011). Canberra group handbook on household income statistics (2nd ed.). Geneva: United Nations.\n\n\nVannieuwenhuyze, J./Loosveldt, G./Molenberghs, G. (2010). A Method for Evaluating Mode Effects in Mixed-Mode Surveys. Public Opinion Quarterly, 74(5), 1027–1045. DOI: 10.1093/poq/nfq059"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Dates\n\n   Oct 5, 2026 – Jan 25, 2026\n   Mondays\n   10:00–12:00\n   WU Campus\n\n\n\nHighlights\n\n   max. 30 students\n   Engage in policy discussion\n    Improve your R coding skills\n   Create an own data visualization\n\n\n\nContact\nPlease contact both lecturers via e-mail. Note that we use the WU Canvas platform canvas.wu.ac.at for all assignments in this course.\n\n\n\nCourse design\nThe lecturers introduce into various fields of monetary policy and provide examples of data visualizations that serve as starting point for discussions. As the graphic illustration of statistical data gains in importance in both the academic and the public discourse, students will learn best practices and gain insights into the visualization of data. Another take-away of the course is to strengthen the knowledge about the power and limitations of the underlying data of empirical economic policy. A part of each session is dedicated to the work with data. The lecturer provides R-code to produce figures in class.\nStudents are expected to recreate three charts at home during the semester and create a comprehensive data visualization with exclusive data from the Austrian National Bank. Students will present their chart in class and draft a report with a detailed description of the data, the code and the final visualization in RMarkdown. Moreover, the best charts are awarded in a joint ceremony with the Austrian National Bank.\nThe sessions are designed to encourage students to actively participate in the debates, raise questions, and gain experience in visualizing data for academic publications or the general debate.\n\n\nRecommended literature\n\n\n\n\n\n\n\n\n\nJonathan Schwabish  Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks  Columbia University Press  ISBN-13: 9780231193115  Link\n\n\n\nDavid Spiegelhalter  The Art of Statistics: Learning from Data  Penguin Books UK  ISBN-13: 9780241258767  Link\n\n\n\n\n\n\nLearning outcomes\nAfter completing this course, students will:\n\nknow key figures in various fields of monetary policy\nbe aware of potentials and limitations of available data in specific policy areas\nshow improved programming skills in R and the ability to create an RMarkdown report\nhave basic knowledge of important principles of data visualization\nbe able to create simple charts to enrich their academic articles\n\n\n\nGrading\n\n\n\n\n\n\n\n\n\nAssignments: 30% (0-10 points for each visualization)\n\n\n\nChart presentation: 30% (0-20 points for the quality of the presentation, 0-10 for the preliminary chart)\n\n\n\nWritten report: 40% (0-40 points for the report and the final chart)\n\n\n\n\n   100-90: Excellent      89-80: Good      79-65: Satisfactory      64-50: Sufficient\nAll single tasks have to be passed (50% threshold each)."
+  }
+]
