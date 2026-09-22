@@ -36,9 +36,9 @@ css: layout/css/adveconpol.scss
 
 #### Course design
 
-The lecturers introduce into various fields of monetary policy and provide examples of data visualizations that serve as starting point for discussions. As the graphic illustration of statistical data gains in importance in both the academic and the public discourse, students will learn best practices and gain insights into the visualization of data. Another take-away of the course is to strengthen the knowledge about the power and limitations of the underlying data of empirical economic policy. A part of each session is dedicated to the work with data. The lecturer provides R-code to produce figures in class. 
+The lecturers introduce into various fields of monetary policy and provide examples of data visualizations that serve as starting point for discussions. As the graphic illustration of statistical data gains in importance in both the academic and the public discourse, students will learn best practices and gain insights into the visualization of data. A part of each session is dedicated to the work with data where the lecturers provide R-code to produce figures in class. 
 
-Students are expected to recreate three charts at home during the semester and create a comprehensive data visualization with exclusive data from the Austrian National Bank. Students will present their chart in class and draft a report with a detailed description of the data, the code and the final visualization in RMarkdown. Moreover, the best charts are awarded in a joint ceremony with the Austrian National Bank.
+Students are expected to recreate three charts at home during the semester and create a comprehensive data visualization with exclusive data from the Austrian National Bank (OeNB). Experts from OeNB will introduce the data in class and provide valuable insights into the empirical analysis of monetary policy. Students will present their chart at the end of the semester and draft a report with a detailed description of the data, the code and the final visualization in RMarkdown. Moreover, the best charts are awarded in a joint ceremony with the Austrian National Bank.
 
 The sessions are designed to encourage students to actively participate in the debates, raise questions, and gain experience in visualizing data for academic publications or the general debate.
 
