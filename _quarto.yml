@@ -17,7 +17,7 @@ website:
   announcement: 
     icon: info-circle
     dismissable: true
-    content: "<span style='font-size:0.8em;'>**Registration via LPIS opens on October, 2nd**</span>"
+    content: "<span style='font-size:0.8em;'>**Registration via LPIS opens on 2 October 2026**</span>"
     type: primary
     position: above-navbar
 

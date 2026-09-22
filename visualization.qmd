@@ -6,19 +6,19 @@ css: layout/css/adveconpol.scss
 
 #### Data visualization
 
-Students will create a preliminary chart addressing a relevant problem of economic policy for an in-class presentation. The presentation should provide an intuition of the research question, the underlying data of the chart and considerations behind the style of the chart. **The time slot for the presentation is five minutes.** Afterwards we will have a brief Q&A in class. The presentation should only have a small number of slides with little text to lead the audience through the process of chart creation, e.g.
+Students will create a preliminary chart addressing [one of the topics from a list provided by the Austrian National Bank](data/assignments/topics.xlsx). The in-class presentation should provide an intuition of the research question, the underlying data of the chart and considerations behind the style of the chart. **The time slot for the presentation is five minutes.** Afterwards we will have a brief Q&A in class. The presentation should only have a small number of slides with little text to lead the audience through the process of chart creation, e.g.
 
-- *Research question*: Which issue in economic policy do you want to address with your chart? 
+- *Research question*: Which issue in monetary policy do you address with your chart? 
 - *Data*: What data did you use?
 - *Chart*: What does the chart show? What were your thoughts when choosing this style?
 - *Conclusion*: What can we learn from this data visualization for economic policy?
 
 #### RMarkdown report
 
-Students are required to draft a short report around the chart, containing the economic policy background and the most important information about chart creation. **The final version of the report is due on January 31, 2027.** You should work with [RMarkdown](https://rmarkdown.rstudio.com/index.html) (or [Quarto](https://quarto.org)) which is a handy and simple tool to compose reports based on R code. It is recommended to edit the document in [RStudio](https://posit.co) and compile it in HTML format. The final report should be structured as follows:
+Students are required to draft a short report around the chart, containing the monetary policy background and the most important information about chart creation. **The final version of the report is due on January 31, 2027.** You should work with [RMarkdown](https://rmarkdown.rstudio.com/index.html) (or [Quarto](https://quarto.org)) which is a handy and simple tool to compose reports based on R code. It is recommended to edit the document in [RStudio](https://posit.co) (or Positron) and compile it in HTML format. The final report should be structured as follows:
 
 - *Introduction:* Explain why the topic you chose is important and interesting for the academic/public debate.
-- *Research question:* What is the specific research question that you want to address with your visualization?
+- *Research question:* What is the specific research question that you address with your visualization?
 - *Data:* What data did you use? What are the limitations of the data? If helpful, you might want to include some descriptive statistics as a table.
 - *Result:* Present and describe the chart that you have created.
 - *Conclusion*: What are the policy conclusions of your chart? 
