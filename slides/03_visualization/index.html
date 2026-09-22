@@ -6,8 +6,8 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-709e903f7486fc15c5f7f9cf283d35df.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.37">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-cd5a5e2e1b6543c3d002122cbcf2b4f2.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Dr.&nbsp;Matthias Schnetzer">
   <meta name="dcterms.date" content="2025-10-20">
@@ -21,10 +21,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -225,7 +228,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Dr.&nbsp;Matthias Schnetzer 
+Dr.&nbsp;Matthias Schnetzer
 </div>
 </div>
 </div>
@@ -678,10 +681,10 @@ Dr.&nbsp;Matthias Schnetzer
 <section id="geometries-and-aesthetic-mapping" class="slide level2 medium">
 <h2>Geometries and aesthetic mapping</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-code-line-numbers="1|2|3|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>data <span class="sc">|&gt;</span>  </span>
-<span id="cb1-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> value, <span class="at">color =</span> category)) <span class="sc">+</span></span>
-<span id="cb1-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
-<span id="cb1-4"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"yellow"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-code-line-numbers="1|2|3|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a aria-label="1"></a>data <span class="sc">|&gt;</span>  </span>
+<span id="cb1-2"><a aria-label="2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> value, <span class="at">color =</span> category)) <span class="sc">+</span></span>
+<span id="cb1-3"><a aria-label="3"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb1-4"><a aria-label="4"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"red"</span>, <span class="st">"blue"</span>, <span class="st">"yellow"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><br></p>
 <div class="tbl-classic tbl-smaller">
@@ -748,9 +751,9 @@ Dr.&nbsp;Matthias Schnetzer
 <h2>First steps</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
-<span id="cb2-2"><a></a>                  <span class="at">y =</span> bill_dep)) <span class="sc">+</span></span>
-<span id="cb2-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a aria-label="1"></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb2-2"><a aria-label="2"></a>                  <span class="at">y =</span> bill_dep)) <span class="sc">+</span></span>
+<span id="cb2-3"><a aria-label="3"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -765,11 +768,11 @@ Dr.&nbsp;Matthias Schnetzer
 <h2>Colors</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-code-line-numbers="3,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
-<span id="cb3-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
-<span id="cb3-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb3-5"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" data-code-line-numbers="3,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a aria-label="1"></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb3-2"><a aria-label="2"></a>                  <span class="at">y =</span> bill_dep, </span>
+<span id="cb3-3"><a aria-label="3"></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb3-4"><a aria-label="4"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a aria-label="5"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -784,14 +787,14 @@ Dr.&nbsp;Matthias Schnetzer
 <h2>Scales</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="5,6,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
-<span id="cb4-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
-<span id="cb4-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb4-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb4-5"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
-<span id="cb4-6"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb4-7"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">21</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>,<span class="dv">21</span>,<span class="dv">3</span>)) <span class="sc">+</span></span>
-<span id="cb4-8"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" data-code-line-numbers="5,6,7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a aria-label="1"></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb4-2"><a aria-label="2"></a>                  <span class="at">y =</span> bill_dep, </span>
+<span id="cb4-3"><a aria-label="3"></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb4-4"><a aria-label="4"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb4-5"><a aria-label="5"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
+<span id="cb4-6"><a aria-label="6"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb4-7"><a aria-label="7"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">21</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>,<span class="dv">21</span>,<span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb4-8"><a aria-label="8"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -806,17 +809,17 @@ Dr.&nbsp;Matthias Schnetzer
 <h2>Labels</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="8,9,10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
-<span id="cb5-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
-<span id="cb5-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb5-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb5-5"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
-<span id="cb5-6"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb5-7"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">21</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>,<span class="dv">21</span>,<span class="dv">3</span>)) <span class="sc">+</span></span>
-<span id="cb5-8"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill length (in mm)"</span>, <span class="at">y =</span> <span class="st">"Bill depth (in mm)"</span>,</span>
-<span id="cb5-9"><a></a>      <span class="at">title =</span> <span class="st">"Penguins are awesome"</span>,</span>
-<span id="cb5-10"><a></a>      <span class="at">subtitle =</span> <span class="st">"Depth and length of bills"</span>) <span class="sc">+</span></span>
-<span id="cb5-11"><a></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" data-code-line-numbers="8,9,10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a aria-label="1"></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb5-2"><a aria-label="2"></a>                  <span class="at">y =</span> bill_dep, </span>
+<span id="cb5-3"><a aria-label="3"></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb5-4"><a aria-label="4"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a aria-label="5"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
+<span id="cb5-6"><a aria-label="6"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb5-7"><a aria-label="7"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">21</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>,<span class="dv">21</span>,<span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb5-8"><a aria-label="8"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill length (in mm)"</span>, <span class="at">y =</span> <span class="st">"Bill depth (in mm)"</span>,</span>
+<span id="cb5-9"><a aria-label="9"></a>      <span class="at">title =</span> <span class="st">"Penguins are awesome"</span>,</span>
+<span id="cb5-10"><a aria-label="10"></a>      <span class="at">subtitle =</span> <span class="st">"Depth and length of bills"</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a aria-label="11"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -831,21 +834,21 @@ Dr.&nbsp;Matthias Schnetzer
 <h2>Annotation rather than legend</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-code-line-numbers="8,9,10,15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
-<span id="cb6-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
-<span id="cb6-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb6-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb6-5"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
-<span id="cb6-6"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb6-7"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">21</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>,<span class="dv">21</span>,<span class="dv">3</span>)) <span class="sc">+</span></span>
-<span id="cb6-8"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="fl">34.7</span>, <span class="fl">55.7</span>, <span class="fl">50.7</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">20.7</span>, <span class="dv">19</span>, <span class="fl">13.6</span>), </span>
-<span id="cb6-9"><a></a>  <span class="at">color =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], </span>
-<span id="cb6-10"><a></a>  <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Adélie"</span>,<span class="st">"Chinstrap"</span>,<span class="st">"Gentoo"</span>), <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb6-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill length (in mm)"</span>, <span class="at">y =</span> <span class="st">"Bill depth (in mm)"</span>,</span>
-<span id="cb6-12"><a></a>      <span class="at">title =</span> <span class="st">"Penguins are awesome"</span>,</span>
-<span id="cb6-13"><a></a>      <span class="at">subtitle =</span> <span class="st">"Depth and length of bills"</span>) <span class="sc">+</span></span>
-<span id="cb6-14"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb6-15"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" data-code-line-numbers="8,9,10,15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a aria-label="1"></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb6-2"><a aria-label="2"></a>                  <span class="at">y =</span> bill_dep, </span>
+<span id="cb6-3"><a aria-label="3"></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb6-4"><a aria-label="4"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb6-5"><a aria-label="5"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
+<span id="cb6-6"><a aria-label="6"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb6-7"><a aria-label="7"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">21</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>,<span class="dv">21</span>,<span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb6-8"><a aria-label="8"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="fl">34.7</span>, <span class="fl">55.7</span>, <span class="fl">50.7</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">20.7</span>, <span class="dv">19</span>, <span class="fl">13.6</span>), </span>
+<span id="cb6-9"><a aria-label="9"></a>  <span class="at">color =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], </span>
+<span id="cb6-10"><a aria-label="10"></a>  <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Adélie"</span>,<span class="st">"Chinstrap"</span>,<span class="st">"Gentoo"</span>), <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb6-11"><a aria-label="11"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill length (in mm)"</span>, <span class="at">y =</span> <span class="st">"Bill depth (in mm)"</span>,</span>
+<span id="cb6-12"><a aria-label="12"></a>      <span class="at">title =</span> <span class="st">"Penguins are awesome"</span>,</span>
+<span id="cb6-13"><a aria-label="13"></a>      <span class="at">subtitle =</span> <span class="st">"Depth and length of bills"</span>) <span class="sc">+</span></span>
+<span id="cb6-14"><a aria-label="14"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-15"><a aria-label="15"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -860,25 +863,25 @@ Dr.&nbsp;Matthias Schnetzer
 <h2>Themes</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-code-line-numbers="16,17,18,19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
-<span id="cb7-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
-<span id="cb7-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb7-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb7-5"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
-<span id="cb7-6"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb7-7"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">21</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>,<span class="dv">21</span>,<span class="dv">3</span>)) <span class="sc">+</span></span>
-<span id="cb7-8"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="fl">34.7</span>, <span class="fl">55.7</span>, <span class="fl">50.7</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">20.7</span>, <span class="dv">19</span>, <span class="fl">13.6</span>), </span>
-<span id="cb7-9"><a></a>  <span class="at">color =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], </span>
-<span id="cb7-10"><a></a>  <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Adélie"</span>,<span class="st">"Chinstrap"</span>,<span class="st">"Gentoo"</span>), <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb7-11"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill length (in mm)"</span>, <span class="at">y =</span> <span class="st">"Bill depth (in mm)"</span>,</span>
-<span id="cb7-12"><a></a>      <span class="at">title =</span> <span class="st">"Penguins are awesome"</span>,</span>
-<span id="cb7-13"><a></a>      <span class="at">subtitle =</span> <span class="st">"Depth and length of bills"</span>) <span class="sc">+</span></span>
-<span id="cb7-14"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb7-15"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb7-16"><a></a>  <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb7-17"><a></a>  <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face=</span><span class="st">"bold"</span>),</span>
-<span id="cb7-18"><a></a>  <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>),</span>
-<span id="cb7-19"><a></a>  <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" data-code-line-numbers="16,17,18,19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a aria-label="1"></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb7-2"><a aria-label="2"></a>                  <span class="at">y =</span> bill_dep, </span>
+<span id="cb7-3"><a aria-label="3"></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb7-4"><a aria-label="4"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a aria-label="5"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
+<span id="cb7-6"><a aria-label="6"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb7-7"><a aria-label="7"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">21</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>,<span class="dv">21</span>,<span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb7-8"><a aria-label="8"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="fl">34.7</span>, <span class="fl">55.7</span>, <span class="fl">50.7</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">20.7</span>, <span class="dv">19</span>, <span class="fl">13.6</span>), </span>
+<span id="cb7-9"><a aria-label="9"></a>  <span class="at">color =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], </span>
+<span id="cb7-10"><a aria-label="10"></a>  <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Adélie"</span>,<span class="st">"Chinstrap"</span>,<span class="st">"Gentoo"</span>), <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a aria-label="11"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill length (in mm)"</span>, <span class="at">y =</span> <span class="st">"Bill depth (in mm)"</span>,</span>
+<span id="cb7-12"><a aria-label="12"></a>      <span class="at">title =</span> <span class="st">"Penguins are awesome"</span>,</span>
+<span id="cb7-13"><a aria-label="13"></a>      <span class="at">subtitle =</span> <span class="st">"Depth and length of bills"</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a aria-label="14"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb7-15"><a aria-label="15"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb7-16"><a aria-label="16"></a>  <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb7-17"><a aria-label="17"></a>  <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face=</span><span class="st">"bold"</span>),</span>
+<span id="cb7-18"><a aria-label="18"></a>  <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>),</span>
+<span id="cb7-19"><a aria-label="19"></a>  <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
@@ -892,13 +895,13 @@ Dr.&nbsp;Matthias Schnetzer
 <section id="calculate-median-and-standard-deviation" class="slide level2 smaller">
 <h2>Calculate median and standard deviation</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>data_summary <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">c</span>(bill_len, bill_dep),</span>
-<span id="cb8-4"><a></a>  <span class="fu">list</span>(<span class="at">median =</span> <span class="sc">~</span><span class="fu">median</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb8-5"><a></a>       <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>))))</span>
-<span id="cb8-6"><a></a></span>
-<span id="cb8-7"><a></a>data_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a aria-label="1"></a>data_summary <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a aria-label="2"></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a aria-label="3"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">c</span>(bill_len, bill_dep),</span>
+<span id="cb8-4"><a aria-label="4"></a>  <span class="fu">list</span>(<span class="at">median =</span> <span class="sc">~</span><span class="fu">median</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb8-5"><a aria-label="5"></a>       <span class="at">sd =</span> <span class="sc">~</span><span class="fu">sd</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>))))</span>
+<span id="cb8-6"><a aria-label="6"></a></span>
+<span id="cb8-7"><a aria-label="7"></a>data_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment">
 <div class="cell-output cell-output-stdout">
@@ -915,39 +918,39 @@ Dr.&nbsp;Matthias Schnetzer
 <h2>Median</h2>
 <div class="cell columns column-output-location">
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
-<span id="cb10-2"><a></a>                  <span class="at">y =</span> bill_dep, </span>
-<span id="cb10-3"><a></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb10-4"><a></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb10-5"><a></a>  <span class="fu">geom_errorbar</span>(</span>
-<span id="cb10-6"><a></a>    <span class="at">data =</span> data_summary,</span>
-<span id="cb10-7"><a></a>    <span class="fu">aes</span>(<span class="at">x =</span> bill_len_median,</span>
-<span id="cb10-8"><a></a>      <span class="at">ymin =</span> bill_dep_median <span class="sc">-</span> bill_dep_sd,</span>
-<span id="cb10-9"><a></a>      <span class="at">ymax =</span> bill_dep_median <span class="sc">+</span> bill_dep_sd,</span>
-<span id="cb10-10"><a></a>      <span class="at">color =</span> species,</span>
-<span id="cb10-11"><a></a>      <span class="at">color =</span> <span class="fu">after_scale</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(color, .<span class="dv">2</span>, <span class="at">space =</span> <span class="st">"combined"</span>))), </span>
-<span id="cb10-12"><a></a>      <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">width =</span> .<span class="dv">5</span>, <span class="at">size =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
-<span id="cb10-13"><a></a>  <span class="fu">geom_errorbar</span>(</span>
-<span id="cb10-14"><a></a>    <span class="at">data =</span> data_summary,</span>
-<span id="cb10-15"><a></a>    <span class="fu">aes</span>(<span class="at">y =</span> bill_dep_median,</span>
-<span id="cb10-16"><a></a>      <span class="at">xmin =</span> bill_len_median <span class="sc">-</span> bill_len_sd,</span>
-<span id="cb10-17"><a></a>      <span class="at">xmax =</span> bill_len_median <span class="sc">+</span> bill_len_sd,</span>
-<span id="cb10-18"><a></a>      <span class="at">color =</span> species,</span>
-<span id="cb10-19"><a></a>      <span class="at">color =</span> <span class="fu">after_scale</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(color, .<span class="dv">2</span>, <span class="at">space =</span> <span class="st">"combined"</span>))), </span>
-<span id="cb10-20"><a></a>      <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">width =</span> .<span class="dv">25</span>, <span class="at">size =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
-<span id="cb10-21"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
-<span id="cb10-22"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb10-23"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">21</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>,<span class="dv">21</span>,<span class="dv">3</span>)) <span class="sc">+</span></span>
-<span id="cb10-24"><a></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="fl">34.7</span>, <span class="fl">55.7</span>, <span class="fl">50.7</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">20.7</span>, <span class="dv">19</span>, <span class="fl">13.6</span>), <span class="at">color =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Adélie"</span>,<span class="st">"Chinstrap"</span>,<span class="st">"Gentoo"</span>), <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb10-25"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill length (in mm)"</span>, <span class="at">y =</span> <span class="st">"Bill depth (in mm)"</span>,</span>
-<span id="cb10-26"><a></a>      <span class="at">title =</span> <span class="st">"Penguins are awesome"</span>,</span>
-<span id="cb10-27"><a></a>      <span class="at">subtitle =</span> <span class="st">"Depth and length of bills"</span>) <span class="sc">+</span></span>
-<span id="cb10-28"><a></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb10-29"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
-<span id="cb10-30"><a></a>  <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb10-31"><a></a>  <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face=</span><span class="st">"bold"</span>),</span>
-<span id="cb10-32"><a></a>  <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>),</span>
-<span id="cb10-33"><a></a>  <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" data-code-line-numbers="5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a aria-label="1"></a>data <span class="sc">|&gt;</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> bill_len, </span>
+<span id="cb10-2"><a aria-label="2"></a>                  <span class="at">y =</span> bill_dep, </span>
+<span id="cb10-3"><a aria-label="3"></a>                  <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb10-4"><a aria-label="4"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb10-5"><a aria-label="5"></a>  <span class="fu">geom_errorbar</span>(</span>
+<span id="cb10-6"><a aria-label="6"></a>    <span class="at">data =</span> data_summary,</span>
+<span id="cb10-7"><a aria-label="7"></a>    <span class="fu">aes</span>(<span class="at">x =</span> bill_len_median,</span>
+<span id="cb10-8"><a aria-label="8"></a>      <span class="at">ymin =</span> bill_dep_median <span class="sc">-</span> bill_dep_sd,</span>
+<span id="cb10-9"><a aria-label="9"></a>      <span class="at">ymax =</span> bill_dep_median <span class="sc">+</span> bill_dep_sd,</span>
+<span id="cb10-10"><a aria-label="10"></a>      <span class="at">color =</span> species,</span>
+<span id="cb10-11"><a aria-label="11"></a>      <span class="at">color =</span> <span class="fu">after_scale</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(color, .<span class="dv">2</span>, <span class="at">space =</span> <span class="st">"combined"</span>))), </span>
+<span id="cb10-12"><a aria-label="12"></a>      <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">width =</span> .<span class="dv">5</span>, <span class="at">size =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb10-13"><a aria-label="13"></a>  <span class="fu">geom_errorbar</span>(</span>
+<span id="cb10-14"><a aria-label="14"></a>    <span class="at">data =</span> data_summary,</span>
+<span id="cb10-15"><a aria-label="15"></a>    <span class="fu">aes</span>(<span class="at">y =</span> bill_dep_median,</span>
+<span id="cb10-16"><a aria-label="16"></a>      <span class="at">xmin =</span> bill_len_median <span class="sc">-</span> bill_len_sd,</span>
+<span id="cb10-17"><a aria-label="17"></a>      <span class="at">xmax =</span> bill_len_median <span class="sc">+</span> bill_len_sd,</span>
+<span id="cb10-18"><a aria-label="18"></a>      <span class="at">color =</span> species,</span>
+<span id="cb10-19"><a aria-label="19"></a>      <span class="at">color =</span> <span class="fu">after_scale</span>(colorspace<span class="sc">::</span><span class="fu">darken</span>(color, .<span class="dv">2</span>, <span class="at">space =</span> <span class="st">"combined"</span>))), </span>
+<span id="cb10-20"><a aria-label="20"></a>      <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, <span class="at">width =</span> .<span class="dv">25</span>, <span class="at">size =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb10-21"><a aria-label="21"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)) <span class="sc">+</span></span>
+<span id="cb10-22"><a aria-label="22"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">30</span>,<span class="dv">60</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb10-23"><a aria-label="23"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">21</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">12</span>,<span class="dv">21</span>,<span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb10-24"><a aria-label="24"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">c</span>(<span class="fl">34.7</span>, <span class="fl">55.7</span>, <span class="fl">50.7</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">20.7</span>, <span class="dv">19</span>, <span class="fl">13.6</span>), <span class="at">color =</span> MetBrewer<span class="sc">::</span><span class="fu">met.brewer</span>(<span class="st">"Lakota"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">label =</span> <span class="fu">c</span>(<span class="st">"Adélie"</span>,<span class="st">"Chinstrap"</span>,<span class="st">"Gentoo"</span>), <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb10-25"><a aria-label="25"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill length (in mm)"</span>, <span class="at">y =</span> <span class="st">"Bill depth (in mm)"</span>,</span>
+<span id="cb10-26"><a aria-label="26"></a>      <span class="at">title =</span> <span class="st">"Penguins are awesome"</span>,</span>
+<span id="cb10-27"><a aria-label="27"></a>      <span class="at">subtitle =</span> <span class="st">"Depth and length of bills"</span>) <span class="sc">+</span></span>
+<span id="cb10-28"><a aria-label="28"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-29"><a aria-label="29"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb10-30"><a aria-label="30"></a>  <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb10-31"><a aria-label="31"></a>  <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face=</span><span class="st">"bold"</span>),</span>
+<span id="cb10-32"><a aria-label="32"></a>  <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>),</span>
+<span id="cb10-33"><a aria-label="33"></a>  <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
 <div class="cell-output-display">
 <div>
