@@ -14,18 +14,18 @@
     "text": "Data visualization\nStudents will create a preliminary chart addressing one of the topics from a list provided by the Austrian National Bank. The in-class presentation should provide an intuition of the research question, the underlying data of the chart and considerations behind the style of the chart. The time slot for the presentation is five minutes. Afterwards we will have a brief Q&A in class. The presentation should only have a small number of slides with little text to lead the audience through the process of chart creation, e.g.\n\nResearch question: Which issue in monetary policy do you address with your chart?\nData: What data did you use?\nChart: What does the chart show? What were your thoughts when choosing this style?\nConclusion: What can we learn from this data visualization for economic policy?\n\n\n\nRMarkdown report\nStudents are required to draft a short report around the chart, containing the monetary policy background and the most important information about chart creation. The final version of the report is due on January 31, 2027. You should work with RMarkdown (or Quarto) which is a handy and simple tool to compose reports based on R code. It is recommended to edit the document in RStudio (or Positron) and compile it in HTML format. The final report should be structured as follows:\n\nIntroduction: Explain why the topic you chose is important and interesting for the academic/public debate.\nResearch question: What is the specific research question that you address with your visualization?\nData: What data did you use? What are the limitations of the data? If helpful, you might want to include some descriptive statistics as a table.\nResult: Present and describe the chart that you have created.\nConclusion: What are the policy conclusions of your chart?\nCode: Provide the full code for your data visualization as a code block in the appendix of the report.\n\n\n\nCheatsheets\n   \n\n\nAdditional online resources\n\n\n\n\n\n\n\n\n\nKieran Healy  Data Visualization: A Practical Introduction  Princeton University Press  ISBN-13: 9780691181622  Link\n\n\n\nClaus O. Wilke  Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures  O’Reilly Media  ISBN-13: 9781492031086  Link\n\n\n\nJack Dougherty and Ilya Ilyankou  Hands-On Data Visualization: Interactive Storytelling from Spreadsheets to Code  O’Reilly Media  ISBN-13: 9781492086000  Link"
   },
   {
-    "objectID": "slides/01_introduction/index.html#course-info",
-    "href": "slides/01_introduction/index.html#course-info",
+    "objectID": "slides/01_introduction/index.html#lecturers",
+    "href": "slides/01_introduction/index.html#lecturers",
     "title": "    Monetary Policy Visualization",
-    "section": "Course info",
-    "text": "Course info\n\n\n\n\n   \n\n\n\n\n ?var:instructor.name-wo-title\n ?var:instructor.employer\n ?var:instructor.email\n ?var:instructor.url\n ?var:instructor.twitter\n\n\n\n\n\n Oct 5, 2026 – Jan 25, 2026\n 10:00–12:00\n TC.5.05\n https://mschnetzer.github.io/econpol26"
+    "section": "Lecturers",
+    "text": "Lecturers\n\n\n\n\n\n\n\n   Dr. Matthias Schnetzer\n   https://mschnetzer.github.io\n   mschnetz@wu.ac.at\n   mschnetzer\n\n\n\n\n\n   Patrick Mokre, PhD\n   https://www.patrickmokre.com\n   patrick.mokre@akwien.at\n   patrickmokre"
   },
   {
     "objectID": "slides/01_introduction/index.html#about-this-course",
     "href": "slides/01_introduction/index.html#about-this-course",
     "title": "    Monetary Policy Visualization",
     "section": "About this course",
-    "text": "About this course\n\n“A picture is worth a thousand words”\n\nThis course approaches contemporary issues of economic policy by analyzing innovative or iconic data visualizations. We analyse selected illustrations, discuss the underlying data, the theoretical background and policy implications. We will assemble plots in class and study the basics of data visualization.\nYou will gain:\n\nan overview of contemporary debates in economic policy\na basic understanding of principles of data visualization\nknowledge how to enrich academic publications with informative graphs"
+    "text": "About this course\n\n“A picture is worth a thousand words”\n\nThis course approaches monetary policy by analyzing data and creating data visualizations. We study selected illustrations, discuss the underlying data, the theoretical background and policy implications. We will assemble plots in class and study the basics of data visualization.\nYou will gain:\n\nan overview of economic issues in monetary policy\na basic understanding of principles of data visualization\nknowledge how to enrich academic publications with informative graphs"
   },
   {
     "objectID": "slides/01_introduction/index.html#who-are-you",
@@ -60,7 +60,7 @@
     "href": "slides/01_introduction/index.html#chart-report",
     "title": "    Monetary Policy Visualization",
     "section": "Chart & Report",
-    "text": "Chart & Report\n\n\nChart presentation\n\n\nResearch question Which economic policy question do you want to answer with your chart?\nData\nChart\nConclusion What can we learn from the data visualization for economic policy?\n\n\nDeadline: January 18, 2026\n\nRMarkdown (or Quarto) Report\n\n\nTitle\nAuthor\nIntroduction\nResearch question\nData\nResult\nConclusion\nCode\n\n\nDeadline: January 31, 2026"
+    "text": "Chart & Report\n\n\nChart presentation\n\n\nResearch question\nData\nChart\nConclusion\n\n\nDeadline: January 11, 2027\n\nRMarkdown (or Quarto) Report\n\n\nTitle\nAuthor\nIntroduction\nResearch question\nData\nResult\nConclusion\nCode\n\n\nDeadline: January 31, 2027"
   },
   {
     "objectID": "slides/01_introduction/index.html#grading",
@@ -81,7 +81,7 @@
     "href": "slides/01_introduction/index.html#feedback-cooperation-and-help",
     "title": "    Monetary Policy Visualization",
     "section": "Feedback, cooperation and help",
-    "text": "Feedback, cooperation and help\nLet me know your feedback on the course anytime. If possible, I will try to incorporate your feedback immediately. At least, I will consider it for future courses.\nAs some of you might already have advanced coding skills in R, please support each other and collaborate. This does not mean that one person does all the coding and shares with all colleagues. Students should have an intrinsic motivation to improve their coding skills but cooperate to learn from each other.\nThere is a forum on the learning platform for exchange among students. Please also consult support platforms like Stack Overflow or take a look at the cheatsheets:"
+    "text": "Feedback, cooperation and help\nLet us know your feedback on the course anytime. If possible, we will try to incorporate your feedback immediately. At least, we will consider it for future courses.\nAs some of you might already have advanced coding skills in R, please support each other and collaborate. This does not mean that one person does all the coding and shares with all colleagues. Students should have an intrinsic motivation to improve their coding skills but cooperate to learn from each other.\nPlease also consult support platforms like Stack Overflow or take a look at the cheatsheets:"
   },
   {
     "objectID": "slides/01_introduction/index.html#recommended-literature",
