@@ -1,0 +1,1153 @@
+---
+title: |
+    <span class='fa-stack course-icon'>
+        <i class='fas fa-comment fa-stack-2x blue'></i>
+        <i class='fas fa-coins fa-stack-1x fa-inverse' style='margin-top:-5pt'></i>
+      </span><br>
+    Geld und Geldpolitik
+lang: de
+from: markdown+emoji
+execute:
+  freeze: auto
+  echo: false
+  fig-width: 6
+  fig-height: 5
+format:
+  revealjs:
+    theme: ../econpol_slides.scss
+    footer: 'Monetary Economics and Policy | 2026'
+    header-includes: |
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
+    slide-number: true
+    show-slide-number: all
+    transition: fade
+    progress: true
+    multiplex: false
+    scrollable: true
+    preview-links: false
+    hide-inactive-cursor: true
+    highlight-style: printing
+    pause: true
+---
+
+## Syllabus {.smaller .noscroll}
+
+::: {style="font-size:0.62em; line-height:1.15;"}
+| Topic | Theory | Visualization |
+|:----------------|:------------------------------|:------------------------------------|
+| **What is money** | • Functions of money<br>• Monetary aggregates<br>• Money demand<br>*(Cecchetti and Schoenholz 2021, Part I)* | Classification:<br>Transferrable vs term deposits as split between transaction balances M1 and holdings M2/M3. |
+| **Interest rates and present value** | • Nominal and real rates<br>• Fisher equation<br>• How many interest rates are "the interest rate"<br>*(Cecchetti and Schoenholz 2021, Part II)* | Effective, nominal and real (CPI adjusted) deposit rates.<br>Distribution of rates (heatmap, density plots, ridgelines).<br>Stock rotation (maturity wall): bar charts of loans by remaining fixation period. |
+| **Banks as intermediaries and transmission mechanism** | • Maturity transformation<br>• Net interest margin<br>• Propagation of policy rate to lending rate to spending chain<br>*(Cecchetti and Schoenholz 2021, Part III)* | Debt by sector (bump chart, mosaic chart)<br>Rate pass-through (policy rate to service cost)<br>Scatter of new volume and new rates (to businesses) reveals hysteresis.<br>Connect sector, loan purpose, maturity class and rate fixation in Sankey diagram. |
+| **Financialization and debt** | • Income-financed and debt-financed consumption (and wealth)<br>*Avritzer and Brochier (2025)* | Loan structure of private households.<br>Loan purposes, loan-size class.<br>Composition of private debt (streamgraph) |
+| **Debt and rate cycles** | • Debt-service ratios<br>• Variable and fixed rate borrowers over the cycle<br>• Financial instability hypothesis<br>*Minsky (1992)* | Rate-fixation period as measure of interest rate exposure. Composition of debtors hit first by rate hikes.<br>Maturity of new loans (streamgraph). |
+| **International debt** | • Dominant currency paradigm (world money)<br>• Spillovers from core to periphery<br>• Exorbitant privilege<br>• Global financial cycle<br>*Lapavitsas (2026)* | Domestic, EU and cross-border loans (Ridgeline)<br>Average bank rates (Jitter plot) |
+:::
+
+## Literatur {.noscroll}
+
+![Cecchetti and Schoenholtz: Money, Banking and Financial Markets. Sixth Edition](https://pictures.abebooks.com/isbn/9781260571363-uk.jpg){fig-align="center" height="450"}
+
+::: {.aside}
+Source: abebooks.com
+:::
+
+<!-- ## Course structure (1/2) {.smaller} -->
+
+<!-- ::: {style="font-size:0.85em; line-height:1.25;"} -->
+<!-- | Topic | Theory | Visualization | -->
+<!-- |:------|:-------|:--------------| -->
+<!-- | **What is money** | Functions of money<br>Monetary aggregates<br>Money demand<br>*(Cecchetti and Schoenholz 2021, Part I)* | Classification: transferrable vs term deposits as split between transaction balances M1 and holdings M2/M3. | -->
+<!-- | **Interest rates and present value** | Nominal and real rates<br>Fisher equation<br>How many interest rates are "the interest rate"<br>*(Cecchetti and Schoenholz 2021, Part II)* | Effective, nominal and real (CPI adjusted) deposit rates.<br>Distribution of rates (heatmap, density plots, ridgelines).<br>Stock rotation (maturity wall): bar charts of loans by remaining fixation period. | -->
+<!-- | **Banks as intermediaries and transmission mechanism** | Maturity transformation<br>Net interest margin<br>Propagation of policy rate to lending rate to spending chain<br>*(Cecchetti and Schoenholz 2021, Part III)* | Debt by sector (bump chart, mosaic chart)<br>Rate pass-through (policy rate to service cost)<br>Scatter of new volume and new rates (to businesses) reveals hysteresis.<br>Connect sector, loan purpose, maturity class and rate fixation in Sankey diagram. | -->
+<!-- ::: -->
+
+<!-- ## Course structure (2/2) {.smaller} -->
+
+<!-- ::: {style="font-size:0.85em; line-height:1.25;"} -->
+<!-- | Topic | Theory | Visualization | -->
+<!-- |:------|:-------|:--------------| -->
+<!-- | **Financialization and debt** | Income-financed and debt-financed consumption (and wealth)<br>*Avritzer and Brochier (2025)* | Loan structure of private households.<br>Loan purposes, loan-size class.<br>Composition of private debt (streamgraph) | -->
+<!-- | **Debt and rate cycles** | Debt-service ratios<br>Variable and fixed rate borrowers over the cycle<br>Financial instability hypothesis<br>*Minsky (1992)* | Rate-fixation period as measure of interest rate exposure. Composition of debtors hit first by rate hikes.<br>Maturity of new loans (streamgraph). | -->
+<!-- | **International debt** | Dominant currency paradigm (world money)<br>Spillovers from core to periphery<br>Exorbitant privilege<br>Global financial cycle<br>*Lapavitsas (2026)* | Domestic, EU and cross-border loans (Ridgeline)<br>Average bank rates (Jitter plot) | -->
+<!-- ::: -->
+
+<!-- ## Ideas OeNB {.smaller} -->
+
+<!-- Flowchart underlying statistics to data set. -->
+
+<!-- ::: columns -->
+<!-- ::: {.column width="60%"} -->
+<!-- **Private credit dataset: visual outlier analysis** -->
+
+<!-- - Marshall Edgeworth (Composition Effect in average interest rate) -->
+<!-- - Distribution of market shares (by category) – maybe stream graph? -->
+<!-- - Structural differences between countries – maybe relative stacked bar plots (horizontal)? -->
+
+<!-- **Aggregated Loans Analysis by financial instrument** -->
+
+<!-- - *Q1/2023 – Q4/2025, creditor, debtor by country and industry*, *green finance attributes*. -->
+<!-- - Share of green bonds (aggregate, by country, outlier analysis). -->
+<!-- ::: -->
+
+<!-- ::: {.column width="40%"} -->
+<!-- **Further data** -->
+
+<!-- - Card Payments -->
+<!-- - Payment Data -->
+<!-- - Pension Funds -->
+<!-- - Insurance Funds -->
+<!-- ::: -->
+<!-- ::: -->
+
+# Bestandteile des Finanzsystems
+
+<div style="text-align:center;">
+<span class='fa-stack' style='font-size:7rem;'>
+  <i class='fas fa-circle fa-stack-2x blue'></i>
+  <i class='fas fa-puzzle-piece fa-stack-1x fa-inverse'></i>
+</span>
+</div>
+
+::: footer
+:::
+
+## Überblick {.medium}
+
+## Überblick
+
+```{=html}
+<div style="text-align:center;">
+<svg viewBox="0 0 850 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Die sechs Bestandteile des Finanzsystems als ineinandergreifende Puzzleteile" style="height:480px;width:auto;">
+  <path d="M50,50 L300.0,50.0 L300.0,150.0 C310.5,150.0 314.0,130.0 328.0,135.0 C345.5,140.0 345.5,210.0 328.0,215.0 C314.0,220.0 310.5,200.0 300.0,200.0 L300.0,300.0 L200.0,300.0 C200.0,310.5 220.0,314.0 215.0,328.0 C210.0,345.5 140.0,345.5 135.0,328.0 C130.0,314.0 150.0,310.5 150.0,300.0 L50.0,300.0 L50.0,50.0 Z" fill="#5d8198" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M300,50 L550.0,50.0 L550.0,150.0 C539.5,150.0 536.0,130.0 522.0,135.0 C504.5,140.0 504.5,210.0 522.0,215.0 C536.0,220.0 539.5,200.0 550.0,200.0 L550.0,300.0 L450.0,300.0 C450.0,289.5 470.0,286.0 465.0,272.0 C460.0,254.5 390.0,254.5 385.0,272.0 C380.0,286.0 400.0,289.5 400.0,300.0 L300.0,300.0 L300.0,200.0 C310.5,200.0 314.0,220.0 328.0,215.0 C345.5,210.0 345.5,140.0 328.0,135.0 C314.0,130.0 310.5,150.0 300.0,150.0 L300.0,50.0 Z" fill="#e76254" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M550,50 L800.0,50.0 L800.0,300.0 L700.0,300.0 C700.0,310.5 720.0,314.0 715.0,328.0 C710.0,345.5 640.0,345.5 635.0,328.0 C630.0,314.0 650.0,310.5 650.0,300.0 L550.0,300.0 L550.0,200.0 C539.5,200.0 536.0,220.0 522.0,215.0 C504.5,210.0 504.5,140.0 522.0,135.0 C536.0,130.0 539.5,150.0 550.0,150.0 L550.0,50.0 Z" fill="#d03161" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M50,300 L150.0,300.0 C150.0,310.5 130.0,314.0 135.0,328.0 C140.0,345.5 210.0,345.5 215.0,328.0 C220.0,314.0 200.0,310.5 200.0,300.0 L300.0,300.0 L300.0,400.0 C289.5,400.0 286.0,380.0 272.0,385.0 C254.5,390.0 254.5,460.0 272.0,465.0 C286.0,470.0 289.5,450.0 300.0,450.0 L300.0,550.0 L50.0,550.0 L50.0,300.0 Z" fill="#218500" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M300,300 L400.0,300.0 C400.0,289.5 380.0,286.0 385.0,272.0 C390.0,254.5 460.0,254.5 465.0,272.0 C470.0,286.0 450.0,289.5 450.0,300.0 L550.0,300.0 L550.0,400.0 C560.5,400.0 564.0,380.0 578.0,385.0 C595.5,390.0 595.5,460.0 578.0,465.0 C564.0,470.0 560.5,450.0 550.0,450.0 L550.0,550.0 L300.0,550.0 L300.0,450.0 C289.5,450.0 286.0,470.0 272.0,465.0 C254.5,460.0 254.5,390.0 272.0,385.0 C286.0,380.0 289.5,400.0 300.0,400.0 L300.0,300.0 Z" fill="#d37b00" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M550,300 L650.0,300.0 C650.0,310.5 630.0,314.0 635.0,328.0 C640.0,345.5 710.0,345.5 715.0,328.0 C720.0,314.0 700.0,310.5 700.0,300.0 L800.0,300.0 L800.0,550.0 L550.0,550.0 L550.0,450.0 C560.5,450.0 564.0,470.0 578.0,465.0 C595.5,460.0 595.5,390.0 578.0,385.0 C564.0,380.0 560.5,400.0 550.0,400.0 L550.0,300.0 Z" fill="#495057" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <text x="175" y="182" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="175" dy="0">Geld</tspan></text>
+  <text x="425" y="169" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="425" dy="0">Finanz-</tspan><tspan x="425" dy="25">instrumente</tspan></text>
+  <text x="675" y="182" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="675" dy="0">Finanzmärkte</tspan></text>
+  <text x="175" y="432" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="175" dy="0">Zentralbanken</tspan></text>
+  <text x="425" y="419" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="425" dy="0">Finanz-</tspan><tspan x="425" dy="25">institutionen</tspan></text>
+  <text x="675" y="419" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="675" dy="0">Regulierende</tspan><tspan x="675" dy="25">Institutionen</tspan></text>
+</svg>
+</div>
+```
+## Geld {.medium}
+
+```{=html}
+<div style="position:relative; display:inline-block; padding:4px 0;">
+  <!-- vertical line -->
+  <div style="position:absolute; left:39px; top:40px; bottom:20px; width:4px; background:#ced4da;"></div>
+
+  <!-- 1 Geldwaren -->
+  <div style="position:relative; display:flex; align-items:center; gap:1.2rem; margin-bottom:14px;">
+    <div style="width:70px;height:70px;border-radius:50%;background:#5d8198;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 0 0 5px #fff;margin-left:4px;">
+      <i class="fa-solid fa-wheat-awn"></i>
+      <!-- <img src="img/geld_01_geldwaren.png" style="width:70px;height:70px;border-radius:50%;object-fit:cover;"> -->
+    </div>
+    <span style="font-size:1.4rem;">Geldwaren</span>
+  </div>
+
+  <!-- 2 Münzen -->
+  <div style="position:relative; display:flex; align-items:center; gap:1.2rem; margin-bottom:14px;">
+    <div style="width:70px;height:70px;border-radius:50%;background:#e76254;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 0 0 5px #fff;margin-left:4px;">
+      <i class="fa-solid fa-coins"></i>
+      <!-- <img src="img/geld_02_muenzen.png" style="width:70px;height:70px;border-radius:50%;object-fit:cover;"> -->
+    </div>
+    <span style="font-size:1.4rem;">Münzen</span>
+  </div>
+
+  <!-- 3 Papiergeld -->
+  <div style="position:relative; display:flex; align-items:center; gap:1.2rem; margin-bottom:14px;">
+    <div style="width:70px;height:70px;border-radius:50%;background:#d03161;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 0 0 5px #fff;margin-left:4px;">
+      <i class="fa-solid fa-money-bill"></i>
+      <!-- <img src="img/geld_03_papiergeld.png" style="width:70px;height:70px;border-radius:50%;object-fit:cover;"> -->
+    </div>
+    <span style="font-size:1.4rem;">Papiergeld</span>
+  </div>
+
+  <!-- 4 Bankgeld -->
+  <div style="position:relative; display:flex; align-items:center; gap:1.2rem; margin-bottom:14px;">
+    <div style="width:70px;height:70px;border-radius:50%;background:#218500;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 0 0 5px #fff;margin-left:4px;">
+      <i class="fa-solid fa-building-columns"></i>
+      <!-- <img src="img/geld_04_bankgeld.png" style="width:70px;height:70px;border-radius:50%;object-fit:cover;"> -->
+    </div>
+    <span style="font-size:1.4rem;">Bankgeld</span>
+  </div>
+
+  <!-- 5 Digitale Währungen -->
+  <div style="position:relative; display:flex; align-items:center; gap:1.2rem;">
+    <div style="width:70px;height:70px;border-radius:50%;background:#d37b00;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 0 0 5px #fff;margin-left:4px;">
+      <i class="fa-solid fa-bitcoin-sign"></i>
+      <!-- <img src="img/geld_05_digital.png" style="width:70px;height:70px;border-radius:50%;object-fit:cover;"> -->
+    </div>
+    <span style="font-size:1.4rem;">Digitale Währungen</span>
+  </div>
+
+  <!-- arrow at the end of the line -->
+  <i class="fa-solid fa-caret-down" style="position:absolute; left:31px; bottom:-6px; font-size:1.6rem; color:#ced4da;"></i>
+</div>
+```
+
+## Finanzinstrumente {.medium}
+
+::: columns
+::: {.column width="45%"}
+Im Englischen werden *financial instruments* auch *securities* genannt, weil der zugrundeliegende Vertrag eine Rückzahlung oder künftige Zahlung absichern soll.
+:::
+
+::: {.column width="55%"}
+- Kredite
+- Anleihen
+- Aktien
+- Aktienfonds (mutual funds)
+- Versicherungen
+- Termingeschäfte (contract for difference)
+:::
+:::
+
+## Finanzmärkte {.medium}
+
+::: columns
+::: {.column width="50%"}
+- Kaffeehäuser, Beisln, Handelsposten
+- Börsen
+- Elektronische Plattformen und Apps
+:::
+
+::: {.column width="50%"}
+![Herberge Ter Beurze](https://museum.nbb.be/sites/default/files/styles/large_horizontal/public/2024-01/I04883_1.jpg?h=9521c228&itok=8qOrHMPZ){fig-align="center" height="380"}
+
+::: {.aside}
+Source: Museum of the National Bank of Belgium ([museum.nbb.be](https://museum.nbb.be))
+:::
+:::
+:::
+
+## Finanzinstitutionen {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Banken als Tresorräume mit Auszahlungsraum
+- Einlagen und Kredite
+- Händler:innen für Finanzinstrumente
+- Trennung von Geschäfts- und Privatbanken
+:::
+
+::: {.column width="45%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Regulierungsbehörden {.medium}
+
+::: columns
+::: {.column width="33%"}
+::: {style="background:#f8f9fa; border-top:6px solid #5d8198; border-radius:0.8rem; padding:1.2rem 1.4rem; min-height:300px; box-sizing:border-box;"}
+<span class="fa-stack" style="font-size:2rem;">
+  <i class="fas fa-circle fa-stack-2x" style="color:#5d8198;"></i>
+  <i class="fas fa-file-signature fa-stack-1x fa-inverse"></i>
+</span>
+
+::: {.altlist}
+- Wucherverbot
+- Banklizenzen
+- Hausbanken
+:::
+:::
+:::
+
+::: {.column width="33%"}
+::: {style="background:#f8f9fa; border-top:6px solid #e76254; border-radius:0.8rem; padding:1.2rem 1.4rem; min-height:300px; box-sizing:border-box;"}
+<span class="fa-stack" style="font-size:2rem;">
+  <i class="fas fa-circle fa-stack-2x" style="color:#e76254;"></i>
+  <i class="fas fa-magnifying-glass fa-stack-1x fa-inverse"></i>
+</span>
+
+::: {.altlist}
+- Bankenaufsicht nach Finanzkrisen
+- Überwachen und Strafen
+:::
+:::
+:::
+
+::: {.column width="33%"}
+::: {style="background:#f8f9fa; border-top:6px solid #d03161; border-radius:0.8rem; padding:1.2rem 1.4rem; min-height:300px; box-sizing:border-box;"}
+<span class="fa-stack" style="font-size:2rem;">
+  <i class="fas fa-circle fa-stack-2x" style="color:#d03161;"></i>
+  <i class="fas fa-scale-balanced fa-stack-1x fa-inverse"></i>
+</span>
+
+::: {.altlist}
+- Glass-Steagle Act
+- Dodd-Frank Act
+- Basel III
+:::
+:::
+:::
+:::
+
+## Zentralbanken {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Münzprägeanstalten
+- Schatzkammer/Finanzverwaltung (William of Orange)
+- Geld- und Kreditangebot, Staatsanleihen
+:::
+
+::: {.column width="45%"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-format: svg
+#| fig-width: 6
+#| fig-height: 4.2
+#| fig-align: center
+library(tidyverse)
+
+# Download once, then reuse the local copy
+f <- "boe_policy_rate.csv"
+if (!file.exists(f)) {
+  try(download.file(
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BOEPRUKA",
+    f, mode = "wb", quiet = TRUE), silent = TRUE)
+}
+
+if (file.exists(f)) {
+  df <- read_csv(f, show_col_types = FALSE) |>
+    rename(date = 1, rate = 2) |>
+    mutate(year = as.integer(format(as.Date(date), "%Y")),
+           rate = as.numeric(rate)) |>
+    filter(year >= 1900, !is.na(rate))
+
+  y0 <- min(df$year)
+  y1 <- max(df$year)
+
+  # Markers: start, highest, lowest
+  marks <- bind_rows(
+    df |> slice_min(year, n = 1, with_ties = FALSE) |> mutate(vj = -1),
+    df |> slice_max(rate, n = 1, with_ties = FALSE) |> mutate(vj = -1),
+    df |> slice_min(rate, n = 1, with_ties = FALSE) |> mutate(vj = 1.8)
+  ) |>
+    mutate(
+      hj = case_when(year == y0 ~ 0,
+                     year >= y1 - 10 ~ 1,
+                     TRUE ~ 0.5),
+      label = paste0(rate, " % (", year, ")")
+    )
+
+  p <- ggplot(df, aes(year, rate)) +
+    geom_line(colour = "#5d8198", linewidth = 1.2) +
+    geom_point(data = marks, colour = "#e76254", size = 3.5) +
+    geom_label(data = marks, aes(label = label, vjust = vj, hjust = hj),
+               colour = "#e76254", fill = "white", label.size = 0,
+               label.padding = unit(0.2, "lines"), size = 4.5) +
+    scale_x_continuous(expand = expansion(mult = c(0.03, 0.06))) +
+    scale_y_continuous(expand = expansion(mult = c(0.18, 0.15))) +
+    coord_cartesian(clip = "off") +
+    labs(title = paste0("Leitzins der Bank of England, ", y0, "–", y1),
+         caption = "Quelle: Bank of England via FRED (BOEPRUKA)") +
+    theme_void(base_size = 14) +
+    theme(
+      plot.background  = element_rect(fill = "transparent", colour = NA),
+      panel.background = element_rect(fill = "transparent", colour = NA),
+      plot.title   = element_text(colour = "#343a40", face = "bold",
+                                  hjust = 0, margin = margin(b = 8)),
+      plot.caption = element_text(colour = "#868e96", size = 9, hjust = 0,
+                                  margin = margin(t = 8))
+    )
+  print(p)
+} else {
+  cat("Daten konnten nicht geladen werden.")
+}
+```
+:::
+:::
+## Fragen (Cecchetti und Schoenholtz) {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Was unterscheidet eine Bankomatkarte von einer Kreditkarte?
+- Sind Ihre Bankeinlagen versichert?
+- Würden Sie lieber Aktien, Anleihen oder Gold besitzen?
+- Würden Sie Aktien der Firma kaufen, für die Sie arbeiten?
+- Welche Informationen wollen Sie haben, bevor Sie eine Hypothek aufnehmen?
+:::
+
+::: {.column width="50%"}
+- Was ist Ihre Kreditwürdigkeit, und warum ist die wichtig?
+- Brauchen Sie eine Lebensversicherung?
+- Brauchen Sie eine Krankenversicherung?
+- Brauchen Sie eine Sozialversicherung?
+- Brauchen Sie eine Pensionsversicherung?
+:::
+:::
+
+# Geld
+
+<div style="text-align:center;">
+<span class='fa-stack' style='font-size:7rem;'>
+  <i class='fas fa-circle fa-stack-2x blue'></i>
+  <i class='fas fa-money-bill-wave fa-stack-1x fa-inverse'></i>
+</span>
+</div>
+
+::: footer
+:::
+
+## Recheneinheit {.medium}
+
+- Rechneinheit und Verrechnungseinheit:
+    - Güter und Dienstleistungen sind vergleichbar (kommensurabel)
+    - Geschäfte werden gegengerechnet und nur die Differenz ausbezahlt
+    - Ausgaben und Einnahmen passieren nicht gleichzeitig, werden aber in Beziehung gesetzt
+- Relative Preise: Alle Güter und Dienstleistungen werden miteinander verglichen.
+
+## Wertspeicher {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Zahlungsmittel sind gegen schnellen Verfall geschützt
+    - Käsesteuern, Salzsteuern, Edelmetalle
+- Liquider Wertspeicher: Geld kann sehr schnell und günstig gegen Güter und Dienstleistungen getauscht werden.
+:::
+
+::: {.column width="50%"}
+- Gold weniger schnell, Anleihen noch langsamer, Immobilien ganz langsam.
+- Finanzinstitutionen unterscheiden zwischen Marktliquidität (*market liquidity)* und Finanzierungsliquidität (*funding liquidity)*.
+:::
+:::
+
+## Warengeld {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Frühe Zahlungsmittel hatten einen intrinsischen Wert: Seide, Butter, Salz, Tierzähne.
+- Sie hatten auch darüber hinausgehende nützliche Eigenschaften:
+    - Haltbarkeit
+    - Teilbarkeit
+    - Transportierbarkeit
+    - Standardisierbarkeit.
+:::
+
+::: {.column width="50%"}
+- Gold zieht sich durch die Geschichte der Zahlungsmittel:
+    - Selten (Hohes Wert-zu-Gewicht Verhältnis)
+    - Weithin bekannt und verbreitet
+    - Reinheitsgrad bestimmbar
+    - Standardisierbar und verlustfrei teilbar
+    - Haltbar
+:::
+:::
+
+## Papiergeld {.medium}
+
+::: columns
+::: {.column width="60%"}
+- Im 17. Jahrhundert: Papiergeld entwickelt in Schweden als Alternative zu Kupfergeld (nicht sehr wertvoll)
+- Direkt eintauschbar für Metallgeld
+- Mehr Banknoten als verfügbares Metall, baldiger Vertrauensverlust
+- Ab beginnendem 18. Jahrhundert: Papiergeld in den amerikanischen Kolonien und Frankreich.
+:::
+
+::: {.column width="40%"}
+![Erste Banknote aus Schweden](https://museum.nbb.be/sites/default/files/styles/large_horizontal/public/2021-02/B17954_r.png?h=2e6f65da&itok=Iz3iDMvw){fig-align="center" height="380"}
+
+::: {.aside}
+Source: Museum of the National Bank of Belgium ([museum.nbb.be](https://museum.nbb.be))
+:::
+:::
+:::
+
+## Papiergeld {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Im amerikanischen Bürger:innenkrieg finanzieren beide Seiten Personal und Dienstleistungen mit Papiergeld, gedeckt von einem staatlichen Versprechen.
+- Papiergeld der Sieger:innenseite ist anerkanntes Zahlungsmittel (greenback), Banknoten der Velierer:innenseite nur noch für Sammler:innen interessant.
+:::
+
+::: {.column width="45%"}
+<!-- Platz für Abbildung: z. B. Greenback und Banknote der Verlierer:innenseite -->
+:::
+:::
+
+## Fiatgeld {.medium}
+
+::: columns
+::: {.column width="60%"}
+- Modernes Papiergeld hat wenig intrinsischen Wert und niedrige Produktionskosten.
+- Annahme durch staatliche Stellen und private Geschäftstreibende ist rechtlich vorgegeben.
+- Gedecktes Papiergeld: Edelmetall im selben Wert vorhanden, verlangsamt Entwertung.
+- Ungedecktes Papiergeld (echtes Fiatgeld): Eintauschbarkeit abhängig von Marktbedingungen
+:::
+
+::: {.column width="40%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Fiatgeld {.medium}
+
+::: columns
+::: {.column width="60%"}
+- Genau wie Waren- und Metallgeld an allgemeine Akzeptanz gebunden.
+- Geldmenge zentral gesteuert und einfach auszuweiten (Entwertungsangst).
+- Ziel von Fiatgeld: Stärkere Preisentwicklung als Warengeld, setzt Mengenentwicklung unter realem Wachstum voraus.
+:::
+
+::: {.column width="40%"}
+<!-- Platz für Abbildung: z. B. Geldmengenentwicklung -->
+:::
+:::
+
+## Elektronische Zahlungsmittel {.smaller}
+
+::: columns
+::: {.column width="30%"}
+- Debitkarte:
+    - Zahlungsanweisung an Bank.
+    - Zahlung durch Karteninhaber:in.
+    - Gebührenfinanziert.
+:::
+
+::: {.column width="30%"}
+- Kreditkarte:
+    - Vorstrecken durch Bank.
+    - Zahlung durch Bank.
+    - Zinsfinanziert.
+:::
+
+::: {.column width="40%"}
+- Direktüberweisung:
+    - Elektronische Zahlungsanweisung
+    - Transaktionen über Clearingstelle (*automatic* *clearing houses ACH*)
+    - Zwischen Finanzinstitutionen: Tatsächliche Transaktion nur über Differenz.
+    - Mittlerweile häufig an Handyverträge gebunden (Handyparken in Wien, M-Pesa in Kenia)
+:::
+:::
+
+## Inflation {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Inflation bedeutet, dass Güter und Dienstleistungen allgemein teurer werden.
+- Inflation bedeutet, dass Geld weniger wert ist.
+- Geld ist weniger wert, wenn mehr Geld zirkuliert als Waren und Dienstleistungen zirkulieren.
+:::
+
+::: {.column width="45%"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-format: svg
+#| fig-width: 6
+#| fig-height: 4.2
+#| fig-align: center
+library(tidyverse)
+
+f   <- "ons_milk_pint.csv"
+url <- paste0("https://www.ons.gov.uk/generator?format=csv&uri=",
+              "/economy/inflationandpriceindices/timeseries/cznt/mm23")
+msg <- character()
+
+# A valid ONS file contains the line "CDID" near the top
+ok_file <- function(path) {
+  file.exists(path) && file.size(path) > 500 &&
+    any(grepl("CDID", readLines(path, n = 15, warn = FALSE)))
+}
+
+if (!ok_file(f)) {
+  unlink(f)
+  ua <- "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+
+  # Try 1: base R with libcurl and a browser user agent
+  r1 <- try(download.file(url, f, mode = "wb", quiet = TRUE,
+                          method = "libcurl",
+                          headers = c("User-Agent" = ua)), silent = TRUE)
+  if (inherits(r1, "try-error")) msg <- c(msg, conditionMessage(attr(r1, "condition")))
+
+  # Try 2: curl package (install.packages("curl") if missing)
+  if (!ok_file(f) && requireNamespace("curl", quietly = TRUE)) {
+    h <- curl::new_handle(useragent = ua)
+    r2 <- try(curl::curl_download(url, f, handle = h), silent = TRUE)
+    if (inherits(r2, "try-error")) msg <- c(msg, conditionMessage(attr(r2, "condition")))
+  }
+
+  # Try 3: read straight from the URL
+  if (!ok_file(f)) {
+    r3 <- try(writeLines(readLines(url, warn = FALSE), f), silent = TRUE)
+    if (inherits(r3, "try-error")) msg <- c(msg, conditionMessage(attr(r3, "condition")))
+  }
+  if (!ok_file(f)) unlink(f)
+}
+
+if (ok_file(f)) {
+  # Metadata lines first, then annual, quarterly and monthly rows.
+  # Keep only the annual rows (a plain four-digit year).
+  df <- read_csv(f, col_names = c("period", "value"),
+                 col_types = cols(.default = col_character()),
+                 show_col_types = FALSE) |>
+    filter(grepl("^[0-9]{4}$", period)) |>
+    mutate(year = as.integer(period), pence = as.numeric(value)) |>
+    filter(!is.na(pence))
+
+  y0 <- min(df$year)
+  y1 <- max(df$year)
+  ratio <- round(df$pence[df$year == y1] / df$pence[df$year == y0])
+
+  marks <- bind_rows(
+    df |> slice_min(year, n = 1) |> mutate(hj = 0, vj = -0.8),
+    df |> slice_max(year, n = 1) |> mutate(hj = 1, vj = -0.8)
+  ) |>
+    mutate(label = paste0(format(round(pence, 1), nsmall = 1,
+                                 decimal.mark = ","), " p (", year, ")"))
+
+  p <- ggplot(df, aes(year, pence)) +
+    geom_line(colour = "#5d8198", linewidth = 1.2) +
+    geom_point(data = marks, colour = "#e76254", size = 3.5) +
+    geom_label(data = marks,
+               aes(label = label, hjust = hj, vjust = vj),
+               colour = "#e76254", fill = "white", label.size = 0,
+               label.padding = unit(0.2, "lines"), size = 4.5) +
+    scale_x_continuous(expand = expansion(mult = c(0.03, 0.06))) +
+    scale_y_continuous(expand = expansion(mult = c(0.05, 0.2))) +
+    coord_cartesian(clip = "off") +
+    labs(title = paste0("Preis eines Pints Milch (UK), ", y0, "–", y1),
+         subtitle = paste0("Nominal in Pence: das ", ratio, "-Fache seit ", y0),
+         caption = "Quelle: ONS, RPI average price (CZNT)") +
+    theme_void(base_size = 14) +
+    theme(
+      plot.background  = element_rect(fill = "transparent", colour = NA),
+      panel.background = element_rect(fill = "transparent", colour = NA),
+      plot.title    = element_text(colour = "#343a40", face = "bold",
+                                   hjust = 0, margin = margin(b = 2)),
+      plot.subtitle = element_text(colour = "#868e96", size = 10, hjust = 0,
+                                   margin = margin(b = 8)),
+      plot.caption  = element_text(colour = "#868e96", size = 9, hjust = 0,
+                                   margin = margin(t = 8))
+    )
+  print(p)
+} else {
+  cat("Daten konnten nicht geladen werden.\n",
+      "Fehler: ", paste(unique(msg), collapse = " | "), "\n",
+      "Manuell: CSV von der ONS-Seite (cznt/mm23) herunterladen und als ",
+      f, " neben die .qmd legen.", sep = "")
+}
+```
+:::
+:::
+
+## Inflation {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Es zirkuliert mehr Geld als Waren, wenn die Geldmenge plötzlich ausgeweitet wird.
+- Es zirkulieren weniger Waren als Geld, wenn mehr gespart und weniger investiert (oder konsumiert) wird.
+- Inflation wird real spürbar wenn Preise tatsächlich erhöht (von Firmen) und höhere Preise tatsächlich bezahlt werden (von Haushalten und Firmen)
+:::
+
+::: {.column width="45%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Geld zählen {.medium}
+
+::: columns
+::: {.column width="50%"}
+Zahlungsmittel können nach Liquidität gereiht werden:
+
+- Bargeld
+- Taggeldkonten
+- Festgeldkonten
+- Staatsanleihen
+- Aktien
+:::
+
+::: {.column width="50%"}
+<!-- Platz für Abbildung: z. B. Liquiditätsleiter -->
+:::
+:::
+
+## Geldaggregate {.medium}
+
+```{r}
+#| include: false
+# Stream graph (copy of geom_pemstream, defined here, not loaded).
+# Added argument: center = TRUE keeps the original mirrored layout;
+# center = FALSE puts the lower bound on a flat baseline at zero.
+StatPemstream <- ggplot2::ggproto("StatPemstream", ggplot2::Stat,
+  required_aes = c("x", "y", "fill"),
+  compute_panel = function(data, scales, span = 0.75, stack_order = NULL,
+                           center = TRUE) {
+    if (is.null(stack_order)) {
+      data$fill <- factor(data$fill)
+    } else {
+      data$fill <- factor(data$fill, levels = stack_order)
+    }
+    data <- data[order(data$x, rev(as.integer(data$fill))), ]
+
+    data <- do.call(rbind, lapply(split(data, data$x), function(d) {
+      offset <- if (center) sum(d$y) / 2 else 0
+      d$ymax <- cumsum(d$y) - offset
+      d$ymin <- d$ymax - d$y
+      d
+    }))
+
+    data <- do.call(rbind, lapply(split(data, data$fill), function(d) {
+      d <- d[order(d$x), ]
+      if (nrow(d) >= 4) {
+        d$ymin <- stats::predict(stats::loess(ymin ~ x, data = d, span = span))
+        d$ymax <- stats::predict(stats::loess(ymax ~ x, data = d, span = span))
+      }
+      d
+    }))
+    data
+  }
+)
+
+geom_pemstream <- function(mapping = NULL, data = NULL,
+                           position = "identity",
+                           span = 0.75, stack_order = NULL, center = TRUE,
+                           na.rm = FALSE, show.legend = NA,
+                           inherit.aes = TRUE, ...) {
+  ggplot2::layer(
+    stat = StatPemstream, geom = ggplot2::GeomRibbon,
+    mapping = mapping, data = data, position = position,
+    show.legend = show.legend, inherit.aes = inherit.aes,
+    params = list(span = span, stack_order = stack_order, center = center,
+                  na.rm = na.rm, ...)
+  )
+}
+```
+
+::: columns
+::: {.column width="50%"}
+- M1: Bargeld und Einlagenkonten (fast unverzinst)
+- M2: M1 + Festgeldkonten unter USD 100.000, Sparkonten, Anlagenfonds, ... (verzinst)
+- M3 + Einlagen über USD 100.000
+- M4 (Britisch): Bargeld in Verwendung, Bankeinlagen, Bauspareinlagen, Einlagenzertifikate.
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-format: svg
+#| fig-width: 6
+#| fig-height: 4.4
+#| fig-align: center
+library(tidyverse)
+
+# Download once from the ECB Data Portal, then reuse the local copy
+f <- "ecb_money_aggregates.csv"
+if (!file.exists(f)) {
+  try(download.file(
+    paste0("https://data-api.ecb.europa.eu/service/data/BSI/",
+           "M.U2.Y.V.M10+M20+M30.X.1.U2.2300.Z01.E",
+           "?format=csvdata&startPeriod=1999-01"),
+    f, mode = "wb", quiet = TRUE), silent = TRUE)
+}
+
+if (file.exists(f)) {
+  # Values in Bio. € (trillions); the ECB reports millions
+  wide <- read_csv(f, show_col_types = FALSE) |>
+    transmute(item = sub(".*\\.(M[123]0)\\..*", "\\1", KEY),
+              period = TIME_PERIOD, value = OBS_VALUE / 1e6) |>
+    pivot_wider(names_from = item, values_from = value) |>
+    mutate(x = as.integer(substr(period, 1, 4)) +
+               (as.integer(substr(period, 6, 7)) - 1) / 12)
+
+  lvl <- c("M3 – M2", "M2 – M1", "M1")   # M1 sits at the bottom
+  df <- wide |>
+    transmute(x, `M1` = M10, `M2 – M1` = M20 - M10, `M3 – M2` = M30 - M20) |>
+    pivot_longer(-x, names_to = "aggregat", values_to = "wert")
+
+  fmt <- function(v) paste0(format(round(v, 1), nsmall = 1, decimal.mark = ","),
+                            " Bio. €")
+
+  # Edge markers: aggregate levels = upper edges of the bands
+  first <- wide |> slice_min(x, n = 1)
+  last  <- wide |> slice_max(x, n = 1)
+
+  ends <- tibble(
+    x = last$x, name = c("M1", "M2", "M3"),
+    y = c(last$M10, last$M20, last$M30)
+  ) |> mutate(label = paste0(name, "  ", fmt(y)))
+
+  start <- tibble(x = first$x, name = "M3", y = first$M30,
+                  label = paste0("M3  ", fmt(first$M30)))
+
+  marks <- bind_rows(ends, start)
+
+  fills <- c("M1" = "#5d8198", "M2 – M1" = "#e76254", "M3 – M2" = "#868e96")
+  cols  <- c("M1" = "#5d8198", "M2" = "#e76254", "M3" = "#868e96")
+
+  p <- ggplot() +
+    geom_pemstream(data = df, aes(x = x, y = wert, fill = aggregat),
+                   span = 0.08, stack_order = lvl, center = FALSE,
+                   colour = "white", linewidth = 0.3) +
+    geom_hline(yintercept = 0, colour = "#ced4da", linewidth = 0.5) +
+    geom_point(data = marks, aes(x = x, y = y, colour = name), size = 3) +
+    geom_label(data = ends,
+               aes(x = x + 0.4, y = y, label = label, colour = name),
+               hjust = 0, fill = "white", label.size = 0,
+               label.padding = unit(0.2, "lines"),
+               size = 4, fontface = "bold") +
+    geom_label(data = start,
+               aes(x = x, y = y, label = label, colour = name),
+               hjust = 0, vjust = -0.5, fill = "white", label.size = 0,
+               label.padding = unit(0.2, "lines"),
+               size = 4, fontface = "bold") +
+    scale_fill_manual(values = fills) +
+    scale_colour_manual(values = cols) +
+    scale_x_continuous(breaks = seq(2000, 2020, 10),
+                       expand = expansion(mult = c(0.01, 0.35))) +
+    scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +
+    coord_cartesian(clip = "off") +
+    labs(title = paste0("Geldaggregate im Euro-Raum, ",
+                        floor(min(df$x)), "–", floor(max(df$x))),
+         subtitle = "Obergrenzen der Bänder = M1, M2 und M3 (Bio. € = Billionen Euro)",
+         caption = "Quelle: EZB Data Portal (BSI), saisonbereinigt, Bestände") +
+    theme_void(base_size = 14) +
+    theme(
+      legend.position  = "none",
+      plot.background  = element_rect(fill = "transparent", colour = NA),
+      panel.background = element_rect(fill = "transparent", colour = NA),
+      axis.text.x  = element_text(colour = "#868e96", size = 10,
+                                  margin = margin(t = 6)),
+      plot.title   = element_text(colour = "#343a40", face = "bold",
+                                  hjust = 0, margin = margin(b = 2)),
+      plot.subtitle = element_text(colour = "#868e96", size = 10, hjust = 0,
+                                   margin = margin(b = 8)),
+      plot.caption = element_text(colour = "#868e96", size = 9, hjust = 0,
+                                  margin = margin(t = 8))
+    )
+  print(p)
+} else {
+  cat("Daten konnten nicht geladen werden.")
+}
+```
+:::
+:::
+
+## Geld drucken {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Physische Geldproduktion durch Notenbanken, mit Seignorage-Gewinn (Differenz zwischen Produktionskosten und Nennwert)
+- Kreditschöpfung durch Geschäftsbanken und Kreditinstitute
+- Jedes Aktivum wird durch ein Passivum gespiegelt.
+:::
+
+::: {.column width="45%"}
+<!-- Platz für Abbildung: z. B. Bilanzschema (Aktiva/Passiva) -->
+:::
+:::
+
+## Fragen (Cecchetti und Schoenholtz) {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Wie können Sie für einen Kaffee bezahlen?
+- Welche Zahlungsart ist am günstigsten für die Empfängerin?
+- Was hat Geld mit Arbeitsspezialisierung zu tun?
+- Was wäre eine angemessene Rechnungs- und Verrechnungseinheit einer bargeldlosen Ökonomie?
+:::
+
+::: {.column width="50%"}
+- Was für Beispiele von Direktüberweisungen kennen Sie?
+- Was sind die Vor- und Nachteile als EU-Land dem Euroraum beizutreten?
+- Warum sind Tomaten, Ziegelsteine und Rinder keine guten Geldwaren?
+- Was sind die aktuellen Schätzungen für die Geldaggreagte M1, M2, M3 und M4 in Österreich?
+:::
+:::
+
+# Finanzinstrumente
+
+<div style="text-align:center;">
+<span class='fa-stack' style='font-size:7rem;'>
+  <i class='fas fa-circle fa-stack-2x blue'></i>
+  <i class='fas fa-file-contract fa-stack-1x fa-inverse'></i>
+</span>
+</div>
+
+::: footer
+:::
+
+## Geld ausborgen {.medium}
+
+::: columns
+::: {.column width="50%"}
+Direkte Kredite:
+
+- Privatkredit
+- Schuldschein
+- Geldleiher:innen und Kredithaie
+:::
+
+::: {.column width="50%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Geld ausborgen {.smaller}
+
+::: columns
+::: {.column width="50%"}
+Indirekte Kredite
+
+- Banken vermitteln zwischen Einleger:innen und Kreditnehmer:innen
+    - Riskentransformation
+    - Fristentransformation
+:::
+
+::: {.column width="50%"}
+- Wer sich Geld ausborgt, schafft gleichzeitig Aktiva (wofür das Geld ausgegeben wird) und Passiva (die Schulden)
+- Wer Geld herborgt schafft ebenfalls Aktive (die Kreditsumme) und Passiva (wo das Geld dafür herkommt)
+:::
+:::
+
+## Geld ausborgen {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Nicht alle Kredite sind einlagengedeckt: Banken schaffen (schöpfen) Geld, indem sie Kredite vergeben.
+- Kredite sind Aktivposten (*assets*): können gehandelt werden und daher als Eigenkapital (*collateral*) für weitere Kredite verwendet werden, durch die wieder Geld geschöpft wird.
+:::
+
+::: {.column width="50%"}
+- Nur ein Bruchteil der Guthaben und Kredite sind als Banknoten im Umlauf. Für den Rest reicht die Verrechnung von Zahlungen gegeneinander (*clearing*).
+:::
+:::
+
+## Direkte und indirekte Kreditvergabe {.medium}
+
+- Trend zur Institutionalisierung von Direktkrediten (Unterschied verschwimmt).
+- Moderne Unterscheidung: Wer besitzt das Aktivum (den Kredit):
+    - Direktkredit: Gläubiger:in
+    - Indirekt: Gläubiger:in besitzt Anspruch gegenüber einer Institution, diese eine gegenüber Kreditnehmer:in.
+
+## Finanzinstrumente {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Vertragliche Zahlungs- oder Wertübertragungsverpflichtung
+- Zahlungsmittel (Aktienoptionen statt Gehaltserhöhung)
+- Wertspeicher
+- Risikotransfer
+:::
+
+::: {.column width="45%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Risikotransfer {.medium}
+
+::: columns
+::: {.column width="60%"}
+- Direkte Kreditvergabe: Entweder vertragsgemäße Erfüllung oder Totalausfall.
+- Indirekte Kreditvergabe: Teilweiser Ausfall, bei unabhängigen Kreditrisiken überschaubar.
+- Kreditausfallrisiken nicht immer unabhängige Zufallsereignisse (Immobilienkrise 2007)
+:::
+
+::: {.column width="40%"}
+<!-- Platz für Abbildung: z. B. Kreditausfälle in der Immobilienkrise -->
+:::
+:::
+
+## Informationen in Finanzinstrumenten {.medium}
+
+::: columns
+::: {.column width="60%"}
+- Finanzinstrumente sind komplex, sie zu verstehen kostet Zeit oder Geld (die Zeit von Anwält:innen).
+- Entwicklung eines Finanzinstruments bedeutet Standardisierung und Übersetzung.
+- Absicherung gegen asymmetrische Information
+:::
+
+::: {.column width="40%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Einfache und derivative Instrumente {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Einfache Finanzinstrumente: Wert und Zahlungen beziehen sich ausschließlich auf wirtschaftlichen Status der Kreditnehmerin (Zinsen, Dividenden, ...).
+:::
+
+::: {.column width="50%"}
+- Derivative Instrumente: Wert und Zahlungen beziehen sich auf Wertentwicklung anderer Instrumente.
+- Derivative Instrumente: Verteilen Risiken unter vielen Investor:innen.
+:::
+:::
+
+## Instrumente bewerten {.medium}
+
+::: columns
+::: {.column width="50%"}
+Ein Finanzinstrument hat einen höheren Preis, wenn eine höhere Zahlung zu einem baldigeren Zeitpunkt und mit höherer Wahrscheinlichkeit geleistet wird.
+:::
+
+::: {.column width="50%"}
+- Höhe der vereinbarten Zahlungen.
+- Zeitpunkt der vereinbarten Zahlungen.
+- Umstände der vereinbarten Zahlungen.
+:::
+:::
+
+## Beispiele für Finanzinstrumente {.medium}
+
+::: columns
+::: {.column width="50%"}
+- Bankkredite
+- Anleihen (Staaten und Firmen)
+- Immobilienhypotheken
+- Aktien
+- Besicherte Wertpapiere (*asset backed securities*)
+:::
+
+::: {.column width="50%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Riskentransformation {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Versicherungsverträge: Auszahlung wenn Ereignis eintritt.
+- Termingeschäfte (*futures*): Geschäft wird in der Zukunft zu zukünftigen Preisen abgeschlossen.
+- Optionen: Anrecht, ein Geschäft in der Zukunft zu festgelegtem Preis abzuschließen.
+- Swaps: Vertrag, in der Zukunft zwei Zahlungen (oft in unterschiedlichen Währungen) abzuschließen.
+:::
+
+::: {.column width="50%"}
+<!-- Platz für eine Abbildung -->
+:::
+:::
+
+## Finanzmärkte {.medium}
+
+::: columns
+::: {.column width="50%"}
+- Liquidität
+- Informationen sammeln und kommunizieren
+- Organisieren Riskenteilung
+:::
+
+::: {.column width="50%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Transaktionskosten {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Finanzmärkte verteilen Liquidität
+- Transaktionskosten fallen an, sollen aber niedrig sein
+- Informationen vor allem über Preise
+:::
+
+::: {.column width="45%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Informative Preise {.smaller}
+
+- Preise werden durch Wettbewerb geformt: Hohe Preise sprechen für geringes Angebot oder hohe Nachfrage.
+- Ohne Zusatzinformationen bietet das eine Idee an, welche Finanzinstrumente von ihren Besitzer:innen und anderen Käufer:innen als vielversprechend gesehen werden.
+- Große Gruppen irren sich selten, aber wenn, dann sehr (Blasenbildung)
+
+## Primäre und sekundäre Märkte {.medium}
+
+::: columns
+::: {.column width="50%"}
+- Primärmarkt: Neue Finanzinstrumente
+- Sekundärmarkt: Alle weiteren Besitzer:innenwechsel
+:::
+
+::: {.column width="50%"}
+<!-- Platz für Abbildung: z. B. Schema Primär- und Sekundärmarkt -->
+:::
+:::
+
+## Zentralisierte und Freiverkehrsmärkte {.smaller}
+
+::: columns
+::: {.column width="55%"}
+- Zentralisierte Märkte: Händler:innen treffen sich an einem physischen Ort.
+- Freiverkehr: Dezentralisierte Märkte mit elektronischen Transaktionen
+- Elektronische Netzwerke: Plattformen die Verkäufer:innen und Käufer:innen vernetzen (ohne *broker* und *dealer)*.
+:::
+
+::: {.column width="45%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Einteilung nach Funktion {.smaller}
+
+- Debt and Equity: Einfache Finanzinstrumente (Kredite und Anteile) werden für Geld verkauft.
+- Derivativmärkte: Finanzderivate werden für zukünftigen Zahlungen gehandelt.
+- Kredite auf Geldmärkten haben eine Laufzeit von unter einem Jahr, längere Laufzeiten werden auf Anleihenmärkten gehandelt.
+
+## Finanzmärkte wie man sie sich vorstellt {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Geringe Transaktionskosten
+- Zutreffende und zugängliche Informationen
+- Investor:innenschutz gegen Diebstahl, Betrug, Manipulation.
+:::
+
+::: {.column width="45%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Finanzmärkte wie sie sind {.smaller}
+
+Finanzmärkte sind von Machtungleichgewicht und Machtausübung geprägt.
+
+::: columns
+::: {.column width="50%"}
+- Größe und Reputation bestimmen Aktionsradius, daraus entsteht **asymmetrische Information**.
+- Absprachen und gegenseitige Verpflichtungen sind intransparent, daraus entstehen **verzerrte Preissignale**.
+:::
+
+::: {.column width="50%"}
+- Investitionen in Überbewertung ist profitabel, daraus entstehen **Blasen**.
+- Handlungsspielraum von kleinen Anleger:innen ist begrenzt, daraus entsteht **Übervorteilung**.
+:::
+:::
+
+## Finanzinstitutionen {.medium}
+
+::: columns
+::: {.column width="60%"}
+- Kombinieren langfristige Kredite mit täglich fälligen Einlagen -- Fristentransformation
+- Kombinieren viele Kredite (oder andere Instrumente) mit unterschiedlichem Ausfallrisiko -- Riskentransformation.
+- Organisieren Zugang zu Finanzmärkten -- Transaktionskosten
+:::
+
+::: {.column width="40%"}
+<!-- Platz für Abbildung -->
+:::
+:::
+
+## Struktur der Finanzindustrie {.smaller}
+
+- Banken (*depository institutions*): Nehmen Einlagen und vergeben Kredite
+- Versicherungen: Nehmen Prämien, legen diese an, zahlen Ansprüche aus (hohe Liquidität).
+- Pensionsfonds: Nehmen Einzahlungen, legen diese an, zahlen Ansprüche aus (geringe Liquidität).
