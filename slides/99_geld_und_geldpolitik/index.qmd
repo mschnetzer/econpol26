@@ -299,6 +299,7 @@ Source: Museum of the National Bank of Belgium ([museum.nbb.be](https://museum.n
 
 ::: {.column width="45%"}
 ```{r}
+#| label: plot-zb
 #| echo: false
 #| warning: false
 #| message: false
@@ -366,6 +367,16 @@ if (file.exists(f)) {
 ```
 :::
 :::
+
+## Code: Leitzins der Bank of England {.smaller}
+
+```{=html}
+<style>.reveal pre code { max-height: none; }</style>
+```
+
+```{r ref.label="plot-zb", echo=TRUE, eval=FALSE}
+```
+
 ## Fragen (Cecchetti und Schoenholtz) {.smaller}
 
 ::: columns
@@ -541,6 +552,7 @@ Source: Museum of the National Bank of Belgium ([museum.nbb.be](https://museum.n
 
 ::: {.column width="45%"}
 ```{r}
+#| label: plot-milk
 #| echo: false
 #| warning: false
 #| message: false
@@ -642,6 +654,11 @@ if (ok_file(f)) {
 :::
 :::
 
+## Code: Preis eines Pints Milch (ONS) {.smaller}
+
+```{r ref.label="plot-milk", echo=TRUE, eval=FALSE}
+```
+
 ## Inflation {.medium}
 
 ::: columns
@@ -736,6 +753,7 @@ geom_pemstream <- function(mapping = NULL, data = NULL,
 
 ::: {.column width="50%"}
 ```{r}
+#| label: plot-stream
 #| echo: false
 #| warning: false
 #| message: false
@@ -837,6 +855,11 @@ if (file.exists(f)) {
 :::
 :::
 
+## Code: Geldaggregate im Euro-Raum (EZB) {.smaller}
+
+```{r ref.label="plot-stream", echo=TRUE, eval=FALSE}
+```
+
 ## Geld drucken {.medium}
 
 ::: columns
@@ -916,16 +939,143 @@ Indirekte Kredite
 
 ## Geld ausborgen {.smaller}
 
+```{r}
+#| label: fn-waffle
+#| include: false
+# --- eigene Geom-Definition (nicht geladen, sondern hier neu definiert) ---
+library(tidyverse)
+
+StatPemwaffle <- ggplot2::ggproto("StatPemwaffle", ggplot2::Stat,
+  required_aes = c("y", "fill"),
+  compute_panel = function(data, scales, n_cols = 10, tile_size = 0.9,
+                           stack_order = NULL) {
+    if (is.null(stack_order)) {
+      data$fill <- factor(data$fill)
+    } else {
+      data$fill <- factor(data$fill, levels = stack_order)
+    }
+    # pro Panel auf genau 100 Kacheln normieren
+    total <- sum(data$y)
+    data$n_units <- round(data$y / total * 100)
+    diff <- 100 - sum(data$n_units)
+    if (diff != 0) {
+      idx <- which.max(data$n_units)
+      data$n_units[idx] <- data$n_units[idx] + diff
+    }
+    data <- data[data$n_units > 0, ]
+    data <- data[order(data$fill), ]
+    reps <- rep(seq_len(nrow(data)), data$n_units)
+    out <- data[reps, , drop = FALSE]
+    out$square_id <- seq_len(nrow(out)) - 1
+    out$x <- out$square_id %% n_cols
+    out$y <- out$square_id %/% n_cols
+    out$width  <- tile_size
+    out$height <- tile_size
+    out
+  }
+)
+
+geom_pemwaffle <- function(mapping = NULL, data = NULL, position = "identity",
+                           n_cols = 10, tile_size = 0.9, stack_order = NULL,
+                           na.rm = FALSE, show.legend = NA,
+                           inherit.aes = TRUE, ...) {
+  ggplot2::layer(
+    stat = StatPemwaffle, geom = ggplot2::GeomTile,
+    mapping = mapping, data = data, position = position,
+    show.legend = show.legend, inherit.aes = inherit.aes,
+    params = list(n_cols = n_cols, tile_size = tile_size,
+                  stack_order = stack_order, na.rm = na.rm, ...)
+  )
+}
+```
+
 ::: columns
 ::: {.column width="50%"}
 - Nicht alle Kredite sind einlagengedeckt: Banken schaffen (schöpfen) Geld, indem sie Kredite vergeben.
 - Kredite sind Aktivposten (*assets*): können gehandelt werden und daher als Eigenkapital (*collateral*) für weitere Kredite verwendet werden, durch die wieder Geld geschöpft wird.
+- Nur ein Bruchteil der Guthaben und Kredite sind als Banknoten im Umlauf. Für den Rest reicht die Verrechnung von Zahlungen gegeneinander (*clearing*).
 :::
 
 ::: {.column width="50%"}
-- Nur ein Bruchteil der Guthaben und Kredite sind als Banknoten im Umlauf. Für den Rest reicht die Verrechnung von Zahlungen gegeneinander (*clearing*).
+```{r}
+#| label: plot-waffle
+#| echo: false
+#| fig-format: svg
+#| fig-width: 5
+#| fig-height: 5
+#| fig-align: center
+
+# Daten: FRED (St. Louis Fed), einmal laden und als CSV neben der qmd speichern
+get_fred <- function(id) {
+  f <- paste0("fred_", id, ".csv")
+  if (!file.exists(f)) {
+    try(download.file(
+      paste0("https://fred.stlouisfed.org/graph/fredgraph.csv?id=", id),
+      f, mode = "wb", quiet = TRUE), silent = TRUE)
+  }
+  if (!file.exists(f)) return(NULL)
+  d <- read.csv(f)
+  names(d) <- c("date", "value")
+  d$date  <- as.Date(d$date)
+  d$value <- suppressWarnings(as.numeric(d$value))
+  d[!is.na(d$value), ]
+}
+
+cur <- get_fred("CURRCIR")   # Bargeld im Umlauf (Mrd. USD)
+m2  <- get_fred("M2SL")      # Geldmenge M2 (Mrd. USD)
+
+if (is.null(cur) || is.null(m2)) {
+  cat("Daten konnten nicht geladen werden.")
+} else {
+  yrs <- c(1960, 1980, 2000, 2025)
+
+  d <- inner_join(rename(cur, bar = value), rename(m2, m2 = value), by = "date") |>
+    mutate(year = as.integer(format(date, "%Y"))) |>
+    filter(year %in% yrs) |>
+    group_by(year) |>
+    summarise(bar = mean(bar), m2 = mean(m2), .groups = "drop") |>
+    mutate(Giralgeld = m2 - bar,
+           panel = factor(paste0(year, ": ", round(100 * bar / m2), " % Bargeld"),
+                          levels = paste0(year, ": ", round(100 * bar / m2), " % Bargeld"))) |>
+    select(panel, Bargeld = bar, Giralgeld) |>
+    pivot_longer(c(Bargeld, Giralgeld), names_to = "art", values_to = "wert")
+
+  p <- ggplot(d, aes(y = wert, fill = art)) +
+    geom_pemwaffle(stack_order = c("Bargeld", "Giralgeld")) +
+    facet_wrap(~panel, nrow = 2) +
+    coord_equal() +
+    scale_y_reverse() +
+    scale_fill_manual(values = c(Bargeld = "#e76254", Giralgeld = "#5d8198"),
+                      name = NULL) +
+    labs(title = "Bargeld ist nur ein Teil des Geldes",
+         subtitle = "1 Kachel = 1 % der Geldmenge M2 (USA)",
+         caption = "Quelle: FRED (CURRCIR, M2SL), Jahresdurchschnitte") +
+    theme_void(base_size = 14) +
+    theme(
+      plot.background  = element_rect(fill = "transparent", colour = NA),
+      panel.background = element_rect(fill = "transparent", colour = NA),
+      plot.title    = element_text(colour = "#343a40", face = "bold", hjust = 0),
+      plot.subtitle = element_text(colour = "#868e96", hjust = 0,
+                                   margin = margin(b = 8)),
+      plot.caption  = element_text(colour = "#868e96", size = 9, hjust = 0),
+      strip.text    = element_text(colour = "#343a40", face = "bold",
+                                   margin = margin(b = 4)),
+      legend.position = "bottom",
+      legend.text = element_text(colour = "#495057")
+    )
+  print(p)
+}
+```
 :::
 :::
+
+## Code: Bargeld und Giralgeld (FRED) {.smaller}
+
+```{r ref.label="plot-waffle", echo=TRUE, eval=FALSE}
+```
+
+
+<!-- ====================================================================== -->
 
 ## Direkte und indirekte Kreditvergabe {.medium}
 
@@ -951,17 +1101,207 @@ Indirekte Kredite
 
 ## Risikotransfer {.medium}
 
+```{r}
+#| label: fn-bump
+#| include: false
+# --- eigene Geom-Definition (nicht geladen, sondern hier neu definiert) ---
+library(tidyverse)
+
+StatPembumpRank <- ggplot2::ggproto("StatPembumpRank", ggplot2::Stat,
+  required_aes = c("x", "y", "colour"),
+  compute_panel = function(data, scales) {
+    data$colour <- factor(data$colour)
+    do.call(rbind, lapply(split(data, data$x), function(d) {
+      d$y <- rank(-d$y, ties.method = "first")
+      d
+    }))
+  }
+)
+
+StatPembumpLine <- ggplot2::ggproto("StatPembumpLine", ggplot2::Stat,
+  required_aes = c("x", "y", "colour"),
+  compute_panel = function(data, scales, n_interp = 30, sigmoid_k = 10) {
+    data$colour <- factor(data$colour)
+    ranked <- do.call(rbind, lapply(split(data, data$x), function(d) {
+      d$y <- rank(-d$y, ties.method = "first")
+      d
+    }))
+    do.call(rbind, lapply(split(ranked, ranked$colour), function(d) {
+      d <- d[order(d$x), ]
+      if (nrow(d) < 2) return(d[0, ])
+      segs <- lapply(seq_len(nrow(d) - 1), function(i) {
+        x1 <- d$x[i]; x2 <- d$x[i + 1]
+        y1 <- d$y[i]; y2 <- d$y[i + 1]
+        if (y1 == y2) {
+          seg <- data.frame(x = c(x1, x2), y = c(y1, y2))
+        } else {
+          t <- seq(0, 1, length.out = n_interp)
+          s <- 1 / (1 + exp(-sigmoid_k * (t - 0.5)))
+          s <- (s - min(s)) / (max(s) - min(s))
+          seg <- data.frame(x = x1 + t * (x2 - x1),
+                            y = y1 + (y2 - y1) * s)
+        }
+        seg$colour <- d$colour[i]
+        seg$PANEL  <- d$PANEL[1]
+        seg$group  <- d$group[1]
+        seg
+      })
+      do.call(rbind, segs)
+    }))
+  }
+)
+
+StatPembumpLabel <- ggplot2::ggproto("StatPembumpLabel", ggplot2::Stat,
+  required_aes = c("x", "y", "colour"),
+  compute_panel = function(data, scales, label_pos = "first_last", nudge_y = -0.3) {
+    data$colour <- factor(data$colour)
+    ranked <- do.call(rbind, lapply(split(data, data$x), function(d) {
+      d$y <- rank(-d$y, ties.method = "first")
+      d
+    }))
+    if (label_pos == "last") {
+      ranked <- ranked[ranked$x == max(ranked$x), ]
+    } else if (label_pos == "first") {
+      ranked <- ranked[ranked$x == min(ranked$x), ]
+    } else if (label_pos == "first_last") {
+      ranked <- ranked[ranked$x %in% c(min(ranked$x), max(ranked$x)), ]
+    }
+    ranked$y <- ranked$y + nudge_y
+    ranked
+  }
+)
+
+geom_pembumpchart <- function(mapping = NULL, data = NULL, position = "identity",
+                              n_interp = 30, sigmoid_k = 10,
+                              point_size = 1.8, line_width = 0.8,
+                              labels = c("first_last", "last", "first", "all", "none"),
+                              label_size = 3.2, label_nudge_y = -0.3,
+                              na.rm = FALSE, show.legend = NA,
+                              inherit.aes = TRUE, ...) {
+  labels <- match.arg(labels)
+
+  line_layer <- ggplot2::layer(
+    stat = StatPembumpLine, geom = ggplot2::GeomLine,
+    mapping = mapping, data = data, position = position,
+    show.legend = show.legend, inherit.aes = inherit.aes,
+    params = list(n_interp = n_interp, sigmoid_k = sigmoid_k,
+                  linewidth = line_width, na.rm = na.rm, ...)
+  )
+  point_layer <- ggplot2::layer(
+    stat = StatPembumpRank, geom = ggplot2::GeomPoint,
+    mapping = mapping, data = data, position = position,
+    show.legend = show.legend, inherit.aes = inherit.aes,
+    params = list(size = point_size, na.rm = na.rm)
+  )
+  out <- list(line_layer, point_layer)
+
+  if (labels != "none") {
+    label_mapping <- mapping
+    if (is.null(label_mapping)) {
+      label_mapping <- ggplot2::aes(label = ggplot2::after_stat(colour))
+    } else if (is.null(label_mapping$label)) {
+      label_mapping <- modifyList(label_mapping,
+                                  ggplot2::aes(label = ggplot2::after_stat(colour)))
+    }
+    label_layer <- ggplot2::layer(
+      stat = StatPembumpLabel, geom = ggplot2::GeomText,
+      mapping = label_mapping, data = data, position = position,
+      show.legend = FALSE, inherit.aes = inherit.aes,
+      params = list(label_pos = labels, nudge_y = label_nudge_y,
+                    hjust = 0.5, size = label_size, na.rm = na.rm)
+    )
+    out <- c(out, list(label_layer))
+  }
+  out
+}
+```
+
 ::: columns
-::: {.column width="60%"}
+::: {.column width="55%"}
 - Direkte Kreditvergabe: Entweder vertragsgemäße Erfüllung oder Totalausfall.
 - Indirekte Kreditvergabe: Teilweiser Ausfall, bei unabhängigen Kreditrisiken überschaubar.
 - Kreditausfallrisiken nicht immer unabhängige Zufallsereignisse (Immobilienkrise 2007)
 :::
 
-::: {.column width="40%"}
-<!-- Platz für Abbildung: z. B. Kreditausfälle in der Immobilienkrise -->
+::: {.column width="45%"}
+```{r}
+#| label: plot-bump
+#| echo: false
+#| fig-format: svg
+#| fig-width: 5
+#| fig-height: 4.6
+#| fig-align: center
+
+# Daten: FRED, Ausfallquoten bei US-Geschäftsbanken (saisonbereinigt, Quartale)
+get_fred <- function(id) {
+  f <- paste0("fred_", id, ".csv")
+  if (!file.exists(f)) {
+    try(download.file(
+      paste0("https://fred.stlouisfed.org/graph/fredgraph.csv?id=", id),
+      f, mode = "wb", quiet = TRUE), silent = TRUE)
+  }
+  if (!file.exists(f)) return(NULL)
+  d <- read.csv(f)
+  names(d) <- c("date", "value")
+  d$date  <- as.Date(d$date)
+  d$value <- suppressWarnings(as.numeric(d$value))
+  d[!is.na(d$value), ]
+}
+
+ids <- c(Hypotheken          = "DRSFRMACBS",
+         Kreditkarten        = "DRCCLACBS",
+         Firmenkredite = "DRBLACBS",
+         `Gewerbeimmo.` = "DRCRELEXFACBS")
+
+dl <- lapply(ids, get_fred)
+
+if (any(sapply(dl, is.null))) {
+  cat("Daten konnten nicht geladen werden.")
+} else {
+  jahre <- seq(1992, 2025, by = 3)
+
+  d <- bind_rows(dl, .id = "art") |>
+    mutate(jahr = as.integer(format(date, "%Y"))) |>
+    filter(jahr %in% jahre) |>
+    group_by(art, jahr) |>
+    summarise(wert = mean(value), .groups = "drop")
+
+  p <- ggplot(d, aes(x = jahr, y = wert, colour = art)) +
+    geom_pembumpchart(point_size = 2.4, line_width = 1.1,
+                      labels = "first_last", label_size = 3.3) +
+    annotate("text", x = 2010, y = 0.35, label = "Immobilienkrise",
+             colour = "#868e96", size = 3.6, fontface = "italic") +
+    scale_y_reverse(expand = expansion(add = c(0.6, 0.4))) +
+    scale_x_continuous(expand = expansion(mult = 0.22)) +
+    scale_colour_manual(values = c(Hypotheken          = "#d03161",
+                                   Kreditkarten        = "#e76254",
+                                   Firmenkredite = "#5d8198",
+                                   `Gewerbeimmo.` = "#d37b00")) +
+    coord_cartesian(clip = "off") +
+    labs(title = "Wo fallen Kredite aus?",
+         subtitle = "Rang der Ausfallquote nach Kreditart (1 = höchste), alle 3 Jahre",
+         caption = "Quelle: FRED (DRSFRMACBS, DRCCLACBS, DRBLACBS, DRCRELEXFACBS)") +
+    theme_void(base_size = 14) +
+    theme(
+      plot.background  = element_rect(fill = "transparent", colour = NA),
+      panel.background = element_rect(fill = "transparent", colour = NA),
+      plot.title    = element_text(colour = "#343a40", face = "bold", hjust = 0),
+      plot.subtitle = element_text(colour = "#868e96", size = 10, hjust = 0,
+                                   margin = margin(b = 8)),
+      plot.caption  = element_text(colour = "#868e96", size = 8, hjust = 0),
+      legend.position = "none"
+    )
+  print(p)
+}
+```
 :::
 :::
+
+## Code: Ausfallquoten nach Kreditart (FRED) {.smaller}
+
+```{r ref.label="plot-bump", echo=TRUE, eval=FALSE}
+```
+
 
 ## Informationen in Finanzinstrumenten {.medium}
 
