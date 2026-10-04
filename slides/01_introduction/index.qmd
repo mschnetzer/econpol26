@@ -7,9 +7,9 @@ title: |
         <i class='fas {{< var course.icon >}} fa-stack-1x fa-inverse' style='margin-top:-5pt'></i>
       </span><br>
     {{< var course.subtitle >}}
-author: '{{< var instructor1.name >}}'
+author: '{{< var instructor1.name-wo-title >}} ⋅ {{< var instructor2.name-wo-title >}}'
 subtitle: Introduction
-date: October 06, 2025
+date: October 05, 2026
 date-format: long
 from: markdown+emoji
 bibliography: ../../data/lit/wipol_advanced.bib
@@ -35,33 +35,29 @@ format:
     pause: true
 ---
 
-## Course info {.smaller}
+## Lecturers {.smaller}
 
 ::: columns
 ::: {.column width="30%"}
-![](img/profile-pic.jpg){.absolute top="20%" left="7%" style="display: inline-block; width: 150px; height: 150px;border-radius:50%;"}
+![](img/schnetzer.jpg){.absolute top="20%" left="7%" style="display: inline-block; width: 150px; height: 150px;border-radius:50%;"}
 
-::: {.absolute top="60%" left="5%" style="display: block; font-size: 5.5rem;"}
-<span class='fa-stack'>
-  <i class='fas {{< var course.icon-bg >}} fa-stack-2x blue'></i>
-  <i class='fas {{< var course.icon >}} fa-stack-1x fa-inverse' style='margin-top:-5pt'></i>
- </span>
+![](img/mokre.jpg){.absolute top="55%" left="7%" style="display: inline-block; width: 150px; height: 150px;border-radius:50%;"}
 :::
 
-:::
 ::: {.column width="70%" .iconlist}
 ::: {.absolute top="120"}
-- <i class="fa-solid fa-user icon"></i> {{< var instructor.name-wo-title >}}
-- <i class="fa-solid fa-building icon"></i> {{< var instructor.employer >}}
-- <i class="fa-solid fa-envelope icon"></i> [{{< var instructor.email >}}](mailto:{{< var instructor.email >}})
-- <i class="fa-solid fa-globe icon"></i> [{{< var instructor.url >}}]({{< var instructor.url >}})
-- <i class="fa-brands fa-twitter icon"></i> [{{< var instructor.twitter >}}](https://www.twitter.com/{{< var instructor.twitter >}})
+- {{< fa user >}} &nbsp; {{< var instructor1.name >}}
+- {{< fa globe >}} &nbsp; [{{< var instructor1.url >}}]({{< var instructor1.url >}})
+- {{< fa envelope >}} &nbsp; {{< var instructor1.email >}}
+- {{< fa brands github >}} &nbsp; [{{< var instructor1.github >}}](https://www.github.com/{{< var instructor1.github >}})
 
 <div><br></div>
-- <i class="fa-solid fa-calendar-alt icon"></i> {{< var course.dates >}}
-- <i class="fa-solid fa-clock icon"></i> {{< var course.time >}}
-- <i class="fa-solid fa-location-dot icon"></i> {{< var course.location >}}
-- <i class="fa-solid fa-link icon"></i> [{{< var course.url >}}]({{< var course.url >}})
+
+- {{< fa user >}} &nbsp; {{< var instructor2.name >}}
+- {{< fa globe >}} &nbsp; [{{< var instructor2.url >}}]({{< var instructor2.url >}})
+- {{< fa envelope >}} &nbsp; {{< var instructor2.email >}}
+- {{< fa brands github >}} &nbsp; [{{< var instructor2.github >}}](https://www.github.com/{{< var instructor2.github >}})
+
 :::
 :::
 :::
@@ -72,13 +68,23 @@ format:
 "A picture is worth a thousand words"
 :::
 
-This course approaches contemporary issues of economic policy by analyzing innovative or iconic data visualizations. We analyse selected illustrations, discuss the underlying data, the theoretical background and policy implications. We will assemble plots in class and study the basics of data visualization.
+This course approaches monetary policy by analyzing data and creating data visualizations. We study selected illustrations, discuss the underlying data, the theoretical background and policy implications. We will assemble plots in class and study the basics of data visualization.
 
 You will gain:
 
-- an overview of [contemporary debates in economic policy]{.marker-hl} 
+- an overview of [economic issues in monetary policy]{.marker-hl} 
 - a basic understanding of [principles of data visualization]{.marker-hl}
 - knowledge how to [enrich academic publications]{.marker-hl} with informative graphs
+
+## Collaboration with OeNB {.medium}
+
+This course is a collaboration with the [Austrian National Bank](https://www.oenb.at) (OeNB). The bank will exclusively provide datasets for this class to create data visualizations. 
+
+\
+
+![](img/oenb.png){fig-align="center" height="90px"}
+
+There will be an [award ceremony]{.marker-hl} at the end of the course where the best visualizations will be presented at the OeNB.
 
 ## Who are you?
 
@@ -154,12 +160,12 @@ The raw data for the figures are available as CSV files. The charts should then 
 ::: {.column width="50%"}
 ### Chart presentation
 ::: {.altlist}
-- Research question [Which economic policy question do you want to answer with your chart?]{style="font-size:1.3rem"}
+- Research question
 - Data
 - Chart 
-- Conclusion [What can we learn from the data visualization for economic policy?]{style="font-size:1.3rem"}
+- Conclusion
 :::
-[**Deadline: January 18, 2026**]{.marker-hl}
+[**Deadline: January 11, 2027**]{.marker-hl}
 :::
 
 ::: {.column width="50%"}
@@ -174,7 +180,7 @@ The raw data for the figures are available as CSV files. The charts should then 
 - Conclusion
 - Code
 :::
-[**Deadline: January 31, 2026**]{.marker-hl}
+[**Deadline: January 31, 2027**]{.marker-hl}
 :::
 :::
 
@@ -227,11 +233,11 @@ The raw data for the figures are available as CSV files. The charts should then 
 
 ## Feedback, cooperation and help {.smaller}
 
-Let me know your [feedback]{.marker-hl} on the course anytime. If possible, I will try to incorporate your feedback immediately. At least, I will consider it for future courses. 
+Let us know your [feedback]{.marker-hl} on the course anytime. If possible, we will try to incorporate your feedback immediately. At least, we will consider it for future courses. 
 
 As some of you might already have advanced coding skills in R, please support each other and collaborate. This does not mean that one person does all the coding and shares with all colleagues. Students should have an intrinsic motivation to improve their coding skills but [cooperate to learn from each other]{.marker-hl}. 
 
-There is a forum on the learning platform for exchange among students. Please also consult support platforms like [Stack Overflow](https://stackoverflow.com) or take a look at the cheatsheets:
+Please also consult support platforms like [Stack Overflow](https://stackoverflow.com) or take a look at the cheatsheets:
 
 ::: {style="text-align:center;"}
 [![](../../data/img/tidyr.png){width=140}](https://posit.co/wp-content/uploads/2022/10/tidyr.pdf) [![](../../data/img/dplyr.png){width=140}](https://posit.co/wp-content/uploads/2022/10/data-transformation-1.pdf) [![](../../data/img/ggplot2.png){width=140}](https://posit.co/wp-content/uploads/2022/10/data-visualization-1.pdf) [![](../../data/img/rmarkdown.png){width=140}](https://posit.co/wp-content/uploads/2022/10/rmarkdown-1.pdf)
