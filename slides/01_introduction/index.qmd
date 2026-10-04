@@ -125,9 +125,9 @@ schedule |> arrange(Date) |> select(-c(Chart,Slides,Code,Data)) |>
         tab_style(location = cells_body(),
                   style = cell_text(weight = 200)) |>
         fmt_index(columns = Content, pattern = "{x}.") |>
-        cols_width(1:3 ~pct(15),
-                    4 ~ pct(25),
-                    5 ~ pct(15)) |>
+        cols_width(1:3 ~pct(12),
+                    4 ~ pct(30),
+                    5 ~ pct(14)) |>
         cols_align(align = "left") |>
         cols_align(align = "center", columns = 5) |>
         as_raw_html(inline_css = FALSE) 
@@ -251,4 +251,257 @@ Please also consult support platforms like [Stack Overflow](https://stackoverflo
 | ![](../../data/img/schwabish.jpg) | **Jonathan Schwabish** <br> *Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks* <br> Columbia University Press <br> ISBN-13: 9780231193115 |
 | ![](../../data/img/spiegelhalter.jpeg) | **David Spiegelhalter** <br> *The Art of Statistics: Learning from Data* <br> Penguin Books UK <br> ISBN-13: 9780241258767 |
 : {tbl-colwidths="[20,80]"}
+:::
+
+
+# Empirical Monetary Policy Research
+
+<center>
+![](../../data/img/avatar_laptop.png){height=350}
+</center>
+
+::: footer
+:::
+
+
+## The era of evidence in economics {.smaller}
+
+![](img/era_of_evidence.png){fig-align="center" height="390"}
+
+::: {style="font-size:1.5rem;font-weight:100;" .secfont}
+The figure shows the evolution of economics literature by text mining the 500 most-cited titles in top journals by decade. There is a shift from advancing theory towards [empirical evidence]{.hl .hl-dred}.
+:::
+
+::: {.aside}
+Source: @brice:2019
+:::
+
+## The rise of empirical articles {.smaller}
+
+::: {.tbl-larger .recommended-lit}
+|   |   |
+|---|---|
+| ![](img/empirical.png) | There is a distinct [rise of empirical papers]{.hl .hl-dred} in economics. In the 1980s, around one third of publications was empirical. Today, it's more than half. This trend is present in all sub-fields of the discipline (labor, finance, macro, etc.). <br><br> The analyis is based on 134,892 papers published in 80 journals between 1980 and 2015. Papers are labeled as empirical if they use data to estimate economically meaningful parameters. |
+: {tbl-colwidths="[50,50]"}
+:::
+
+::: {.aside}
+Source: @angrist:2017
+:::
+
+## Evidence-based economic policy {.smaller}
+
+::: {.incremental}
+- [Data collection:]{.secfont .hl .hl-blue} Collection of relevant and high-quality data (administrative data, surveys, interviews, observations, etc.). Researchers should be aware of the qualities but also of the flaws of the data.
+- [Data analysis:]{.secfont .hl .hl-blue} The design and type of analysis depends on the question being asked and resources available. The methods range from qualitative to quantitative analysis. The choice of application might unwittingly involve normative reflections by the researcher.
+- [Policy suggestions:]{.secfont .hl .hl-blue} A major goal of empirical economics is to serve and improve policy making. The findings should, however, be carefully interpreted with regard to the limitations of empirical analyis. Economic policy, even if it's evidence-based, is affected by norms, beliefs, etc.
+:::
+
+# Mind the (data) gap!
+
+<center>
+![](../../data/img/avatar_finger.png){height=350}
+</center>
+
+::: footer
+:::
+
+## The limits of data {.medium}
+
+::: {.columns}
+::: {.column width=30%}
+![](img/bias.png)
+:::
+::: {.column width=70%}
+- Data is never a perfect reflection of the world!
+- It's only a subset: not crime but [reported]{.hl .hl-dred} crime
+- Information is collected by humans and processed by machines: imprecisions and errors are [inevitable]{.hl .hl-blue}!
+- Be aware of potential (cognitive and statistical) biases!
+:::
+:::
+
+::: {.aside}
+Source: [XKCD](https://xkcd.com/2618/)
+:::
+
+## Invisible women
+
+::: {.tbl-larger .recommended-lit}
+|   |   |
+|---|---|
+| ![](img/perez.jpg) | **Caroline Criado Perez** <br> *Exposing Data Bias in a World Designed for Men* <br> Random House Uk <br> ISBN: 978-1-78470-628-9 <br><br> The world we live in is built around male data, preferences, and assumptions. There are numerous examples of how the [gender data gap]{.hl .hl-dred} has led to women being overlooked and undervalued in areas ranging from medicine to urban planning. To create a more just and equal society, we need to take into account the different experiences and needs of women and other marginalized groups in our data collection and decision-making processes. |
+: {tbl-colwidths="[20,80]"}
+:::
+
+## Invisible rich {.smaller}
+
+::: {.tbl-larger .recommended-lit}
+|   |   |
+|---|---|
+| ![](img/rlmap_col.png) | Survey data are based on representative samples drawn from total population. However, the probability of drawing one of the few very rich households into the sample is infinitesimal. Moreover, participation in surveys is mostly voluntary and there is a higher refusal rate at the top. This [poor coverage of the top]{.hl .hl-dred} in wealth and income surveys conceals the extent of inequality. <br><br> The figure shows the gap between the richest observation in wealth survey data (HFCS) and the "poorest" observation in national rich lists created by magazines. |
+: {tbl-colwidths="[50,50]"}
+:::
+
+::: {.aside}
+Source: @disslbacher:2020
+:::
+
+## Administrative versus survey data {.smaller}
+
+::: {.absolute top="10%" left="0"}
+![](img/admsvy1.png)
+:::
+
+::: {.absolute top="30%" left="27%" .textbox .fragment .fade-up .altlist}
+### Impact on response behavior:
+
+- Social desirability
+- Sociodemographic characteristics
+- Survey design
+- Learning effect
+:::
+
+::: aside
+Source: @angel:2019
+:::
+
+## Mean reverting errors {.smaller}
+
+![](img/admsvy2.png)
+
+::: aside
+Source: @angel:2019
+:::
+
+## How do we explain the mismatch? {.smaller}
+
+![](img/admsvy3.png)
+
+::: aside
+Source: @angel:2019
+:::
+
+# Why should we plot data?
+
+<center>
+![](../../data/img/avatar_shrug.png){height=350}
+</center>
+
+::: footer
+:::
+
+
+## Anscombe's quartet
+
+```{r anscomedata}
+#| echo: false
+library(kableExtra)
+library(datasauRus)
+anscombe_m <- data.frame()
+
+for(i in 1:4) {
+  anscombe_m <- rbind(anscombe_m, data.frame(x=anscombe[,i], y=anscombe[,i+4]))}
+  
+anscombe_m <- anscombe_m |> 
+  mutate(set = c(rep("I",11),rep("II",11),rep("III",11),rep("IV",11)))
+
+means <- anscombe |> 
+  select(x1,y1,x2,y2,x3,y3,x4,y4) |> 
+  summarise(across(everything(), mean))
+
+sd <- anscombe |> 
+  select(x1,y1,x2,y2,x3,y3,x4,y4) |> 
+  summarise(across(everything(), sd))
+
+cor <- anscombe |>
+  summarise(x1=cor(x1,y1), x2=cor(x2,y2), x3=cor(x3,y3), x4=cor(x4,y4))
+
+anscombe |> 
+  mutate(obs = as.character(1:n())) |> 
+  select(obs,x1,y1,x2,y2,x3,y3,x4,y4) |>
+  add_row(obs="Mean",round(means,2)) |>
+  add_row(obs="SD",round(sd,2)) |>
+  add_row(obs="Corr",round(cor,2)) |>
+  kbl(escape = FALSE, col.names = c("Obs.", rep(c("X","Y"),4)), align="rcccccccc") |>
+  column_spec(1, border_right = T, bold = T) |>
+  column_spec(seq(3,7,2), border_right = T) |>
+  row_spec(11, extra_css = "border-bottom: 3px solid") |>
+  add_header_above(c(" " = 1, "I" = 2, "II"=2, "III"=2, "IV"=2)) |>
+  kable_classic(full_width = F)
+```
+
+
+## What do we learn when plotting the data?
+
+```{r anscombe}
+#| echo: false
+ggplot(anscombe_m, aes(x, y)) +  
+geom_text(aes(x = 15, y = 5, label=set), family = "Alfa Slab One", size=36, color = "gray95") + 
+geom_smooth(method="lm", fill=NA, fullrange=TRUE, color = "black", linewidth=0.5) + 
+geom_point(size=3.5, color="black", fill="red", alpha=0.8, shape=21) +
+facet_wrap(~set, ncol=2, scales = "free") +
+scale_x_continuous(limits = c(0,20)) +
+scale_y_continuous(limits = c(0,15)) +
+labs(x = NULL, y = NULL) +
+coord_cartesian(expand = F) +
+theme_minimal() +
+theme(strip.text = element_blank(),
+axis.text = element_blank(),
+panel.border = element_rect(linewidth = 0.1, fill = NA))
+```
+
+## Do you see correlation?
+
+```{r datasaurus}
+#| echo: false
+#| fig-align: center
+datasaurus_dozen |>
+  filter(dataset %in% c("slant_down", "dino")) |>
+  mutate(dataset = ifelse(dataset == "dino", "B", "A")) |>
+  ggplot(aes(x = x, y = y, colour = dataset))+
+  geom_point() +
+  scale_color_manual(values = c("#C32402", "#0234C3")) +
+  facet_wrap(~dataset, ncol = 2) +
+  labs(x=NULL, y=NULL) +
+  theme_minimal() +
+  theme(legend.position = "none",
+  strip.text = element_blank(),
+  panel.border = element_rect(linewidth = 0.1, fill = NA))
+```
+
+. . .
+
+::: {.columns}
+::: {.column style="text-align:center;"}
+[Correlation: -0.07]{.secfont style="font-size:1.5rem;color:#C32402;"}
+:::
+::: {.column style="text-align:center;"}
+[Correlation: -0.07]{.secfont style="font-size:1.5rem;color:#0234C3;"}
+:::
+:::
+
+
+## Same same but different
+
+```{r dinolpots}
+#| echo: false
+#| fig-align: center
+datasaurus_dozen |>
+  filter(!dataset == "dino") |>
+  ggplot(aes(x = x, y = y, colour = dataset))+
+  geom_point() +
+  geom_text(aes(x = 50, y = -10, label = glue::glue("Cor.: {round(cor(x,y),2)}")), hjust = 0.5) +
+  facet_wrap(~dataset, nrow = 2) +
+  labs(x=NULL, y=NULL) +
+  theme_minimal() +
+  theme(legend.position = "none",
+  strip.text = element_blank(),
+  axis.text = element_blank(),
+  panel.border = element_rect(linewidth = 0.1, fill = NA))
+```
+
+
+## Bibliography {.bibstyle}
+
+:::footer
 :::

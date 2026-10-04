@@ -2,46 +2,33 @@ library(tidyverse)
 library(waffle)
 library(MetBrewer)
 
-# raw <- tribble(~Parents, ~Children, ~Share,
-#                "Compulsory school", "Compulsory school", 36.2,
-#                "Compulsory school", "Apprenticeship/Lower secondary", 42.3,
-#                "Compulsory school", "Higher secondary", 12.1,
-#                "Compulsory school", "Tertiary education", 9.4,
-#                "Apprenticeship/Lower secondary", "Compulsory school", 8.9,
-#                "Apprenticeship/Lower secondary", "Apprenticeship/Lower secondary", 54.1, #
-#                "Apprenticeship/Lower secondary", "Higher secondary", 18.7,
-#                "Apprenticeship/Lower secondary", "Tertiary education", 18.3,
-#                "Higher secondary", "Compulsory school", 5.9,
-#                "Higher secondary", "Apprenticeship/Lower secondary", 20.8,
-#                "Higher secondary", "Higher secondary", 30.8,
-#                "Higher secondary", "Tertiary education", 42.5,
-#                "Tertiary education", "Compulsory school", 5.8,
-#                "Tertiary education", "Apprenticeship/Lower secondary", 11.7,
-#                "Tertiary education", "Higher secondary", 21.2,
-#                "Tertiary education", "Tertiary education", 61.3
-# )
+# faclevel <- c("Bottom 50%","Next 40%","Top 6-10%","Top 2-5%","Richest 1%")
+# df <- tibble(labels=factor(faclevel,levels=rev(faclevel)),
+#        'Population share'=c(50,40,5,4,1),
+#        'Net wealth share'=c(3,31,11,16,39))
+# plotdf <- df |> 
+#      pivot_longer(-labels, names_to = "share", values_to = "value")
+# write.csv(plotdf, "waffle.csv")
+
 
 raw <- read.csv("waffle.csv")
 
-plotdata <- raw |> filter(Parents %in% c("Apprenticeship/Lower secondary",
-                              "Tertiary education")) |> 
-  mutate(Children = factor(Children, levels = c("Tertiary education",
-                                                "Higher secondary",
-                                                "Apprenticeship/Lower secondary",
-                                                "Compulsory school")),
-         Parents = ifelse(Parents == "Tertiary education", "Parents with tertiary education", "Parents with apprenticeship/lower secondary"))
+plotdat <- raw |> 
+  mutate(labels = factor(labels, levels = c("Bottom 50%", "Next 40%", "Top 6-10%", "Top 2-5%", "Richest 1%")),
+          share = factor(share, levels = c("Population share", "Net wealth share")))
 
-plotdata |> 
+plotdat |> 
   ggplot() +
-  geom_waffle(aes(fill = Children, values = Share), size = 1.1, n_rows = 5, 
+  geom_waffle(aes(fill = labels, values = value), size = 1.1, n_rows = 5, 
               na.rm=T, color = "white", make_proportional = T) + 
-  facet_wrap(~Parents, ncol = 1) +
+  facet_wrap(~share, ncol = 1) +
   scale_fill_manual(values = met.brewer("Lakota"), 
-                    name = "Education of descendants (25-44 years)") +
+                    guide = guide_legend(reverse = T), 
+                    name = NULL) +
   scale_x_discrete(expand=c(0,0)) +
   scale_y_discrete(expand=c(0,0)) +
-  labs(title = "Educational persistence in Austria",
-       caption = "Source: Bildung in Zahlen 2023/24, Statistics Austria. Figure: @matschnetzer") +
+  labs(title = "Net wealth shares in Austria",
+       caption = "Source: HFCS, OeNB. Figure: @matschnetzer") +
   theme_minimal(base_family = "Roboto Condensed") +
   coord_equal() +
   theme_enhance_waffle() +
