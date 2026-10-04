@@ -30,6 +30,72 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #000000; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #000000; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; } /* BuiltIn */
+    code span.cf { color: #000000; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #644a9b; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #000000; font-weight: bold; } /* Keyword */
+    code span.op { color: #000000; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #ff5500; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
   </style>
   <link rel="stylesheet" href="99_geld_und_geldpolitik_files/libs/revealjs/dist/theme/quarto-154b031e5a53c206aaf92cd60ff35f9b.css">
   <link href="99_geld_und_geldpolitik_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -425,12 +491,75 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="99_geld_und_geldpolitik_files/figure-revealjs/unnamed-chunk-1-1.svg" class="quarto-figure quarto-figure-center" width="576"></p>
+<p><img data-src="99_geld_und_geldpolitik_files/figure-revealjs/plot-zb-1.svg" class="quarto-figure quarto-figure-center" width="576"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
+</section>
+<section id="code-leitzins-der-bank-of-england" class="slide level2 smaller">
+<h2>Code: Leitzins der Bank of England</h2>
+<style>.reveal pre code { max-height: none; }</style>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a><span class="co"># Download once, then reuse the local copy</span></span>
+<span id="cb1-4"><a href=""></a>f <span class="ot">&lt;-</span> <span class="st">"boe_policy_rate.csv"</span></span>
+<span id="cb1-5"><a href=""></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(f)) {</span>
+<span id="cb1-6"><a href=""></a>  <span class="fu">try</span>(<span class="fu">download.file</span>(</span>
+<span id="cb1-7"><a href=""></a>    <span class="st">"https://fred.stlouisfed.org/graph/fredgraph.csv?id=BOEPRUKA"</span>,</span>
+<span id="cb1-8"><a href=""></a>    f, <span class="at">mode =</span> <span class="st">"wb"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>), <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-9"><a href=""></a>}</span>
+<span id="cb1-10"><a href=""></a></span>
+<span id="cb1-11"><a href=""></a><span class="cf">if</span> (<span class="fu">file.exists</span>(f)) {</span>
+<span id="cb1-12"><a href=""></a>  df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(f, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-13"><a href=""></a>    <span class="fu">rename</span>(<span class="at">date =</span> <span class="dv">1</span>, <span class="at">rate =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-14"><a href=""></a>    <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(<span class="fu">format</span>(<span class="fu">as.Date</span>(date), <span class="st">"%Y"</span>)),</span>
+<span id="cb1-15"><a href=""></a>           <span class="at">rate =</span> <span class="fu">as.numeric</span>(rate)) <span class="sc">|&gt;</span></span>
+<span id="cb1-16"><a href=""></a>    <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1900</span>, <span class="sc">!</span><span class="fu">is.na</span>(rate))</span>
+<span id="cb1-17"><a href=""></a></span>
+<span id="cb1-18"><a href=""></a>  y0 <span class="ot">&lt;-</span> <span class="fu">min</span>(df<span class="sc">$</span>year)</span>
+<span id="cb1-19"><a href=""></a>  y1 <span class="ot">&lt;-</span> <span class="fu">max</span>(df<span class="sc">$</span>year)</span>
+<span id="cb1-20"><a href=""></a></span>
+<span id="cb1-21"><a href=""></a>  <span class="co"># Markers: start, highest, lowest</span></span>
+<span id="cb1-22"><a href=""></a>  marks <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb1-23"><a href=""></a>    df <span class="sc">|&gt;</span> <span class="fu">slice_min</span>(year, <span class="at">n =</span> <span class="dv">1</span>, <span class="at">with_ties =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">vj =</span> <span class="sc">-</span><span class="dv">1</span>),</span>
+<span id="cb1-24"><a href=""></a>    df <span class="sc">|&gt;</span> <span class="fu">slice_max</span>(rate, <span class="at">n =</span> <span class="dv">1</span>, <span class="at">with_ties =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">vj =</span> <span class="sc">-</span><span class="dv">1</span>),</span>
+<span id="cb1-25"><a href=""></a>    df <span class="sc">|&gt;</span> <span class="fu">slice_min</span>(rate, <span class="at">n =</span> <span class="dv">1</span>, <span class="at">with_ties =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">vj =</span> <span class="fl">1.8</span>)</span>
+<span id="cb1-26"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb1-27"><a href=""></a>    <span class="fu">mutate</span>(</span>
+<span id="cb1-28"><a href=""></a>      <span class="at">hj =</span> <span class="fu">case_when</span>(year <span class="sc">==</span> y0 <span class="sc">~</span> <span class="dv">0</span>,</span>
+<span id="cb1-29"><a href=""></a>                     year <span class="sc">&gt;=</span> y1 <span class="sc">-</span> <span class="dv">10</span> <span class="sc">~</span> <span class="dv">1</span>,</span>
+<span id="cb1-30"><a href=""></a>                     <span class="cn">TRUE</span> <span class="sc">~</span> <span class="fl">0.5</span>),</span>
+<span id="cb1-31"><a href=""></a>      <span class="at">label =</span> <span class="fu">paste0</span>(rate, <span class="st">" % ("</span>, year, <span class="st">")"</span>)</span>
+<span id="cb1-32"><a href=""></a>    )</span>
+<span id="cb1-33"><a href=""></a></span>
+<span id="cb1-34"><a href=""></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(year, rate)) <span class="sc">+</span></span>
+<span id="cb1-35"><a href=""></a>    <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">"#5d8198"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb1-36"><a href=""></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> marks, <span class="at">colour =</span> <span class="st">"#e76254"</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb1-37"><a href=""></a>    <span class="fu">geom_label</span>(<span class="at">data =</span> marks, <span class="fu">aes</span>(<span class="at">label =</span> label, <span class="at">vjust =</span> vj, <span class="at">hjust =</span> hj),</span>
+<span id="cb1-38"><a href=""></a>               <span class="at">colour =</span> <span class="st">"#e76254"</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">label.size =</span> <span class="dv">0</span>,</span>
+<span id="cb1-39"><a href=""></a>               <span class="at">label.padding =</span> <span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">"lines"</span>), <span class="at">size =</span> <span class="fl">4.5</span>) <span class="sc">+</span></span>
+<span id="cb1-40"><a href=""></a>    <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.03</span>, <span class="fl">0.06</span>))) <span class="sc">+</span></span>
+<span id="cb1-41"><a href=""></a>    <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.18</span>, <span class="fl">0.15</span>))) <span class="sc">+</span></span>
+<span id="cb1-42"><a href=""></a>    <span class="fu">coord_cartesian</span>(<span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb1-43"><a href=""></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste0</span>(<span class="st">"Leitzins der Bank of England, "</span>, y0, <span class="st">"–"</span>, y1),</span>
+<span id="cb1-44"><a href=""></a>         <span class="at">caption =</span> <span class="st">"Quelle: Bank of England via FRED (BOEPRUKA)"</span>) <span class="sc">+</span></span>
+<span id="cb1-45"><a href=""></a>    <span class="fu">theme_void</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb1-46"><a href=""></a>    <span class="fu">theme</span>(</span>
+<span id="cb1-47"><a href=""></a>      <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb1-48"><a href=""></a>      <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb1-49"><a href=""></a>      <span class="at">plot.title   =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#343a40"</span>, <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb1-50"><a href=""></a>                                  <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">8</span>)),</span>
+<span id="cb1-51"><a href=""></a>      <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#868e96"</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb1-52"><a href=""></a>                                  <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">8</span>))</span>
+<span id="cb1-53"><a href=""></a>    )</span>
+<span id="cb1-54"><a href=""></a>  <span class="fu">print</span>(p)</span>
+<span id="cb1-55"><a href=""></a>} <span class="cf">else</span> {</span>
+<span id="cb1-56"><a href=""></a>  <span class="fu">cat</span>(<span class="st">"Daten konnten nicht geladen werden."</span>)</span>
+<span id="cb1-57"><a href=""></a>}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="fragen-cecchetti-und-schoenholtz" class="slide level2 smaller">
 <h2>Fragen (Cecchetti und Schoenholtz)</h2>
@@ -628,12 +757,107 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="99_geld_und_geldpolitik_files/figure-revealjs/unnamed-chunk-2-1.svg" class="quarto-figure quarto-figure-center" width="576"></p>
+<p><img data-src="99_geld_und_geldpolitik_files/figure-revealjs/plot-milk-1.svg" class="quarto-figure quarto-figure-center" width="576"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
+</section>
+<section id="code-preis-eines-pints-milch-ons" class="slide level2 smaller">
+<h2>Code: Preis eines Pints Milch (ONS)</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href=""></a></span>
+<span id="cb2-3"><a href=""></a>f   <span class="ot">&lt;-</span> <span class="st">"ons_milk_pint.csv"</span></span>
+<span id="cb2-4"><a href=""></a>url <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://www.ons.gov.uk/generator?format=csv&amp;uri="</span>,</span>
+<span id="cb2-5"><a href=""></a>              <span class="st">"/economy/inflationandpriceindices/timeseries/cznt/mm23"</span>)</span>
+<span id="cb2-6"><a href=""></a>msg <span class="ot">&lt;-</span> <span class="fu">character</span>()</span>
+<span id="cb2-7"><a href=""></a></span>
+<span id="cb2-8"><a href=""></a><span class="co"># A valid ONS file contains the line "CDID" near the top</span></span>
+<span id="cb2-9"><a href=""></a>ok_file <span class="ot">&lt;-</span> <span class="cf">function</span>(path) {</span>
+<span id="cb2-10"><a href=""></a>  <span class="fu">file.exists</span>(path) <span class="sc">&amp;&amp;</span> <span class="fu">file.size</span>(path) <span class="sc">&gt;</span> <span class="dv">500</span> <span class="sc">&amp;&amp;</span></span>
+<span id="cb2-11"><a href=""></a>    <span class="fu">any</span>(<span class="fu">grepl</span>(<span class="st">"CDID"</span>, <span class="fu">readLines</span>(path, <span class="at">n =</span> <span class="dv">15</span>, <span class="at">warn =</span> <span class="cn">FALSE</span>)))</span>
+<span id="cb2-12"><a href=""></a>}</span>
+<span id="cb2-13"><a href=""></a></span>
+<span id="cb2-14"><a href=""></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">ok_file</span>(f)) {</span>
+<span id="cb2-15"><a href=""></a>  <span class="fu">unlink</span>(f)</span>
+<span id="cb2-16"><a href=""></a>  ua <span class="ot">&lt;-</span> <span class="st">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"</span></span>
+<span id="cb2-17"><a href=""></a></span>
+<span id="cb2-18"><a href=""></a>  <span class="co"># Try 1: base R with libcurl and a browser user agent</span></span>
+<span id="cb2-19"><a href=""></a>  r1 <span class="ot">&lt;-</span> <span class="fu">try</span>(<span class="fu">download.file</span>(url, f, <span class="at">mode =</span> <span class="st">"wb"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-20"><a href=""></a>                          <span class="at">method =</span> <span class="st">"libcurl"</span>,</span>
+<span id="cb2-21"><a href=""></a>                          <span class="at">headers =</span> <span class="fu">c</span>(<span class="st">"User-Agent"</span> <span class="ot">=</span> ua)), <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-22"><a href=""></a>  <span class="cf">if</span> (<span class="fu">inherits</span>(r1, <span class="st">"try-error"</span>)) msg <span class="ot">&lt;-</span> <span class="fu">c</span>(msg, <span class="fu">conditionMessage</span>(<span class="fu">attr</span>(r1, <span class="st">"condition"</span>)))</span>
+<span id="cb2-23"><a href=""></a></span>
+<span id="cb2-24"><a href=""></a>  <span class="co"># Try 2: curl package (install.packages("curl") if missing)</span></span>
+<span id="cb2-25"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">ok_file</span>(f) <span class="sc">&amp;&amp;</span> <span class="fu">requireNamespace</span>(<span class="st">"curl"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb2-26"><a href=""></a>    h <span class="ot">&lt;-</span> curl<span class="sc">::</span><span class="fu">new_handle</span>(<span class="at">useragent =</span> ua)</span>
+<span id="cb2-27"><a href=""></a>    r2 <span class="ot">&lt;-</span> <span class="fu">try</span>(curl<span class="sc">::</span><span class="fu">curl_download</span>(url, f, <span class="at">handle =</span> h), <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-28"><a href=""></a>    <span class="cf">if</span> (<span class="fu">inherits</span>(r2, <span class="st">"try-error"</span>)) msg <span class="ot">&lt;-</span> <span class="fu">c</span>(msg, <span class="fu">conditionMessage</span>(<span class="fu">attr</span>(r2, <span class="st">"condition"</span>)))</span>
+<span id="cb2-29"><a href=""></a>  }</span>
+<span id="cb2-30"><a href=""></a></span>
+<span id="cb2-31"><a href=""></a>  <span class="co"># Try 3: read straight from the URL</span></span>
+<span id="cb2-32"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">ok_file</span>(f)) {</span>
+<span id="cb2-33"><a href=""></a>    r3 <span class="ot">&lt;-</span> <span class="fu">try</span>(<span class="fu">writeLines</span>(<span class="fu">readLines</span>(url, <span class="at">warn =</span> <span class="cn">FALSE</span>), f), <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-34"><a href=""></a>    <span class="cf">if</span> (<span class="fu">inherits</span>(r3, <span class="st">"try-error"</span>)) msg <span class="ot">&lt;-</span> <span class="fu">c</span>(msg, <span class="fu">conditionMessage</span>(<span class="fu">attr</span>(r3, <span class="st">"condition"</span>)))</span>
+<span id="cb2-35"><a href=""></a>  }</span>
+<span id="cb2-36"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">ok_file</span>(f)) <span class="fu">unlink</span>(f)</span>
+<span id="cb2-37"><a href=""></a>}</span>
+<span id="cb2-38"><a href=""></a></span>
+<span id="cb2-39"><a href=""></a><span class="cf">if</span> (<span class="fu">ok_file</span>(f)) {</span>
+<span id="cb2-40"><a href=""></a>  <span class="co"># Metadata lines first, then annual, quarterly and monthly rows.</span></span>
+<span id="cb2-41"><a href=""></a>  <span class="co"># Keep only the annual rows (a plain four-digit year).</span></span>
+<span id="cb2-42"><a href=""></a>  df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(f, <span class="at">col_names =</span> <span class="fu">c</span>(<span class="st">"period"</span>, <span class="st">"value"</span>),</span>
+<span id="cb2-43"><a href=""></a>                 <span class="at">col_types =</span> <span class="fu">cols</span>(<span class="at">.default =</span> <span class="fu">col_character</span>()),</span>
+<span id="cb2-44"><a href=""></a>                 <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-45"><a href=""></a>    <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"^[0-9]{4}$"</span>, period)) <span class="sc">|&gt;</span></span>
+<span id="cb2-46"><a href=""></a>    <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(period), <span class="at">pence =</span> <span class="fu">as.numeric</span>(value)) <span class="sc">|&gt;</span></span>
+<span id="cb2-47"><a href=""></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(pence))</span>
+<span id="cb2-48"><a href=""></a></span>
+<span id="cb2-49"><a href=""></a>  y0 <span class="ot">&lt;-</span> <span class="fu">min</span>(df<span class="sc">$</span>year)</span>
+<span id="cb2-50"><a href=""></a>  y1 <span class="ot">&lt;-</span> <span class="fu">max</span>(df<span class="sc">$</span>year)</span>
+<span id="cb2-51"><a href=""></a>  ratio <span class="ot">&lt;-</span> <span class="fu">round</span>(df<span class="sc">$</span>pence[df<span class="sc">$</span>year <span class="sc">==</span> y1] <span class="sc">/</span> df<span class="sc">$</span>pence[df<span class="sc">$</span>year <span class="sc">==</span> y0])</span>
+<span id="cb2-52"><a href=""></a></span>
+<span id="cb2-53"><a href=""></a>  marks <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb2-54"><a href=""></a>    df <span class="sc">|&gt;</span> <span class="fu">slice_min</span>(year, <span class="at">n =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">hj =</span> <span class="dv">0</span>, <span class="at">vj =</span> <span class="sc">-</span><span class="fl">0.8</span>),</span>
+<span id="cb2-55"><a href=""></a>    df <span class="sc">|&gt;</span> <span class="fu">slice_max</span>(year, <span class="at">n =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">hj =</span> <span class="dv">1</span>, <span class="at">vj =</span> <span class="sc">-</span><span class="fl">0.8</span>)</span>
+<span id="cb2-56"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb2-57"><a href=""></a>    <span class="fu">mutate</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="fu">format</span>(<span class="fu">round</span>(pence, <span class="dv">1</span>), <span class="at">nsmall =</span> <span class="dv">1</span>,</span>
+<span id="cb2-58"><a href=""></a>                                 <span class="at">decimal.mark =</span> <span class="st">","</span>), <span class="st">" p ("</span>, year, <span class="st">")"</span>))</span>
+<span id="cb2-59"><a href=""></a></span>
+<span id="cb2-60"><a href=""></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(year, pence)) <span class="sc">+</span></span>
+<span id="cb2-61"><a href=""></a>    <span class="fu">geom_line</span>(<span class="at">colour =</span> <span class="st">"#5d8198"</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb2-62"><a href=""></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> marks, <span class="at">colour =</span> <span class="st">"#e76254"</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb2-63"><a href=""></a>    <span class="fu">geom_label</span>(<span class="at">data =</span> marks,</span>
+<span id="cb2-64"><a href=""></a>               <span class="fu">aes</span>(<span class="at">label =</span> label, <span class="at">hjust =</span> hj, <span class="at">vjust =</span> vj),</span>
+<span id="cb2-65"><a href=""></a>               <span class="at">colour =</span> <span class="st">"#e76254"</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">label.size =</span> <span class="dv">0</span>,</span>
+<span id="cb2-66"><a href=""></a>               <span class="at">label.padding =</span> <span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">"lines"</span>), <span class="at">size =</span> <span class="fl">4.5</span>) <span class="sc">+</span></span>
+<span id="cb2-67"><a href=""></a>    <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.03</span>, <span class="fl">0.06</span>))) <span class="sc">+</span></span>
+<span id="cb2-68"><a href=""></a>    <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.2</span>))) <span class="sc">+</span></span>
+<span id="cb2-69"><a href=""></a>    <span class="fu">coord_cartesian</span>(<span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb2-70"><a href=""></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste0</span>(<span class="st">"Preis eines Pints Milch (UK), "</span>, y0, <span class="st">"–"</span>, y1),</span>
+<span id="cb2-71"><a href=""></a>         <span class="at">subtitle =</span> <span class="fu">paste0</span>(<span class="st">"Nominal in Pence: das "</span>, ratio, <span class="st">"-Fache seit "</span>, y0),</span>
+<span id="cb2-72"><a href=""></a>         <span class="at">caption =</span> <span class="st">"Quelle: ONS, RPI average price (CZNT)"</span>) <span class="sc">+</span></span>
+<span id="cb2-73"><a href=""></a>    <span class="fu">theme_void</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb2-74"><a href=""></a>    <span class="fu">theme</span>(</span>
+<span id="cb2-75"><a href=""></a>      <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb2-76"><a href=""></a>      <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb2-77"><a href=""></a>      <span class="at">plot.title    =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#343a40"</span>, <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb2-78"><a href=""></a>                                   <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">2</span>)),</span>
+<span id="cb2-79"><a href=""></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#868e96"</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb2-80"><a href=""></a>                                   <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">8</span>)),</span>
+<span id="cb2-81"><a href=""></a>      <span class="at">plot.caption  =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#868e96"</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb2-82"><a href=""></a>                                   <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">8</span>))</span>
+<span id="cb2-83"><a href=""></a>    )</span>
+<span id="cb2-84"><a href=""></a>  <span class="fu">print</span>(p)</span>
+<span id="cb2-85"><a href=""></a>} <span class="cf">else</span> {</span>
+<span id="cb2-86"><a href=""></a>  <span class="fu">cat</span>(<span class="st">"Daten konnten nicht geladen werden.</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb2-87"><a href=""></a>      <span class="st">"Fehler: "</span>, <span class="fu">paste</span>(<span class="fu">unique</span>(msg), <span class="at">collapse =</span> <span class="st">" | "</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb2-88"><a href=""></a>      <span class="st">"Manuell: CSV von der ONS-Seite (cznt/mm23) herunterladen und als "</span>,</span>
+<span id="cb2-89"><a href=""></a>      f, <span class="st">" neben die .qmd legen."</span>, <span class="at">sep =</span> <span class="st">""</span>)</span>
+<span id="cb2-90"><a href=""></a>}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="inflation-1" class="slide level2 medium">
 <h2>Inflation</h2>
@@ -679,12 +903,107 @@
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="99_geld_und_geldpolitik_files/figure-revealjs/unnamed-chunk-4-1.svg" class="quarto-figure quarto-figure-center" width="576"></p>
+<p><img data-src="99_geld_und_geldpolitik_files/figure-revealjs/plot-stream-1.svg" class="quarto-figure quarto-figure-center" width="576"></p>
 </figure>
 </div>
 </div>
 </div>
 </div></div>
+</section>
+<section id="code-geldaggregate-im-euro-raum-ezb" class="slide level2 smaller">
+<h2>Code: Geldaggregate im Euro-Raum (EZB)</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href=""></a></span>
+<span id="cb3-3"><a href=""></a><span class="co"># Download once from the ECB Data Portal, then reuse the local copy</span></span>
+<span id="cb3-4"><a href=""></a>f <span class="ot">&lt;-</span> <span class="st">"ecb_money_aggregates.csv"</span></span>
+<span id="cb3-5"><a href=""></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(f)) {</span>
+<span id="cb3-6"><a href=""></a>  <span class="fu">try</span>(<span class="fu">download.file</span>(</span>
+<span id="cb3-7"><a href=""></a>    <span class="fu">paste0</span>(<span class="st">"https://data-api.ecb.europa.eu/service/data/BSI/"</span>,</span>
+<span id="cb3-8"><a href=""></a>           <span class="st">"M.U2.Y.V.M10+M20+M30.X.1.U2.2300.Z01.E"</span>,</span>
+<span id="cb3-9"><a href=""></a>           <span class="st">"?format=csvdata&amp;startPeriod=1999-01"</span>),</span>
+<span id="cb3-10"><a href=""></a>    f, <span class="at">mode =</span> <span class="st">"wb"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>), <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-11"><a href=""></a>}</span>
+<span id="cb3-12"><a href=""></a></span>
+<span id="cb3-13"><a href=""></a><span class="cf">if</span> (<span class="fu">file.exists</span>(f)) {</span>
+<span id="cb3-14"><a href=""></a>  <span class="co"># Values in Bio. € (trillions); the ECB reports millions</span></span>
+<span id="cb3-15"><a href=""></a>  wide <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(f, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-16"><a href=""></a>    <span class="fu">transmute</span>(<span class="at">item =</span> <span class="fu">sub</span>(<span class="st">".*</span><span class="sc">\\</span><span class="st">.(M[123]0)</span><span class="sc">\\</span><span class="st">..*"</span>, <span class="st">"</span><span class="sc">\\</span><span class="st">1"</span>, KEY),</span>
+<span id="cb3-17"><a href=""></a>              <span class="at">period =</span> TIME_PERIOD, <span class="at">value =</span> OBS_VALUE <span class="sc">/</span> <span class="fl">1e6</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-18"><a href=""></a>    <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> item, <span class="at">values_from =</span> value) <span class="sc">|&gt;</span></span>
+<span id="cb3-19"><a href=""></a>    <span class="fu">mutate</span>(<span class="at">x =</span> <span class="fu">as.integer</span>(<span class="fu">substr</span>(period, <span class="dv">1</span>, <span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb3-20"><a href=""></a>               (<span class="fu">as.integer</span>(<span class="fu">substr</span>(period, <span class="dv">6</span>, <span class="dv">7</span>)) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="dv">12</span>)</span>
+<span id="cb3-21"><a href=""></a></span>
+<span id="cb3-22"><a href=""></a>  lvl <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"M3 – M2"</span>, <span class="st">"M2 – M1"</span>, <span class="st">"M1"</span>)   <span class="co"># M1 sits at the bottom</span></span>
+<span id="cb3-23"><a href=""></a>  df <span class="ot">&lt;-</span> wide <span class="sc">|&gt;</span></span>
+<span id="cb3-24"><a href=""></a>    <span class="fu">transmute</span>(x, <span class="st">`</span><span class="at">M1</span><span class="st">`</span> <span class="ot">=</span> M10, <span class="st">`</span><span class="at">M2 – M1</span><span class="st">`</span> <span class="ot">=</span> M20 <span class="sc">-</span> M10, <span class="st">`</span><span class="at">M3 – M2</span><span class="st">`</span> <span class="ot">=</span> M30 <span class="sc">-</span> M20) <span class="sc">|&gt;</span></span>
+<span id="cb3-25"><a href=""></a>    <span class="fu">pivot_longer</span>(<span class="sc">-</span>x, <span class="at">names_to =</span> <span class="st">"aggregat"</span>, <span class="at">values_to =</span> <span class="st">"wert"</span>)</span>
+<span id="cb3-26"><a href=""></a></span>
+<span id="cb3-27"><a href=""></a>  fmt <span class="ot">&lt;-</span> <span class="cf">function</span>(v) <span class="fu">paste0</span>(<span class="fu">format</span>(<span class="fu">round</span>(v, <span class="dv">1</span>), <span class="at">nsmall =</span> <span class="dv">1</span>, <span class="at">decimal.mark =</span> <span class="st">","</span>),</span>
+<span id="cb3-28"><a href=""></a>                            <span class="st">" Bio. €"</span>)</span>
+<span id="cb3-29"><a href=""></a></span>
+<span id="cb3-30"><a href=""></a>  <span class="co"># Edge markers: aggregate levels = upper edges of the bands</span></span>
+<span id="cb3-31"><a href=""></a>  first <span class="ot">&lt;-</span> wide <span class="sc">|&gt;</span> <span class="fu">slice_min</span>(x, <span class="at">n =</span> <span class="dv">1</span>)</span>
+<span id="cb3-32"><a href=""></a>  last  <span class="ot">&lt;-</span> wide <span class="sc">|&gt;</span> <span class="fu">slice_max</span>(x, <span class="at">n =</span> <span class="dv">1</span>)</span>
+<span id="cb3-33"><a href=""></a></span>
+<span id="cb3-34"><a href=""></a>  ends <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-35"><a href=""></a>    <span class="at">x =</span> last<span class="sc">$</span>x, <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"M1"</span>, <span class="st">"M2"</span>, <span class="st">"M3"</span>),</span>
+<span id="cb3-36"><a href=""></a>    <span class="at">y =</span> <span class="fu">c</span>(last<span class="sc">$</span>M10, last<span class="sc">$</span>M20, last<span class="sc">$</span>M30)</span>
+<span id="cb3-37"><a href=""></a>  ) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">label =</span> <span class="fu">paste0</span>(name, <span class="st">"  "</span>, <span class="fu">fmt</span>(y)))</span>
+<span id="cb3-38"><a href=""></a></span>
+<span id="cb3-39"><a href=""></a>  start <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">x =</span> first<span class="sc">$</span>x, <span class="at">name =</span> <span class="st">"M3"</span>, <span class="at">y =</span> first<span class="sc">$</span>M30,</span>
+<span id="cb3-40"><a href=""></a>                  <span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"M3  "</span>, <span class="fu">fmt</span>(first<span class="sc">$</span>M30)))</span>
+<span id="cb3-41"><a href=""></a></span>
+<span id="cb3-42"><a href=""></a>  marks <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(ends, start)</span>
+<span id="cb3-43"><a href=""></a></span>
+<span id="cb3-44"><a href=""></a>  fills <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"M1"</span> <span class="ot">=</span> <span class="st">"#5d8198"</span>, <span class="st">"M2 – M1"</span> <span class="ot">=</span> <span class="st">"#e76254"</span>, <span class="st">"M3 – M2"</span> <span class="ot">=</span> <span class="st">"#868e96"</span>)</span>
+<span id="cb3-45"><a href=""></a>  cols  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"M1"</span> <span class="ot">=</span> <span class="st">"#5d8198"</span>, <span class="st">"M2"</span> <span class="ot">=</span> <span class="st">"#e76254"</span>, <span class="st">"M3"</span> <span class="ot">=</span> <span class="st">"#868e96"</span>)</span>
+<span id="cb3-46"><a href=""></a></span>
+<span id="cb3-47"><a href=""></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb3-48"><a href=""></a>    <span class="fu">geom_pemstream</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> wert, <span class="at">fill =</span> aggregat),</span>
+<span id="cb3-49"><a href=""></a>                   <span class="at">span =</span> <span class="fl">0.08</span>, <span class="at">stack_order =</span> lvl, <span class="at">center =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-50"><a href=""></a>                   <span class="at">colour =</span> <span class="st">"white"</span>, <span class="at">linewidth =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb3-51"><a href=""></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">colour =</span> <span class="st">"#ced4da"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb3-52"><a href=""></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> marks, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">colour =</span> name), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb3-53"><a href=""></a>    <span class="fu">geom_label</span>(<span class="at">data =</span> ends,</span>
+<span id="cb3-54"><a href=""></a>               <span class="fu">aes</span>(<span class="at">x =</span> x <span class="sc">+</span> <span class="fl">0.4</span>, <span class="at">y =</span> y, <span class="at">label =</span> label, <span class="at">colour =</span> name),</span>
+<span id="cb3-55"><a href=""></a>               <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">label.size =</span> <span class="dv">0</span>,</span>
+<span id="cb3-56"><a href=""></a>               <span class="at">label.padding =</span> <span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">"lines"</span>),</span>
+<span id="cb3-57"><a href=""></a>               <span class="at">size =</span> <span class="dv">4</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb3-58"><a href=""></a>    <span class="fu">geom_label</span>(<span class="at">data =</span> start,</span>
+<span id="cb3-59"><a href=""></a>               <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">label =</span> label, <span class="at">colour =</span> name),</span>
+<span id="cb3-60"><a href=""></a>               <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">label.size =</span> <span class="dv">0</span>,</span>
+<span id="cb3-61"><a href=""></a>               <span class="at">label.padding =</span> <span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">"lines"</span>),</span>
+<span id="cb3-62"><a href=""></a>               <span class="at">size =</span> <span class="dv">4</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb3-63"><a href=""></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> fills) <span class="sc">+</span></span>
+<span id="cb3-64"><a href=""></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> cols) <span class="sc">+</span></span>
+<span id="cb3-65"><a href=""></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2000</span>, <span class="dv">2020</span>, <span class="dv">10</span>),</span>
+<span id="cb3-66"><a href=""></a>                       <span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.35</span>))) <span class="sc">+</span></span>
+<span id="cb3-67"><a href=""></a>    <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.15</span>))) <span class="sc">+</span></span>
+<span id="cb3-68"><a href=""></a>    <span class="fu">coord_cartesian</span>(<span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb3-69"><a href=""></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste0</span>(<span class="st">"Geldaggregate im Euro-Raum, "</span>,</span>
+<span id="cb3-70"><a href=""></a>                        <span class="fu">floor</span>(<span class="fu">min</span>(df<span class="sc">$</span>x)), <span class="st">"–"</span>, <span class="fu">floor</span>(<span class="fu">max</span>(df<span class="sc">$</span>x))),</span>
+<span id="cb3-71"><a href=""></a>         <span class="at">subtitle =</span> <span class="st">"Obergrenzen der Bänder = M1, M2 und M3 (Bio. € = Billionen Euro)"</span>,</span>
+<span id="cb3-72"><a href=""></a>         <span class="at">caption =</span> <span class="st">"Quelle: EZB Data Portal (BSI), saisonbereinigt, Bestände"</span>) <span class="sc">+</span></span>
+<span id="cb3-73"><a href=""></a>    <span class="fu">theme_void</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb3-74"><a href=""></a>    <span class="fu">theme</span>(</span>
+<span id="cb3-75"><a href=""></a>      <span class="at">legend.position  =</span> <span class="st">"none"</span>,</span>
+<span id="cb3-76"><a href=""></a>      <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb3-77"><a href=""></a>      <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb3-78"><a href=""></a>      <span class="at">axis.text.x  =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#868e96"</span>, <span class="at">size =</span> <span class="dv">10</span>,</span>
+<span id="cb3-79"><a href=""></a>                                  <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">6</span>)),</span>
+<span id="cb3-80"><a href=""></a>      <span class="at">plot.title   =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#343a40"</span>, <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb3-81"><a href=""></a>                                  <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">2</span>)),</span>
+<span id="cb3-82"><a href=""></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#868e96"</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb3-83"><a href=""></a>                                   <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">8</span>)),</span>
+<span id="cb3-84"><a href=""></a>      <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#868e96"</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb3-85"><a href=""></a>                                  <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">8</span>))</span>
+<span id="cb3-86"><a href=""></a>    )</span>
+<span id="cb3-87"><a href=""></a>  <span class="fu">print</span>(p)</span>
+<span id="cb3-88"><a href=""></a>} <span class="cf">else</span> {</span>
+<span id="cb3-89"><a href=""></a>  <span class="fu">cat</span>(<span class="st">"Daten konnten nicht geladen werden."</span>)</span>
+<span id="cb3-90"><a href=""></a>}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="geld-drucken" class="slide level2 medium">
 <h2>Geld drucken</h2>
@@ -768,12 +1087,85 @@
 <ul>
 <li>Nicht alle Kredite sind einlagengedeckt: Banken schaffen (schöpfen) Geld, indem sie Kredite vergeben.</li>
 <li>Kredite sind Aktivposten (<em>assets</em>): können gehandelt werden und daher als Eigenkapital (<em>collateral</em>) für weitere Kredite verwendet werden, durch die wieder Geld geschöpft wird.</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<ul>
 <li>Nur ein Bruchteil der Guthaben und Kredite sind als Banknoten im Umlauf. Für den Rest reicht die Verrechnung von Zahlungen gegeneinander (<em>clearing</em>).</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="99_geld_und_geldpolitik_files/figure-revealjs/plot-waffle-1.svg" class="quarto-figure quarto-figure-center" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
 </div></div>
+</section>
+<section id="code-bargeld-und-giralgeld-fred" class="slide level2 smaller">
+<h2>Code: Bargeld und Giralgeld (FRED)</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href=""></a><span class="co"># Daten: FRED (St. Louis Fed), einmal laden und als CSV neben der qmd speichern</span></span>
+<span id="cb4-2"><a href=""></a>get_fred <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb4-3"><a href=""></a>  f <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"fred_"</span>, id, <span class="st">".csv"</span>)</span>
+<span id="cb4-4"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(f)) {</span>
+<span id="cb4-5"><a href=""></a>    <span class="fu">try</span>(<span class="fu">download.file</span>(</span>
+<span id="cb4-6"><a href=""></a>      <span class="fu">paste0</span>(<span class="st">"https://fred.stlouisfed.org/graph/fredgraph.csv?id="</span>, id),</span>
+<span id="cb4-7"><a href=""></a>      f, <span class="at">mode =</span> <span class="st">"wb"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>), <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-8"><a href=""></a>  }</span>
+<span id="cb4-9"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(f)) <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
+<span id="cb4-10"><a href=""></a>  d <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(f)</span>
+<span id="cb4-11"><a href=""></a>  <span class="fu">names</span>(d) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"value"</span>)</span>
+<span id="cb4-12"><a href=""></a>  d<span class="sc">$</span>date  <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(d<span class="sc">$</span>date)</span>
+<span id="cb4-13"><a href=""></a>  d<span class="sc">$</span>value <span class="ot">&lt;-</span> <span class="fu">suppressWarnings</span>(<span class="fu">as.numeric</span>(d<span class="sc">$</span>value))</span>
+<span id="cb4-14"><a href=""></a>  d[<span class="sc">!</span><span class="fu">is.na</span>(d<span class="sc">$</span>value), ]</span>
+<span id="cb4-15"><a href=""></a>}</span>
+<span id="cb4-16"><a href=""></a></span>
+<span id="cb4-17"><a href=""></a>cur <span class="ot">&lt;-</span> <span class="fu">get_fred</span>(<span class="st">"CURRCIR"</span>)   <span class="co"># Bargeld im Umlauf (Mrd. USD)</span></span>
+<span id="cb4-18"><a href=""></a>m2  <span class="ot">&lt;-</span> <span class="fu">get_fred</span>(<span class="st">"M2SL"</span>)      <span class="co"># Geldmenge M2 (Mrd. USD)</span></span>
+<span id="cb4-19"><a href=""></a></span>
+<span id="cb4-20"><a href=""></a><span class="cf">if</span> (<span class="fu">is.null</span>(cur) <span class="sc">||</span> <span class="fu">is.null</span>(m2)) {</span>
+<span id="cb4-21"><a href=""></a>  <span class="fu">cat</span>(<span class="st">"Daten konnten nicht geladen werden."</span>)</span>
+<span id="cb4-22"><a href=""></a>} <span class="cf">else</span> {</span>
+<span id="cb4-23"><a href=""></a>  yrs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1960</span>, <span class="dv">1980</span>, <span class="dv">2000</span>, <span class="dv">2025</span>)</span>
+<span id="cb4-24"><a href=""></a></span>
+<span id="cb4-25"><a href=""></a>  d <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(<span class="fu">rename</span>(cur, <span class="at">bar =</span> value), <span class="fu">rename</span>(m2, <span class="at">m2 =</span> value), <span class="at">by =</span> <span class="st">"date"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-26"><a href=""></a>    <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(<span class="fu">format</span>(date, <span class="st">"%Y"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb4-27"><a href=""></a>    <span class="fu">filter</span>(year <span class="sc">%in%</span> yrs) <span class="sc">|&gt;</span></span>
+<span id="cb4-28"><a href=""></a>    <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span></span>
+<span id="cb4-29"><a href=""></a>    <span class="fu">summarise</span>(<span class="at">bar =</span> <span class="fu">mean</span>(bar), <span class="at">m2 =</span> <span class="fu">mean</span>(m2), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-30"><a href=""></a>    <span class="fu">mutate</span>(<span class="at">Giralgeld =</span> m2 <span class="sc">-</span> bar,</span>
+<span id="cb4-31"><a href=""></a>           <span class="at">panel =</span> <span class="fu">factor</span>(<span class="fu">paste0</span>(year, <span class="st">": "</span>, <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> bar <span class="sc">/</span> m2), <span class="st">" % Bargeld"</span>),</span>
+<span id="cb4-32"><a href=""></a>                          <span class="at">levels =</span> <span class="fu">paste0</span>(year, <span class="st">": "</span>, <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> bar <span class="sc">/</span> m2), <span class="st">" % Bargeld"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb4-33"><a href=""></a>    <span class="fu">select</span>(panel, <span class="at">Bargeld =</span> bar, Giralgeld) <span class="sc">|&gt;</span></span>
+<span id="cb4-34"><a href=""></a>    <span class="fu">pivot_longer</span>(<span class="fu">c</span>(Bargeld, Giralgeld), <span class="at">names_to =</span> <span class="st">"art"</span>, <span class="at">values_to =</span> <span class="st">"wert"</span>)</span>
+<span id="cb4-35"><a href=""></a></span>
+<span id="cb4-36"><a href=""></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(d, <span class="fu">aes</span>(<span class="at">y =</span> wert, <span class="at">fill =</span> art)) <span class="sc">+</span></span>
+<span id="cb4-37"><a href=""></a>    <span class="fu">geom_pemwaffle</span>(<span class="at">stack_order =</span> <span class="fu">c</span>(<span class="st">"Bargeld"</span>, <span class="st">"Giralgeld"</span>)) <span class="sc">+</span></span>
+<span id="cb4-38"><a href=""></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>panel, <span class="at">nrow =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb4-39"><a href=""></a>    <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
+<span id="cb4-40"><a href=""></a>    <span class="fu">scale_y_reverse</span>() <span class="sc">+</span></span>
+<span id="cb4-41"><a href=""></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Bargeld =</span> <span class="st">"#e76254"</span>, <span class="at">Giralgeld =</span> <span class="st">"#5d8198"</span>),</span>
+<span id="cb4-42"><a href=""></a>                      <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-43"><a href=""></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Bargeld ist nur ein Teil des Geldes"</span>,</span>
+<span id="cb4-44"><a href=""></a>         <span class="at">subtitle =</span> <span class="st">"1 Kachel = 1 % der Geldmenge M2 (USA)"</span>,</span>
+<span id="cb4-45"><a href=""></a>         <span class="at">caption =</span> <span class="st">"Quelle: FRED (CURRCIR, M2SL), Jahresdurchschnitte"</span>) <span class="sc">+</span></span>
+<span id="cb4-46"><a href=""></a>    <span class="fu">theme_void</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb4-47"><a href=""></a>    <span class="fu">theme</span>(</span>
+<span id="cb4-48"><a href=""></a>      <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb4-49"><a href=""></a>      <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb4-50"><a href=""></a>      <span class="at">plot.title    =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#343a40"</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb4-51"><a href=""></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#868e96"</span>, <span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb4-52"><a href=""></a>                                   <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">8</span>)),</span>
+<span id="cb4-53"><a href=""></a>      <span class="at">plot.caption  =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#868e96"</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb4-54"><a href=""></a>      <span class="at">strip.text    =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#343a40"</span>, <span class="at">face =</span> <span class="st">"bold"</span>,</span>
+<span id="cb4-55"><a href=""></a>                                   <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">4</span>)),</span>
+<span id="cb4-56"><a href=""></a>      <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb4-57"><a href=""></a>      <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#495057"</span>)</span>
+<span id="cb4-58"><a href=""></a>    )</span>
+<span id="cb4-59"><a href=""></a>  <span class="fu">print</span>(p)</span>
+<span id="cb4-60"><a href=""></a>}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<!-- ====================================================================== -->
 </section>
 <section id="direkte-und-indirekte-kreditvergabe" class="slide level2 medium">
 <h2>Direkte und indirekte Kreditvergabe</h2>
@@ -803,15 +1195,89 @@
 <section id="risikotransfer" class="slide level2 medium">
 <h2>Risikotransfer</h2>
 <div class="columns">
-<div class="column" style="width:60%;">
+<div class="column" style="width:55%;">
 <ul>
 <li>Direkte Kreditvergabe: Entweder vertragsgemäße Erfüllung oder Totalausfall.</li>
 <li>Indirekte Kreditvergabe: Teilweiser Ausfall, bei unabhängigen Kreditrisiken überschaubar.</li>
 <li>Kreditausfallrisiken nicht immer unabhängige Zufallsereignisse (Immobilienkrise 2007)</li>
 </ul>
-</div><div class="column" style="width:40%;">
-<!-- Platz für Abbildung: z. B. Kreditausfälle in der Immobilienkrise -->
+</div><div class="column" style="width:45%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="99_geld_und_geldpolitik_files/figure-revealjs/plot-bump-1.svg" class="quarto-figure quarto-figure-center" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
 </div></div>
+</section>
+<section id="code-ausfallquoten-nach-kreditart-fred" class="slide level2 smaller">
+<h2>Code: Ausfallquoten nach Kreditart (FRED)</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="co"># Daten: FRED, Ausfallquoten bei US-Geschäftsbanken (saisonbereinigt, Quartale)</span></span>
+<span id="cb5-2"><a href=""></a>get_fred <span class="ot">&lt;-</span> <span class="cf">function</span>(id) {</span>
+<span id="cb5-3"><a href=""></a>  f <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"fred_"</span>, id, <span class="st">".csv"</span>)</span>
+<span id="cb5-4"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(f)) {</span>
+<span id="cb5-5"><a href=""></a>    <span class="fu">try</span>(<span class="fu">download.file</span>(</span>
+<span id="cb5-6"><a href=""></a>      <span class="fu">paste0</span>(<span class="st">"https://fred.stlouisfed.org/graph/fredgraph.csv?id="</span>, id),</span>
+<span id="cb5-7"><a href=""></a>      f, <span class="at">mode =</span> <span class="st">"wb"</span>, <span class="at">quiet =</span> <span class="cn">TRUE</span>), <span class="at">silent =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-8"><a href=""></a>  }</span>
+<span id="cb5-9"><a href=""></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">file.exists</span>(f)) <span class="fu">return</span>(<span class="cn">NULL</span>)</span>
+<span id="cb5-10"><a href=""></a>  d <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(f)</span>
+<span id="cb5-11"><a href=""></a>  <span class="fu">names</span>(d) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"date"</span>, <span class="st">"value"</span>)</span>
+<span id="cb5-12"><a href=""></a>  d<span class="sc">$</span>date  <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(d<span class="sc">$</span>date)</span>
+<span id="cb5-13"><a href=""></a>  d<span class="sc">$</span>value <span class="ot">&lt;-</span> <span class="fu">suppressWarnings</span>(<span class="fu">as.numeric</span>(d<span class="sc">$</span>value))</span>
+<span id="cb5-14"><a href=""></a>  d[<span class="sc">!</span><span class="fu">is.na</span>(d<span class="sc">$</span>value), ]</span>
+<span id="cb5-15"><a href=""></a>}</span>
+<span id="cb5-16"><a href=""></a></span>
+<span id="cb5-17"><a href=""></a>ids <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">Hypotheken          =</span> <span class="st">"DRSFRMACBS"</span>,</span>
+<span id="cb5-18"><a href=""></a>         <span class="at">Kreditkarten        =</span> <span class="st">"DRCCLACBS"</span>,</span>
+<span id="cb5-19"><a href=""></a>         <span class="at">Firmenkredite =</span> <span class="st">"DRBLACBS"</span>,</span>
+<span id="cb5-20"><a href=""></a>         <span class="st">`</span><span class="at">Gewerbeimmo.</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"DRCRELEXFACBS"</span>)</span>
+<span id="cb5-21"><a href=""></a></span>
+<span id="cb5-22"><a href=""></a>dl <span class="ot">&lt;-</span> <span class="fu">lapply</span>(ids, get_fred)</span>
+<span id="cb5-23"><a href=""></a></span>
+<span id="cb5-24"><a href=""></a><span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(dl, is.null))) {</span>
+<span id="cb5-25"><a href=""></a>  <span class="fu">cat</span>(<span class="st">"Daten konnten nicht geladen werden."</span>)</span>
+<span id="cb5-26"><a href=""></a>} <span class="cf">else</span> {</span>
+<span id="cb5-27"><a href=""></a>  jahre <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1992</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">3</span>)</span>
+<span id="cb5-28"><a href=""></a></span>
+<span id="cb5-29"><a href=""></a>  d <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(dl, <span class="at">.id =</span> <span class="st">"art"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-30"><a href=""></a>    <span class="fu">mutate</span>(<span class="at">jahr =</span> <span class="fu">as.integer</span>(<span class="fu">format</span>(date, <span class="st">"%Y"</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb5-31"><a href=""></a>    <span class="fu">filter</span>(jahr <span class="sc">%in%</span> jahre) <span class="sc">|&gt;</span></span>
+<span id="cb5-32"><a href=""></a>    <span class="fu">group_by</span>(art, jahr) <span class="sc">|&gt;</span></span>
+<span id="cb5-33"><a href=""></a>    <span class="fu">summarise</span>(<span class="at">wert =</span> <span class="fu">mean</span>(value), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb5-34"><a href=""></a></span>
+<span id="cb5-35"><a href=""></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(d, <span class="fu">aes</span>(<span class="at">x =</span> jahr, <span class="at">y =</span> wert, <span class="at">colour =</span> art)) <span class="sc">+</span></span>
+<span id="cb5-36"><a href=""></a>    <span class="fu">geom_pembumpchart</span>(<span class="at">point_size =</span> <span class="fl">2.4</span>, <span class="at">line_width =</span> <span class="fl">1.1</span>,</span>
+<span id="cb5-37"><a href=""></a>                      <span class="at">labels =</span> <span class="st">"first_last"</span>, <span class="at">label_size =</span> <span class="fl">3.3</span>) <span class="sc">+</span></span>
+<span id="cb5-38"><a href=""></a>    <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">2010</span>, <span class="at">y =</span> <span class="fl">0.35</span>, <span class="at">label =</span> <span class="st">"Immobilienkrise"</span>,</span>
+<span id="cb5-39"><a href=""></a>             <span class="at">colour =</span> <span class="st">"#868e96"</span>, <span class="at">size =</span> <span class="fl">3.6</span>, <span class="at">fontface =</span> <span class="st">"italic"</span>) <span class="sc">+</span></span>
+<span id="cb5-40"><a href=""></a>    <span class="fu">scale_y_reverse</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">add =</span> <span class="fu">c</span>(<span class="fl">0.6</span>, <span class="fl">0.4</span>))) <span class="sc">+</span></span>
+<span id="cb5-41"><a href=""></a>    <span class="fu">scale_x_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fl">0.22</span>)) <span class="sc">+</span></span>
+<span id="cb5-42"><a href=""></a>    <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">Hypotheken          =</span> <span class="st">"#d03161"</span>,</span>
+<span id="cb5-43"><a href=""></a>                                   <span class="at">Kreditkarten        =</span> <span class="st">"#e76254"</span>,</span>
+<span id="cb5-44"><a href=""></a>                                   <span class="at">Firmenkredite =</span> <span class="st">"#5d8198"</span>,</span>
+<span id="cb5-45"><a href=""></a>                                   <span class="st">`</span><span class="at">Gewerbeimmo.</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"#d37b00"</span>)) <span class="sc">+</span></span>
+<span id="cb5-46"><a href=""></a>    <span class="fu">coord_cartesian</span>(<span class="at">clip =</span> <span class="st">"off"</span>) <span class="sc">+</span></span>
+<span id="cb5-47"><a href=""></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Wo fallen Kredite aus?"</span>,</span>
+<span id="cb5-48"><a href=""></a>         <span class="at">subtitle =</span> <span class="st">"Rang der Ausfallquote nach Kreditart (1 = höchste), alle 3 Jahre"</span>,</span>
+<span id="cb5-49"><a href=""></a>         <span class="at">caption =</span> <span class="st">"Quelle: FRED (DRSFRMACBS, DRCCLACBS, DRBLACBS, DRCRELEXFACBS)"</span>) <span class="sc">+</span></span>
+<span id="cb5-50"><a href=""></a>    <span class="fu">theme_void</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb5-51"><a href=""></a>    <span class="fu">theme</span>(</span>
+<span id="cb5-52"><a href=""></a>      <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb5-53"><a href=""></a>      <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">colour =</span> <span class="cn">NA</span>),</span>
+<span id="cb5-54"><a href=""></a>      <span class="at">plot.title    =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#343a40"</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb5-55"><a href=""></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#868e96"</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb5-56"><a href=""></a>                                   <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">8</span>)),</span>
+<span id="cb5-57"><a href=""></a>      <span class="at">plot.caption  =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"#868e96"</span>, <span class="at">size =</span> <span class="dv">8</span>, <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb5-58"><a href=""></a>      <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb5-59"><a href=""></a>    )</span>
+<span id="cb5-60"><a href=""></a>  <span class="fu">print</span>(p)</span>
+<span id="cb5-61"><a href=""></a>}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="informationen-in-finanzinstrumenten" class="slide level2 medium">
 <h2>Informationen in Finanzinstrumenten</h2>
