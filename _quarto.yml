@@ -14,12 +14,12 @@ website:
   title: "PI 0588 Economic Policy"
   site-url: "https://mschnetzer.github.io/econpol26/"
   
-  announcement: 
-    icon: info-circle
-    dismissable: true
-    content: "<span style='font-size:0.8em;'>**Registration via LPIS opens on 2 October 2026**</span>"
-    type: primary
-    position: above-navbar
+  # announcement: 
+  #   icon: info-circle
+  #   dismissable: true
+  #   content: "<span style='font-size:0.8em;'>**Registration via LPIS opens on 2 October 2026**</span>"
+  #   type: primary
+  #   position: above-navbar
 
   navbar:
     pinned: true

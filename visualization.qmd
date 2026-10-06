@@ -15,7 +15,7 @@ Students will create a preliminary chart addressing [one of the topics from a li
 
 #### RMarkdown report
 
-Students are required to draft a short report around the chart, containing the monetary policy background and the most important information about chart creation. **The final version of the report is due on January 31, 2027.** You should work with [RMarkdown](https://rmarkdown.rstudio.com/index.html) (or [Quarto](https://quarto.org)) which is a handy and simple tool to compose reports based on R code. It is recommended to edit the document in [RStudio](https://posit.co) (or Positron) and compile it in HTML format. The final report should be structured as follows:
+Students are required to draft a short report around the chart, containing the monetary policy background and the most important information about chart creation. **The final version of the report is due on January 31, 2027.** You should work with [RMarkdown](https://rmarkdown.rstudio.com/index.html) (or [Quarto](https://quarto.org)) which is a handy and simple tool to compose reports based on R code. It is recommended to edit the document in [RStudio](https://posit.co/downloads) (or [Positron](https://positron.posit.co)) and compile it in HTML format. The final report should be structured as follows:
 
 - *Introduction:* Explain why the topic you chose is important and interesting for the academic/public debate.
 - *Research question:* What is the specific research question that you address with your visualization?

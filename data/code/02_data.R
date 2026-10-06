@@ -2,15 +2,12 @@
 # 02 BASICS OF DATA HANDLING
 ############################
 
-# Load the tidyverse
+# Load the tidyverse where Penguins data is included
 library(tidyverse)
 
 ##############
 ## PENGUINS ##
 ##############
-
-# Load library
-library(palmerpenguins)
 
 # Assign data
 data <- penguins
@@ -24,9 +21,9 @@ glimpse(data)
 levels(data$species)
 
 # Show some descriptive statistics
-summary(data$bill_length_mm) # There are 2 NA values
-mean(data$bill_length_mm, na.rm = T)
-sd(data$bill_length_mm, na.rm = T)
+summary(data$bill_len) # There are 2 NA values
+mean(data$bill_len, na.rm = T)
+sd(data$bill_len, na.rm = T)
 
 ## What is the mean flipper length?
 
@@ -46,7 +43,7 @@ data |> filter(species %in% c("Adelie","Gentoo"))
 
 
 # Select and rename
-data |> select(Art = species, Insel = island, Geschlecht = sex)
+data |> select(Art = species, Insel = island, Geschlecht = sex) |> head()
 
 # Counting
 data |> count(island)
@@ -54,50 +51,50 @@ data |> count(species, island)
 data |> count(species, island, .drop = FALSE)
 
 # Calculate summarise statistics
-data |> summarise(meanbill = mean(bill_length_mm, na.rm = T),
-                  sdbill = sd(bill_length_mm, na.rm = T),
-                  meanflipper = mean(flipper_length_mm, na.rm = T),
-                  sdflipper = sd(flipper_length_mm, na.rm = T))
+data |> summarise(meanbill = mean(bill_len, na.rm = T),
+                  sdbill = sd(bill_len, na.rm = T),
+                  meanflipper = mean(flipper_len, na.rm = T),
+                  sdflipper = sd(flipper_len, na.rm = T))
 
 # Summary statistics by group
 data |> group_by(species) |> 
-  summarise(meanbill = mean(bill_length_mm, na.rm = T))
-data |> summarise(meanbill = mean(bill_length_mm, na.rm = T), .by = species)
+  summarise(meanbill = mean(bill_len, na.rm = T))
+data |> summarise(meanbill = mean(bill_len, na.rm = T), .by = species)
 
 ## Calculate maximum flipper length by island
 
 
 # Median body mass
-data |> summarise(median = median(body_mass_g, na.rm = T),
-                  medianq = quantile(body_mass_g, probs = 0.5, na.rm = T))
+data |> summarise(median = median(body_mass, na.rm = T),
+                  medianq = quantile(body_mass, probs = 0.5, na.rm = T))
 
 ## Calculate P25 of body mass by sex
 
 
 # Summary statistic for selected variable type
-data |> summarise(across(c(bill_length_mm, bill_depth_mm), ~mean(., na.rm = T)))
+data |> summarise(across(c(bill_len, bill_dep), ~mean(., na.rm = T)))
 data |> summarise(across(where(is.numeric), ~mean(., na.rm = T)))
 
 # Control with nice select function
-data |> select(contains("length")) # other options: starts_with; ends_with
-data |> summarise(across(contains("length"), ~mean(., na.rm = T)))
+data |> select(contains("len")) |> head() # other options: starts_with; ends_with
+data |> summarise(across(contains("len"), ~mean(., na.rm = T)))
 
 # Drop observations with missing values (and save)
 data <- data |> drop_na()
 
 # Create new variables with mutate (and don't forget to save in dataset)
-data <- data |> mutate(totallength = bill_length_mm + flipper_length_mm)
+data <- data |> mutate(totallength = bill_len + flipper_len)
 data <- data |> mutate(color = case_when(sex == "male" ~ "darkgreen",
                                          sex == "female" ~ "darkred"))
 
 # Arrange data by column in descending order
-data |> arrange(desc(bill_length_mm))
+data |> arrange(desc(bill_len))
 
 # Get top 3 observations for bill length by species
-top3 <- data |> slice_max(bill_length_mm, n = 3, by = species)
+top3 <- data |> slice_max(bill_len, n = 3, by = species)
 
 # Get bottom 10% of observations with smallest bill length
-top10p <- data |> slice_min(bill_length_mm, prop = 0.1)
+top10p <- data |> slice_min(bill_len, prop = 0.1)
 
 ## Show 3 observations with smallest body mass by island
 
@@ -141,6 +138,6 @@ fulldata <- left_join(sub1, sub2)
 fulldata <- fulldata |> 
   mutate(wageshare = `Compensation of employees`/`Gross domestic product at market prices`*100)
 
-fulldata |> 
+fulldata |> drop_na() |> 
   ggplot(aes(x = time, y = wageshare)) + 
   geom_line()
