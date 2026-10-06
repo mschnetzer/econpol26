@@ -1,7 +1,9 @@
 library(tidyverse)
 library(ggrepel)
 
-# raw <- read_csv2("rates.csv")
+# Download data from OeNB website
+# raw <- read_csv2("rates.csv", col_select = c("Jahr", "Monat", "Indikator", "Werte"), 
+#           locale = locale(encoding = "ISO-8859-1"))
 # raw |> select(year = Jahr, month = Monat, country = Indikator, value = Werte) |> 
 #   mutate(country = case_when(
 #     str_detect(country, "Euroraum") ~ "EA",
@@ -9,11 +11,11 @@ library(ggrepel)
 #     str_detect(country, "USA") ~ "USA",
 #     str_detect(country, "Japan") ~ "JP"
 #   )) |> 
-#   mutate(date = make_date(year, month)) |> 
-#   filter(country %in% c("EA", "GB", "USA", "JP")) -> rates
+#      filter(country %in% c("EA", "GB", "USA", "JP")) -> rates
 # write.csv(rates, "lines.csv")
 
-raw <- read_csv("lines.csv")
+raw <- read_csv("lines.csv") |> 
+     mutate(date = make_date(year, month))
 
 raw |> 
   ggplot(aes(x = date, y = value, color = country)) + 
