@@ -1,0 +1,877 @@
+[
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "In this table you find the dates and contents of all classes.\n\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\nDate\nTime\nRoom\nContent\nSlides\nCode\nData\nAssignment\n\n\n\n\nOct 05, 2026\n10:00-12:00\nTC.5.05\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2026\n10:00-12:00\nTC.5.05\nMonetary Regimes · Data handling\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOct 19, 2026\n10:00-12:00\nTC.5.05\nEffects of Monetary Policy · Geometries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 02, 2026\n10:00-12:00\nTC.5.05\nQuantitative Easing · Scales\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 09, 2026\n10:00-12:00\nTC.5.05\nFinancialization and Debt · Colors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 16, 2026\n10:00-12:00\nTC.5.05\ntba · Labels\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 23, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 30, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDec 14, 2026\n10:00-12:00\nTC.5.03\nMonetary inequalities · Maps\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 11, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 18, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 25, 2027\n10:00-12:00\nTC.5.05\nAward ceremony at OeNB\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignments\nAssignment [1] provides the setup of the R infrastructure that is required in this course. There are no points for this assignment. Assignments [2] to [4] are recreations of examplary figures provided below. These examples are related to figures that are discussed in class. Students should then try to reproduce the plots at home and improve their individual coding skills. The raw data for the figures are available as *.csv files below.\n\nHomework 1\n\n\n\n\n\n\n\nInstall the latest R version (&gt; v4.6.0)\nInstall the latest version of RStudio Desktop\nOpen RStudio, copy the following code into the console and execute: install.packages(c(\"tidyverse\", \"rmarkdown\", \"scales\", \"lubridate\", \"colorspace\", \"devtools\")); sessionInfo()\nClick on Help &gt; About RStudio\nMake sure that both the R version (Console) and the RStudio version are visible, take a screenshot and upload it to the learning platform before October 12, 2026 at 9 a.m.\n\n\n\n\n\nHomework 2\n\n\n\n\n\n\nPlease submit your chart before November 09, 2026 at 9 a.m. The data for this assignment is available here: \n\n\n\n\nHomework 3\n\n\n\n\n\n\nPlease submit your chart before November 23, 2026 at 9 a.m. The data for this assignment is available here: \n\n\n\n\nHomework 4\n\n\n\n\n\n\nPlease submit your chart before December 14, 2026 at 9 a.m. The data for this assignment is available here:"
+  },
+  {
+    "objectID": "visualization.html",
+    "href": "visualization.html",
+    "title": "Chart & Report",
+    "section": "",
+    "text": "Data visualization\nStudents will create a preliminary chart addressing one of the topics from a list provided by the Austrian National Bank. The in-class presentation should provide an intuition of the research question, the underlying data of the chart and considerations behind the style of the chart. The time slot for the presentation is five minutes. Afterwards we will have a brief Q&A in class. The presentation should only have a small number of slides with little text to lead the audience through the process of chart creation, e.g.\n\nResearch question: Which issue in monetary policy do you address with your chart?\nData: What data did you use?\nChart: What does the chart show? What were your thoughts when choosing this style?\nConclusion: What can we learn from this data visualization for economic policy?\n\n\n\nRMarkdown report\nStudents are required to draft a short report around the chart, containing the monetary policy background and the most important information about chart creation. The final version of the report is due on January 31, 2027. You should work with RMarkdown (or Quarto) which is a handy and simple tool to compose reports based on R code. It is recommended to edit the document in RStudio (or Positron) and compile it in HTML format. The final report should be structured as follows:\n\nIntroduction: Explain why the topic you chose is important and interesting for the academic/public debate.\nResearch question: What is the specific research question that you address with your visualization?\nData: What data did you use? What are the limitations of the data? If helpful, you might want to include some descriptive statistics as a table.\nResult: Present and describe the chart that you have created.\nConclusion: What are the policy conclusions of your chart?\nCode: Provide the full code for your data visualization as a code block in the appendix of the report.\n\n\n\nCheatsheets\n   \n\n\nAdditional online resources\n\n\n\n\n\n\n\n\n\nKieran Healy  Data Visualization: A Practical Introduction  Princeton University Press  ISBN-13: 9780691181622  Link\n\n\n\nClaus O. Wilke  Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures  O’Reilly Media  ISBN-13: 9781492031086  Link\n\n\n\nJack Dougherty and Ilya Ilyankou  Hands-On Data Visualization: Interactive Storytelling from Spreadsheets to Code  O’Reilly Media  ISBN-13: 9781492086000  Link"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#lecturers",
+    "href": "slides/01_introduction/index.html#lecturers",
+    "title": "    Monetary Policy Visualization",
+    "section": "Lecturers",
+    "text": "Lecturers\n\n\n\n\n\n\n\n   Dr. Matthias Schnetzer\n   https://mschnetzer.github.io\n   mschnetz@wu.ac.at\n   mschnetzer\n\n\n\n\n\n   Patrick Mokre, PhD\n   https://www.patrickmokre.com\n   patrick.mokre@akwien.at\n   patrickmokre"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#about-this-course",
+    "href": "slides/01_introduction/index.html#about-this-course",
+    "title": "    Monetary Policy Visualization",
+    "section": "About this course",
+    "text": "About this course\n\n“A picture is worth a thousand words”\n\nThis course approaches monetary policy by analyzing data and creating data visualizations. We study selected illustrations, discuss the underlying data, the theoretical background and policy implications. We will assemble plots in class and study the basics of data visualization.\nYou will gain:\n\nan overview of economic issues in monetary policy\na basic understanding of principles of data visualization\nknowledge how to enrich academic publications with informative graphs"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#collaboration-with-oenb",
+    "href": "slides/01_introduction/index.html#collaboration-with-oenb",
+    "title": "    Monetary Policy Visualization",
+    "section": "Collaboration with OeNB",
+    "text": "Collaboration with OeNB\nThis course is a collaboration with the Austrian National Bank (OeNB). The bank will exclusively provide datasets for this class to create data visualizations.\n\n\n\n\n\n\n\nThere will be an award ceremony at the end of the course where the best visualizations will be presented at the OeNB."
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#who-are-you",
+    "href": "slides/01_introduction/index.html#who-are-you",
+    "title": "    Monetary Policy Visualization",
+    "section": "Who are you?",
+    "text": "Who are you?\n   \nWhat do you expect of this course? Do you already have some coding experience in R?"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#schedule",
+    "href": "slides/01_introduction/index.html#schedule",
+    "title": "    Monetary Policy Visualization",
+    "section": "Schedule",
+    "text": "Schedule\n\n  \n  \n\n\n\n\n\n\n\n\n\n\nDate\nTime\nRoom\nContent\nAssignment\n\n\n\n\nOct 05, 2026\n10:00-12:00\nTC.5.05\nIntroduction\n\n\n\nCircle Xmark\n\n\n\n\n\n\nOct 12, 2026\n10:00-12:00\nTC.5.05\nMonetary Regimes · Data handling\n\n\n\nPen\n\n\n\n\n\n\nOct 19, 2026\n10:00-12:00\nTC.5.05\nEffects of Monetary Policy · Geometries\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 02, 2026\n10:00-12:00\nTC.5.05\nQuantitative Easing · Scales\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 09, 2026\n10:00-12:00\nTC.5.05\nFinancialization and Debt · Colors\n\n\n\nPen\n\n\n\n\n\n\nNov 16, 2026\n10:00-12:00\nTC.5.05\ntba · Labels\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 23, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\nPen\n\n\n\n\n\n\nNov 30, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\nCircle Xmark\n\n\n\n\n\n\nDec 14, 2026\n10:00-12:00\nTC.5.03\nMonetary inequalities · Maps\n\n\n\nPen\n\n\n\n\n\n\nJan 11, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\nCircle Xmark\n\n\n\n\n\n\nJan 18, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\nCircle Xmark\n\n\n\n\n\n\nJan 25, 2027\n10:00-12:00\nTC.5.05\nAward ceremony at OeNB\n\n\n\nCircle Xmark"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#assignments",
+    "href": "slides/01_introduction/index.html#assignments",
+    "title": "    Monetary Policy Visualization",
+    "section": "Assignments",
+    "text": "Assignments\nAssignment 1 provides the setup of the R infrastructure that is required in this course. There are no points for this assignment.\nAssignments 2 to 4 are recreations of examplary figures. These examples are related to figures that are discussed in class. Students should then try to reproduce the plots at home and improve their individual coding skills.\nThe raw data for the figures are available as CSV files. The charts should then be uploaded to the learning platform before 9 a.m. on the day of the deadline."
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#assignments-1",
+    "href": "slides/01_introduction/index.html#assignments-1",
+    "title": "    Monetary Policy Visualization",
+    "section": "Assignments",
+    "text": "Assignments"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#chart-report",
+    "href": "slides/01_introduction/index.html#chart-report",
+    "title": "    Monetary Policy Visualization",
+    "section": "Chart & Report",
+    "text": "Chart & Report\n\n\nChart presentation\n\n\nResearch question\nData\nChart\nConclusion\n\n\nDeadline: January 11, 2027\n\nRMarkdown (or Quarto) Report\n\n\nTitle\nAuthor\nIntroduction\nResearch question\nData\nResult\nConclusion\nCode\n\n\nDeadline: January 31, 2027"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#grading",
+    "href": "slides/01_introduction/index.html#grading",
+    "title": "    Monetary Policy Visualization",
+    "section": "Grading",
+    "text": "Grading\n  Assignments: 30% (0-10 points for each visualization)  \n\n Chart presentation: 30% (0-20 points for the quality of the presentation, 0-10 for the preliminary chart)  \n\n\n Written report: 40% (0-40 points for the report and the final chart)\n\n\n\n\n   100-90: Excellent      89-80: Good      79-65: Satisfactory      64-50: Sufficient  All single tasks have to be passed (50% threshold each)."
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#visualizations-by-students",
+    "href": "slides/01_introduction/index.html#visualizations-by-students",
+    "title": "    Monetary Policy Visualization",
+    "section": "Visualizations by students",
+    "text": "Visualizations by students"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#feedback-cooperation-and-help",
+    "href": "slides/01_introduction/index.html#feedback-cooperation-and-help",
+    "title": "    Monetary Policy Visualization",
+    "section": "Feedback, cooperation and help",
+    "text": "Feedback, cooperation and help\nLet us know your feedback on the course anytime. If possible, we will try to incorporate your feedback immediately. At least, we will consider it for future courses.\nAs some of you might already have advanced coding skills in R, please support each other and collaborate. This does not mean that one person does all the coding and shares with all colleagues. Students should have an intrinsic motivation to improve their coding skills but cooperate to learn from each other.\nPlease also consult support platforms like Stack Overflow or take a look at the cheatsheets:"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#recommended-literature",
+    "href": "slides/01_introduction/index.html#recommended-literature",
+    "title": "    Monetary Policy Visualization",
+    "section": "Recommended Literature",
+    "text": "Recommended Literature\n\n\n\n\n\n\n\n\n\nJonathan Schwabish  Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks  Columbia University Press  ISBN-13: 9780231193115\n\n\n\nDavid Spiegelhalter  The Art of Statistics: Learning from Data  Penguin Books UK  ISBN-13: 9780241258767"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#the-era-of-evidence-in-economics",
+    "href": "slides/01_introduction/index.html#the-era-of-evidence-in-economics",
+    "title": "    Monetary Policy Visualization",
+    "section": "The era of evidence in economics",
+    "text": "The era of evidence in economics\n\n\n\n\n\n\nThe figure shows the evolution of economics literature by text mining the 500 most-cited titles in top journals by decade. There is a shift from advancing theory towards empirical evidence.\n\n\n\nSource: Brice/Montesinos-Yufa (2019)"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#the-rise-of-empirical-articles",
+    "href": "slides/01_introduction/index.html#the-rise-of-empirical-articles",
+    "title": "    Monetary Policy Visualization",
+    "section": "The rise of empirical articles",
+    "text": "The rise of empirical articles\n\n\n\n\n\n\n\n\n\nThere is a distinct rise of empirical papers in economics. In the 1980s, around one third of publications was empirical. Today, it’s more than half. This trend is present in all sub-fields of the discipline (labor, finance, macro, etc.).  The analyis is based on 134,892 papers published in 80 journals between 1980 and 2015. Papers are labeled as empirical if they use data to estimate economically meaningful parameters.\n\n\n\n\n\n\nSource: Angrist et al. (2017)"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#evidence-based-economic-policy",
+    "href": "slides/01_introduction/index.html#evidence-based-economic-policy",
+    "title": "    Monetary Policy Visualization",
+    "section": "Evidence-based economic policy",
+    "text": "Evidence-based economic policy\n\nData collection: Collection of relevant and high-quality data (administrative data, surveys, interviews, observations, etc.). Researchers should be aware of the qualities but also of the flaws of the data.\nData analysis: The design and type of analysis depends on the question being asked and resources available. The methods range from qualitative to quantitative analysis. The choice of application might unwittingly involve normative reflections by the researcher.\nPolicy suggestions: A major goal of empirical economics is to serve and improve policy making. The findings should, however, be carefully interpreted with regard to the limitations of empirical analyis. Economic policy, even if it’s evidence-based, is affected by norms, beliefs, etc."
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#the-limits-of-data",
+    "href": "slides/01_introduction/index.html#the-limits-of-data",
+    "title": "    Monetary Policy Visualization",
+    "section": "The limits of data",
+    "text": "The limits of data\n\n\n\n\n\nData is never a perfect reflection of the world!\nIt’s only a subset: not crime but reported crime\nInformation is collected by humans and processed by machines: imprecisions and errors are inevitable!\nBe aware of potential (cognitive and statistical) biases!\n\n\n\n\nSource: XKCD"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#invisible-women",
+    "href": "slides/01_introduction/index.html#invisible-women",
+    "title": "    Monetary Policy Visualization",
+    "section": "Invisible women",
+    "text": "Invisible women\n\n\n\n\n\n\n\n\n\nCaroline Criado Perez  Exposing Data Bias in a World Designed for Men  Random House Uk  ISBN: 978-1-78470-628-9  The world we live in is built around male data, preferences, and assumptions. There are numerous examples of how the gender data gap has led to women being overlooked and undervalued in areas ranging from medicine to urban planning. To create a more just and equal society, we need to take into account the different experiences and needs of women and other marginalized groups in our data collection and decision-making processes."
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#invisible-rich",
+    "href": "slides/01_introduction/index.html#invisible-rich",
+    "title": "    Monetary Policy Visualization",
+    "section": "Invisible rich",
+    "text": "Invisible rich\n\n\n\n\n\n\n\n\n\nSurvey data are based on representative samples drawn from total population. However, the probability of drawing one of the few very rich households into the sample is infinitesimal. Moreover, participation in surveys is mostly voluntary and there is a higher refusal rate at the top. This poor coverage of the top in wealth and income surveys conceals the extent of inequality.  The figure shows the gap between the richest observation in wealth survey data (HFCS) and the “poorest” observation in national rich lists created by magazines.\n\n\n\n\n\n\nSource: Disslbacher et al. (2020)"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#administrative-versus-survey-data",
+    "href": "slides/01_introduction/index.html#administrative-versus-survey-data",
+    "title": "    Monetary Policy Visualization",
+    "section": "Administrative versus survey data",
+    "text": "Administrative versus survey data\n\n\n\n\nImpact on response behavior:\n\nSocial desirability\nSociodemographic characteristics\nSurvey design\nLearning effect\n\n\n\n\nSource: Angel et al. (2019)"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#mean-reverting-errors",
+    "href": "slides/01_introduction/index.html#mean-reverting-errors",
+    "title": "    Monetary Policy Visualization",
+    "section": "Mean reverting errors",
+    "text": "Mean reverting errors\n\n\n\nSource: Angel et al. (2019)"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#how-do-we-explain-the-mismatch",
+    "href": "slides/01_introduction/index.html#how-do-we-explain-the-mismatch",
+    "title": "    Monetary Policy Visualization",
+    "section": "How do we explain the mismatch?",
+    "text": "How do we explain the mismatch?\n\n\n\nSource: Angel et al. (2019)"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#anscombes-quartet",
+    "href": "slides/01_introduction/index.html#anscombes-quartet",
+    "title": "    Monetary Policy Visualization",
+    "section": "Anscombe’s quartet",
+    "text": "Anscombe’s quartet\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nI\n\n\nII\n\n\nIII\n\n\nIV\n\n\n\nObs.\nX\nY\nX\nY\nX\nY\nX\nY\n\n\n\n\n1\n10.00\n8.04\n10.00\n9.14\n10.00\n7.46\n8.00\n6.58\n\n\n2\n8.00\n6.95\n8.00\n8.14\n8.00\n6.77\n8.00\n5.76\n\n\n3\n13.00\n7.58\n13.00\n8.74\n13.00\n12.74\n8.00\n7.71\n\n\n4\n9.00\n8.81\n9.00\n8.77\n9.00\n7.11\n8.00\n8.84\n\n\n5\n11.00\n8.33\n11.00\n9.26\n11.00\n7.81\n8.00\n8.47\n\n\n6\n14.00\n9.96\n14.00\n8.10\n14.00\n8.84\n8.00\n7.04\n\n\n7\n6.00\n7.24\n6.00\n6.13\n6.00\n6.08\n8.00\n5.25\n\n\n8\n4.00\n4.26\n4.00\n3.10\n4.00\n5.39\n19.00\n12.50\n\n\n9\n12.00\n10.84\n12.00\n9.13\n12.00\n8.15\n8.00\n5.56\n\n\n10\n7.00\n4.82\n7.00\n7.26\n7.00\n6.42\n8.00\n7.91\n\n\n11\n5.00\n5.68\n5.00\n4.74\n5.00\n5.73\n8.00\n6.89\n\n\nMean\n9.00\n7.50\n9.00\n7.50\n9.00\n7.50\n9.00\n7.50\n\n\nSD\n3.32\n2.03\n3.32\n2.03\n3.32\n2.03\n3.32\n2.03\n\n\nCorr\n0.82\nNA\n0.82\nNA\n0.82\nNA\n0.82\nNA"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#what-do-we-learn-when-plotting-the-data",
+    "href": "slides/01_introduction/index.html#what-do-we-learn-when-plotting-the-data",
+    "title": "    Monetary Policy Visualization",
+    "section": "What do we learn when plotting the data?",
+    "text": "What do we learn when plotting the data?"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#do-you-see-correlation",
+    "href": "slides/01_introduction/index.html#do-you-see-correlation",
+    "title": "    Monetary Policy Visualization",
+    "section": "Do you see correlation?",
+    "text": "Do you see correlation?\n\n\n\n\nCorrelation: -0.07\n\nCorrelation: -0.07"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#same-same-but-different",
+    "href": "slides/01_introduction/index.html#same-same-but-different",
+    "title": "    Monetary Policy Visualization",
+    "section": "Same same but different",
+    "text": "Same same but different"
+  },
+  {
+    "objectID": "slides/01_introduction/index.html#bibliography",
+    "href": "slides/01_introduction/index.html#bibliography",
+    "title": "    Monetary Policy Visualization",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\n\n\n\n\n\nAngel, Stefan/Disslbacher, Franziska/Humer, Stefan/Schnetzer, Matthias (2019). What Did You Really Earn Last Year?: Explaining Measurement Error in Survey Income Data. Journal of the Royal Statistical Society: Series A (Statistics in Society). DOI: 10.1111/rssa.12463\n\n\nAngrist, Joshua/Azoulay, Pierre/Ellison, Glenn/Hill, Ryan/Lu, Susan Feng (2017). Economic Research Evolves: Fields and Styles. American Economic Review, 107(5), 293–297. DOI: 10.1257/aer.p20171117\n\n\nBrice, Brandon D./Montesinos-Yufa, Hugo M. (2019). The era of empirical evidence. Mimeo.\n\n\nDisslbacher, Franziska/Ertl, Michael/List, Emanuel/Mokre, Patrick/Schnetzer, Matthias (2020). On top of the top - adjusting wealth distributions using national rich lists (Working Paper Series No. 20). INEQ."
+  },
+  {
+    "objectID": "gallery.html",
+    "href": "gallery.html",
+    "title": "Selected student work",
+    "section": "",
+    "text": "Victoria Bauer\n\n\n\n\n\nKoen Berben\n\n\n\n\n\nRoopsa Chakraborty\n\n\n\n\n\nSofia Evtushenko\n\n\n\n\n\nTobias Gerstmayr\n\n\n\n\n\nAntonia Hittmair\n\n\n\n\n\nEva-Maria Mooslechner\n\n\n\n\n\nWilhelm Hartung\n\n\n\n\n\nZulian Marecos Amarillas\n\n\n\n\n\nElizaveta Minaeva\n\n\n\n\n\nTeodor Nedev\n\n\n\n\n\nTeodor Nikolov\n\n\n\n\n\nVictor Novy\n\n\n\n\n\nMaria Pessoa Dias da Silva\n\n\n\n\n\nSarah Rabong\n\n\n\n\n\nNina Schöller\n\n\n\n\n\nAnastasiia Skliankina\n\n\n\n\n\nManuel Stahl"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "\n            Monetary Policy Visualization\n        ",
+    "section": "",
+    "text": "Economic Policy (Applied track)\n        \n        \n            Monetary Policy Visualization\n        \n        \n            PI 0588 • Winter term 2026  Vienna University of Economics and Business\n        \n    \n    \n          \n            \n            \n          \n        \n\n\n\n\n\n\nLecturer\n\n   Dr. Matthias Schnetzer\n   https://mschnetzer.github.io\n   mschnetz@wu.ac.at\n   mschnetzer\n\n\n\nLecturer\n\n   Patrick Mokre, PhD\n   https://www.patrickmokre.com\n   patrick.mokre@akwien.at\n   patrickmokre\n\n\n\nCourse details\n\n   Oct 5, 2026 – Jan 25, 2026\n   Mondays\n   10:00–12:00\n   TC.5.05\n\n\n\n\nSummary\n“A picture is worth a thousand words”. This course approaches contemporary issues of monetary policy by analyzing data and creating visualizations. We discuss theoretical backgrounds, empirical evidence and policy implications of monetary policy. In a second step, we assemble plots in class and study the basics of data visualization for policy design and evaluation. As a special feature, we will have a collaboration with the Austrian National Bank (OeNB). The bank will exclusively provide datasets for this class to create data visualizations. The main assignment is that students will design a comprehensive data visualization in R and draft a report around that figure in RMarkdown (or Quarto). Students will need to bring their laptop to class and prior knowledge of data handling in R is beneficial.\n\n\n\n     \n\n\n\nTo sum up, students will gain:\n\n\nan overview of contemporary debates in monetary policy based on recent empirical research\nan understanding of the basics of data visualization for policy design and evaluation\nknowledge how to enrich academic journal publications with informative figures"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#syllabus",
+    "href": "slides/99_geld_und_geldpolitik/index.html#syllabus",
+    "title": "    Geld und Geldpolitik",
+    "section": "Syllabus",
+    "text": "Syllabus\n\n\n\n\n\n\n\n\n\nTopic\nTheory\nVisualization\n\n\n\n\nWhat is money\n• Functions of money• Monetary aggregates• Money demand(Cecchetti and Schoenholz 2021, Part I)\nClassification:Transferrable vs term deposits as split between transaction balances M1 and holdings M2/M3.\n\n\nInterest rates and present value\n• Nominal and real rates• Fisher equation• How many interest rates are “the interest rate”(Cecchetti and Schoenholz 2021, Part II)\nEffective, nominal and real (CPI adjusted) deposit rates.Distribution of rates (heatmap, density plots, ridgelines).Stock rotation (maturity wall): bar charts of loans by remaining fixation period.\n\n\nBanks as intermediaries and transmission mechanism\n• Maturity transformation• Net interest margin• Propagation of policy rate to lending rate to spending chain(Cecchetti and Schoenholz 2021, Part III)\nDebt by sector (bump chart, mosaic chart)Rate pass-through (policy rate to service cost)Scatter of new volume and new rates (to businesses) reveals hysteresis.Connect sector, loan purpose, maturity class and rate fixation in Sankey diagram.\n\n\nFinancialization and debt\n• Income-financed and debt-financed consumption (and wealth)Avritzer and Brochier (2025)\nLoan structure of private households.Loan purposes, loan-size class.Composition of private debt (streamgraph)\n\n\nDebt and rate cycles\n• Debt-service ratios• Variable and fixed rate borrowers over the cycle• Financial instability hypothesisMinsky (1992)\nRate-fixation period as measure of interest rate exposure. Composition of debtors hit first by rate hikes.Maturity of new loans (streamgraph).\n\n\nInternational debt\n• Dominant currency paradigm (world money)• Spillovers from core to periphery• Exorbitant privilege• Global financial cycleLapavitsas (2026)\nDomestic, EU and cross-border loans (Ridgeline)Average bank rates (Jitter plot)"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#literatur",
+    "href": "slides/99_geld_und_geldpolitik/index.html#literatur",
+    "title": "    Geld und Geldpolitik",
+    "section": "Literatur",
+    "text": "Literatur\n\n\n\nCecchetti and Schoenholtz: Money, Banking and Financial Markets. Sixth Edition\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: abebooks.com"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#überblick",
+    "href": "slides/99_geld_und_geldpolitik/index.html#überblick",
+    "title": "    Geld und Geldpolitik",
+    "section": "Überblick",
+    "text": "Überblick"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#überblick-1",
+    "href": "slides/99_geld_und_geldpolitik/index.html#überblick-1",
+    "title": "    Geld und Geldpolitik",
+    "section": "Überblick",
+    "text": "Überblick\n\n\n  \n  \n  \n  \n  \n  \n  Geld\n  Finanz-instrumente\n  Finanzmärkte\n  Zentralbanken\n  Finanz-institutionen\n  RegulierendeInstitutionen"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#geld",
+    "href": "slides/99_geld_und_geldpolitik/index.html#geld",
+    "title": "    Geld und Geldpolitik",
+    "section": "Geld",
+    "text": "Geld\n\n  \n  \n\n  \n  \n    \n      \n      \n    \n    Geldwaren\n  \n\n  \n  \n    \n      \n      \n    \n    Münzen\n  \n\n  \n  \n    \n      \n      \n    \n    Papiergeld\n  \n\n  \n  \n    \n      \n      \n    \n    Bankgeld\n  \n\n  \n  \n    \n      \n      \n    \n    Digitale Währungen"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#finanzinstrumente",
+    "href": "slides/99_geld_und_geldpolitik/index.html#finanzinstrumente",
+    "title": "    Geld und Geldpolitik",
+    "section": "Finanzinstrumente",
+    "text": "Finanzinstrumente\n\n\nIm Englischen werden financial instruments auch securities genannt, weil der zugrundeliegende Vertrag eine Rückzahlung oder künftige Zahlung absichern soll.\n\n\nKredite\nAnleihen\nAktien\nAktienfonds (mutual funds)\nVersicherungen\nTermingeschäfte (contract for difference)"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#finanzmärkte",
+    "href": "slides/99_geld_und_geldpolitik/index.html#finanzmärkte",
+    "title": "    Geld und Geldpolitik",
+    "section": "Finanzmärkte",
+    "text": "Finanzmärkte\n\n\n\nKaffeehäuser, Beisln, Handelsposten\nBörsen\nElektronische Plattformen und Apps\n\n\n\n\n\nHerberge Ter Beurze\n\n\n\n\n\nSource: Museum of the National Bank of Belgium (museum.nbb.be)"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#finanzinstitutionen",
+    "href": "slides/99_geld_und_geldpolitik/index.html#finanzinstitutionen",
+    "title": "    Geld und Geldpolitik",
+    "section": "Finanzinstitutionen",
+    "text": "Finanzinstitutionen\n\n\n\nBanken als Tresorräume mit Auszahlungsraum\nEinlagen und Kredite\nHändler:innen für Finanzinstrumente\nTrennung von Geschäfts- und Privatbanken"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#regulierungsbehörden",
+    "href": "slides/99_geld_und_geldpolitik/index.html#regulierungsbehörden",
+    "title": "    Geld und Geldpolitik",
+    "section": "Regulierungsbehörden",
+    "text": "Regulierungsbehörden\n\n\n\n   \n\n\nWucherverbot\nBanklizenzen\nHausbanken\n\n\n\n\n\n   \n\n\nBankenaufsicht nach Finanzkrisen\nÜberwachen und Strafen\n\n\n\n\n\n   \n\n\nGlass-Steagle Act\nDodd-Frank Act\nBasel III"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#zentralbanken",
+    "href": "slides/99_geld_und_geldpolitik/index.html#zentralbanken",
+    "title": "    Geld und Geldpolitik",
+    "section": "Zentralbanken",
+    "text": "Zentralbanken\n\n\n\nMünzprägeanstalten\nSchatzkammer/Finanzverwaltung (William of Orange)\nGeld- und Kreditangebot, Staatsanleihen"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#code-leitzins-der-bank-of-england",
+    "href": "slides/99_geld_und_geldpolitik/index.html#code-leitzins-der-bank-of-england",
+    "title": "    Geld und Geldpolitik",
+    "section": "Code: Leitzins der Bank of England",
+    "text": "Code: Leitzins der Bank of England\n\n\nlibrary(tidyverse)\n\n# Download once, then reuse the local copy\nf &lt;- \"boe_policy_rate.csv\"\nif (!file.exists(f)) {\n  try(download.file(\n    \"https://fred.stlouisfed.org/graph/fredgraph.csv?id=BOEPRUKA\",\n    f, mode = \"wb\", quiet = TRUE), silent = TRUE)\n}\n\nif (file.exists(f)) {\n  df &lt;- read_csv(f, show_col_types = FALSE) |&gt;\n    rename(date = 1, rate = 2) |&gt;\n    mutate(year = as.integer(format(as.Date(date), \"%Y\")),\n           rate = as.numeric(rate)) |&gt;\n    filter(year &gt;= 1900, !is.na(rate))\n\n  y0 &lt;- min(df$year)\n  y1 &lt;- max(df$year)\n\n  # Markers: start, highest, lowest\n  marks &lt;- bind_rows(\n    df |&gt; slice_min(year, n = 1, with_ties = FALSE) |&gt; mutate(vj = -1),\n    df |&gt; slice_max(rate, n = 1, with_ties = FALSE) |&gt; mutate(vj = -1),\n    df |&gt; slice_min(rate, n = 1, with_ties = FALSE) |&gt; mutate(vj = 1.8)\n  ) |&gt;\n    mutate(\n      hj = case_when(year == y0 ~ 0,\n                     year &gt;= y1 - 10 ~ 1,\n                     TRUE ~ 0.5),\n      label = paste0(rate, \" % (\", year, \")\")\n    )\n\n  p &lt;- ggplot(df, aes(year, rate)) +\n    geom_line(colour = \"#5d8198\", linewidth = 1.2) +\n    geom_point(data = marks, colour = \"#e76254\", size = 3.5) +\n    geom_label(data = marks, aes(label = label, vjust = vj, hjust = hj),\n               colour = \"#e76254\", fill = \"white\", label.size = 0,\n               label.padding = unit(0.2, \"lines\"), size = 4.5) +\n    scale_x_continuous(expand = expansion(mult = c(0.03, 0.06))) +\n    scale_y_continuous(expand = expansion(mult = c(0.18, 0.15))) +\n    coord_cartesian(clip = \"off\") +\n    labs(title = paste0(\"Leitzins der Bank of England, \", y0, \"–\", y1),\n         caption = \"Quelle: Bank of England via FRED (BOEPRUKA)\") +\n    theme_void(base_size = 14) +\n    theme(\n      plot.background  = element_rect(fill = \"transparent\", colour = NA),\n      panel.background = element_rect(fill = \"transparent\", colour = NA),\n      plot.title   = element_text(colour = \"#343a40\", face = \"bold\",\n                                  hjust = 0, margin = margin(b = 8)),\n      plot.caption = element_text(colour = \"#868e96\", size = 9, hjust = 0,\n                                  margin = margin(t = 8))\n    )\n  print(p)\n} else {\n  cat(\"Daten konnten nicht geladen werden.\")\n}"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#fragen-cecchetti-und-schoenholtz",
+    "href": "slides/99_geld_und_geldpolitik/index.html#fragen-cecchetti-und-schoenholtz",
+    "title": "    Geld und Geldpolitik",
+    "section": "Fragen (Cecchetti und Schoenholtz)",
+    "text": "Fragen (Cecchetti und Schoenholtz)\n\n\n\nWas unterscheidet eine Bankomatkarte von einer Kreditkarte?\nSind Ihre Bankeinlagen versichert?\nWürden Sie lieber Aktien, Anleihen oder Gold besitzen?\nWürden Sie Aktien der Firma kaufen, für die Sie arbeiten?\nWelche Informationen wollen Sie haben, bevor Sie eine Hypothek aufnehmen?\n\n\n\nWas ist Ihre Kreditwürdigkeit, und warum ist die wichtig?\nBrauchen Sie eine Lebensversicherung?\nBrauchen Sie eine Krankenversicherung?\nBrauchen Sie eine Sozialversicherung?\nBrauchen Sie eine Pensionsversicherung?"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#recheneinheit",
+    "href": "slides/99_geld_und_geldpolitik/index.html#recheneinheit",
+    "title": "    Geld und Geldpolitik",
+    "section": "Recheneinheit",
+    "text": "Recheneinheit\n\nRechneinheit und Verrechnungseinheit:\n\nGüter und Dienstleistungen sind vergleichbar (kommensurabel)\nGeschäfte werden gegengerechnet und nur die Differenz ausbezahlt\nAusgaben und Einnahmen passieren nicht gleichzeitig, werden aber in Beziehung gesetzt\n\nRelative Preise: Alle Güter und Dienstleistungen werden miteinander verglichen."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#wertspeicher",
+    "href": "slides/99_geld_und_geldpolitik/index.html#wertspeicher",
+    "title": "    Geld und Geldpolitik",
+    "section": "Wertspeicher",
+    "text": "Wertspeicher\n\n\n\nZahlungsmittel sind gegen schnellen Verfall geschützt\n\nKäsesteuern, Salzsteuern, Edelmetalle\n\nLiquider Wertspeicher: Geld kann sehr schnell und günstig gegen Güter und Dienstleistungen getauscht werden.\n\n\n\nGold weniger schnell, Anleihen noch langsamer, Immobilien ganz langsam.\nFinanzinstitutionen unterscheiden zwischen Marktliquidität (market liquidity) und Finanzierungsliquidität (funding liquidity)."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#warengeld",
+    "href": "slides/99_geld_und_geldpolitik/index.html#warengeld",
+    "title": "    Geld und Geldpolitik",
+    "section": "Warengeld",
+    "text": "Warengeld\n\n\n\nFrühe Zahlungsmittel hatten einen intrinsischen Wert: Seide, Butter, Salz, Tierzähne.\nSie hatten auch darüber hinausgehende nützliche Eigenschaften:\n\nHaltbarkeit\nTeilbarkeit\nTransportierbarkeit\nStandardisierbarkeit.\n\n\n\n\nGold zieht sich durch die Geschichte der Zahlungsmittel:\n\nSelten (Hohes Wert-zu-Gewicht Verhältnis)\nWeithin bekannt und verbreitet\nReinheitsgrad bestimmbar\nStandardisierbar und verlustfrei teilbar\nHaltbar"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#papiergeld",
+    "href": "slides/99_geld_und_geldpolitik/index.html#papiergeld",
+    "title": "    Geld und Geldpolitik",
+    "section": "Papiergeld",
+    "text": "Papiergeld\n\n\n\nIm 17. Jahrhundert: Papiergeld entwickelt in Schweden als Alternative zu Kupfergeld (nicht sehr wertvoll)\nDirekt eintauschbar für Metallgeld\nMehr Banknoten als verfügbares Metall, baldiger Vertrauensverlust\nAb beginnendem 18. Jahrhundert: Papiergeld in den amerikanischen Kolonien und Frankreich.\n\n\n\n\n\nErste Banknote aus Schweden\n\n\n\n\n\nSource: Museum of the National Bank of Belgium (museum.nbb.be)"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#papiergeld-1",
+    "href": "slides/99_geld_und_geldpolitik/index.html#papiergeld-1",
+    "title": "    Geld und Geldpolitik",
+    "section": "Papiergeld",
+    "text": "Papiergeld\n\n\n\nIm amerikanischen Bürger:innenkrieg finanzieren beide Seiten Personal und Dienstleistungen mit Papiergeld, gedeckt von einem staatlichen Versprechen.\nPapiergeld der Sieger:innenseite ist anerkanntes Zahlungsmittel (greenback), Banknoten der Velierer:innenseite nur noch für Sammler:innen interessant."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#fiatgeld",
+    "href": "slides/99_geld_und_geldpolitik/index.html#fiatgeld",
+    "title": "    Geld und Geldpolitik",
+    "section": "Fiatgeld",
+    "text": "Fiatgeld\n\n\n\nModernes Papiergeld hat wenig intrinsischen Wert und niedrige Produktionskosten.\nAnnahme durch staatliche Stellen und private Geschäftstreibende ist rechtlich vorgegeben.\nGedecktes Papiergeld: Edelmetall im selben Wert vorhanden, verlangsamt Entwertung.\nUngedecktes Papiergeld (echtes Fiatgeld): Eintauschbarkeit abhängig von Marktbedingungen"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#fiatgeld-1",
+    "href": "slides/99_geld_und_geldpolitik/index.html#fiatgeld-1",
+    "title": "    Geld und Geldpolitik",
+    "section": "Fiatgeld",
+    "text": "Fiatgeld\n\n\n\nGenau wie Waren- und Metallgeld an allgemeine Akzeptanz gebunden.\nGeldmenge zentral gesteuert und einfach auszuweiten (Entwertungsangst).\nZiel von Fiatgeld: Stärkere Preisentwicklung als Warengeld, setzt Mengenentwicklung unter realem Wachstum voraus."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#elektronische-zahlungsmittel",
+    "href": "slides/99_geld_und_geldpolitik/index.html#elektronische-zahlungsmittel",
+    "title": "    Geld und Geldpolitik",
+    "section": "Elektronische Zahlungsmittel",
+    "text": "Elektronische Zahlungsmittel\n\n\n\nDebitkarte:\n\nZahlungsanweisung an Bank.\nZahlung durch Karteninhaber:in.\nGebührenfinanziert.\n\n\n\n\nKreditkarte:\n\nVorstrecken durch Bank.\nZahlung durch Bank.\nZinsfinanziert.\n\n\n\n\nDirektüberweisung:\n\nElektronische Zahlungsanweisung\nTransaktionen über Clearingstelle (automatic clearing houses ACH)\nZwischen Finanzinstitutionen: Tatsächliche Transaktion nur über Differenz.\nMittlerweile häufig an Handyverträge gebunden (Handyparken in Wien, M-Pesa in Kenia)"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#inflation",
+    "href": "slides/99_geld_und_geldpolitik/index.html#inflation",
+    "title": "    Geld und Geldpolitik",
+    "section": "Inflation",
+    "text": "Inflation\n\n\n\nInflation bedeutet, dass Güter und Dienstleistungen allgemein teurer werden.\nInflation bedeutet, dass Geld weniger wert ist.\nGeld ist weniger wert, wenn mehr Geld zirkuliert als Waren und Dienstleistungen zirkulieren."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#code-preis-eines-pints-milch-ons",
+    "href": "slides/99_geld_und_geldpolitik/index.html#code-preis-eines-pints-milch-ons",
+    "title": "    Geld und Geldpolitik",
+    "section": "Code: Preis eines Pints Milch (ONS)",
+    "text": "Code: Preis eines Pints Milch (ONS)\n\nlibrary(tidyverse)\n\nf   &lt;- \"ons_milk_pint.csv\"\nurl &lt;- paste0(\"https://www.ons.gov.uk/generator?format=csv&uri=\",\n              \"/economy/inflationandpriceindices/timeseries/cznt/mm23\")\nmsg &lt;- character()\n\n# A valid ONS file contains the line \"CDID\" near the top\nok_file &lt;- function(path) {\n  file.exists(path) && file.size(path) &gt; 500 &&\n    any(grepl(\"CDID\", readLines(path, n = 15, warn = FALSE)))\n}\n\nif (!ok_file(f)) {\n  unlink(f)\n  ua &lt;- \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36\"\n\n  # Try 1: base R with libcurl and a browser user agent\n  r1 &lt;- try(download.file(url, f, mode = \"wb\", quiet = TRUE,\n                          method = \"libcurl\",\n                          headers = c(\"User-Agent\" = ua)), silent = TRUE)\n  if (inherits(r1, \"try-error\")) msg &lt;- c(msg, conditionMessage(attr(r1, \"condition\")))\n\n  # Try 2: curl package (install.packages(\"curl\") if missing)\n  if (!ok_file(f) && requireNamespace(\"curl\", quietly = TRUE)) {\n    h &lt;- curl::new_handle(useragent = ua)\n    r2 &lt;- try(curl::curl_download(url, f, handle = h), silent = TRUE)\n    if (inherits(r2, \"try-error\")) msg &lt;- c(msg, conditionMessage(attr(r2, \"condition\")))\n  }\n\n  # Try 3: read straight from the URL\n  if (!ok_file(f)) {\n    r3 &lt;- try(writeLines(readLines(url, warn = FALSE), f), silent = TRUE)\n    if (inherits(r3, \"try-error\")) msg &lt;- c(msg, conditionMessage(attr(r3, \"condition\")))\n  }\n  if (!ok_file(f)) unlink(f)\n}\n\nif (ok_file(f)) {\n  # Metadata lines first, then annual, quarterly and monthly rows.\n  # Keep only the annual rows (a plain four-digit year).\n  df &lt;- read_csv(f, col_names = c(\"period\", \"value\"),\n                 col_types = cols(.default = col_character()),\n                 show_col_types = FALSE) |&gt;\n    filter(grepl(\"^[0-9]{4}$\", period)) |&gt;\n    mutate(year = as.integer(period), pence = as.numeric(value)) |&gt;\n    filter(!is.na(pence))\n\n  y0 &lt;- min(df$year)\n  y1 &lt;- max(df$year)\n  ratio &lt;- round(df$pence[df$year == y1] / df$pence[df$year == y0])\n\n  marks &lt;- bind_rows(\n    df |&gt; slice_min(year, n = 1) |&gt; mutate(hj = 0, vj = -0.8),\n    df |&gt; slice_max(year, n = 1) |&gt; mutate(hj = 1, vj = -0.8)\n  ) |&gt;\n    mutate(label = paste0(format(round(pence, 1), nsmall = 1,\n                                 decimal.mark = \",\"), \" p (\", year, \")\"))\n\n  p &lt;- ggplot(df, aes(year, pence)) +\n    geom_line(colour = \"#5d8198\", linewidth = 1.2) +\n    geom_point(data = marks, colour = \"#e76254\", size = 3.5) +\n    geom_label(data = marks,\n               aes(label = label, hjust = hj, vjust = vj),\n               colour = \"#e76254\", fill = \"white\", label.size = 0,\n               label.padding = unit(0.2, \"lines\"), size = 4.5) +\n    scale_x_continuous(expand = expansion(mult = c(0.03, 0.06))) +\n    scale_y_continuous(expand = expansion(mult = c(0.05, 0.2))) +\n    coord_cartesian(clip = \"off\") +\n    labs(title = paste0(\"Preis eines Pints Milch (UK), \", y0, \"–\", y1),\n         subtitle = paste0(\"Nominal in Pence: das \", ratio, \"-Fache seit \", y0),\n         caption = \"Quelle: ONS, RPI average price (CZNT)\") +\n    theme_void(base_size = 14) +\n    theme(\n      plot.background  = element_rect(fill = \"transparent\", colour = NA),\n      panel.background = element_rect(fill = \"transparent\", colour = NA),\n      plot.title    = element_text(colour = \"#343a40\", face = \"bold\",\n                                   hjust = 0, margin = margin(b = 2)),\n      plot.subtitle = element_text(colour = \"#868e96\", size = 10, hjust = 0,\n                                   margin = margin(b = 8)),\n      plot.caption  = element_text(colour = \"#868e96\", size = 9, hjust = 0,\n                                   margin = margin(t = 8))\n    )\n  print(p)\n} else {\n  cat(\"Daten konnten nicht geladen werden.\\n\",\n      \"Fehler: \", paste(unique(msg), collapse = \" | \"), \"\\n\",\n      \"Manuell: CSV von der ONS-Seite (cznt/mm23) herunterladen und als \",\n      f, \" neben die .qmd legen.\", sep = \"\")\n}"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#inflation-1",
+    "href": "slides/99_geld_und_geldpolitik/index.html#inflation-1",
+    "title": "    Geld und Geldpolitik",
+    "section": "Inflation",
+    "text": "Inflation\n\n\n\nEs zirkuliert mehr Geld als Waren, wenn die Geldmenge plötzlich ausgeweitet wird.\nEs zirkulieren weniger Waren als Geld, wenn mehr gespart und weniger investiert (oder konsumiert) wird.\nInflation wird real spürbar wenn Preise tatsächlich erhöht (von Firmen) und höhere Preise tatsächlich bezahlt werden (von Haushalten und Firmen)"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#geld-zählen",
+    "href": "slides/99_geld_und_geldpolitik/index.html#geld-zählen",
+    "title": "    Geld und Geldpolitik",
+    "section": "Geld zählen",
+    "text": "Geld zählen\n\n\nZahlungsmittel können nach Liquidität gereiht werden:\n\nBargeld\nTaggeldkonten\nFestgeldkonten\nStaatsanleihen\nAktien"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#geldaggregate",
+    "href": "slides/99_geld_und_geldpolitik/index.html#geldaggregate",
+    "title": "    Geld und Geldpolitik",
+    "section": "Geldaggregate",
+    "text": "Geldaggregate\n\n\n\nM1: Bargeld und Einlagenkonten (fast unverzinst)\nM2: M1 + Festgeldkonten unter USD 100.000, Sparkonten, Anlagenfonds, … (verzinst)\nM3 + Einlagen über USD 100.000\nM4 (Britisch): Bargeld in Verwendung, Bankeinlagen, Bauspareinlagen, Einlagenzertifikate."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#code-geldaggregate-im-euro-raum-ezb",
+    "href": "slides/99_geld_und_geldpolitik/index.html#code-geldaggregate-im-euro-raum-ezb",
+    "title": "    Geld und Geldpolitik",
+    "section": "Code: Geldaggregate im Euro-Raum (EZB)",
+    "text": "Code: Geldaggregate im Euro-Raum (EZB)\n\nlibrary(tidyverse)\n\n# Download once from the ECB Data Portal, then reuse the local copy\nf &lt;- \"ecb_money_aggregates.csv\"\nif (!file.exists(f)) {\n  try(download.file(\n    paste0(\"https://data-api.ecb.europa.eu/service/data/BSI/\",\n           \"M.U2.Y.V.M10+M20+M30.X.1.U2.2300.Z01.E\",\n           \"?format=csvdata&startPeriod=1999-01\"),\n    f, mode = \"wb\", quiet = TRUE), silent = TRUE)\n}\n\nif (file.exists(f)) {\n  # Values in Bio. € (trillions); the ECB reports millions\n  wide &lt;- read_csv(f, show_col_types = FALSE) |&gt;\n    transmute(item = sub(\".*\\\\.(M[123]0)\\\\..*\", \"\\\\1\", KEY),\n              period = TIME_PERIOD, value = OBS_VALUE / 1e6) |&gt;\n    pivot_wider(names_from = item, values_from = value) |&gt;\n    mutate(x = as.integer(substr(period, 1, 4)) +\n               (as.integer(substr(period, 6, 7)) - 1) / 12)\n\n  lvl &lt;- c(\"M3 – M2\", \"M2 – M1\", \"M1\")   # M1 sits at the bottom\n  df &lt;- wide |&gt;\n    transmute(x, `M1` = M10, `M2 – M1` = M20 - M10, `M3 – M2` = M30 - M20) |&gt;\n    pivot_longer(-x, names_to = \"aggregat\", values_to = \"wert\")\n\n  fmt &lt;- function(v) paste0(format(round(v, 1), nsmall = 1, decimal.mark = \",\"),\n                            \" Bio. €\")\n\n  # Edge markers: aggregate levels = upper edges of the bands\n  first &lt;- wide |&gt; slice_min(x, n = 1)\n  last  &lt;- wide |&gt; slice_max(x, n = 1)\n\n  ends &lt;- tibble(\n    x = last$x, name = c(\"M1\", \"M2\", \"M3\"),\n    y = c(last$M10, last$M20, last$M30)\n  ) |&gt; mutate(label = paste0(name, \"  \", fmt(y)))\n\n  start &lt;- tibble(x = first$x, name = \"M3\", y = first$M30,\n                  label = paste0(\"M3  \", fmt(first$M30)))\n\n  marks &lt;- bind_rows(ends, start)\n\n  fills &lt;- c(\"M1\" = \"#5d8198\", \"M2 – M1\" = \"#e76254\", \"M3 – M2\" = \"#868e96\")\n  cols  &lt;- c(\"M1\" = \"#5d8198\", \"M2\" = \"#e76254\", \"M3\" = \"#868e96\")\n\n  p &lt;- ggplot() +\n    geom_pemstream(data = df, aes(x = x, y = wert, fill = aggregat),\n                   span = 0.08, stack_order = lvl, center = FALSE,\n                   colour = \"white\", linewidth = 0.3) +\n    geom_hline(yintercept = 0, colour = \"#ced4da\", linewidth = 0.5) +\n    geom_point(data = marks, aes(x = x, y = y, colour = name), size = 3) +\n    geom_label(data = ends,\n               aes(x = x + 0.4, y = y, label = label, colour = name),\n               hjust = 0, fill = \"white\", label.size = 0,\n               label.padding = unit(0.2, \"lines\"),\n               size = 4, fontface = \"bold\") +\n    geom_label(data = start,\n               aes(x = x, y = y, label = label, colour = name),\n               hjust = 0, vjust = -0.5, fill = \"white\", label.size = 0,\n               label.padding = unit(0.2, \"lines\"),\n               size = 4, fontface = \"bold\") +\n    scale_fill_manual(values = fills) +\n    scale_colour_manual(values = cols) +\n    scale_x_continuous(breaks = seq(2000, 2020, 10),\n                       expand = expansion(mult = c(0.01, 0.35))) +\n    scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +\n    coord_cartesian(clip = \"off\") +\n    labs(title = paste0(\"Geldaggregate im Euro-Raum, \",\n                        floor(min(df$x)), \"–\", floor(max(df$x))),\n         subtitle = \"Obergrenzen der Bänder = M1, M2 und M3 (Bio. € = Billionen Euro)\",\n         caption = \"Quelle: EZB Data Portal (BSI), saisonbereinigt, Bestände\") +\n    theme_void(base_size = 14) +\n    theme(\n      legend.position  = \"none\",\n      plot.background  = element_rect(fill = \"transparent\", colour = NA),\n      panel.background = element_rect(fill = \"transparent\", colour = NA),\n      axis.text.x  = element_text(colour = \"#868e96\", size = 10,\n                                  margin = margin(t = 6)),\n      plot.title   = element_text(colour = \"#343a40\", face = \"bold\",\n                                  hjust = 0, margin = margin(b = 2)),\n      plot.subtitle = element_text(colour = \"#868e96\", size = 10, hjust = 0,\n                                   margin = margin(b = 8)),\n      plot.caption = element_text(colour = \"#868e96\", size = 9, hjust = 0,\n                                  margin = margin(t = 8))\n    )\n  print(p)\n} else {\n  cat(\"Daten konnten nicht geladen werden.\")\n}"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#geld-drucken",
+    "href": "slides/99_geld_und_geldpolitik/index.html#geld-drucken",
+    "title": "    Geld und Geldpolitik",
+    "section": "Geld drucken",
+    "text": "Geld drucken\n\n\n\nPhysische Geldproduktion durch Notenbanken, mit Seignorage-Gewinn (Differenz zwischen Produktionskosten und Nennwert)\nKreditschöpfung durch Geschäftsbanken und Kreditinstitute\nJedes Aktivum wird durch ein Passivum gespiegelt."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#fragen-cecchetti-und-schoenholtz-1",
+    "href": "slides/99_geld_und_geldpolitik/index.html#fragen-cecchetti-und-schoenholtz-1",
+    "title": "    Geld und Geldpolitik",
+    "section": "Fragen (Cecchetti und Schoenholtz)",
+    "text": "Fragen (Cecchetti und Schoenholtz)\n\n\n\nWie können Sie für einen Kaffee bezahlen?\nWelche Zahlungsart ist am günstigsten für die Empfängerin?\nWas hat Geld mit Arbeitsspezialisierung zu tun?\nWas wäre eine angemessene Rechnungs- und Verrechnungseinheit einer bargeldlosen Ökonomie?\n\n\n\nWas für Beispiele von Direktüberweisungen kennen Sie?\nWas sind die Vor- und Nachteile als EU-Land dem Euroraum beizutreten?\nWarum sind Tomaten, Ziegelsteine und Rinder keine guten Geldwaren?\nWas sind die aktuellen Schätzungen für die Geldaggreagte M1, M2, M3 und M4 in Österreich?"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#geld-ausborgen",
+    "href": "slides/99_geld_und_geldpolitik/index.html#geld-ausborgen",
+    "title": "    Geld und Geldpolitik",
+    "section": "Geld ausborgen",
+    "text": "Geld ausborgen\n\n\nDirekte Kredite:\n\nPrivatkredit\nSchuldschein\nGeldleiher:innen und Kredithaie"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#geld-ausborgen-1",
+    "href": "slides/99_geld_und_geldpolitik/index.html#geld-ausborgen-1",
+    "title": "    Geld und Geldpolitik",
+    "section": "Geld ausborgen",
+    "text": "Geld ausborgen\n\n\nIndirekte Kredite\n\nBanken vermitteln zwischen Einleger:innen und Kreditnehmer:innen\n\nRiskentransformation\nFristentransformation\n\n\n\n\nWer sich Geld ausborgt, schafft gleichzeitig Aktiva (wofür das Geld ausgegeben wird) und Passiva (die Schulden)\nWer Geld herborgt schafft ebenfalls Aktive (die Kreditsumme) und Passiva (wo das Geld dafür herkommt)"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#geld-ausborgen-2",
+    "href": "slides/99_geld_und_geldpolitik/index.html#geld-ausborgen-2",
+    "title": "    Geld und Geldpolitik",
+    "section": "Geld ausborgen",
+    "text": "Geld ausborgen\n\n\n\nNicht alle Kredite sind einlagengedeckt: Banken schaffen (schöpfen) Geld, indem sie Kredite vergeben.\nKredite sind Aktivposten (assets): können gehandelt werden und daher als Eigenkapital (collateral) für weitere Kredite verwendet werden, durch die wieder Geld geschöpft wird.\nNur ein Bruchteil der Guthaben und Kredite sind als Banknoten im Umlauf. Für den Rest reicht die Verrechnung von Zahlungen gegeneinander (clearing)."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#code-bargeld-und-giralgeld-fred",
+    "href": "slides/99_geld_und_geldpolitik/index.html#code-bargeld-und-giralgeld-fred",
+    "title": "    Geld und Geldpolitik",
+    "section": "Code: Bargeld und Giralgeld (FRED)",
+    "text": "Code: Bargeld und Giralgeld (FRED)\n\n# Daten: FRED (St. Louis Fed), einmal laden und als CSV neben der qmd speichern\nget_fred &lt;- function(id) {\n  f &lt;- paste0(\"fred_\", id, \".csv\")\n  if (!file.exists(f)) {\n    try(download.file(\n      paste0(\"https://fred.stlouisfed.org/graph/fredgraph.csv?id=\", id),\n      f, mode = \"wb\", quiet = TRUE), silent = TRUE)\n  }\n  if (!file.exists(f)) return(NULL)\n  d &lt;- read.csv(f)\n  names(d) &lt;- c(\"date\", \"value\")\n  d$date  &lt;- as.Date(d$date)\n  d$value &lt;- suppressWarnings(as.numeric(d$value))\n  d[!is.na(d$value), ]\n}\n\ncur &lt;- get_fred(\"CURRCIR\")   # Bargeld im Umlauf (Mrd. USD)\nm2  &lt;- get_fred(\"M2SL\")      # Geldmenge M2 (Mrd. USD)\n\nif (is.null(cur) || is.null(m2)) {\n  cat(\"Daten konnten nicht geladen werden.\")\n} else {\n  yrs &lt;- c(1960, 1980, 2000, 2025)\n\n  d &lt;- inner_join(rename(cur, bar = value), rename(m2, m2 = value), by = \"date\") |&gt;\n    mutate(year = as.integer(format(date, \"%Y\"))) |&gt;\n    filter(year %in% yrs) |&gt;\n    group_by(year) |&gt;\n    summarise(bar = mean(bar), m2 = mean(m2), .groups = \"drop\") |&gt;\n    mutate(Giralgeld = m2 - bar,\n           panel = factor(paste0(year, \": \", round(100 * bar / m2), \" % Bargeld\"),\n                          levels = paste0(year, \": \", round(100 * bar / m2), \" % Bargeld\"))) |&gt;\n    select(panel, Bargeld = bar, Giralgeld) |&gt;\n    pivot_longer(c(Bargeld, Giralgeld), names_to = \"art\", values_to = \"wert\")\n\n  p &lt;- ggplot(d, aes(y = wert, fill = art)) +\n    geom_pemwaffle(stack_order = c(\"Bargeld\", \"Giralgeld\")) +\n    facet_wrap(~panel, nrow = 2) +\n    coord_equal() +\n    scale_y_reverse() +\n    scale_fill_manual(values = c(Bargeld = \"#e76254\", Giralgeld = \"#5d8198\"),\n                      name = NULL) +\n    labs(title = \"Bargeld ist nur ein Teil des Geldes\",\n         subtitle = \"1 Kachel = 1 % der Geldmenge M2 (USA)\",\n         caption = \"Quelle: FRED (CURRCIR, M2SL), Jahresdurchschnitte\") +\n    theme_void(base_size = 14) +\n    theme(\n      plot.background  = element_rect(fill = \"transparent\", colour = NA),\n      panel.background = element_rect(fill = \"transparent\", colour = NA),\n      plot.title    = element_text(colour = \"#343a40\", face = \"bold\", hjust = 0),\n      plot.subtitle = element_text(colour = \"#868e96\", hjust = 0,\n                                   margin = margin(b = 8)),\n      plot.caption  = element_text(colour = \"#868e96\", size = 9, hjust = 0),\n      strip.text    = element_text(colour = \"#343a40\", face = \"bold\",\n                                   margin = margin(b = 4)),\n      legend.position = \"bottom\",\n      legend.text = element_text(colour = \"#495057\")\n    )\n  print(p)\n}"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#direkte-und-indirekte-kreditvergabe",
+    "href": "slides/99_geld_und_geldpolitik/index.html#direkte-und-indirekte-kreditvergabe",
+    "title": "    Geld und Geldpolitik",
+    "section": "Direkte und indirekte Kreditvergabe",
+    "text": "Direkte und indirekte Kreditvergabe\n\nTrend zur Institutionalisierung von Direktkrediten (Unterschied verschwimmt).\nModerne Unterscheidung: Wer besitzt das Aktivum (den Kredit):\n\nDirektkredit: Gläubiger:in\nIndirekt: Gläubiger:in besitzt Anspruch gegenüber einer Institution, diese eine gegenüber Kreditnehmer:in."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#finanzinstrumente-2",
+    "href": "slides/99_geld_und_geldpolitik/index.html#finanzinstrumente-2",
+    "title": "    Geld und Geldpolitik",
+    "section": "Finanzinstrumente",
+    "text": "Finanzinstrumente\n\n\n\nVertragliche Zahlungs- oder Wertübertragungsverpflichtung\nZahlungsmittel (Aktienoptionen statt Gehaltserhöhung)\nWertspeicher\nRisikotransfer"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#risikotransfer",
+    "href": "slides/99_geld_und_geldpolitik/index.html#risikotransfer",
+    "title": "    Geld und Geldpolitik",
+    "section": "Risikotransfer",
+    "text": "Risikotransfer\n\n\n\nDirekte Kreditvergabe: Entweder vertragsgemäße Erfüllung oder Totalausfall.\nIndirekte Kreditvergabe: Teilweiser Ausfall, bei unabhängigen Kreditrisiken überschaubar.\nKreditausfallrisiken nicht immer unabhängige Zufallsereignisse (Immobilienkrise 2007)"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#code-ausfallquoten-nach-kreditart-fred",
+    "href": "slides/99_geld_und_geldpolitik/index.html#code-ausfallquoten-nach-kreditart-fred",
+    "title": "    Geld und Geldpolitik",
+    "section": "Code: Ausfallquoten nach Kreditart (FRED)",
+    "text": "Code: Ausfallquoten nach Kreditart (FRED)\n\n# Daten: FRED, Ausfallquoten bei US-Geschäftsbanken (saisonbereinigt, Quartale)\nget_fred &lt;- function(id) {\n  f &lt;- paste0(\"fred_\", id, \".csv\")\n  if (!file.exists(f)) {\n    try(download.file(\n      paste0(\"https://fred.stlouisfed.org/graph/fredgraph.csv?id=\", id),\n      f, mode = \"wb\", quiet = TRUE), silent = TRUE)\n  }\n  if (!file.exists(f)) return(NULL)\n  d &lt;- read.csv(f)\n  names(d) &lt;- c(\"date\", \"value\")\n  d$date  &lt;- as.Date(d$date)\n  d$value &lt;- suppressWarnings(as.numeric(d$value))\n  d[!is.na(d$value), ]\n}\n\nids &lt;- c(Hypotheken          = \"DRSFRMACBS\",\n         Kreditkarten        = \"DRCCLACBS\",\n         Firmenkredite = \"DRBLACBS\",\n         `Gewerbeimmo.` = \"DRCRELEXFACBS\")\n\ndl &lt;- lapply(ids, get_fred)\n\nif (any(sapply(dl, is.null))) {\n  cat(\"Daten konnten nicht geladen werden.\")\n} else {\n  jahre &lt;- seq(1992, 2025, by = 3)\n\n  d &lt;- bind_rows(dl, .id = \"art\") |&gt;\n    mutate(jahr = as.integer(format(date, \"%Y\"))) |&gt;\n    filter(jahr %in% jahre) |&gt;\n    group_by(art, jahr) |&gt;\n    summarise(wert = mean(value), .groups = \"drop\")\n\n  p &lt;- ggplot(d, aes(x = jahr, y = wert, colour = art)) +\n    geom_pembumpchart(point_size = 2.4, line_width = 1.1,\n                      labels = \"first_last\", label_size = 3.3) +\n    annotate(\"text\", x = 2010, y = 0.35, label = \"Immobilienkrise\",\n             colour = \"#868e96\", size = 3.6, fontface = \"italic\") +\n    scale_y_reverse(expand = expansion(add = c(0.6, 0.4))) +\n    scale_x_continuous(expand = expansion(mult = 0.22)) +\n    scale_colour_manual(values = c(Hypotheken          = \"#d03161\",\n                                   Kreditkarten        = \"#e76254\",\n                                   Firmenkredite = \"#5d8198\",\n                                   `Gewerbeimmo.` = \"#d37b00\")) +\n    coord_cartesian(clip = \"off\") +\n    labs(title = \"Wo fallen Kredite aus?\",\n         subtitle = \"Rang der Ausfallquote nach Kreditart (1 = höchste), alle 3 Jahre\",\n         caption = \"Quelle: FRED (DRSFRMACBS, DRCCLACBS, DRBLACBS, DRCRELEXFACBS)\") +\n    theme_void(base_size = 14) +\n    theme(\n      plot.background  = element_rect(fill = \"transparent\", colour = NA),\n      panel.background = element_rect(fill = \"transparent\", colour = NA),\n      plot.title    = element_text(colour = \"#343a40\", face = \"bold\", hjust = 0),\n      plot.subtitle = element_text(colour = \"#868e96\", size = 10, hjust = 0,\n                                   margin = margin(b = 8)),\n      plot.caption  = element_text(colour = \"#868e96\", size = 8, hjust = 0),\n      legend.position = \"none\"\n    )\n  print(p)\n}"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#informationen-in-finanzinstrumenten",
+    "href": "slides/99_geld_und_geldpolitik/index.html#informationen-in-finanzinstrumenten",
+    "title": "    Geld und Geldpolitik",
+    "section": "Informationen in Finanzinstrumenten",
+    "text": "Informationen in Finanzinstrumenten\n\n\n\nFinanzinstrumente sind komplex, sie zu verstehen kostet Zeit oder Geld (die Zeit von Anwält:innen).\nEntwicklung eines Finanzinstruments bedeutet Standardisierung und Übersetzung.\nAbsicherung gegen asymmetrische Information"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#einfache-und-derivative-instrumente",
+    "href": "slides/99_geld_und_geldpolitik/index.html#einfache-und-derivative-instrumente",
+    "title": "    Geld und Geldpolitik",
+    "section": "Einfache und derivative Instrumente",
+    "text": "Einfache und derivative Instrumente\n\n\n\nEinfache Finanzinstrumente: Wert und Zahlungen beziehen sich ausschließlich auf wirtschaftlichen Status der Kreditnehmerin (Zinsen, Dividenden, …).\n\n\n\nDerivative Instrumente: Wert und Zahlungen beziehen sich auf Wertentwicklung anderer Instrumente.\nDerivative Instrumente: Verteilen Risiken unter vielen Investor:innen."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#instrumente-bewerten",
+    "href": "slides/99_geld_und_geldpolitik/index.html#instrumente-bewerten",
+    "title": "    Geld und Geldpolitik",
+    "section": "Instrumente bewerten",
+    "text": "Instrumente bewerten\n\n\nEin Finanzinstrument hat einen höheren Preis, wenn eine höhere Zahlung zu einem baldigeren Zeitpunkt und mit höherer Wahrscheinlichkeit geleistet wird.\n\n\nHöhe der vereinbarten Zahlungen.\nZeitpunkt der vereinbarten Zahlungen.\nUmstände der vereinbarten Zahlungen."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#beispiele-für-finanzinstrumente",
+    "href": "slides/99_geld_und_geldpolitik/index.html#beispiele-für-finanzinstrumente",
+    "title": "    Geld und Geldpolitik",
+    "section": "Beispiele für Finanzinstrumente",
+    "text": "Beispiele für Finanzinstrumente\n\n\n\nBankkredite\nAnleihen (Staaten und Firmen)\nImmobilienhypotheken\nAktien\nBesicherte Wertpapiere (asset backed securities)"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#riskentransformation",
+    "href": "slides/99_geld_und_geldpolitik/index.html#riskentransformation",
+    "title": "    Geld und Geldpolitik",
+    "section": "Riskentransformation",
+    "text": "Riskentransformation\n\n\n\nVersicherungsverträge: Auszahlung wenn Ereignis eintritt.\nTermingeschäfte (futures): Geschäft wird in der Zukunft zu zukünftigen Preisen abgeschlossen.\nOptionen: Anrecht, ein Geschäft in der Zukunft zu festgelegtem Preis abzuschließen.\nSwaps: Vertrag, in der Zukunft zwei Zahlungen (oft in unterschiedlichen Währungen) abzuschließen."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#finanzmärkte-1",
+    "href": "slides/99_geld_und_geldpolitik/index.html#finanzmärkte-1",
+    "title": "    Geld und Geldpolitik",
+    "section": "Finanzmärkte",
+    "text": "Finanzmärkte\n\n\n\nLiquidität\nInformationen sammeln und kommunizieren\nOrganisieren Riskenteilung"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#transaktionskosten",
+    "href": "slides/99_geld_und_geldpolitik/index.html#transaktionskosten",
+    "title": "    Geld und Geldpolitik",
+    "section": "Transaktionskosten",
+    "text": "Transaktionskosten\n\n\n\nFinanzmärkte verteilen Liquidität\nTransaktionskosten fallen an, sollen aber niedrig sein\nInformationen vor allem über Preise"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#informative-preise",
+    "href": "slides/99_geld_und_geldpolitik/index.html#informative-preise",
+    "title": "    Geld und Geldpolitik",
+    "section": "Informative Preise",
+    "text": "Informative Preise\n\nPreise werden durch Wettbewerb geformt: Hohe Preise sprechen für geringes Angebot oder hohe Nachfrage.\nOhne Zusatzinformationen bietet das eine Idee an, welche Finanzinstrumente von ihren Besitzer:innen und anderen Käufer:innen als vielversprechend gesehen werden.\nGroße Gruppen irren sich selten, aber wenn, dann sehr (Blasenbildung)"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#primäre-und-sekundäre-märkte",
+    "href": "slides/99_geld_und_geldpolitik/index.html#primäre-und-sekundäre-märkte",
+    "title": "    Geld und Geldpolitik",
+    "section": "Primäre und sekundäre Märkte",
+    "text": "Primäre und sekundäre Märkte\n\n\n\nPrimärmarkt: Neue Finanzinstrumente\nSekundärmarkt: Alle weiteren Besitzer:innenwechsel"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#zentralisierte-und-freiverkehrsmärkte",
+    "href": "slides/99_geld_und_geldpolitik/index.html#zentralisierte-und-freiverkehrsmärkte",
+    "title": "    Geld und Geldpolitik",
+    "section": "Zentralisierte und Freiverkehrsmärkte",
+    "text": "Zentralisierte und Freiverkehrsmärkte\n\n\n\nZentralisierte Märkte: Händler:innen treffen sich an einem physischen Ort.\nFreiverkehr: Dezentralisierte Märkte mit elektronischen Transaktionen\nElektronische Netzwerke: Plattformen die Verkäufer:innen und Käufer:innen vernetzen (ohne broker und dealer)."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#einteilung-nach-funktion",
+    "href": "slides/99_geld_und_geldpolitik/index.html#einteilung-nach-funktion",
+    "title": "    Geld und Geldpolitik",
+    "section": "Einteilung nach Funktion",
+    "text": "Einteilung nach Funktion\n\nDebt and Equity: Einfache Finanzinstrumente (Kredite und Anteile) werden für Geld verkauft.\nDerivativmärkte: Finanzderivate werden für zukünftigen Zahlungen gehandelt.\nKredite auf Geldmärkten haben eine Laufzeit von unter einem Jahr, längere Laufzeiten werden auf Anleihenmärkten gehandelt."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#finanzmärkte-wie-man-sie-sich-vorstellt",
+    "href": "slides/99_geld_und_geldpolitik/index.html#finanzmärkte-wie-man-sie-sich-vorstellt",
+    "title": "    Geld und Geldpolitik",
+    "section": "Finanzmärkte wie man sie sich vorstellt",
+    "text": "Finanzmärkte wie man sie sich vorstellt\n\n\n\nGeringe Transaktionskosten\nZutreffende und zugängliche Informationen\nInvestor:innenschutz gegen Diebstahl, Betrug, Manipulation."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#finanzmärkte-wie-sie-sind",
+    "href": "slides/99_geld_und_geldpolitik/index.html#finanzmärkte-wie-sie-sind",
+    "title": "    Geld und Geldpolitik",
+    "section": "Finanzmärkte wie sie sind",
+    "text": "Finanzmärkte wie sie sind\nFinanzmärkte sind von Machtungleichgewicht und Machtausübung geprägt.\n\n\n\nGröße und Reputation bestimmen Aktionsradius, daraus entsteht asymmetrische Information.\nAbsprachen und gegenseitige Verpflichtungen sind intransparent, daraus entstehen verzerrte Preissignale.\n\n\n\nInvestitionen in Überbewertung ist profitabel, daraus entstehen Blasen.\nHandlungsspielraum von kleinen Anleger:innen ist begrenzt, daraus entsteht Übervorteilung."
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#finanzinstitutionen-1",
+    "href": "slides/99_geld_und_geldpolitik/index.html#finanzinstitutionen-1",
+    "title": "    Geld und Geldpolitik",
+    "section": "Finanzinstitutionen",
+    "text": "Finanzinstitutionen\n\n\n\nKombinieren langfristige Kredite mit täglich fälligen Einlagen – Fristentransformation\nKombinieren viele Kredite (oder andere Instrumente) mit unterschiedlichem Ausfallrisiko – Riskentransformation.\nOrganisieren Zugang zu Finanzmärkten – Transaktionskosten"
+  },
+  {
+    "objectID": "slides/99_geld_und_geldpolitik/index.html#struktur-der-finanzindustrie",
+    "href": "slides/99_geld_und_geldpolitik/index.html#struktur-der-finanzindustrie",
+    "title": "    Geld und Geldpolitik",
+    "section": "Struktur der Finanzindustrie",
+    "text": "Struktur der Finanzindustrie\n\nBanken (depository institutions): Nehmen Einlagen und vergeben Kredite\nVersicherungen: Nehmen Prämien, legen diese an, zahlen Ansprüche aus (hohe Liquidität).\nPensionsfonds: Nehmen Einzahlungen, legen diese an, zahlen Ansprüche aus (geringe Liquidität)."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#what-is-money",
+    "href": "slides/03_effects/index.html#what-is-money",
+    "title": "    Monetary Policy Visualization",
+    "section": "What is money?",
+    "text": "What is money?\nMoney is often introduced in textbooks as a neutral technical device that solves the inefficiencies of barter — a “medium of exchange” that emerged spontaneously to avoid the problem of a double coincidence of wants.\nA (Post-)Keynesian perspective instead treats money as a social and credit relation: money is fundamentally a unit of account for debt, and most money in modern economies exists as IOUs — promises to pay, recorded on balance sheets.\n\nThis distinction matters enormously for how we think about who creates money, what limits its creation, and what central banks can and cannot do."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#functions-of-money",
+    "href": "slides/03_effects/index.html#functions-of-money",
+    "title": "    Monetary Policy Visualization",
+    "section": "Functions of money",
+    "text": "Functions of money\n\n\nUnit of account — the measure in which prices, debts and contracts are denominated\nMedium of exchange — used to settle transactions\nStore of value — a way to hold wealth over time\nMeans of final settlement of debt — this is the function (Post-)Keynesians emphasize\n\n\n\nFor (Post-)Keynesians, money is above all a way of settling debt obligations in a monetary production economy: firms borrow to produce before they sell, and money bridges this gap between outlays and receipts (Keynes’ finance motive)."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#two-views-on-the-origin-of-money",
+    "href": "slides/03_effects/index.html#two-views-on-the-origin-of-money",
+    "title": "    Monetary Policy Visualization",
+    "section": "Two views on the origin of money",
+    "text": "Two views on the origin of money\n\n\nNeoclassical / mainstream\n\nMoney emerged to overcome the inefficiencies of barter\nHistorically and logically commodity-based (gold, silver)\nGovernment and banks essentially replace the commodity with tokens of equal value\n\n\n(Post-)Keynesian\n\nHistorical and anthropological evidence finds little support for a barter origin\nMoney originates in credit and debt relations, often tied to tax obligations to the state (chartalism)\nMoney is a social institution, not a commodity"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#how-is-money-created",
+    "href": "slides/03_effects/index.html#how-is-money-created",
+    "title": "    Monetary Policy Visualization",
+    "section": "How is money created?",
+    "text": "How is money created?\nMost money in modern economies is not created by central banks printing currency, but by commercial banks when they extend credit.\n\n“Loans create deposits”\n\nWhen a bank grants a loan, it simultaneously creates a matching deposit on the borrower’s account — a balance sheet expansion, not a transfer of pre-existing funds.\n\nThis is the principle of endogenous money: the money supply expands and contracts with the demand for credit in the economy, rather than being fixed exogenously by the central bank."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#the-role-of-banks",
+    "href": "slides/03_effects/index.html#the-role-of-banks",
+    "title": "    Monetary Policy Visualization",
+    "section": "The role of banks",
+    "text": "The role of banks\n\n\nCommercial banks do not simply act as intermediaries that lend out pre-existing deposits from savers to borrowers\nInstead, they create purchasing power “out of nothing” when granting a loan, subject to profitability considerations and regulatory constraints (capital and liquidity requirements)\nReserves at the central bank are needed for interbank settlement, not as a precondition for lending\n\n\n\nThis overturns the textbook “money multiplier” story, in which the central bank sets the monetary base and banks mechanically multiply it into a fixed volume of loans."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#neoclassical-view-the-money-multiplier",
+    "href": "slides/03_effects/index.html#neoclassical-view-the-money-multiplier",
+    "title": "    Monetary Policy Visualization",
+    "section": "Neoclassical view: the money multiplier",
+    "text": "Neoclassical view: the money multiplier\n\nThe central bank sets the quantity of bank reserves (the monetary base)\nBanks lend out a fraction of these reserves and deposits, subject to a reserve requirement\nThe money supply is a stable multiple of the monetary base: \\[M = m \\times B\\]\nMoney is exogenous: it is a stock controlled directly by the central bank\n\n\nImplication: controlling the growth of the money supply (monetarism) is seen as the key lever to control inflation."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#post-keynesian-view-endogenous-money",
+    "href": "slides/03_effects/index.html#post-keynesian-view-endogenous-money",
+    "title": "    Monetary Policy Visualization",
+    "section": "(Post-)Keynesian view: endogenous money",
+    "text": "(Post-)Keynesian view: endogenous money\n\nLoan demand from firms and households drives credit creation by commercial banks\nCentral banks do not fix the quantity of reserves; they accommodate banks’ demand for reserves at a chosen policy interest rate\nCausation runs from loans to deposits to reserves — the reverse of the multiplier story\nMoney is endogenous: its quantity adjusts to the needs of economic activity\n\n\nThis is often called the horizontalist view — central banks set the price of reserves (the interest rate) and supply whatever quantity of reserves banks need at that rate."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#the-role-of-central-banks",
+    "href": "slides/03_effects/index.html#the-role-of-central-banks",
+    "title": "    Monetary Policy Visualization",
+    "section": "The role of central banks",
+    "text": "The role of central banks\n\n\nCentral banks act as the lender of last resort to the banking system, ensuring liquidity and settlement of interbank payments\nModern central banks primarily operate by setting a short-term policy interest rate rather than a fixed money supply target\nThey influence economic activity indirectly, through the cost of credit, exchange rates and expectations\nQuantitative easing (QE) expands central bank reserves and asset holdings, but does not mechanically translate into a proportional expansion of bank lending"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#key-differences-at-a-glance",
+    "href": "slides/03_effects/index.html#key-differences-at-a-glance",
+    "title": "    Monetary Policy Visualization",
+    "section": "Key differences at a glance",
+    "text": "Key differences at a glance\n\n\n\n\n\n\n\n\nQuestion\nNeoclassical / mainstream\n(Post-)Keynesian\n\n\n\n\nWhat is money?\nEvolved from barter, ultimately commodity-based\nA social/credit relation, unit of account for debt\n\n\nHow is money created?\nCentral bank controls the monetary base; multiplier\nBanks create money endogenously via loans\n\n\nMoney supply\nExogenous, set by the central bank\nEndogenous, demand-determined\n\n\nCentral bank tool\nControls quantity of money/reserves\nSets the price (interest rate) of reserves\n\n\nInflation\n“Always and everywhere a monetary phenomenon” (quantity theory)\nDriven by costs, distributional conflict, demand pressures\n\n\nSaving & investment\nSaving enables investment (loanable funds)\nInvestment generates the saving needed to finance it"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#why-this-matters-for-monetary-policy",
+    "href": "slides/03_effects/index.html#why-this-matters-for-monetary-policy",
+    "title": "    Monetary Policy Visualization",
+    "section": "Why this matters for monetary policy",
+    "text": "Why this matters for monetary policy\nThese theoretical differences are not merely academic — they shape how economists interpret real-world policy:\n\n\nWhether quantitative easing should be expected to be inflationary\nWhether interest rate hikes are the appropriate tool against all types of inflation\nWhether fiscal deficits are inherently constrained by “crowding out” of private investment\nHow financial instability and banking crises originate endogenously in credit cycles\n\n\n\nOver the course we will use data and visualizations to examine these questions empirically — e.g. by tracing central bank balance sheets, bank lending, and monetary aggregates over time."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#what-is-a-monetary-regime",
+    "href": "slides/03_effects/index.html#what-is-a-monetary-regime",
+    "title": "    Monetary Policy Visualization",
+    "section": "What is a monetary regime?",
+    "text": "What is a monetary regime?\nA monetary regime is the set of institutional rules that govern how money is created, valued and exchanged — both domestically (what anchors the value of money) and internationally (how a currency relates to other currencies).\nKey dimensions of a monetary regime:\n\n\nWhat (if anything) backs or anchors the currency’s value\nHow exchange rates with other currencies are determined\nHow much discretion the central bank has over monetary policy\nWhat nominal target, if any, policy is oriented towards (money supply, exchange rate, inflation rate)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#the-gold-standard",
+    "href": "slides/03_effects/index.html#the-gold-standard",
+    "title": "    Monetary Policy Visualization",
+    "section": "The gold standard",
+    "text": "The gold standard\nUnder the classical gold standard (roughly 1870s–1914), currencies were pegged to a fixed quantity of gold and freely convertible.\n\n\nExchange rates between countries were effectively fixed\nBalance-of-payments adjustment worked through gold flows and the “price-specie-flow mechanism”: deficit countries lost gold, contracting money supply, prices and demand, restoring balance\nDomestic monetary policy was largely subordinated to maintaining convertibility\n\n\n\nCritique: this mechanism imposed painful deflation and unemployment on deficit countries — a recurring (Post-)Keynesian concern about “external constraints” on domestic policy autonomy."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#bretton-woods-19441971",
+    "href": "slides/03_effects/index.html#bretton-woods-19441971",
+    "title": "    Monetary Policy Visualization",
+    "section": "Bretton Woods (1944–1971)",
+    "text": "Bretton Woods (1944–1971)\n\n\nCurrencies pegged to the US dollar, which was itself convertible into gold at a fixed rate\nAdjustable pegs allowed for occasional realignments, unlike the rigid gold standard\nCapital controls gave countries more room for independent domestic policy (full employment, growth) — closer to the Keynesian vision at its founding (Keynes was a key architect)\nCollapsed in 1971 when the US suspended dollar–gold convertibility"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#from-fixed-to-floating-exchange-rates",
+    "href": "slides/03_effects/index.html#from-fixed-to-floating-exchange-rates",
+    "title": "    Monetary Policy Visualization",
+    "section": "From fixed to floating exchange rates",
+    "text": "From fixed to floating exchange rates\nSince the 1970s, most major currencies float against each other, with values determined by supply and demand in foreign exchange markets rather than by a fixed peg.\n\nThis raises the classic “impossible trinity” / trilemma: a country cannot simultaneously have\n\n\n\nA fixed exchange rate\nFree international capital mobility\nAn independent monetary policy\n\n\n\n— it can choose at most two of the three."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#monetarism-and-money-supply-targeting",
+    "href": "slides/03_effects/index.html#monetarism-and-money-supply-targeting",
+    "title": "    Monetary Policy Visualization",
+    "section": "Monetarism and money supply targeting",
+    "text": "Monetarism and money supply targeting\nIn the 1970s–80s, several central banks (e.g. the Bundesbank, the Fed under Volcker) explicitly targeted the growth rate of the money supply, following the monetarist prescription that controlling money growth controls inflation.\n\nIn practice, this proved difficult: the relationship between measured monetary aggregates and inflation was unstable, partly because — as the endogenous money view predicts — the money supply responds to economic activity rather than being a lever fully under the central bank’s control. Most central banks abandoned strict money-supply targets by the 1990s."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#inflation-targeting",
+    "href": "slides/03_effects/index.html#inflation-targeting",
+    "title": "    Monetary Policy Visualization",
+    "section": "Inflation targeting",
+    "text": "Inflation targeting\nSince the 1990s, the dominant regime among major central banks (ECB, Fed, Bank of England, …) has been inflation targeting:\n\n\nAn explicit numerical inflation target (commonly around 2%)\nThe policy interest rate is the main instrument, adjusted in response to the outlook for inflation and economic activity\nCentral banks are typically granted formal independence from elected governments to pursue this target\nCommunication and credibility (“forward guidance”) become central tools alongside the interest rate itself"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#monetary-regimes-a-comparative-view",
+    "href": "slides/03_effects/index.html#monetary-regimes-a-comparative-view",
+    "title": "    Monetary Policy Visualization",
+    "section": "Monetary regimes: a comparative view",
+    "text": "Monetary regimes: a comparative view\n\n\n\n\n\n\n\n\n\nRegime\nAnchor\nExchange rate\nPolicy autonomy\n\n\n\n\nGold standard\nGold\nFixed\nVery limited\n\n\nBretton Woods\nUS dollar / gold\nFixed but adjustable\nModerate (with capital controls)\n\n\nMonetarist money targeting\nMoney supply growth\nFloating\nRule-based, limited discretion\n\n\nInflation targeting\nInflation rate\nMostly floating\nDiscretionary, but rule-guided\n\n\nCurrency union (e.g. euro area)\nCommon currency, single central bank\nFixed within the union\nNone for individual members\n\n\n\n\n(Post-)Keynesians stress that the choice of regime is never purely technical: each regime distributes policy autonomy and adjustment burdens differently between countries, and between capital and labour."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#william-playfair-1759-1823",
+    "href": "slides/03_effects/index.html#william-playfair-1759-1823",
+    "title": "    Monetary Policy Visualization",
+    "section": "William Playfair (1759-1823)",
+    "text": "William Playfair (1759-1823)\n\n\n\n\n\n\n\n[created: 1786]"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#john-snow-1813-1858",
+    "href": "slides/03_effects/index.html#john-snow-1813-1858",
+    "title": "    Monetary Policy Visualization",
+    "section": "John Snow (1813-1858)",
+    "text": "John Snow (1813-1858)\n\n\n\n\n\n\n\n\n[created: 1854]"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#charles-joseph-minard-1781-1870",
+    "href": "slides/03_effects/index.html#charles-joseph-minard-1781-1870",
+    "title": "    Monetary Policy Visualization",
+    "section": "Charles Joseph Minard (1781-1870)",
+    "text": "Charles Joseph Minard (1781-1870)\n\n\n\n\n\n\n\n[created: 1869]"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#w.e.b.-du-bois-1868-1963",
+    "href": "slides/03_effects/index.html#w.e.b.-du-bois-1868-1963",
+    "title": "    Monetary Policy Visualization",
+    "section": "W.E.B. Du Bois (1868-1963)",
+    "text": "W.E.B. Du Bois (1868-1963)\n\n\n\n\n\n\n\n\n[created: 1890]"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#otto-neurath-1882-1945",
+    "href": "slides/03_effects/index.html#otto-neurath-1882-1945",
+    "title": "    Monetary Policy Visualization",
+    "section": "Otto Neurath (1882-1945)",
+    "text": "Otto Neurath (1882-1945)\n\n\n\n\n\n\n\n[created: 1943]"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#choose-the-adequate-type-of-graph",
+    "href": "slides/03_effects/index.html#choose-the-adequate-type-of-graph",
+    "title": "    Monetary Policy Visualization",
+    "section": "1. Choose the adequate type of graph",
+    "text": "1. Choose the adequate type of graph\n\n\nBad:\n\n\n\n\n\n Good:\n\n\n\n\n\nChoose a chart type with respect to your data (numeric, categorical, ranking, time series etc.)\nWhat would you like to show: comparison, distribution, composition, relationship?\nTo help you find the adequate type from a myriad of alternatives, you can also take a look at https://www.data-to-viz.com and https://datavizproject.com"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#a-simple-decision-tree-of-chart-types",
+    "href": "slides/03_effects/index.html#a-simple-decision-tree-of-chart-types",
+    "title": "    Monetary Policy Visualization",
+    "section": "A simple decision tree of chart types",
+    "text": "A simple decision tree of chart types"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#visualize-data-accurately-and-faithfully",
+    "href": "slides/03_effects/index.html#visualize-data-accurately-and-faithfully",
+    "title": "    Monetary Policy Visualization",
+    "section": "2. Visualize data accurately and faithfully",
+    "text": "2. Visualize data accurately and faithfully\n\n\nBad:   Good: \n\n\nPrioritize data accuracy, clarity, and integrity\nAvoid misleading the reader by truncating the y-axis, using two different y-axis, cherry-picking data, not providing context, etc.\nA good story based on data visualization does not involve deceptive manipulation of the data!\n\n\n\n\nSource: Dougherty/Ilyankou (2021)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#example",
+    "href": "slides/03_effects/index.html#example",
+    "title": "    Monetary Policy Visualization",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: Patient"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#another-example",
+    "href": "slides/03_effects/index.html#another-example",
+    "title": "    Monetary Policy Visualization",
+    "section": "Another example",
+    "text": "Another example"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#a-third-example",
+    "href": "slides/03_effects/index.html#a-third-example",
+    "title": "    Monetary Policy Visualization",
+    "section": "A third example",
+    "text": "A third example\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource: The Correspondent"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#integrate-graphics-and-text",
+    "href": "slides/03_effects/index.html#integrate-graphics-and-text",
+    "title": "    Monetary Policy Visualization",
+    "section": "3. Integrate graphics and text",
+    "text": "3. Integrate graphics and text\n\n\nBad:   Good: \n\n\nDon’t make people turn their head to read labels\nThink about a logical order of the chart (alphabetical, values)\nAdd direct labels rather than a legend\nChoose a meaningful title that focuses on your message\n\n\n\n\nSource: Dougherty/Ilyankou (2021)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#best-practice",
+    "href": "slides/03_effects/index.html#best-practice",
+    "title": "    Monetary Policy Visualization",
+    "section": "Best practice",
+    "text": "Best practice\n\n\n\n\n\n\n\n\nSources: Washington Post, chezVoila"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#reduce-the-clutter",
+    "href": "slides/03_effects/index.html#reduce-the-clutter",
+    "title": "    Monetary Policy Visualization",
+    "section": "4. Reduce the clutter",
+    "text": "4. Reduce the clutter\n\n\nBad:   Good: \n\n\nUnnecessary visual elements distract the readers from the central data\nAvoid elements that do not contain information!\nBasic elements like heavy tick marks or gridlines should be removed\nThink carefully which visual elements are really needed to read the chart\n\n\n\n\nSource: Dougherty/Ilyankou (2021)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#best-practice-1",
+    "href": "slides/03_effects/index.html#best-practice-1",
+    "title": "    Monetary Policy Visualization",
+    "section": "Best practice",
+    "text": "Best practice\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSources: BlueGranite"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#avoid-the-spaghetti-chart-and-start-with-gray",
+    "href": "slides/03_effects/index.html#avoid-the-spaghetti-chart-and-start-with-gray",
+    "title": "    Monetary Policy Visualization",
+    "section": "5. Avoid the spaghetti chart and start with gray",
+    "text": "5. Avoid the spaghetti chart and start with gray\n\n\nBad:\n\n\n\n Good:\n\n\n\n\n\nWhen the graph contains too much information, it looks like spaghetti\nTry to break overloaded single charts into smaller parts (facets, small multiples) or highlight the relevant information\nStart with gray: you are forced to be strategic in the use of color, labels, etc."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#best-practice-2",
+    "href": "slides/03_effects/index.html#best-practice-2",
+    "title": "    Monetary Policy Visualization",
+    "section": "Best practice",
+    "text": "Best practice\n\n\n\n\n\n\n\n\nSource: Schwabish (2014)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#deceptive-graphs",
+    "href": "slides/03_effects/index.html#deceptive-graphs",
+    "title": "    Monetary Policy Visualization",
+    "section": "Deceptive graphs",
+    "text": "Deceptive graphs\n\n\n\n\n\n\n\n\nQuelle: Lauer/O'Brien (2020)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#deceptive-graphs-1",
+    "href": "slides/03_effects/index.html#deceptive-graphs-1",
+    "title": "    Monetary Policy Visualization",
+    "section": "Deceptive graphs",
+    "text": "Deceptive graphs\n\n\n\n\n\n\n\n\nQuelle: Lauer/O'Brien (2020)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#misleading-titles",
+    "href": "slides/03_effects/index.html#misleading-titles",
+    "title": "    Monetary Policy Visualization",
+    "section": "Misleading titles",
+    "text": "Misleading titles\n\n\n\nQuelle: Lauer/O'Brien (2020)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#deceptive-graphs-meet-their-goal",
+    "href": "slides/03_effects/index.html#deceptive-graphs-meet-their-goal",
+    "title": "    Monetary Policy Visualization",
+    "section": "Deceptive graphs meet their goal",
+    "text": "Deceptive graphs meet their goal\n\n\n\nQuelle: Lauer/O'Brien (2020)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#what-are-the-gestalt-principles",
+    "href": "slides/03_effects/index.html#what-are-the-gestalt-principles",
+    "title": "    Monetary Policy Visualization",
+    "section": "What are the Gestalt Principles?",
+    "text": "What are the Gestalt Principles?\nGestalt Principles describe how humans group similar elements, recognize patterns and simplify complex images. “Gestalt” is German for “unified whole”.\n\n\n\n\n\nThe question is how humans typically gain meaningful perceptions from the chaotic stimuli around them. The idea is that the mind “informs” what the eye sees by perceiving a series of individual elements as a whole."
+  },
+  {
+    "objectID": "slides/03_effects/index.html#which-chart-is-random-and-which-has-structure-in-it",
+    "href": "slides/03_effects/index.html#which-chart-is-random-and-which-has-structure-in-it",
+    "title": "    Monetary Policy Visualization",
+    "section": "Which chart is random and which has structure in it?",
+    "text": "Which chart is random and which has structure in it?\n\n\n\n\n\n\n\n\nSource: Healy (2018)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#gestalt-rules",
+    "href": "slides/03_effects/index.html#gestalt-rules",
+    "title": "    Monetary Policy Visualization",
+    "section": "Gestalt rules",
+    "text": "Gestalt rules\n\nProximity Things that are spatially near to one another seem to be related.\nSimilarity Things that look alike seem to be related.\nConnection Things that are visually tied to one another seem to be related.\nContinuity Partially hidden objects are completed into familiar shapes.\nClosure Incomplete shapes are perceived as complete.\nFigure and Ground Visual elements are taken to be either in the foreground or the background.\nCommon Fate Elements sharing a direction of movement are perceived as a unit.\n\n\n\nSource: Healy (2018)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#our-brains-look-for-structure",
+    "href": "slides/03_effects/index.html#our-brains-look-for-structure",
+    "title": "    Monetary Policy Visualization",
+    "section": "Our brains look for structure",
+    "text": "Our brains look for structure\n\n\n\n\n\n\n\nSource: Healy (2018)"
+  },
+  {
+    "objectID": "slides/03_effects/index.html#bibliography",
+    "href": "slides/03_effects/index.html#bibliography",
+    "title": "    Monetary Policy Visualization",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\n\n\n\n\n\nDougherty, Jack/Ilyankou, Ilya (2021). Hands-on data visualization: Interactive storytelling from spreadsheets to code. O’Reilly Media.\n\n\nHealy, Kieran (2018). Data visualization: A practical introduction. Princeton University Press.\n\n\nLauer, Claire/O'Brien, Shaun (2020). How People Are Influenced by Deceptive Tactics in Everyday Charts and Graphs. IEEE Transactions on Professional Communication, 63(4), 327–340. DOI: 10.1109/tpc.2020.3032053\n\n\nSchwabish, Jonathan A. (2014). An Economist’s Guide to Visualizing Data. Journal of Economic Perspectives, 28(1), 209–234. DOI: 10.1257/jep.28.1.209"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Dates\n\n   Oct 5, 2026 – Jan 25, 2026\n   Mondays\n   10:00–12:00\n   TC.5.05\n\n\n\nHighlights\n\n   max. 30 students\n   Engage in policy discussion\n    Improve your R coding skills\n   Create an own data visualization\n\n\n\nContact\nPlease contact both lecturers via e-mail. Note that we use the WU Canvas platform canvas.wu.ac.at for all assignments in this course.\n\n\n\nCourse design\nThe lecturers introduce into various fields of monetary policy and provide examples of data visualizations that serve as starting point for discussions. As the graphic illustration of statistical data gains in importance in both the academic and the public discourse, students will learn best practices and gain insights into the visualization of data. A part of each session is dedicated to the work with data where the lecturers provide R-code to produce figures in class.\nStudents are expected to recreate three charts at home during the semester and create a comprehensive data visualization with exclusive data from the Austrian National Bank (OeNB). Experts from OeNB will introduce the data in class and provide valuable insights into the empirical analysis of monetary policy. Students will present their chart at the end of the semester and draft a report with a detailed description of the data, the code and the final visualization in RMarkdown. Moreover, the best charts are awarded in a joint ceremony with the Austrian National Bank.\nThe sessions are designed to encourage students to actively participate in the debates, raise questions, and gain experience in visualizing data for academic publications or the general debate.\n\n\nRecommended literature\n\n\n\n\n\n\n\n\n\nJonathan Schwabish  Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks  Columbia University Press  ISBN-13: 9780231193115  Link\n\n\n\nDavid Spiegelhalter  The Art of Statistics: Learning from Data  Penguin Books UK  ISBN-13: 9780241258767  Link\n\n\n\n\n\n\nLearning outcomes\nAfter completing this course, students will:\n\nknow key figures in various fields of monetary policy\nbe aware of potentials and limitations of available data in specific policy areas\nshow improved programming skills in R and the ability to create an RMarkdown report\nhave basic knowledge of important principles of data visualization\nbe able to create simple charts to enrich their academic articles\n\n\n\nGrading\n\n\n\n\n\n\n\n\n\nAssignments: 30% (0-10 points for each visualization)\n\n\n\nChart presentation: 30% (0-20 points for the quality of the presentation, 0-10 for the preliminary chart)\n\n\n\nWritten report: 40% (0-40 points for the report and the final chart)\n\n\n\n\n   100-90: Excellent      89-80: Good      79-65: Satisfactory      64-50: Sufficient\nAll single tasks have to be passed (50% threshold each)."
+  }
+]
