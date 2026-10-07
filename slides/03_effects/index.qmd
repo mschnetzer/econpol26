@@ -9,7 +9,7 @@ title: |
     {{< var course.subtitle >}}
 author: '{{< var instructor1.name >}}'
 subtitle: Effects of Monetary Policy
-date: October 13, 2025
+date: October 19, 2026
 date-format: long
 from: markdown+emoji
 bibliography: ../../data/lit/wipol_advanced.bib

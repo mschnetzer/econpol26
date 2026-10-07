@@ -95,7 +95,7 @@ assignvars <- schedule |> filter(!is.na(Assignment)) |>
 
 4. Click on `Help > About RStudio`
 
-5. Make sure that both the R version (Console) and the RStudio version are visible, take a screenshot and upload it to the [learning platform](https://learn.wu.ac.at) before `r assignvars$deadline[[1]]` at 9 a.m.
+5. Make sure that both the R version (Console) and the RStudio version are visible, take a screenshot and upload it to [Canvas](https://canvas.wu.ac.at) before `r assignvars$deadline[[1]]` at 9 a.m.
 :::
 :::
 

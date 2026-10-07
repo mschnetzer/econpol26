@@ -139,7 +139,7 @@ Assignment 1 provides the setup of the R infrastructure that is required in this
 
 Assignments 2 to 4 are recreations of examplary figures. These examples are related to figures that are discussed in class. Students should then try to [reproduce the plots at home]{.marker-hl} and improve their individual coding skills. 
 
-The raw data for the figures are available as CSV files. The charts should then be uploaded to the [learning platform](https://learn.wu.ac.at) [**before 9 a.m.**]{.marker-hl} on the day of the deadline.
+The raw data for the figures are available as CSV files. The charts should then be uploaded to [Canvas](https://canvas.wu.ac.at) [**before 9 a.m.**]{.marker-hl} on the day of the deadline.
 
 ## Assignments {.medium}
 

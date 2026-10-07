@@ -18,7 +18,7 @@ css: layout/css/adveconpol.scss
 ::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
 #### Highlights
 
-- {{< fa users-line >}} &nbsp; max. {{< var course.students >}} students
+- {{< fa users-line >}} &nbsp; {{< var course.students >}} students
 - {{< fa comments >}} &nbsp; Engage in policy discussion
 - {{< fa laptop-code >}} &nbsp;&nbsp; Improve your R coding skills
 - {{< fa pencil >}} &nbsp; Create an own data visualization
