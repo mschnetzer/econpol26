@@ -4405,8 +4405,8 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <span id="cb78-2"><a aria-label="2"></a>gdp <span class="ot">&lt;-</span> <span class="fu">get_eurostat</span>(<span class="st">"nama_10_gdp"</span>, <span class="at">time_format =</span> <span class="st">"num"</span>, <span class="at">type =</span> <span class="st">"label"</span>,</span>
 <span id="cb78-3"><a aria-label="3"></a>                    <span class="at">filters =</span> <span class="fu">list</span>(<span class="at">geo =</span> <span class="st">"AT"</span>))</span>
 <span id="cb78-4"><a aria-label="4"></a></span>
-<span id="cb78-5"><a aria-label="5"></a><span class="co"># Alternatively, load local RData file</span></span>
-<span id="cb78-6"><a aria-label="6"></a><span class="co"># load("02_data.RData")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb78-5"><a aria-label="5"></a><span class="co"># Drop missing values</span></span>
+<span id="cb78-6"><a aria-label="6"></a>gdp <span class="ot">&lt;-</span> gdp <span class="sc">|&gt;</span> <span class="fu">drop_na</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -4417,43 +4417,41 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Value added, gross"                                                                      
  [2] "Gross domestic product at market prices"                                                 
- [3] "Operating surplus and mixed income, gross"                                               
- [4] "Final consumption expenditure and gross capital formation"                               
- [5] "Final consumption expenditure, gross capital formation and exports of goods and services"
- [6] "Final consumption expenditure of general government"                                     
- [7] "Final consumption expenditure"                                                           
- [8] "Individual consumption expenditure of general government"                                
- [9] "Final consumption expenditure of household"                                              
-[10] "Household and NPISH final consumption expenditure"                                       
-[11] "Final consumption expenditure of NPISH"                                                  
-[12] "Collective consumption expenditure of general government"                                
-[13] "Actual individual consumption"                                                           
-[14] "Gross capital formation"                                                                 
-[15] "Gross fixed capital formation"                                                           
-[16] "Changes in inventories and acquisitions less disposals of valuables"                     
-[17] "Changes in inventories"                                                                  
-[18] "Acquisitions less disposals of valuables"                                                
-[19] "Exports of goods and services"                                                           
-[20] "Exports less imports of goods and services"                                              
-[21] "Exports of goods"                                                                        
-[22] "Exports less imports of goods"                                                           
-[23] "Exports of services"                                                                     
-[24] "Exports less imports of services"                                                        
-[25] "Imports of goods and services"                                                           
-[26] "Imports of goods"                                                                        
-[27] "Imports of services"                                                                     
-[28] "Compensation of employees"                                                               
-[29] "Wages and salaries"                                                                      
-[30] "Employers' social contributions"                                                         
-[31] "Taxes on production and imports"                                                         
-[32] "Taxes on production and imports less subsidies"                                          
-[33] "Taxes on products"                                                                       
-[34] "Taxes less subsidies on products"                                                        
-[35] "Subsidies"                                                                               
-[36] "Subsidies on products"                                                                   
-[37] "Statistical discrepancy (expenditure approach)"                                          
-[38] "Statistical discrepancy (production approach)"                                           
-[39] "Statistical discrepancy (income approach)"                                               </code></pre>
+ [3] "Final consumption expenditure and gross capital formation"                               
+ [4] "Final consumption expenditure, gross capital formation and exports of goods and services"
+ [5] "Final consumption expenditure of general government"                                     
+ [6] "Final consumption expenditure"                                                           
+ [7] "Individual consumption expenditure of general government"                                
+ [8] "Final consumption expenditure of household"                                              
+ [9] "Household and NPISH final consumption expenditure"                                       
+[10] "Final consumption expenditure of NPISH"                                                  
+[11] "Collective consumption expenditure of general government"                                
+[12] "Actual individual consumption"                                                           
+[13] "Gross capital formation"                                                                 
+[14] "Gross fixed capital formation"                                                           
+[15] "Exports of goods and services"                                                           
+[16] "Exports of goods"                                                                        
+[17] "Exports of services"                                                                     
+[18] "Imports of goods and services"                                                           
+[19] "Imports of goods"                                                                        
+[20] "Imports of services"                                                                     
+[21] "Taxes on products"                                                                       
+[22] "Taxes less subsidies on products"                                                        
+[23] "Subsidies on products"                                                                   
+[24] "Operating surplus and mixed income, gross"                                               
+[25] "Changes in inventories and acquisitions less disposals of valuables"                     
+[26] "Changes in inventories"                                                                  
+[27] "Acquisitions less disposals of valuables"                                                
+[28] "Exports less imports of goods and services"                                              
+[29] "Compensation of employees"                                                               
+[30] "Wages and salaries"                                                                      
+[31] "Employers' social contributions"                                                         
+[32] "Taxes on production and imports"                                                         
+[33] "Taxes on production and imports less subsidies"                                          
+[34] "Subsidies"                                                                               
+[35] "Statistical discrepancy (expenditure approach)"                                          
+[36] "Statistical discrepancy (production approach)"                                           
+[37] "Statistical discrepancy (income approach)"                                               </code></pre>
 </div>
 </div>
 </div>
@@ -4518,12 +4516,12 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <pre><code># A tibble: 6 × 6
   freq   unit          geo    time Gross domestic produ…¹ Compensation of empl…²
   &lt;chr&gt;  &lt;chr&gt;         &lt;chr&gt; &lt;dbl&gt;                  &lt;dbl&gt;                  &lt;dbl&gt;
-1 Annual Current pric… Aust…  1975                     NA                     NA
-2 Annual Current pric… Aust…  1976                     NA                     NA
-3 Annual Current pric… Aust…  1977                     NA                     NA
-4 Annual Current pric… Aust…  1978                     NA                     NA
-5 Annual Current pric… Aust…  1979                     NA                     NA
-6 Annual Current pric… Aust…  1980                     NA                     NA
+1 Annual Current pric… Aust…  1995                183629.                 94318.
+2 Annual Current pric… Aust…  1996                185945.                 93704.
+3 Annual Current pric… Aust…  1997                186913                  92638.
+4 Annual Current pric… Aust…  1998                193947                  95895.
+5 Annual Current pric… Aust…  1999                203065.                100118.
+6 Annual Current pric… Aust…  2000                212407.                103626.
 # ℹ abbreviated names: ¹​`Gross domestic product at market prices`,
 #   ²​`Compensation of employees`</code></pre>
 </div>
@@ -4548,12 +4546,12 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <pre><code># A tibble: 6 × 4
   geo      time `Gross domestic product at market prices` Compensation of empl…¹
   &lt;chr&gt;   &lt;dbl&gt;                                     &lt;dbl&gt;                  &lt;dbl&gt;
-1 Austria  1975                                        NA                     NA
-2 Austria  1976                                        NA                     NA
-3 Austria  1977                                        NA                     NA
-4 Austria  1978                                        NA                     NA
-5 Austria  1979                                        NA                     NA
-6 Austria  1980                                        NA                     NA
+1 Austria  1995                                   183629.                 94318.
+2 Austria  1996                                   185945.                 93704.
+3 Austria  1997                                   186913                  92638.
+4 Austria  1998                                   193947                  95895.
+5 Austria  1999                                   203065.                100118.
+6 Austria  2000                                   212407.                103626.
 # ℹ abbreviated name: ¹​`Compensation of employees`</code></pre>
 </div>
 </div>
@@ -4573,12 +4571,12 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <pre><code># A tibble: 6 × 5
   geo      time Gross domestic product at mar…¹ Compensation of empl…² wageshare
   &lt;chr&gt;   &lt;dbl&gt;                           &lt;dbl&gt;                  &lt;dbl&gt;     &lt;dbl&gt;
-1 Austria  1975                              NA                     NA        NA
-2 Austria  1976                              NA                     NA        NA
-3 Austria  1977                              NA                     NA        NA
-4 Austria  1978                              NA                     NA        NA
-5 Austria  1979                              NA                     NA        NA
-6 Austria  1980                              NA                     NA        NA
+1 Austria  1995                         183629.                 94318.      51.4
+2 Austria  1996                         185945.                 93704.      50.4
+3 Austria  1997                         186913                  92638.      49.6
+4 Austria  1998                         193947                  95895.      49.4
+5 Austria  1999                         203065.                100118.      49.3
+6 Austria  2000                         212407.                103626.      48.8
 # ℹ abbreviated names: ¹​`Gross domestic product at market prices`,
 #   ²​`Compensation of employees`</code></pre>
 </div>
@@ -4586,9 +4584,8 @@ $ year        &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 <div class="fragment">
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a aria-label="1"></a>fulldata <span class="sc">|&gt;</span> </span>
-<span id="cb91-2"><a aria-label="2"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb91-3"><a aria-label="3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> wageshare)) <span class="sc">+</span> </span>
-<span id="cb91-4"><a aria-label="4"></a>  <span class="fu">geom_line</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb91-2"><a aria-label="2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> wageshare)) <span class="sc">+</span> </span>
+<span id="cb91-3"><a aria-label="3"></a>  <span class="fu">geom_line</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell fragment" data-layout-align="center">
 <div class="cell-output-display">
