@@ -1,0 +1,2027 @@
+---
+metadata-files: 
+    - ../../_variables.yml
+title: |
+    <span class='fa-stack course-icon'>
+        <i class='fas {{< var course.icon-bg >}} fa-stack-2x blue'></i>
+        <i class='fas {{< var course.icon >}} fa-stack-1x fa-inverse' style='margin-top:-5pt'></i>
+      </span><br>
+    {{< var course.subtitle >}}
+author: '{{< var instructor2.name-wo-title >}}'
+subtitle: Money and Monetary Policy
+date: October 12, 2026
+date-format: long
+from: markdown+emoji
+bibliography: ../../data/lit/wipol_advanced.bib
+csl: ../../data/lit/wipol.csl
+execute:
+  echo: true
+format:
+  revealjs:
+    theme: ../econpol_slides.scss
+    footer: '{{< var course.number >}} {{< var course.title >}} | {{< var course.semester >}}'
+    logo: ../../data/img/wu-logo-simple.png
+    header-includes: |
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
+    slide-number: true
+    show-slide-number: all
+    transition: fade
+    progress: true
+    multiplex: false
+    scrollable: true
+    preview-links: false
+    hide-inactive-cursor: true
+    highlight-style: printing
+    pause: true
+---
+
+## Syllabus {.smaller .noscroll}
+
+::: {style="font-size:0.62em; line-height:1.15;"}
+| Topic | Theory | Visualization |
+|:----------------|:------------------------------|:------------------------------------|
+| **What is money** | • Functions of money<br>• Monetary aggregates<br>• Money demand<br>*(Cecchetti and Schoenholz 2021, Part I)* | Classification:<br>Transferrable vs term deposits as split between transaction balances M1 and holdings M2/M3. |
+| **Interest rates and present value** | • Nominal and real rates<br>• Fisher equation<br>• How many interest rates are "the interest rate"<br>*(Cecchetti and Schoenholz 2021, Part II)* | Effective, nominal and real (CPI adjusted) deposit rates.<br>Distribution of rates (heatmap, density plots, ridgelines).<br>Stock rotation (maturity wall): bar charts of loans by remaining fixation period. |
+| **Banks as intermediaries and transmission mechanism** | • Maturity transformation<br>• Net interest margin<br>• Propagation of policy rate to lending rate to spending chain<br>*(Cecchetti and Schoenholz 2021, Part III)* | Debt by sector (bump chart, mosaic chart)<br>Rate pass-through (policy rate to service cost)<br>Scatter of new volume and new rates (to businesses) reveals hysteresis.<br>Connect sector, loan purpose, maturity class and rate fixation in Sankey diagram. |
+| **Financialization and debt** | • Income-financed and debt-financed consumption (and wealth)<br>*Avritzer and Brochier (2025)* | Loan structure of private households.<br>Loan purposes, loan-size class.<br>Composition of private debt (streamgraph) |
+| **Debt and rate cycles** | • Debt-service ratios<br>• Variable and fixed rate borrowers over the cycle<br>• Financial instability hypothesis<br>*Minsky (1992)* | Rate-fixation period as measure of interest rate exposure. Composition of debtors hit first by rate hikes.<br>Maturity of new loans (streamgraph). |
+| **International debt** | • Dominant currency paradigm (world money)<br>• Spillovers from core to periphery<br>• Exorbitant privilege<br>• Global financial cycle<br>*Lapavitsas (2026)* | Domestic, EU and cross-border loans (Ridgeline)<br>Average bank rates (Jitter plot) |
+:::
+
+## Literature {.noscroll}
+
+![Cecchetti and Schoenholtz: Money, Banking and Financial Markets. Sixth Edition](https://pictures.abebooks.com/isbn/9781260571363-uk.jpg){fig-align="center" height="450"}
+
+::: {.aside}
+Source: abebooks.com
+:::
+
+# Components of the Financial System
+
+<div style="text-align:center;">
+<span class='fa-stack' style='font-size:7rem;'>
+  <i class='fas fa-circle fa-stack-2x blue'></i>
+  <i class='fas fa-puzzle-piece fa-stack-1x fa-inverse'></i>
+</span>
+</div>
+
+::: footer
+:::
+
+## Overview {.medium}
+
+## Overview
+
+```{=html}
+<div style="text-align:center;">
+<svg viewBox="0 0 850 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The six components of the financial system as interlocking puzzle pieces" style="height:480px;width:auto;">
+  <path d="M50,50 L300.0,50.0 L300.0,150.0 C310.5,150.0 314.0,130.0 328.0,135.0 C345.5,140.0 345.5,210.0 328.0,215.0 C314.0,220.0 310.5,200.0 300.0,200.0 L300.0,300.0 L200.0,300.0 C200.0,310.5 220.0,314.0 215.0,328.0 C210.0,345.5 140.0,345.5 135.0,328.0 C130.0,314.0 150.0,310.5 150.0,300.0 L50.0,300.0 L50.0,50.0 Z" fill="#5d8198" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M300,50 L550.0,50.0 L550.0,150.0 C539.5,150.0 536.0,130.0 522.0,135.0 C504.5,140.0 504.5,210.0 522.0,215.0 C536.0,220.0 539.5,200.0 550.0,200.0 L550.0,300.0 L450.0,300.0 C450.0,289.5 470.0,286.0 465.0,272.0 C460.0,254.5 390.0,254.5 385.0,272.0 C380.0,286.0 400.0,289.5 400.0,300.0 L300.0,300.0 L300.0,200.0 C310.5,200.0 314.0,220.0 328.0,215.0 C345.5,210.0 345.5,140.0 328.0,135.0 C314.0,130.0 310.5,150.0 300.0,150.0 L300.0,50.0 Z" fill="#e76254" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M550,50 L800.0,50.0 L800.0,300.0 L700.0,300.0 C700.0,310.5 720.0,314.0 715.0,328.0 C710.0,345.5 640.0,345.5 635.0,328.0 C630.0,314.0 650.0,310.5 650.0,300.0 L550.0,300.0 L550.0,200.0 C539.5,200.0 536.0,220.0 522.0,215.0 C504.5,210.0 504.5,140.0 522.0,135.0 C536.0,130.0 539.5,150.0 550.0,150.0 L550.0,50.0 Z" fill="#d03161" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M50,300 L150.0,300.0 C150.0,310.5 130.0,314.0 135.0,328.0 C140.0,345.5 210.0,345.5 215.0,328.0 C220.0,314.0 200.0,310.5 200.0,300.0 L300.0,300.0 L300.0,400.0 C289.5,400.0 286.0,380.0 272.0,385.0 C254.5,390.0 254.5,460.0 272.0,465.0 C286.0,470.0 289.5,450.0 300.0,450.0 L300.0,550.0 L50.0,550.0 L50.0,300.0 Z" fill="#218500" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M300,300 L400.0,300.0 C400.0,289.5 380.0,286.0 385.0,272.0 C390.0,254.5 460.0,254.5 465.0,272.0 C470.0,286.0 450.0,289.5 450.0,300.0 L550.0,300.0 L550.0,400.0 C560.5,400.0 564.0,380.0 578.0,385.0 C595.5,390.0 595.5,460.0 578.0,465.0 C564.0,470.0 560.5,450.0 550.0,450.0 L550.0,550.0 L300.0,550.0 L300.0,450.0 C289.5,450.0 286.0,470.0 272.0,465.0 C254.5,460.0 254.5,390.0 272.0,385.0 C286.0,380.0 289.5,400.0 300.0,400.0 L300.0,300.0 Z" fill="#d37b00" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M550,300 L650.0,300.0 C650.0,310.5 630.0,314.0 635.0,328.0 C640.0,345.5 710.0,345.5 715.0,328.0 C720.0,314.0 700.0,310.5 700.0,300.0 L800.0,300.0 L800.0,550.0 L550.0,550.0 L550.0,450.0 C560.5,450.0 564.0,470.0 578.0,465.0 C595.5,460.0 595.5,390.0 578.0,385.0 C564.0,380.0 560.5,400.0 550.0,400.0 L550.0,300.0 Z" fill="#495057" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+  <text x="175" y="182" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="175" dy="0">Money</tspan></text>
+  <text x="425" y="169" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="425" dy="0">Financial</tspan><tspan x="425" dy="25">instruments</tspan></text>
+  <text x="675" y="169" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="675" dy="0">Financial</tspan><tspan x="675" dy="25">markets</tspan></text>
+  <text x="175" y="432" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="175" dy="0">Central banks</tspan></text>
+  <text x="425" y="419" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="425" dy="0">Financial</tspan><tspan x="425" dy="25">institutions</tspan></text>
+  <text x="675" y="419" text-anchor="middle" fill="#fff" font-family="Ubuntu, sans-serif" font-size="22" font-weight="700"><tspan x="675" dy="0">Regulatory</tspan><tspan x="675" dy="25">institutions</tspan></text>
+</svg>
+</div>
+```
+## Money {.medium}
+
+```{=html}
+<div style="position:relative; display:inline-block; padding:4px 0;">
+  <!-- vertical line -->
+  <div style="position:absolute; left:39px; top:40px; bottom:20px; width:4px; background:#ced4da;"></div>
+
+  <!-- 1 Commodity money -->
+  <div style="position:relative; display:flex; align-items:center; gap:1.2rem; margin-bottom:14px;">
+    <div style="width:70px;height:70px;border-radius:50%;background:#5d8198;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 0 0 5px #fff;margin-left:4px;">
+      <i class="fa-solid fa-wheat-awn"></i>
+      <!-- <img src="img/geld_01_geldwaren.png" style="width:70px;height:70px;border-radius:50%;object-fit:cover;"> -->
+    </div>
+    <span style="font-size:1.4rem;">Commodity money</span>
+  </div>
+
+  <!-- 2 Coins -->
+  <div style="position:relative; display:flex; align-items:center; gap:1.2rem; margin-bottom:14px;">
+    <div style="width:70px;height:70px;border-radius:50%;background:#e76254;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 0 0 5px #fff;margin-left:4px;">
+      <i class="fa-solid fa-coins"></i>
+      <!-- <img src="img/geld_02_muenzen.png" style="width:70px;height:70px;border-radius:50%;object-fit:cover;"> -->
+    </div>
+    <span style="font-size:1.4rem;">Coins</span>
+  </div>
+
+  <!-- 3 Papiergeld -->
+  <div style="position:relative; display:flex; align-items:center; gap:1.2rem; margin-bottom:14px;">
+    <div style="width:70px;height:70px;border-radius:50%;background:#d03161;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 0 0 5px #fff;margin-left:4px;">
+      <i class="fa-solid fa-money-bill"></i>
+      <!-- <img src="img/geld_03_papiergeld.png" style="width:70px;height:70px;border-radius:50%;object-fit:cover;"> -->
+    </div>
+    <span style="font-size:1.4rem;">Paper money</span>
+  </div>
+
+  <!-- 4 Bankgeld -->
+  <div style="position:relative; display:flex; align-items:center; gap:1.2rem; margin-bottom:14px;">
+    <div style="width:70px;height:70px;border-radius:50%;background:#218500;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 0 0 5px #fff;margin-left:4px;">
+      <i class="fa-solid fa-building-columns"></i>
+      <!-- <img src="img/geld_04_bankgeld.png" style="width:70px;height:70px;border-radius:50%;object-fit:cover;"> -->
+    </div>
+    <span style="font-size:1.4rem;">Bank money</span>
+  </div>
+
+  <!-- 5 Digital currencies -->
+  <div style="position:relative; display:flex; align-items:center; gap:1.2rem;">
+    <div style="width:70px;height:70px;border-radius:50%;background:#d37b00;color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;box-shadow:0 0 0 5px #fff;margin-left:4px;">
+      <i class="fa-solid fa-bitcoin-sign"></i>
+      <!-- <img src="img/geld_05_digital.png" style="width:70px;height:70px;border-radius:50%;object-fit:cover;"> -->
+    </div>
+    <span style="font-size:1.4rem;">Digital currencies</span>
+  </div>
+
+  <!-- arrow at the end of the line -->
+  <i class="fa-solid fa-caret-down" style="position:absolute; left:31px; bottom:-6px; font-size:1.6rem; color:#ced4da;"></i>
+</div>
+```
+
+## Financial Instruments {.medium}
+
+::: columns
+::: {.column width="45%"}
+Financial instruments are also called *securities*, because the underlying contract is meant to secure a repayment or future payment.
+:::
+
+::: {.column width="55%"}
+- Loans
+- Bonds
+- Stocks
+- Equity funds (mutual funds)
+- Insurance
+- Forward transactions (contracts for difference)
+:::
+:::
+
+## Financial Markets {.medium}
+
+::: columns
+::: {.column width="50%"}
+- Coffee houses, taverns, trading posts
+- Stock exchanges
+- Electronic platforms and apps
+:::
+
+::: {.column width="50%"}
+![Ter Beurze inn](https://museum.nbb.be/sites/default/files/styles/large_horizontal/public/2024-01/I04883_1.jpg?h=9521c228&itok=8qOrHMPZ){fig-align="center" height="380"}
+
+::: {.aside}
+Source: Museum of the National Bank of Belgium ([museum.nbb.be](https://museum.nbb.be))
+:::
+:::
+:::
+
+## Financial Institutions {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Banks as vaults with a payout counter
+- Deposits and loans
+- Dealers in financial instruments
+- Separation of commercial and private banks
+:::
+
+::: {.column width="45%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Regulatory Authorities {.medium}
+
+::: columns
+::: {.column width="33%"}
+::: {style="background:#f8f9fa; border-top:6px solid #5d8198; border-radius:0.8rem; padding:1.2rem 1.4rem; min-height:300px; box-sizing:border-box;"}
+<span class="fa-stack" style="font-size:2rem;">
+  <i class="fas fa-circle fa-stack-2x" style="color:#5d8198;"></i>
+  <i class="fas fa-file-signature fa-stack-1x fa-inverse"></i>
+</span>
+
+::: {.altlist}
+- Usury ban
+- Banking licences
+- House banks
+:::
+:::
+:::
+
+::: {.column width="33%"}
+::: {style="background:#f8f9fa; border-top:6px solid #e76254; border-radius:0.8rem; padding:1.2rem 1.4rem; min-height:300px; box-sizing:border-box;"}
+<span class="fa-stack" style="font-size:2rem;">
+  <i class="fas fa-circle fa-stack-2x" style="color:#e76254;"></i>
+  <i class="fas fa-magnifying-glass fa-stack-1x fa-inverse"></i>
+</span>
+
+::: {.altlist}
+- Bank supervision after financial crises
+- Monitoring and punishing
+:::
+:::
+:::
+
+::: {.column width="33%"}
+::: {style="background:#f8f9fa; border-top:6px solid #d03161; border-radius:0.8rem; padding:1.2rem 1.4rem; min-height:300px; box-sizing:border-box;"}
+<span class="fa-stack" style="font-size:2rem;">
+  <i class="fas fa-circle fa-stack-2x" style="color:#d03161;"></i>
+  <i class="fas fa-scale-balanced fa-stack-1x fa-inverse"></i>
+</span>
+
+::: {.altlist}
+- Glass-Steagall Act
+- Dodd-Frank Act
+- Basel III
+:::
+:::
+:::
+:::
+
+## Central Banks {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Mints
+- Treasury/fiscal administration (William of Orange)
+- Supply of money and credit, government bonds
+:::
+
+::: {.column width="45%"}
+```{r}
+#| label: plot-zb
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-format: svg
+#| fig-width: 6
+#| fig-height: 4.2
+#| fig-align: center
+library(tidyverse)
+
+# Download once, then reuse the local copy
+f <- "data/boe_policy_rate.csv"
+if (!file.exists(f)) {
+  try(download.file(
+    "https://fred.stlouisfed.org/graph/fredgraph.csv?id=BOEPRUKA",
+    f, mode = "wb", quiet = TRUE), silent = TRUE)
+}
+
+if (file.exists(f)) {
+  df <- read_csv(f, show_col_types = FALSE) |>
+    rename(date = 1, rate = 2) |>
+    mutate(year = as.integer(format(as.Date(date), "%Y")),
+           rate = as.numeric(rate)) |>
+    filter(year >= 1900, !is.na(rate))
+
+  y0 <- min(df$year)
+  y1 <- max(df$year)
+
+  # Markers: start, highest, lowest
+  marks <- bind_rows(
+    df |> slice_min(year, n = 1, with_ties = FALSE) |> mutate(vj = -1),
+    df |> slice_max(rate, n = 1, with_ties = FALSE) |> mutate(vj = -1),
+    df |> slice_min(rate, n = 1, with_ties = FALSE) |> mutate(vj = 1.8)
+  ) |>
+    mutate(
+      hj = case_when(year == y0 ~ 0,
+                     year >= y1 - 10 ~ 1,
+                     TRUE ~ 0.5),
+      label = paste0(rate, " % (", year, ")")
+    )
+
+  p <- ggplot(df, aes(year, rate)) +
+    geom_line(colour = "#5d8198", linewidth = 1.2) +
+    geom_point(data = marks, colour = "#e76254", size = 3.5) +
+    geom_label(data = marks, aes(label = label, vjust = vj, hjust = hj),
+               colour = "#e76254", fill = "white", label.size = 0,
+               label.padding = unit(0.2, "lines"), size = 4.5) +
+    scale_x_continuous(expand = expansion(mult = c(0.03, 0.06))) +
+    scale_y_continuous(expand = expansion(mult = c(0.18, 0.15))) +
+    coord_cartesian(clip = "off") +
+    labs(title = paste0("Bank of England policy rate, ", y0, "–", y1),
+         caption = "Source: Bank of England via FRED (BOEPRUKA)") +
+    theme_void(base_size = 14) +
+    theme(
+      plot.background  = element_rect(fill = "transparent", colour = NA),
+      panel.background = element_rect(fill = "transparent", colour = NA),
+      plot.title   = element_text(colour = "#343a40", face = "bold",
+                                  hjust = 0, margin = margin(b = 8)),
+      plot.caption = element_text(colour = "#868e96", size = 9, hjust = 0,
+                                  margin = margin(t = 8))
+    )
+  print(p)
+} else {
+  cat("Data could not be loaded.")
+}
+```
+:::
+:::
+
+## Code: Bank of England policy rate {.smaller}
+
+```{=html}
+<style>.reveal pre code { max-height: none; }</style>
+```
+
+```{r ref.label="plot-zb", echo=TRUE, eval=FALSE}
+```
+
+## Questions (Cecchetti and Schoenholtz) {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- What distinguishes a debit card from a credit card?
+- Are your bank deposits insured?
+- Would you rather own stocks, bonds or gold?
+- Would you buy shares of the company you work for?
+- What information do you want before taking out a mortgage?
+:::
+
+::: {.column width="50%"}
+- What is your creditworthiness, and why does it matter?
+- Do you need life insurance?
+- Do you need health insurance?
+- Do you need social insurance?
+- Do you need pension insurance?
+:::
+:::
+
+# Money
+
+<div style="text-align:center;">
+<span class='fa-stack' style='font-size:7rem;'>
+  <i class='fas fa-circle fa-stack-2x blue'></i>
+  <i class='fas fa-money-bill-wave fa-stack-1x fa-inverse'></i>
+</span>
+</div>
+
+::: footer
+:::
+
+## Unit of Account {.medium}
+
+- Unit of account and unit of settlement:
+    - Goods and services become comparable (commensurable)
+    - Transactions are netted and only the difference is paid out
+    - Expenditures and receipts do not occur at the same time, but are put in relation to each other
+- Relative prices: All goods and services are compared with one another.
+
+## Store of Value {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Means of payment are protected against rapid decay
+    - Cheese taxes, salt taxes, precious metals
+- Liquid store of value: Money can be exchanged for goods and services very quickly and cheaply.
+:::
+
+::: {.column width="50%"}
+- Gold less quickly, bonds even more slowly, real estate very slowly.
+- Financial institutions distinguish between *market liquidity* and *funding liquidity*.
+:::
+:::
+
+## Commodity Money {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Early means of payment had intrinsic value: silk, butter, salt, animal teeth.
+- They also had further useful properties:
+    - Durability
+    - Divisibility
+    - Portability
+    - Standardizability.
+:::
+
+::: {.column width="50%"}
+- Gold runs through the history of means of payment:
+    - Scarce (high value-to-weight ratio)
+    - Widely known and distributed
+    - Purity can be determined
+    - Standardizable and divisible without loss
+    - Durable
+:::
+:::
+
+## Paper Money {.medium}
+
+::: columns
+::: {.column width="60%"}
+- In the 17th century: paper money developed in Sweden as an alternative to copper money (not very valuable)
+- Directly exchangeable for metal money
+- More banknotes than available metal, soon followed by loss of confidence
+- From the early 18th century: paper money in the American colonies and France.
+:::
+
+::: {.column width="40%"}
+![First banknote from Sweden](https://museum.nbb.be/sites/default/files/styles/large_horizontal/public/2021-02/B17954_r.png?h=2e6f65da&itok=Iz3iDMvw){fig-align="center" height="380"}
+
+::: {.aside}
+Source: Museum of the National Bank of Belgium ([museum.nbb.be](https://museum.nbb.be))
+:::
+:::
+:::
+
+## Paper Money {.medium}
+
+::: columns
+::: {.column width="55%"}
+- In the American Civil War, both sides paid for personnel and services with paper money, backed by a government promise.
+- The winning side's paper money is recognized as a means of payment (greenback); the losing side's banknotes are now only of interest to collectors.
+:::
+
+::: {.column width="45%"}
+<!-- Space for figure: e.g. greenback and losing-side banknote -->
+:::
+:::
+
+## Fiat Money {.medium}
+
+::: columns
+::: {.column width="60%"}
+- Modern paper money has little intrinsic value and low production costs.
+- Acceptance by government bodies and private businesses is legally required.
+- Backed paper money: precious metal of equal value is held, slowing devaluation.
+- Unbacked paper money (true fiat money): Exchangeability depends on market conditions
+:::
+
+::: {.column width="40%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Fiat Money {.medium}
+
+::: columns
+::: {.column width="60%"}
+- Just like commodity and metal money, tied to general acceptance.
+- Money supply is centrally controlled and easy to expand (fear of devaluation).
+- Aim of fiat money: Stronger price development than commodity money; presupposes that the money supply grows more slowly than real output.
+:::
+
+::: {.column width="40%"}
+<!-- Space for figure: e.g. money supply growth -->
+:::
+:::
+
+## Electronic Means of Payment {.smaller}
+
+::: columns
+::: {.column width="30%"}
+- Debit card:
+    - Payment instruction to the bank.
+    - Payment by the cardholder.
+    - Financed by fees.
+:::
+
+::: {.column width="30%"}
+- Credit card:
+    - Bank advances the funds.
+    - Payment by the bank.
+    - Financed by interest.
+:::
+
+::: {.column width="40%"}
+- Direct transfer:
+    - Electronic payment instruction
+    - Transactions via a clearing house (*automated clearing houses, ACH*)
+    - Between financial institutions: Only the difference is actually transferred.
+    - Now often tied to mobile phone contracts (mobile parking in Vienna, M-Pesa in Kenya)
+:::
+:::
+
+## Inflation {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Inflation means that goods and services generally become more expensive.
+- Inflation means that money is worth less.
+- Money is worth less when more money circulates than goods and services.
+:::
+
+::: {.column width="45%"}
+```{r}
+#| label: plot-milk
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-format: svg
+#| fig-width: 6
+#| fig-height: 4.2
+#| fig-align: center
+library(tidyverse)
+
+f   <- "data/ons_milk_pint.csv"
+url <- paste0("https://www.ons.gov.uk/generator?format=csv&uri=",
+              "/economy/inflationandpriceindices/timeseries/cznt/mm23")
+msg <- character()
+
+# A valid ONS file contains the line "CDID" near the top
+ok_file <- function(path) {
+  file.exists(path) && file.size(path) > 500 &&
+    any(grepl("CDID", readLines(path, n = 15, warn = FALSE)))
+}
+
+if (!ok_file(f)) {
+  unlink(f)
+  ua <- "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+
+  # Try 1: base R with libcurl and a browser user agent
+  r1 <- try(download.file(url, f, mode = "wb", quiet = TRUE,
+                          method = "libcurl",
+                          headers = c("User-Agent" = ua)), silent = TRUE)
+  if (inherits(r1, "try-error")) msg <- c(msg, conditionMessage(attr(r1, "condition")))
+
+  # Try 2: curl package (install.packages("curl") if missing)
+  if (!ok_file(f) && requireNamespace("curl", quietly = TRUE)) {
+    h <- curl::new_handle(useragent = ua)
+    r2 <- try(curl::curl_download(url, f, handle = h), silent = TRUE)
+    if (inherits(r2, "try-error")) msg <- c(msg, conditionMessage(attr(r2, "condition")))
+  }
+
+  # Try 3: read straight from the URL
+  if (!ok_file(f)) {
+    r3 <- try(writeLines(readLines(url, warn = FALSE), f), silent = TRUE)
+    if (inherits(r3, "try-error")) msg <- c(msg, conditionMessage(attr(r3, "condition")))
+  }
+  if (!ok_file(f)) unlink(f)
+}
+
+if (ok_file(f)) {
+  # Metadata lines first, then annual, quarterly and monthly rows.
+  # Keep only the annual rows (a plain four-digit year).
+  df <- read_csv(f, col_names = c("period", "value"),
+                 col_types = cols(.default = col_character()),
+                 show_col_types = FALSE) |>
+    filter(grepl("^[0-9]{4}$", period)) |>
+    mutate(year = as.integer(period), pence = as.numeric(value)) |>
+    filter(!is.na(pence))
+
+  y0 <- min(df$year)
+  y1 <- max(df$year)
+  ratio <- round(df$pence[df$year == y1] / df$pence[df$year == y0])
+
+  marks <- bind_rows(
+    df |> slice_min(year, n = 1) |> mutate(hj = 0, vj = -0.8),
+    df |> slice_max(year, n = 1) |> mutate(hj = 1, vj = -0.8)
+  ) |>
+    mutate(label = paste0(format(round(pence, 1), nsmall = 1), " p (", year, ")"))
+
+  p <- ggplot(df, aes(year, pence)) +
+    geom_line(colour = "#5d8198", linewidth = 1.2) +
+    geom_point(data = marks, colour = "#e76254", size = 3.5) +
+    geom_label(data = marks,
+               aes(label = label, hjust = hj, vjust = vj),
+               colour = "#e76254", fill = "white", label.size = 0,
+               label.padding = unit(0.2, "lines"), size = 4.5) +
+    scale_x_continuous(expand = expansion(mult = c(0.03, 0.06))) +
+    scale_y_continuous(expand = expansion(mult = c(0.05, 0.2))) +
+    coord_cartesian(clip = "off") +
+    labs(title = paste0("Price of a pint of milk (UK), ", y0, "–", y1),
+         subtitle = paste0("Nominal in pence: ", ratio, " times the ", y0, " price"),
+         caption = "Source: ONS, RPI average price (CZNT)") +
+    theme_void(base_size = 14) +
+    theme(
+      plot.background  = element_rect(fill = "transparent", colour = NA),
+      panel.background = element_rect(fill = "transparent", colour = NA),
+      plot.title    = element_text(colour = "#343a40", face = "bold",
+                                   hjust = 0, margin = margin(b = 2)),
+      plot.subtitle = element_text(colour = "#868e96", size = 10, hjust = 0,
+                                   margin = margin(b = 8)),
+      plot.caption  = element_text(colour = "#868e96", size = 9, hjust = 0,
+                                   margin = margin(t = 8))
+    )
+  print(p)
+} else {
+  cat("Data could not be loaded.\n",
+      "Error: ", paste(unique(msg), collapse = " | "), "\n",
+      "Manual: download the CSV from the ONS page (cznt/mm23) and save it as ",
+      f, " next to the .qmd.", sep = "")
+}
+```
+:::
+:::
+
+## Code: Price of a pint of milk (ONS) {.smaller}
+
+```{r ref.label="plot-milk", echo=TRUE, eval=FALSE}
+```
+
+## Inflation {.medium}
+
+::: columns
+::: {.column width="55%"}
+- More money than goods circulates when the money supply is suddenly expanded.
+- Fewer goods than money circulate when more is saved and less is invested (or consumed).
+- Inflation becomes tangible when prices are actually raised (by firms) and higher prices are actually paid (by households and firms).
+:::
+
+::: {.column width="45%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Counting Money {.medium}
+
+::: columns
+::: {.column width="50%"}
+Means of payment can be ranked by liquidity:
+
+- Cash
+- Call deposit accounts
+- Term deposit accounts
+- Government bonds
+- Stocks
+:::
+
+::: {.column width="50%"}
+<!-- Space for figure: e.g. liquidity ladder -->
+:::
+:::
+
+## Monetary Aggregates {.medium}
+
+```{r}
+#| include: false
+# Stream graph (copy of geom_pemstream, defined here, not loaded).
+# Added argument: center = TRUE keeps the original mirrored layout;
+# center = FALSE puts the lower bound on a flat baseline at zero.
+StatPemstream <- ggplot2::ggproto("StatPemstream", ggplot2::Stat,
+  required_aes = c("x", "y", "fill"),
+  compute_panel = function(data, scales, span = 0.75, stack_order = NULL,
+                           center = TRUE) {
+    if (is.null(stack_order)) {
+      data$fill <- factor(data$fill)
+    } else {
+      data$fill <- factor(data$fill, levels = stack_order)
+    }
+    data <- data[order(data$x, rev(as.integer(data$fill))), ]
+
+    data <- do.call(rbind, lapply(split(data, data$x), function(d) {
+      offset <- if (center) sum(d$y) / 2 else 0
+      d$ymax <- cumsum(d$y) - offset
+      d$ymin <- d$ymax - d$y
+      d
+    }))
+
+    data <- do.call(rbind, lapply(split(data, data$fill), function(d) {
+      d <- d[order(d$x), ]
+      if (nrow(d) >= 4) {
+        d$ymin <- stats::predict(stats::loess(ymin ~ x, data = d, span = span))
+        d$ymax <- stats::predict(stats::loess(ymax ~ x, data = d, span = span))
+      }
+      d
+    }))
+    data
+  }
+)
+
+geom_pemstream <- function(mapping = NULL, data = NULL,
+                           position = "identity",
+                           span = 0.75, stack_order = NULL, center = TRUE,
+                           na.rm = FALSE, show.legend = NA,
+                           inherit.aes = TRUE, ...) {
+  ggplot2::layer(
+    stat = StatPemstream, geom = ggplot2::GeomRibbon,
+    mapping = mapping, data = data, position = position,
+    show.legend = show.legend, inherit.aes = inherit.aes,
+    params = list(span = span, stack_order = stack_order, center = center,
+                  na.rm = na.rm, ...)
+  )
+}
+```
+
+::: columns
+::: {.column width="50%"}
+- M1: Cash and deposit accounts (almost no interest)
+- M2: M1 + term deposits under USD 100,000, savings accounts, investment funds, ... (interest-bearing)
+- M3: M2 + deposits over USD 100,000
+- M4 (British): Cash in circulation, bank deposits, building society deposits, certificates of deposit.
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: plot-stream
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-format: svg
+#| fig-width: 6
+#| fig-height: 4.4
+#| fig-align: center
+library(tidyverse)
+
+# Download once from the ECB Data Portal, then reuse the local copy
+f <- "data/ecb_money_aggregates.csv"
+if (!file.exists(f)) {
+  try(download.file(
+    paste0("https://data-api.ecb.europa.eu/service/data/BSI/",
+           "M.U2.Y.V.M10+M20+M30.X.1.U2.2300.Z01.E",
+           "?format=csvdata&startPeriod=1999-01"),
+    f, mode = "wb", quiet = TRUE), silent = TRUE)
+}
+
+if (file.exists(f)) {
+  # Values in € trillions; the ECB reports millions
+  wide <- read_csv(f, show_col_types = FALSE) |>
+    transmute(item = sub(".*\\.(M[123]0)\\..*", "\\1", KEY),
+              period = TIME_PERIOD, value = OBS_VALUE / 1e6) |>
+    pivot_wider(names_from = item, values_from = value) |>
+    mutate(x = as.integer(substr(period, 1, 4)) +
+               (as.integer(substr(period, 6, 7)) - 1) / 12)
+
+  lvl <- c("M3 – M2", "M2 – M1", "M1")   # M1 sits at the bottom
+  df <- wide |>
+    transmute(x, `M1` = M10, `M2 – M1` = M20 - M10, `M3 – M2` = M30 - M20) |>
+    pivot_longer(-x, names_to = "aggregat", values_to = "wert")
+
+  fmt <- function(v) paste0("€", format(round(v, 1), nsmall = 1), " tn")
+
+  # Edge markers: aggregate levels = upper edges of the bands
+  first <- wide |> slice_min(x, n = 1)
+  last  <- wide |> slice_max(x, n = 1)
+
+  ends <- tibble(
+    x = last$x, name = c("M1", "M2", "M3"),
+    y = c(last$M10, last$M20, last$M30)
+  ) |> mutate(label = paste0(name, "  ", fmt(y)))
+
+  start <- tibble(x = first$x, name = "M3", y = first$M30,
+                  label = paste0("M3  ", fmt(first$M30)))
+
+  marks <- bind_rows(ends, start)
+
+  fills <- c("M1" = "#5d8198", "M2 – M1" = "#e76254", "M3 – M2" = "#868e96")
+  cols  <- c("M1" = "#5d8198", "M2" = "#e76254", "M3" = "#868e96")
+
+  p <- ggplot() +
+    geom_pemstream(data = df, aes(x = x, y = wert, fill = aggregat),
+                   span = 0.08, stack_order = lvl, center = FALSE,
+                   colour = "white", linewidth = 0.3) +
+    geom_hline(yintercept = 0, colour = "#ced4da", linewidth = 0.5) +
+    geom_point(data = marks, aes(x = x, y = y, colour = name), size = 3) +
+    geom_label(data = ends,
+               aes(x = x + 0.4, y = y, label = label, colour = name),
+               hjust = 0, fill = "white", label.size = 0,
+               label.padding = unit(0.2, "lines"),
+               size = 4, fontface = "bold") +
+    geom_label(data = start,
+               aes(x = x, y = y, label = label, colour = name),
+               hjust = 0, vjust = -0.5, fill = "white", label.size = 0,
+               label.padding = unit(0.2, "lines"),
+               size = 4, fontface = "bold") +
+    scale_fill_manual(values = fills) +
+    scale_colour_manual(values = cols) +
+    scale_x_continuous(breaks = seq(2000, 2020, 10),
+                       expand = expansion(mult = c(0.01, 0.35))) +
+    scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +
+    coord_cartesian(clip = "off") +
+    labs(title = paste0("Monetary aggregates in the euro area, ",
+                        floor(min(df$x)), "–", floor(max(df$x))),
+         subtitle = "Upper edges of the bands = M1, M2 and M3 (tn = trillions of euros)",
+         caption = "Source: ECB Data Portal (BSI), seasonally adjusted, stocks") +
+    theme_void(base_size = 14) +
+    theme(
+      legend.position  = "none",
+      plot.background  = element_rect(fill = "transparent", colour = NA),
+      panel.background = element_rect(fill = "transparent", colour = NA),
+      axis.text.x  = element_text(colour = "#868e96", size = 10,
+                                  margin = margin(t = 6)),
+      plot.title   = element_text(colour = "#343a40", face = "bold",
+                                  hjust = 0, margin = margin(b = 2)),
+      plot.subtitle = element_text(colour = "#868e96", size = 10, hjust = 0,
+                                   margin = margin(b = 8)),
+      plot.caption = element_text(colour = "#868e96", size = 9, hjust = 0,
+                                  margin = margin(t = 8))
+    )
+  print(p)
+} else {
+  cat("Data could not be loaded.")
+}
+```
+:::
+:::
+
+## Code: Monetary aggregates in the euro area (ECB) {.smaller}
+
+```{r ref.label="plot-stream", echo=TRUE, eval=FALSE}
+```
+
+## Printing Money {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Physical money production by central banks, with seigniorage profit (difference between production cost and face value)
+- Credit creation by commercial banks and credit institutions
+- Every asset is mirrored by a liability.
+:::
+
+::: {.column width="45%"}
+<!-- Space for figure: e.g. balance sheet (assets/liabilities) -->
+:::
+:::
+
+## Questions (Cecchetti and Schoenholtz) {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- How can you pay for a coffee?
+- Which payment method is cheapest for the recipient?
+- What does money have to do with the specialization of labour?
+- What would be an appropriate unit of account and settlement in a cashless economy?
+:::
+
+::: {.column width="50%"}
+- What examples of direct transfers do you know?
+- What are the advantages and disadvantages for an EU country of joining the euro area?
+- Why are tomatoes, bricks and cattle not good commodity monies?
+- What are the current estimates for the monetary aggregates M1, M2, M3 and M4 in Austria?
+:::
+:::
+
+# Financial Instruments
+
+<div style="text-align:center;">
+<span class='fa-stack' style='font-size:7rem;'>
+  <i class='fas fa-circle fa-stack-2x blue'></i>
+  <i class='fas fa-file-contract fa-stack-1x fa-inverse'></i>
+</span>
+</div>
+
+::: footer
+:::
+
+## Borrowing Money {.medium}
+
+::: columns
+::: {.column width="50%"}
+Direct loans:
+
+- Private loan
+- Promissory note
+- Moneylenders and loan sharks
+:::
+
+::: {.column width="50%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Borrowing Money {.smaller}
+
+::: columns
+::: {.column width="50%"}
+Indirect loans
+
+- Banks intermediate between depositors and borrowers
+    - Risk transformation
+    - Maturity transformation
+:::
+
+::: {.column width="50%"}
+- Whoever borrows money simultaneously creates assets (what the money is spent on) and liabilities (the debt)
+- Whoever lends money also creates assets (the loan amount) and liabilities (where the money comes from)
+:::
+:::
+
+## Borrowing Money {.smaller}
+
+```{r}
+#| label: fn-waffle
+#| include: false
+# --- own geom definition (not loaded, redefined here) ---
+library(tidyverse)
+
+StatPemwaffle <- ggplot2::ggproto("StatPemwaffle", ggplot2::Stat,
+  required_aes = c("y", "fill"),
+  compute_panel = function(data, scales, n_cols = 10, tile_size = 0.9,
+                           stack_order = NULL) {
+    if (is.null(stack_order)) {
+      data$fill <- factor(data$fill)
+    } else {
+      data$fill <- factor(data$fill, levels = stack_order)
+    }
+    # normalize each panel to exactly 100 tiles
+    total <- sum(data$y)
+    data$n_units <- round(data$y / total * 100)
+    diff <- 100 - sum(data$n_units)
+    if (diff != 0) {
+      idx <- which.max(data$n_units)
+      data$n_units[idx] <- data$n_units[idx] + diff
+    }
+    data <- data[data$n_units > 0, ]
+    data <- data[order(data$fill), ]
+    reps <- rep(seq_len(nrow(data)), data$n_units)
+    out <- data[reps, , drop = FALSE]
+    out$square_id <- seq_len(nrow(out)) - 1
+    out$x <- out$square_id %% n_cols
+    out$y <- out$square_id %/% n_cols
+    out$width  <- tile_size
+    out$height <- tile_size
+    out
+  }
+)
+
+geom_pemwaffle <- function(mapping = NULL, data = NULL, position = "identity",
+                           n_cols = 10, tile_size = 0.9, stack_order = NULL,
+                           na.rm = FALSE, show.legend = NA,
+                           inherit.aes = TRUE, ...) {
+  ggplot2::layer(
+    stat = StatPemwaffle, geom = ggplot2::GeomTile,
+    mapping = mapping, data = data, position = position,
+    show.legend = show.legend, inherit.aes = inherit.aes,
+    params = list(n_cols = n_cols, tile_size = tile_size,
+                  stack_order = stack_order, na.rm = na.rm, ...)
+  )
+}
+```
+
+::: columns
+::: {.column width="50%"}
+- Not all loans are backed by deposits: banks create money by granting loans.
+- Loans are assets: they can be traded and therefore used as collateral for further loans, which in turn create money.
+- Only a fraction of balances and loans circulate as banknotes. For the rest, payments are simply offset against each other (*clearing*).
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: plot-waffle
+#| echo: false
+#| fig-format: svg
+#| fig-width: 5
+#| fig-height: 5
+#| fig-align: center
+
+# Data: FRED (St. Louis Fed); download once and save as CSV next to the qmd
+get_fred <- function(id) {
+  f <- paste0("data/fred_", id, ".csv")
+  if (!file.exists(f)) {
+    try(download.file(
+      paste0("https://fred.stlouisfed.org/graph/fredgraph.csv?id=", id),
+      f, mode = "wb", quiet = TRUE), silent = TRUE)
+  }
+  if (!file.exists(f)) return(NULL)
+  d <- read.csv(f)
+  names(d) <- c("date", "value")
+  d$date  <- as.Date(d$date)
+  d$value <- suppressWarnings(as.numeric(d$value))
+  d[!is.na(d$value), ]
+}
+
+cur <- get_fred("CURRCIR")   # Currency in circulation (USD bn)
+m2  <- get_fred("M2SL")      # Money supply M2 (USD bn)
+
+if (is.null(cur) || is.null(m2)) {
+  cat("Data could not be loaded.")
+} else {
+  yrs <- c(1960, 1980, 2000, 2025)
+
+  d <- inner_join(rename(cur, bar = value), rename(m2, m2 = value), by = "date") |>
+    mutate(year = as.integer(format(date, "%Y"))) |>
+    filter(year %in% yrs) |>
+    group_by(year) |>
+    summarise(bar = mean(bar), m2 = mean(m2), .groups = "drop") |>
+    mutate(Deposits = m2 - bar,
+           panel = factor(paste0(year, ": ", round(100 * bar / m2), " % cash"),
+                          levels = paste0(year, ": ", round(100 * bar / m2), " % cash"))) |>
+    select(panel, Cash = bar, Deposits) |>
+    pivot_longer(c(Cash, Deposits), names_to = "art", values_to = "wert")
+
+  p <- ggplot(d, aes(y = wert, fill = art)) +
+    geom_pemwaffle(stack_order = c("Cash", "Deposits")) +
+    facet_wrap(~panel, nrow = 2) +
+    coord_equal() +
+    scale_y_reverse() +
+    scale_fill_manual(values = c(Cash = "#e76254", Deposits = "#5d8198"),
+                      name = NULL) +
+    labs(title = "Cash is only part of money",
+         subtitle = "1 tile = 1% of the M2 money supply (USA)",
+         caption = "Source: FRED (CURRCIR, M2SL), annual averages") +
+    theme_void(base_size = 14) +
+    theme(
+      plot.background  = element_rect(fill = "transparent", colour = NA),
+      panel.background = element_rect(fill = "transparent", colour = NA),
+      plot.title    = element_text(colour = "#343a40", face = "bold", hjust = 0),
+      plot.subtitle = element_text(colour = "#868e96", hjust = 0,
+                                   margin = margin(b = 8)),
+      plot.caption  = element_text(colour = "#868e96", size = 9, hjust = 0),
+      strip.text    = element_text(colour = "#343a40", face = "bold",
+                                   margin = margin(b = 4)),
+      legend.position = "bottom",
+      legend.text = element_text(colour = "#495057")
+    )
+  print(p)
+}
+```
+:::
+:::
+
+## Code: Cash and deposits (FRED) {.smaller}
+
+```{r ref.label="plot-waffle", echo=TRUE, eval=FALSE}
+```
+
+
+<!-- ====================================================================== -->
+
+## Direct and Indirect Lending {.medium}
+
+- Trend towards institutionalization of direct loans (the distinction blurs).
+- Modern distinction: Who owns the asset (the loan):
+    - Direct loan: creditor
+    - Indirect: the creditor holds a claim against an institution, which in turn holds one against the borrower.
+
+## Financial Instruments {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Contractual obligation to pay or transfer value
+- Means of payment (stock options instead of a pay rise)
+- Store of value
+- Risk transfer
+:::
+
+::: {.column width="45%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Risk Transfer {.medium}
+
+```{r}
+#| label: fn-bump
+#| include: false
+# --- own geom definition (not loaded, redefined here) ---
+library(tidyverse)
+
+StatPembumpRank <- ggplot2::ggproto("StatPembumpRank", ggplot2::Stat,
+  required_aes = c("x", "y", "colour"),
+  compute_panel = function(data, scales) {
+    data$colour <- factor(data$colour)
+    do.call(rbind, lapply(split(data, data$x), function(d) {
+      d$y <- rank(-d$y, ties.method = "first")
+      d
+    }))
+  }
+)
+
+StatPembumpLine <- ggplot2::ggproto("StatPembumpLine", ggplot2::Stat,
+  required_aes = c("x", "y", "colour"),
+  compute_panel = function(data, scales, n_interp = 30, sigmoid_k = 10) {
+    data$colour <- factor(data$colour)
+    ranked <- do.call(rbind, lapply(split(data, data$x), function(d) {
+      d$y <- rank(-d$y, ties.method = "first")
+      d
+    }))
+    do.call(rbind, lapply(split(ranked, ranked$colour), function(d) {
+      d <- d[order(d$x), ]
+      if (nrow(d) < 2) return(d[0, ])
+      segs <- lapply(seq_len(nrow(d) - 1), function(i) {
+        x1 <- d$x[i]; x2 <- d$x[i + 1]
+        y1 <- d$y[i]; y2 <- d$y[i + 1]
+        if (y1 == y2) {
+          seg <- data.frame(x = c(x1, x2), y = c(y1, y2))
+        } else {
+          t <- seq(0, 1, length.out = n_interp)
+          s <- 1 / (1 + exp(-sigmoid_k * (t - 0.5)))
+          s <- (s - min(s)) / (max(s) - min(s))
+          seg <- data.frame(x = x1 + t * (x2 - x1),
+                            y = y1 + (y2 - y1) * s)
+        }
+        seg$colour <- d$colour[i]
+        seg$PANEL  <- d$PANEL[1]
+        seg$group  <- d$group[1]
+        seg
+      })
+      do.call(rbind, segs)
+    }))
+  }
+)
+
+StatPembumpLabel <- ggplot2::ggproto("StatPembumpLabel", ggplot2::Stat,
+  required_aes = c("x", "y", "colour"),
+  compute_panel = function(data, scales, label_pos = "first_last", nudge_y = -0.3) {
+    data$colour <- factor(data$colour)
+    ranked <- do.call(rbind, lapply(split(data, data$x), function(d) {
+      d$y <- rank(-d$y, ties.method = "first")
+      d
+    }))
+    if (label_pos == "last") {
+      ranked <- ranked[ranked$x == max(ranked$x), ]
+    } else if (label_pos == "first") {
+      ranked <- ranked[ranked$x == min(ranked$x), ]
+    } else if (label_pos == "first_last") {
+      ranked <- ranked[ranked$x %in% c(min(ranked$x), max(ranked$x)), ]
+    }
+    ranked$y <- ranked$y + nudge_y
+    ranked
+  }
+)
+
+geom_pembumpchart <- function(mapping = NULL, data = NULL, position = "identity",
+                              n_interp = 30, sigmoid_k = 10,
+                              point_size = 1.8, line_width = 0.8,
+                              labels = c("first_last", "last", "first", "all", "none"),
+                              label_size = 3.2, label_nudge_y = -0.3,
+                              na.rm = FALSE, show.legend = NA,
+                              inherit.aes = TRUE, ...) {
+  labels <- match.arg(labels)
+
+  line_layer <- ggplot2::layer(
+    stat = StatPembumpLine, geom = ggplot2::GeomLine,
+    mapping = mapping, data = data, position = position,
+    show.legend = show.legend, inherit.aes = inherit.aes,
+    params = list(n_interp = n_interp, sigmoid_k = sigmoid_k,
+                  linewidth = line_width, na.rm = na.rm, ...)
+  )
+  point_layer <- ggplot2::layer(
+    stat = StatPembumpRank, geom = ggplot2::GeomPoint,
+    mapping = mapping, data = data, position = position,
+    show.legend = show.legend, inherit.aes = inherit.aes,
+    params = list(size = point_size, na.rm = na.rm)
+  )
+  out <- list(line_layer, point_layer)
+
+  if (labels != "none") {
+    label_mapping <- mapping
+    if (is.null(label_mapping)) {
+      label_mapping <- ggplot2::aes(label = ggplot2::after_stat(colour))
+    } else if (is.null(label_mapping$label)) {
+      label_mapping <- modifyList(label_mapping,
+                                  ggplot2::aes(label = ggplot2::after_stat(colour)))
+    }
+    label_layer <- ggplot2::layer(
+      stat = StatPembumpLabel, geom = ggplot2::GeomText,
+      mapping = label_mapping, data = data, position = position,
+      show.legend = FALSE, inherit.aes = inherit.aes,
+      params = list(label_pos = labels, nudge_y = label_nudge_y,
+                    hjust = 0.5, size = label_size, na.rm = na.rm)
+    )
+    out <- c(out, list(label_layer))
+  }
+  out
+}
+```
+
+::: columns
+::: {.column width="55%"}
+- Direct lending: Either performance as contracted or total default.
+- Indirect lending: Partial default, manageable when credit risks are independent.
+- Credit default risks are not always independent random events (housing crisis 2007)
+:::
+
+::: {.column width="45%"}
+```{r}
+#| label: plot-bump
+#| echo: false
+#| fig-format: svg
+#| fig-width: 5
+#| fig-height: 4.6
+#| fig-align: center
+
+# Data: FRED, delinquency rates at US commercial banks (seasonally adjusted, quarterly)
+get_fred <- function(id) {
+  f <- paste0("data/fred_", id, ".csv")
+  if (!file.exists(f)) {
+    try(download.file(
+      paste0("https://fred.stlouisfed.org/graph/fredgraph.csv?id=", id),
+      f, mode = "wb", quiet = TRUE), silent = TRUE)
+  }
+  if (!file.exists(f)) return(NULL)
+  d <- read.csv(f)
+  names(d) <- c("date", "value")
+  d$date  <- as.Date(d$date)
+  d$value <- suppressWarnings(as.numeric(d$value))
+  d[!is.na(d$value), ]
+}
+
+ids <- c(Mortgages = "DRSFRMACBS",
+         `Credit cards` = "DRCCLACBS",
+         `Business loans` = "DRBLACBS",
+         `CRE loans` = "DRCRELEXFACBS")
+
+dl <- lapply(ids, get_fred)
+
+if (any(sapply(dl, is.null))) {
+  cat("Data could not be loaded.")
+} else {
+  jahre <- seq(1992, 2025, by = 3)
+
+  d <- bind_rows(dl, .id = "art") |>
+    mutate(jahr = as.integer(format(date, "%Y"))) |>
+    filter(jahr %in% jahre) |>
+    group_by(art, jahr) |>
+    summarise(wert = mean(value), .groups = "drop")
+
+  p <- ggplot(d, aes(x = jahr, y = wert, colour = art)) +
+    geom_pembumpchart(point_size = 2.4, line_width = 1.1,
+                      labels = "first_last", label_size = 3.3) +
+    annotate("text", x = 2010, y = 0.35, label = "Housing crisis",
+             colour = "#868e96", size = 3.6, fontface = "italic") +
+    scale_y_reverse(expand = expansion(add = c(0.6, 0.4))) +
+    scale_x_continuous(expand = expansion(mult = 0.22)) +
+    scale_colour_manual(values = c(Mortgages = "#d03161",
+                                   `Credit cards` = "#e76254",
+                                   `Business loans` = "#5d8198",
+                                   `CRE loans` = "#d37b00")) +
+    coord_cartesian(clip = "off") +
+    labs(title = "Where do loans default?",
+         subtitle = "Rank of delinquency rate by loan type (1 = highest), every 3 years",
+         caption = "Source: FRED (DRSFRMACBS, DRCCLACBS, DRBLACBS, DRCRELEXFACBS)") +
+    theme_void(base_size = 14) +
+    theme(
+      plot.background  = element_rect(fill = "transparent", colour = NA),
+      panel.background = element_rect(fill = "transparent", colour = NA),
+      plot.title    = element_text(colour = "#343a40", face = "bold", hjust = 0),
+      plot.subtitle = element_text(colour = "#868e96", size = 10, hjust = 0,
+                                   margin = margin(b = 8)),
+      plot.caption  = element_text(colour = "#868e96", size = 8, hjust = 0),
+      legend.position = "none"
+    )
+  print(p)
+}
+```
+:::
+:::
+
+## Code: Delinquency rates by loan type (FRED) {.smaller}
+
+```{r ref.label="plot-bump", echo=TRUE, eval=FALSE}
+```
+
+
+## Information in Financial Instruments {.medium}
+
+::: columns
+::: {.column width="60%"}
+- Financial instruments are complex; understanding them costs time or money (lawyers' time).
+- Developing a financial instrument means standardization and translation.
+- Protection against asymmetric information
+:::
+
+::: {.column width="40%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Simple and Derivative Instruments {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Simple financial instruments: Value and payments depend solely on the economic status of the borrower (interest, dividends, ...).
+:::
+
+::: {.column width="50%"}
+- Derivative instruments: Value and payments depend on the performance of other instruments.
+- Derivative instruments: Spread risks among many investors.
+:::
+:::
+
+## Valuing Instruments {.medium}
+
+::: columns
+::: {.column width="50%"}
+A financial instrument has a higher price if a larger payment is made sooner and with higher probability.
+:::
+
+::: {.column width="50%"}
+- Amount of the agreed payments.
+- Timing of the agreed payments.
+- Circumstances of the agreed payments.
+:::
+:::
+
+## Examples of Financial Instruments {.medium}
+
+::: columns
+::: {.column width="50%"}
+- Bank loans
+- Bonds (governments and firms)
+- Real estate mortgages
+- Stocks
+- Asset-backed securities
+:::
+
+::: {.column width="50%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Risk Transformation {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Insurance contracts: Payout when an event occurs.
+- Futures: A transaction is concluded in the future at a price fixed in advance.
+- Options: The right to conclude a transaction in the future at a fixed price.
+- Swaps: Contract to exchange two payments in the future (often in different currencies).
+:::
+
+::: {.column width="50%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Financial Markets {.medium}
+
+::: columns
+::: {.column width="50%"}
+- Liquidity
+- Collect and communicate information
+- Organize risk sharing
+:::
+
+::: {.column width="50%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Transaction Costs {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Financial markets distribute liquidity
+- Transaction costs arise but should be low
+- Information mainly about prices
+:::
+
+::: {.column width="45%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Informative Prices {.smaller}
+
+- Prices are shaped by competition: High prices indicate low supply or high demand.
+- Without additional information, this gives an idea of which financial instruments their owners and other buyers see as promising.
+- Large groups rarely err, but when they do, they err badly (bubbles)
+
+## Primary and Secondary Markets {.medium}
+
+::: columns
+::: {.column width="50%"}
+- Primary market: New financial instruments
+- Secondary market: All subsequent changes of ownership
+:::
+
+::: {.column width="50%"}
+<!-- Space for figure: e.g. diagram of primary and secondary markets -->
+:::
+:::
+
+## Centralized and Over-the-Counter Markets {.smaller}
+
+::: columns
+::: {.column width="55%"}
+- Centralized markets: Dealers meet at a physical location.
+- Over-the-counter: Decentralized markets with electronic transactions
+- Electronic networks: Platforms that connect sellers and buyers (without *brokers* and *dealers*).
+:::
+
+::: {.column width="45%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Classification by Function {.smaller}
+
+- Debt and equity: Simple financial instruments (loans and shares) are sold for money.
+- Derivatives markets: Financial derivatives are traded for future payments.
+- Loans on money markets have a maturity of under one year; longer maturities are traded on bond markets.
+
+## Financial Markets as Imagined {.medium}
+
+::: columns
+::: {.column width="55%"}
+- Low transaction costs
+- Accurate and accessible information
+- Investor protection against theft, fraud, manipulation.
+:::
+
+::: {.column width="45%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Financial Markets as They Are {.smaller}
+
+Financial markets are shaped by power imbalances and the exercise of power.
+
+::: columns
+::: {.column width="50%"}
+- Size and reputation determine scope of action, which gives rise to **asymmetric information**.
+- Agreements and mutual obligations are opaque, which gives rise to **distorted price signals**.
+:::
+
+::: {.column width="50%"}
+- Investing in overvaluation is profitable, which gives rise to **bubbles**.
+- Small investors have limited room for manoeuvre, which gives rise to **exploitation**.
+:::
+:::
+
+## Financial Institutions {.medium}
+
+::: columns
+::: {.column width="60%"}
+- Combine long-term loans with deposits due daily -- maturity transformation
+- Combine many loans (or other instruments) with different default risk -- risk transformation.
+- Organize access to financial markets -- transaction costs
+:::
+
+::: {.column width="40%"}
+<!-- Space for figure -->
+:::
+:::
+
+## Structure of the Financial Industry {.smaller}
+
+- Banks (*depository institutions*): Take deposits and make loans
+- Insurers: Collect premiums, invest them, pay out claims (high liquidity).
+- Pension funds: Collect contributions, invest them, pay out claims (low liquidity).
+
+
+<!-- ## Course structure (1/2) {.smaller} -->
+
+<!-- ::: {style="font-size:0.85em; line-height:1.25;"} -->
+<!-- | Topic | Theory | Visualization | -->
+<!-- |:------|:-------|:--------------| -->
+<!-- | **What is money** | Functions of money<br>Monetary aggregates<br>Money demand<br>*(Cecchetti and Schoenholz 2021, Part I)* | Classification: transferrable vs term deposits as split between transaction balances M1 and holdings M2/M3. | -->
+<!-- | **Interest rates and present value** | Nominal and real rates<br>Fisher equation<br>How many interest rates are "the interest rate"<br>*(Cecchetti and Schoenholz 2021, Part II)* | Effective, nominal and real (CPI adjusted) deposit rates.<br>Distribution of rates (heatmap, density plots, ridgelines).<br>Stock rotation (maturity wall): bar charts of loans by remaining fixation period. | -->
+<!-- | **Banks as intermediaries and transmission mechanism** | Maturity transformation<br>Net interest margin<br>Propagation of policy rate to lending rate to spending chain<br>*(Cecchetti and Schoenholz 2021, Part III)* | Debt by sector (bump chart, mosaic chart)<br>Rate pass-through (policy rate to service cost)<br>Scatter of new volume and new rates (to businesses) reveals hysteresis.<br>Connect sector, loan purpose, maturity class and rate fixation in Sankey diagram. | -->
+<!-- ::: -->
+
+<!-- ## Course structure (2/2) {.smaller} -->
+
+<!-- ::: {style="font-size:0.85em; line-height:1.25;"} -->
+<!-- | Topic | Theory | Visualization | -->
+<!-- |:------|:-------|:--------------| -->
+<!-- | **Financialization and debt** | Income-financed and debt-financed consumption (and wealth)<br>*Avritzer and Brochier (2025)* | Loan structure of private households.<br>Loan purposes, loan-size class.<br>Composition of private debt (streamgraph) | -->
+<!-- | **Debt and rate cycles** | Debt-service ratios<br>Variable and fixed rate borrowers over the cycle<br>Financial instability hypothesis<br>*Minsky (1992)* | Rate-fixation period as measure of interest rate exposure. Composition of debtors hit first by rate hikes.<br>Maturity of new loans (streamgraph). | -->
+<!-- | **International debt** | Dominant currency paradigm (world money)<br>Spillovers from core to periphery<br>Exorbitant privilege<br>Global financial cycle<br>*Lapavitsas (2026)* | Domestic, EU and cross-border loans (Ridgeline)<br>Average bank rates (Jitter plot) | -->
+<!-- ::: -->
+
+<!-- ## Ideas OeNB {.smaller} -->
+
+<!-- Flowchart underlying statistics to data set. -->
+
+<!-- ::: columns -->
+<!-- ::: {.column width="60%"} -->
+<!-- **Private credit dataset: visual outlier analysis** -->
+
+<!-- - Marshall Edgeworth (Composition Effect in average interest rate) -->
+<!-- - Distribution of market shares (by category) – maybe stream graph? -->
+<!-- - Structural differences between countries – maybe relative stacked bar plots (horizontal)? -->
+
+<!-- **Aggregated Loans Analysis by financial instrument** -->
+
+<!-- - *Q1/2023 – Q4/2025, creditor, debtor by country and industry*, *green finance attributes*. -->
+<!-- - Share of green bonds (aggregate, by country, outlier analysis). -->
+<!-- ::: -->
+
+<!-- ::: {.column width="40%"} -->
+<!-- **Further data** -->
+
+<!-- - Card Payments -->
+<!-- - Payment Data -->
+<!-- - Pension Funds -->
+<!-- - Insurance Funds -->
+<!-- ::: -->
+<!-- ::: -->
+
+# Let's start coding with the penguins
+
+<center>
+![](https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/man/figures/logo.png){fig-align="center" height="380"}
+</center>
+
+::: footer
+:::
+
+## The Palmer Penguins {.smaller}
+
+::: {.columns}
+::: {.column}
+![](https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/man/figures/lter_penguins.png){fig-align="center"}
+:::
+::: {.column}
+![](https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/man/figures/culmen_depth.png){fig-align="center"}
+:::
+:::
+
+::: {style="font-size:1.5rem;font-weight:100;" .secfont}
+The [data](https://allisonhorst.github.io/palmerpenguins/index.html) was collected from 2007-2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program. The dataset contains data for 344 penguins. There are 3 different species of penguins, collected from 3 islands in the Palmer Archipelago, Antarctica.
+:::
+
+::: {.aside}
+Source: Gorman, Williams and Fraser (2014), *PLoS ONE* 9(3); artwork by Allison Horst ([allisonhorst.github.io/palmerpenguins](https://allisonhorst.github.io/palmerpenguins))
+:::
+
+## Load the packages {.smaller}
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+# Load the tidyverse, where the Palmer Penguins data is included
+library(tidyverse)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Assign data
+data <- penguins
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Take a look at the data
+head(data)
+```
+
+
+## Take a look at the data {.smaller}
+
+```{r}
+#| echo: true
+#| eval: false
+View(data)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# What are the specific classes of the variables
+glimpse(data)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+levels(data$species)
+```
+
+
+## Descriptive statistics {.smaller}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Show some descriptive statistics
+summary(data$bill_len) # There are 2 NA values
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+mean(data$bill_len, na.rm = T)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+sd(data$bill_len, na.rm = T)
+```
+
+
+## Exercise: mean flipper length {.smaller}
+
+**What is the mean flipper length?**
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+mean(data$flipper_len, na.rm = T)
+```
+
+
+## Factor variables {.smaller}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# The summary command even works for factor variables
+summary(data$species)
+```
+
+
+## Exercise: Torgersen island {.smaller}
+
+**How many penguins were recorded on Torgersen island?**
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+summary(data$island)
+```
+
+
+## Basic tidyr: select and filter {.smaller}
+
+Use a pipe!
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Basic tidyr: filter and select. Use a pipe!
+data |> select(species, island)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data |> filter(species == "Adelie")
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data |> filter(species %in% c("Adelie","Gentoo"))
+```
+
+
+## Exercise: bill length {.smaller}
+
+**Filter penguins with a bill length greater than 45!**
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data |> filter(bill_len > 45)
+```
+
+
+## Select and rename {.smaller}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Select and rename
+data |> select(Species = species, Island = island, Sex = sex)
+```
+
+
+## Counting {.smaller}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Counting
+data |> count(island)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data |> count(species, island)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data |> count(species, island, .drop = FALSE)
+```
+
+
+## Summary statistics {.smaller}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Calculate summarise statistics
+data |> summarise(meanbill = mean(bill_len, na.rm = T),
+                  sdbill = sd(bill_len, na.rm = T),
+                  meanflipper = mean(flipper_len, na.rm = T),
+                  sdflipper = sd(flipper_len, na.rm = T))
+```
+
+
+## Summary statistics by group {.smaller}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Summary statistics by group
+data |> group_by(species) |> 
+  summarise(meanbill = mean(bill_len, na.rm = T))
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data |> summarise(meanbill = mean(bill_len, na.rm = T), .by = species)
+```
+
+
+## Exercise: flipper length by island {.smaller}
+
+**Calculate the maximum flipper length by island!**
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data |> summarise(maxflipper = max(flipper_len, na.rm = T), .by = island)
+```
+
+
+## Median and quantiles {.smaller}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Median body mass
+data |> summarise(median = median(body_mass, na.rm = T),
+                  medianq = quantile(body_mass, probs = 0.5, na.rm = T))
+```
+
+
+## Exercise: P25 of body mass {.smaller}
+
+**Calculate P25 of body mass by sex!**
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data |> summarise(p25 = quantile(body_mass, probs = 0.25, na.rm = T), .by = sex)
+```
+
+
+## Summarise across columns {.smaller}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Summary statistic for selected variable type
+data |> summarise(across(c(bill_len, bill_dep), ~mean(., na.rm = T)))
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data |> summarise(across(where(is.numeric), ~mean(., na.rm = T)))
+```
+
+
+## Select helpers {.smaller}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Control with nice select function
+data |> select(contains("len")) # other options: starts_with; ends_with
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data |> summarise(across(contains("len"), ~mean(., na.rm = T)))
+```
+
+
+## Missing values and new variables {.smaller}
+
+```{r}
+#| echo: true
+# Drop observations with missing values (and save)
+data <- data |> drop_na()
+```
+
+. . .
+
+```{r}
+#| echo: true
+# Create new variables with mutate (and don't forget to save in dataset)
+data <- data |> mutate(totallength = bill_len + flipper_len)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data <- data |> mutate(color = case_when(sex == "male" ~ "darkgreen",
+                                         sex == "female" ~ "darkred"))
+
+data |> select(species, sex, totallength, color) |> head()
+```
+
+
+## Sorting and slicing {.smaller}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Arrange data by column in descending order
+data |> arrange(desc(bill_len))
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Get top 3 observations for bill length by species
+top3 <- data |> slice_max(bill_len, n = 3, by = species)
+top3
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Get bottom 10% of observations with smallest bill length
+top10p <- data |> slice_min(bill_len, prop = 0.1)
+top10p
+```
+
+
+## Exercise: smallest body mass {.smaller}
+
+**Show 3 observations with smallest body mass by island!**
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+data |> slice_min(body_mass, n = 3, by = island)
+```
+
+
+# Part 2: Eurostat national accounts
+
+<div style="text-align:center;">
+<span class='fa-stack' style='font-size:7rem;'>
+  <i class='fas fa-circle fa-stack-2x blue'></i>
+  <i class='fas fa-chart-line fa-stack-1x fa-inverse'></i>
+</span>
+</div>
+
+::: footer
+:::
+
+## Get the Eurostat package {.smaller}
+
+```{r}
+#| echo: true
+#| eval: false
+devtools::install_github("ropengov/eurostat")
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| message: false
+library(eurostat)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| eval: false
+# Search eurostat database for GDP data
+search_eurostat("GDP") |> View()
+```
+
+
+## Download national accounts data {.smaller}
+
+```{r}
+#| echo: true
+#| message: false
+# Download the complete national accounts dataset
+gdp <- get_eurostat("nama_10_gdp", time_format = "num", type = "label",
+                    filters = list(geo = "AT"))
+
+# Alternatively, load local RData file
+# load("02_data.RData")
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Let's take a look at all the components
+unique(gdp$na_item)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+unique(gdp$unit)
+```
+
+
+## Filter and reshape {.smaller}
+
+```{r}
+#| echo: true
+gdpat <- gdp |> filter(unit == "Current prices, million euro",
+                       na_item %in% c("Gross domestic product at market prices",
+                                      "Compensation of employees"))
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+gdpat_wide <- gdpat |>
+  pivot_wider(names_from = "na_item", values_from = "values")
+
+head(gdpat_wide)
+```
+
+
+## Create sub-datasets and join {.smaller}
+
+```{r}
+#| echo: true
+# Create sub-datasets
+sub1 <- gdpat_wide |> select(geo, time, `Gross domestic product at market prices`)
+sub2 <- gdpat_wide |> select(geo, time, `Compensation of employees`)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+#| message: false
+# Join dataset
+fulldata <- left_join(sub1, sub2)
+head(fulldata)
+```
+
+
+## Wage share {.smaller}
+
+```{r}
+#| echo: true
+#| output-location: fragment
+# Calculate wage share in % of GDP
+fulldata <- fulldata |> 
+  mutate(wageshare = `Compensation of employees`/`Gross domestic product at market prices`*100)
+
+head(fulldata)
+```
+
+. . .
+
+```{r}
+#| echo: true
+#| output-location: fragment
+#| fig-height: 3.2
+#| fig-width: 7
+#| fig-align: center
+fulldata |> 
+  drop_na() |> 
+  ggplot(aes(x = time, y = wageshare)) + 
+  geom_line()
+```
