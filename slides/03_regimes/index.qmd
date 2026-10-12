@@ -8,7 +8,7 @@ title: |
       </span><br>
     {{< var course.subtitle >}}
 author: '{{< var instructor1.name >}}'
-subtitle: Effects of Monetary Policy
+subtitle: Monetary Regimes
 date: October 19, 2026
 date-format: long
 from: markdown+emoji
@@ -47,12 +47,12 @@ This distinction matters enormously for how we think about *who creates money*, 
 
 ## Functions of money {.medium}
 
-::: {.altlist}
-- **Unit of account** — the measure in which prices, debts and contracts are denominated
-- **Medium of exchange** — used to settle transactions
-- **Store of value** — a way to hold wealth over time
-- **Means of final settlement of debt** — this is the function (Post-)Keynesians emphasize
-:::
+<ul style="list-style-type: none; list-style-position: outside;">
+<li>{{< fa money-bill-1-wave >}} **Unit of account** — the measure in which prices, debts and contracts are denominated</li>
+<li>{{< fa money-bill-transfer >}} **Medium of exchange** — used to settle transactions</li>
+<li>{{< fa coins >}} **Store of value** — a way to hold wealth over time</li>
+<li>{{< fa money-check-dollar >}} **Means of final settlement of debt** — this is the function (Post-) Keynesians emphasize</li>
+</ul>
 
 . . .
 
@@ -60,8 +60,8 @@ For (Post-)Keynesians, money is above all a way of settling debt obligations in 
 
 ## Two views on the origin of money {.medium}
 
-::: columns
-::: {.column width="50%"}
+::: {.columns layout="[ 0.48, -0.04, 0.48 ]"}
+::: {.column}
 ### Neoclassical / mainstream
 
 - Money emerged to overcome the inefficiencies of **barter**
@@ -69,11 +69,11 @@ For (Post-)Keynesians, money is above all a way of settling debt obligations in 
 - Government and banks essentially replace the commodity with tokens of equal value
 :::
 
-::: {.column width="50%"}
+::: {.column}
 ### (Post-)Keynesian
 
-- Historical and anthropological evidence finds [little support for a barter origin]{.marker-hl}
-- Money originates in [credit and debt relations]{.marker-hl}, often tied to tax obligations to the state (chartalism)
+- Historical and anthropological evidence finds [little support]{.marker-hl} for a barter origin
+- Money originates in credit and debt relations, often tied to [tax obligations]{.marker-hl} to the state (chartalism)
 - Money is a [social institution]{.marker-hl}, not a commodity
 :::
 :::
@@ -95,7 +95,7 @@ This is the principle of [endogenous money]{.marker-hl}: the money supply expand
 ## The role of banks {.medium}
 
 ::: {.altlist}
-- Commercial banks do not simply act as [intermediaries]{.marker-hl} that lend out pre-existing deposits from savers to borrowers
+- Commercial banks do not simply act as [intermediaries]{.marker-hl} that lend out pre-existing deposits from savers to borrowers (loanable funds theory)
 - Instead, they [create purchasing power]{.marker-hl} "out of nothing" when granting a loan, subject to profitability considerations and regulatory constraints (capital and liquidity requirements)
 - Reserves at the central bank are needed for [interbank settlement]{.marker-hl}, not as a precondition for lending
 :::
@@ -131,7 +131,7 @@ This is often called the [horizontalist]{.marker-hl} view — central banks set 
 ::: {.altlist}
 - Central banks act as the [lender of last resort]{.marker-hl} to the banking system, ensuring liquidity and settlement of interbank payments
 - Modern central banks primarily operate by setting a short-term [policy interest rate]{.marker-hl} rather than a fixed money supply target
-- They influence economic activity indirectly, through the [cost of credit]{.marker-hl}, exchange rates and expectations
+- They influence economic activity [indirectly]{.marker-hl}, through the cost of credit, exchange rates and expectations
 - Quantitative easing (QE) expands central bank reserves and asset holdings, but does not mechanically translate into a proportional expansion of bank lending
 :::
 
@@ -145,6 +145,7 @@ This is often called the [horizontalist]{.marker-hl} view — central banks set 
 | Central bank tool | Controls quantity of money/reserves | Sets the price (interest rate) of reserves |
 | Inflation | "Always and everywhere a monetary phenomenon" (quantity theory) | Driven by costs, distributional conflict, demand pressures |
 | Saving & investment | Saving [enables]{.marker-hl} investment (loanable funds) | Investment [generates]{.marker-hl} the saving needed to finance it |
+: {tbl-colwidths="[20, 40, 40]"}
 
 ## Why this matters for monetary policy {.medium}
 
@@ -157,9 +158,6 @@ These theoretical differences are not merely academic — they shape how economi
 - How **financial instability** and banking crises originate endogenously in credit cycles
 :::
 
-. . .
-
-Over the course we will use [data and visualizations]{.marker-hl} to examine these questions empirically — e.g. by tracing central bank balance sheets, bank lending, and monetary aggregates over time.
 
 ## What is a monetary regime? {.medium}
 
@@ -193,7 +191,7 @@ Critique: this mechanism imposed painful deflation and unemployment on deficit c
 ::: {.altlist}
 - Currencies pegged to the US dollar, which was itself convertible into gold at a fixed rate
 - Adjustable pegs allowed for occasional realignments, unlike the rigid gold standard
-- Capital controls gave countries more room for [independent domestic policy]{.marker-hl} (full employment, growth) — closer to the Keynesian vision at its founding (Keynes was a key architect)
+- Capital controls gave countries more room for independent domestic policy (full employment, growth) — closer to the Keynesian vision at its founding (Keynes was a key architect)
 - Collapsed in 1971 when the US suspended dollar–gold convertibility
 :::
 
@@ -205,23 +203,27 @@ Since the 1970s, most major currencies float against each other, with values det
 This raises the classic **"impossible trinity" / trilemma**: a country cannot simultaneously have
 :::
 
-::: {.altlist}
+::: {.altlist .fragment}
 - A fixed exchange rate
 - Free international capital mobility
 - An independent monetary policy
 :::
 
 ::: {.fragment}
-— it can choose at most two of the three.
+— it can choose at most two of the three (Mundell-Fleming).
 :::
 
-## Monetarism and money supply targeting {.medium}
+## Monetarism and money supply targeting {.smaller}
 
 In the 1970s–80s, several central banks (e.g. the Bundesbank, the Fed under Volcker) explicitly targeted the [growth rate of the money supply]{.marker-hl}, following the monetarist prescription that controlling money growth controls inflation.
 
 . . .
 
-In practice, this proved difficult: the relationship between measured monetary aggregates and inflation was unstable, partly because — as the endogenous money view predicts — the money supply responds to economic activity rather than being a lever fully under the central bank's control. Most central banks abandoned strict money-supply targets by the 1990s.
+In practice, this proved difficult: the relationship between measured monetary aggregates and inflation was [unstable]{.marker-hl}, partly because — as the endogenous money view predicts — the money supply responds to economic activity rather than being a lever fully under the central bank's control. 
+
+. . .
+
+The consequence was the [Volcker shock]{.marker-hl}: in 1979, the Fed increased interest rates sharply to curb double-digit inflation. The federal funds rate peaked at 20% in 1981, triggering a severe recession and a steep rise in unemployment, but inflation fell from around 13% in 1980 to below 4% by 1983.
 
 ## Inflation targeting {.medium}
 
