@@ -1936,8 +1936,8 @@ search_eurostat("GDP") |> View()
 gdp <- get_eurostat("nama_10_gdp", time_format = "num", type = "label",
                     filters = list(geo = "AT"))
 
-# Alternatively, load local RData file
-# load("02_data.RData")
+# Drop missing values
+gdp <- gdp |> drop_na()
 ```
 
 . . .
@@ -2021,7 +2021,6 @@ head(fulldata)
 #| fig-width: 7
 #| fig-align: center
 fulldata |> 
-  drop_na() |> 
   ggplot(aes(x = time, y = wageshare)) + 
   geom_line()
 ```
