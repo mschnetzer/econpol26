@@ -1,0 +1,764 @@
+---
+metadata-files: 
+    - ../../_variables.yml
+title: |
+    <span class='fa-stack course-icon'>
+        <i class='fas {{< var course.icon-bg >}} fa-stack-2x blue'></i>
+        <i class='fas {{< var course.icon >}} fa-stack-1x fa-inverse' style='margin-top:-5pt'></i>
+      </span><br>
+    {{< var course.subtitle >}}
+author: '{{< var instructor2.name-wo-title >}}'
+subtitle: Central Banks
+date: November 2, 2026
+date-format: long
+from: markdown+emoji
+bibliography: ../../data/lit/wipol_advanced.bib
+csl: ../../data/lit/wipol.csl
+execute:
+  echo: true
+format:
+  revealjs:
+    theme: ../econpol_slides.scss
+    footer: '{{< var course.number >}} {{< var course.title >}} | {{< var course.semester >}}'
+    logo: ../../data/img/wu-logo-simple.png
+    header-includes: |
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
+    slide-number: true
+    show-slide-number: all
+    transition: fade
+    progress: true
+    multiplex: false
+    scrollable: true
+    preview-links: false
+    hide-inactive-cursor: true
+    highlight-style: printing
+    pause: true
+---
+
+```{r}
+#| label: setup-plot-style
+#| include: false
+
+library(tidyverse)
+library(showtext)   # install.packages("showtext")
+
+# slide fonts (downloaded from Google Fonts at render time)
+font_add_google("Ubuntu", "ubuntu", regular.wt = 300, bold.wt = 500)
+font_add_google("Roboto Slab", "robotoslab", regular.wt = 300, bold.wt = 700)
+font_add_google("Yanone Kaffeesatz", "yanone", regular.wt = 400, bold.wt = 700)
+knitr::opts_chunk$set(fig.showtext = TRUE)
+
+# slide colors (econpol_slides.scss)
+pal <- c(blue = "#5d8198", red = "#e76254", dred = "#d03161", yellow = "#ffd500",
+         green = "#218500", brown = "#d37b00",
+         grey200 = "#e9ecef", grey400 = "#ced4da", grey500 = "#adb5bd",
+         grey600 = "#868e96", grey800 = "#343a40", grey900 = "#212529")
+
+# ordered palette from blue to red, for many ordered categories
+pal_ramp <- function(n) colorRampPalette(c(pal[["blue"]], pal[["red"]]))(n)
+
+# ggplot theme matching the slides:
+# Ubuntu for text, Roboto Slab for numbers, Yanone Kaffeesatz in red for titles
+theme_econpol <- function(base_size = 12,
+                          text_x = TRUE, text_y = TRUE,      # axis text (tick labels)
+                          title_x = TRUE, title_y = TRUE) {  # axis titles
+  th <- theme_minimal(base_size = base_size, base_family = "ubuntu") +
+    theme(
+      text          = element_text(colour = pal[["grey800"]]),
+      panel.grid    = element_blank(),
+      axis.text     = element_text(family = "robotoslab", colour = pal[["grey600"]],
+                                   size = rel(0.85)),
+      axis.title.x  = element_text(margin = margin(t = 10)),
+      axis.title.y  = element_text(margin = margin(r = 10)),
+      plot.title    = element_text(family = "yanone", colour = pal[["red"]],
+                                   size = rel(1.8), margin = margin(b = 6)),
+      plot.subtitle = element_text(colour = pal[["grey600"]]),
+      plot.caption  = element_text(family = "robotoslab", colour = pal[["grey600"]],
+                                   size = rel(0.7), hjust = 0),
+      legend.position = "bottom",
+      legend.title    = element_blank(),
+      legend.key.width = unit(1, "null")
+    )
+  if (!text_x)  th <- th + theme(axis.text.x  = element_blank())
+  if (!text_y)  th <- th + theme(axis.text.y  = element_blank())
+  if (!title_x) th <- th + theme(axis.title.x = element_blank())
+  if (!title_y) th <- th + theme(axis.title.y = element_blank())
+  th
+}
+```
+
+# Central Banks
+
+## What do central banks do? 
+
+
+:::: {.columns style="display: flex; align-items: stretch;"}
+
+::: {.column .hl .hl-blue style="width: 33%; padding: 0.5em 1em; isolation: isolate;"}
+- Interest rates
+
+- Payments systems
+
+- [Lending]{.marker-hl} to private banks
+
+- Regulation and oversight
+:::
+
+::: {.column .hl .hl-dred style="width: 33%; padding: 0.5em 1em; isolation: isolate;"}
+- Inflation
+
+- Growth and employment
+
+- Financial markets and institutions
+
+- Interest and exchange rates
+:::
+
+::: {.column .hl .hl-green style="width: 33%; padding: 0.5em 1em; isolation: isolate;"}
+- Independent
+
+- Accountable
+
+- Transparent
+:::
+
+::::
+
+## Historical concepts
+
+Central banks go back to the 17th century. Some rulers relied on them for financing, others to regulate the financial system. Until the mid-20th century, most countries did not have a central bank. Almost all had mints that monopolized money production though.
+
+- **Government bank**: Issues currency.
+
+- **Monetary policy**: Influence interest rates.
+
+- **Bankers' bank**: Holds deposits of private banks.
+
+## Bankers' bank
+
+The central bank hardly interacts with individual customers. It mostly takes deposits, extends credit and auctions off bonds to financial institutions.
+
+- **Lender of last resort**: Lends money to keep credit market going.
+
+- **Manages payments system**: With bank notes ensure that they are circulated, with economic payments ensure they clear.
+
+- **Oversees commercial banks**: Regulate institutions, inspect banks, stress-test system.
+
+## What the ECB cannot do
+
+The ECB is tasked with [monetary policy]{.marker-hl}, but not fiscal policy. 
+
+It cannot determine, and should not influence, [budgets or economic policy]{.marker-hl}.
+
+It does not collect taxes or generate income beyond [seignorage]{.marker-hl}
+
+## Stability
+
+::::{.columns}
+:::{.column width=50%}
+Financial markets tend to: 
+
+- Episodes of high volatility.
+
+- Vicious cycles of increased risk-taking.
+
+- Financial instability.
+
+- International imbalances.
+:::
+:::{.column width=50%}
+
+"*The central bank is essentially part of the government.*" (Cecchetti and Schönholtz 2021)
+
+Central banks are tasked with stabilizing the system, expressed in interest rates, price levels, exchange rates, even employment and economic growth.
+:::
+::::
+
+## Inflation
+
+Traditionally, price stability has been the primary objective of central banks (e.g. ECB). They are supposed to curb price effects of fiscal expansion, import price, profit or wage pressure.
+
+- **Interest rates**: Central banks make lending more expensive, curbing capital accumulation and wage growth, decreasing demand.
+
+- **Lending**: Credit freezes lead to deflation, central banks step in to re-start the lending cycle.
+
+## Central bank independence
+
+:::: {.columns}
+::: {.column width="50%"}
+[{{< fa plus >}}]{.hl .hl-green .secfont style="font-size:1.3rem;"}
+
+- No short term policy goals that outweigh long term development.
+
+- No electoral pressure to increase fiscal spending with danger of demand outrunning supply.
+:::
+
+::: {.column width="50%"}
+[{{< fa minus >}}]{.hl .hl-dred .secfont style="font-size:1.3rem;"}
+
+- No democratic oversight or democratic legitimacy.
+
+- Recruits from finance or academia with ingrained class interest.
+:::
+::::
+
+## European Central Bank {.smaller}
+
+```{=html}
+<style>
+.ecbfig { display:flex; gap:0.6em; font-size:0.55em; line-height:1.25; text-align:left; }
+.ecbfig .panel { border:2px dashed #adb5bd; border-radius:0.8em; padding:0.5em 0.6em 0.6em; position:relative; }
+.ecbfig .panel-label { font-family:'Roboto Slab',serif; font-weight:400; font-size:0.85em; color:#495057; margin-bottom:0.35em; }
+.ecbfig .panel-label b { font-family:'Yanone Kaffeesatz',sans-serif; font-size:1.55em; color:#e76254; font-weight:400; margin-right:0.25em; }
+.ecbfig .box { border-radius:0.6em; padding:0.35em 0.55em; margin-bottom:0.4em; }
+.ecbfig .box h4 { font-family:'Yanone Kaffeesatz',sans-serif; font-weight:400; font-size:1.45em; margin:0 0 0.1em 0; line-height:1.05; color:inherit; text-transform:none; }
+.ecbfig .box p { margin:0; }
+.ecbfig .blue  { background:#5d8198; color:#fff; }
+.ecbfig .lblue { background:#e3eaef; color:#212529; border-left:5px solid #5d8198; }
+.ecbfig .dred  { background:#d03161; color:#fff; }
+.ecbfig .grey  { background:#f8f9fa; color:#212529; border:1.5px solid #ced4da; }
+.ecbfig .row { display:flex; gap:0.4em; }
+.ecbfig .row > .box { flex:1; }
+.ecbfig .num { font-family:'Roboto Slab',serif; font-weight:700; }
+.ecbfig .small { font-size:0.85em; opacity:0.92; }
+.ecbfig .chips { display:flex; flex-wrap:wrap; gap:0.22em; margin:0.25em 0 0.3em; }
+.ecbfig .chip { font-family:'Roboto Slab',serif; font-size:0.82em; padding:0.05em 0.3em; border-radius:0.25em; background:#fff; color:#d03161; }
+.ecbfig .chip.at { background:#ffd500; color:#212529; font-weight:700; }
+.ecbfig .arrow { text-align:center; color:#868e96; font-size:0.85em; margin:-0.15em 0 0.25em; }
+.ecbfig .dept { display:grid; grid-template-columns:1fr 1fr; gap:0.3em; margin-top:0.3em; }
+.ecbfig .dept div { background:#fff; color:#212529; border-radius:0.4em; padding:0.25em 0.4em; font-size:0.88em; }
+.ecbfig .dept b { color:#d03161; font-weight:700; }
+.ecbfig .link { font-family:'Roboto Slab',serif; font-size:0.8em; color:#d03161; }
+</style>
+
+<div class="ecbfig">
+
+<!-- ===================== LEFT: ESCB / EUROSYSTEM ===================== -->
+<div class="panel" style="flex:1.45;">
+  <div class="panel-label"><b>ESCB</b> ECB + national central banks (NCBs) of all 27 EU states</div>
+
+  <div class="panel" style="border-color:#5d8198; border-style:solid; padding-top:0.4em;">
+    <div class="panel-label"><b style="color:#5d8198;">Eurosystem</b> ECB + 21 euro area NCBs · Frankfurt</div>
+
+    <div class="box blue">
+      <h4>Governing Council</h4>
+      <p>Main decision body: sets <b>monetary policy</b> (key interest rates, liquidity, reserves). <span class="num">6 + 21</span> members; 21 votes at a time: the Executive Board always votes, NCB governors rotate.</p>
+    </div>
+
+    <div class="row">
+      <div class="box lblue">
+        <h4 style="color:#5d8198;">Executive Board</h4>
+        <p><span class="num">6</span> members: President <b>Christine Lagarde</b>, Vice-President <b>Boris Vujčić</b> + 4. Appointed by the European Council, 8-year non-renewable terms. Implements policy, runs the ECB day to day.</p>
+      </div>
+      <div class="box lblue">
+        <h4 style="color:#5d8198;">Supervisory Board</h4>
+        <p>Single Supervisory Mechanism (since 2014). ECB <b>directly supervises</b> the large, systemic banks; NCBs and national authorities handle smaller banks.</p>
+      </div>
+    </div>
+
+    <div class="arrow">▲ governors sit in the Governing Council &nbsp;·&nbsp; ▼ ECB decisions are carried out by the NCBs</div>
+
+    <div class="box dred">
+      <h4>21 national central banks</h4>
+      <div class="chips">
+        <span class="chip at">AT</span><span class="chip">BE</span><span class="chip">BG</span><span class="chip">CY</span><span class="chip">DE</span><span class="chip">EE</span><span class="chip">ES</span><span class="chip">FI</span><span class="chip">FR</span><span class="chip">GR</span><span class="chip">HR</span><span class="chip">IE</span><span class="chip">IT</span><span class="chip">LT</span><span class="chip">LU</span><span class="chip">LV</span><span class="chip">MT</span><span class="chip">NL</span><span class="chip">PT</span><span class="chip">SI</span><span class="chip">SK</span>
+      </div>
+      <p class="small">Carry out monetary operations, issue euro banknotes, run payment systems, act as lender of last resort, serve as bankers to banks and governments in their country.</p>
+    </div>
+  </div>
+
+  <div class="box grey" style="margin:0.45em 0 0 0;">
+    <h4 style="color:#495057;">General Council</h4>
+    <p class="small">ECB President + Vice-President + governors of all 27 EU NCBs. Links the euro area to EU states without the euro; prepares euro adoption.</p>
+  </div>
+</div>
+
+<!-- ===================== RIGHT: OeNB ===================== -->
+<div class="panel" style="flex:1; border-color:#ffd500; border-style:solid; background:#fffdf0;">
+  <div class="panel-label"><b>AT</b> Oesterreichische Nationalbank (OeNB) · Vienna</div>
+
+  <div class="box grey">
+    <h4 style="color:#495057;">Owner: Republic of Austria</h4>
+    <p class="small">Organized as a stock corporation (AG), 100% state-owned.</p>
+  </div>
+
+  <div class="box lblue">
+    <h4 style="color:#5d8198;">General Council <span class="small">(Generalrat)</span></h4>
+    <p>Supervisory body. President <b>Johannes Hahn</b>, Vice-President <b>Ingrid Reischl</b> + 8 members, appointed by the federal government for 5 years. Oversees and advises the board, nominates board candidates.</p>
+  </div>
+
+  <div class="arrow">▼ oversees</div>
+
+  <div class="box dred">
+    <h4>Governing Board <span class="small">(Direktorium)</span></h4>
+    <p class="small"><span class="num">4</span> members, appointed by the Federal President on government proposal (6-year terms). Runs the bank.</p>
+    <div class="dept">
+      <div><b>Governor Martin Kocher</b><br>Central bank policy · <span class="link">seat in ECB Governing Council</span></div>
+      <div><b>Vice-Gov. Edeltraud Stiftinger</b><br>Statistics, treasury, accounting</div>
+      <div><b>Josef Meichenitsch</b><br>Payments, financial literacy, IT</div>
+      <div><b>Thomas Steiner</b><br>Financial stability, banking supervision, holdings</div>
+    </div>
+  </div>
+
+  <div class="box grey" style="margin-bottom:0;">
+    <p class="small">Subsidiaries print banknotes (OeBS) and mint coins (Münze Österreich). Bank supervision is shared with the Financial Market Authority (FMA).</p>
+  </div>
+</div>
+
+</div>
+```
+
+## European Central Bank
+
+The **European Central Bank** oversees a system of national central banks through anonymous votes of the [governing council]{.marker-hl}. Its role and independence is largely codified in the [Maastricht accords]{.marker-hl}. Its **primary objective** is [price stability]{.marker-hl}. Secondary objectives include supporting growth and employment as long as it does not run counter to price stability.
+
+- **Owned** by the NCBs.
+
+- Carries out **monetary policy** (relationships with commercial banks) through the NCBs.
+
+- **Sells and purchases securities** but also supplies [collateralized lending]{.marker-hl} to banks.
+
+## The Austrian National Bank
+
+**OeNB** was [founded in 1923]{.marker-hl}, operating as Austria's central bank and allocating foreign economic assistance to Austria.
+
+It is an [Aktiengesellschaft]{.marker-hl}, with all shares owned by the **Republic of Austria** since 2010. Before 2010 it was co-owned by the Republic, Wirtschaftskammer and Arbeiterkammer.
+
+The OeNB and **Financial Markets Authority (FMA)** participate in the European Central Bank as well as the European Systemic Risk Board.
+
+## Division of labor {.smaller}
+
+::::{.columns}
+:::{.column}
+**ECB**
+
+- Target **interest rates**
+
+- Central **analysis**
+
+- Since 2014: **single supervisory mechanism** for [larger banks]{.marker-hl}
+:::
+:::{.column}
+**NCBs**
+
+- **Operate** monetary policy
+
+- Issue and administer **banknotes**
+
+- National communication
+
+- Supervise smaller banks and non-Eurosystem tasks.
+:::
+::::
+
+## Central banks' balance sheets {.smaller}
+
+::::{.columns}
+:::{.column width=50%}
+**Assets**
+
+- **Securities**, mostly treasury issued, since 2007 increasingly risk assets.
+
+- **Foreign currency reserves** to stabilize exchange rates.
+
+- **Loans** to commerical banks.
+:::
+:::{.column width=50%}
+**Liabilities**
+
+- **Currency**: all issued [bank notes]{.marker-hl} are redeemable.
+
+- **Government account**: The government's bank account.
+
+- Commercial bank **deposits** and reserves.
+:::
+::::
+
+## Central bank transactions {.smaller}
+
+- **Open market operations**: Buy/sell [securities]{.marker-hl}
+
+- **Foreign exchange intervention**: Buy/sell currency reserves.
+
+- **Extend loans** to commercial banks.
+
+- **Pay out cash** to account holders (government or banks).
+
+## Unconventional monetary policy {.smaller}
+
+When the [global financial crisis of 2007-2009]{.marker-hl} unfurled, both the Fed and the ECB introduced new central bank instruments dubbed **unconventional monetary policy**. They are usually legitimized by conventional interest rates approaching the [zero lower bound]{.marker-hl}.
+
+This included **targeted asset purchases** (e.g. of mortgage backed securities) rather than broad interventions; **targeted long-term refinancing operations** as cheap credit to warm up credit freezes; and most famously, **quantitative easing**
+
+## Quantitative easing {.smaller}
+
+Quantitative easing **supplies reserves** to commercial banks beyond the assumed supply/demand relationship that sets the target rate.
+
+The goal of quantitative easing is to supply firms and consumers with money through bank operations.
+
+## Quantitative easing {.smaller}
+
+```{r}
+#| label: fig-qe
+#| fig-cap: "Schematic illustration of post-2007 quantitative easing in the United States"
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-format: svg
+#| fig-width: 6
+#| fig-height: 4.2
+#| fig-align: center
+
+# --- geometry -------------------------------------------------------------
+ioer    <- 1                          # IOER rate (floor)
+x_start <- 0.3; y_start <- 9.5        # top-left start of reserve demand
+x_B     <- 6                          # demand becomes flat at B
+x_07    <- 3                          # reserve supply 2007
+x_15    <- 7.6                        # reserve supply 2015 (point C)
+slope   <- (ioer - y_start) / (x_B - x_start)
+target  <- y_start + slope * (x_07 - x_start)   # 2007 target rate (point A)
+
+col_d <- pal[["red"]]    # demand
+col_s <- pal[["blue"]]   # supply
+txt   <- 4.2         # text size
+fam   <- "ubuntu"
+
+ggplot() +
+  # axes
+  annotate("segment", x = 0, xend = 0, y = 0, yend = 10.6,
+           arrow = arrow(length = unit(0.18, "cm"), type = "closed"), linewidth = 0.5) +
+  annotate("segment", x = 0, xend = 8.6, y = 0, yend = 0, linewidth = 0.5) +
+  # dashed guide lines
+  annotate("segment", x = 0, xend = x_07, y = target, yend = target,
+           linetype = "dashed", colour = pal[["grey500"]], linewidth = 0.4) +
+  annotate("segment", x = 0, xend = x_B, y = ioer, yend = ioer,
+           linetype = "dashed", colour = pal[["grey500"]], linewidth = 0.4) +
+  # reserve supply (vertical)
+  annotate("segment", x = c(x_07, x_15), xend = c(x_07, x_15),
+           y = 0, yend = 9.9, colour = col_s, linewidth = 0.9) +
+  # reserve demand (kinked)
+  annotate("path", x = c(x_start, x_B, 8.6), y = c(y_start, ioer, ioer),
+           colour = col_d, linewidth = 0.9) +
+  # points A and C
+  annotate("point", x = c(x_07, x_15), y = c(target, ioer),
+           colour = col_d, size = 2) +
+  # shift arrow
+  annotate("segment", x = 3.6, xend = 7.0, y = 9.1, yend = 9.1,
+           arrow = arrow(length = unit(0.25, "cm"), type = "closed"), linewidth = 0.6) +
+  # supply labels with subscripts
+  annotate("text", x = x_07, y = 10.4, label = "Reserve~Supply[2007]",
+           parse = TRUE, family = fam, size = txt) +
+  annotate("text", x = x_15, y = 10.4, label = "Reserve~Supply[2015]",
+           parse = TRUE, family = fam, size = txt) +
+  # point labels
+  annotate("text", x = x_07 + 0.2, y = target + 0.3, label = "A",
+           hjust = 0, family = fam, size = txt) +
+  annotate("text", x = c(x_B, x_15), y = -0.4, label = c("B", "C"),
+           family = fam, size = txt) +
+  # scale of QE
+  annotate("segment", x = x_B + 0.25, xend = x_15 - 0.25, y = -0.4, yend = -0.4,
+           arrow = arrow(length = unit(0.15, "cm"), ends = "both", type = "open"),
+           linewidth = 0.4) +
+  annotate("text", x = (x_B + x_15) / 2, y = -1.1, label = "Scale of QE",
+           family = fam, size = txt) +
+  # demand label
+  annotate("text", x = 5.6, y = 3.6, label = "Reserve\nDemand",
+           hjust = 0.3, lineheight = 1.1, family = fam, size = txt) +
+  # axis labels
+  annotate("text", x = -0.15, y = c(target, ioer),
+           label = c("2007 Target Rate", "IOER Rate"),
+           hjust = 1, family = fam, size = txt) +
+  annotate("text", x = -0.15, y = 10.3, label = "Market Federal\nFunds Rate",
+           hjust = 1, lineheight = 0.95, family = fam, size = txt) +
+  annotate("text", x = 3.7, y = -0.6, label = "Quantity of Reserves",
+           family = fam, size = txt) +
+  coord_cartesian(xlim = c(0, 8.6), ylim = c(-1.3, 10.8),
+                  expand = FALSE, clip = "off") +
+  theme_void() +
+  theme(plot.margin = margin(15, 15, 10, 110),
+        text = element_text(colour = pal[["grey800"]]))
+```
+
+# Geometries
+
+## Grammar of graphics {.smaller}
+
+In this course, we mainly work with the [ggplot2]{.marker-hl} R package. The **gg** stands for **Wilkinson's grammar of graphic**. For now it will suffice to understand the basic categories of this grammar.
+
+- **Variables** secribe the underlying data structure.
+
+- **Algebra** are operations that combine variables.
+
+- **Geometry** create [graphical shapes]{.marker-hl} from variables.
+
+- **Aesthetics** assign data to dimensions of the data - e.g. [x- and y-axis]{.marker-hl}, color, or size.
+
+- **Statistics** are [functions]{.marker-hl} that change the appearance of geometries.
+
+- **Scales** represent variables in different dimensions (e.g. the stretching of axis or color palettes).
+
+- **Coordinates** are a mapping of graphs onto the 2 dimensional representation we perceive as plots.
+
+## Geometries {.smaller}
+
+**Geometries** (in ggplot2: [geoms]{.marker-hl}) are an intuitive concept: The shapes we choose to visualize.
+
+```{r}
+#| label: data-geoms
+#| echo: true
+#| warning: false
+#| message: false
+library(tidyverse)
+set.seed(42)
+countries <- c("AT","BE","DE","ES","FR","IT","NL","PT","GR","SK","EE","HR")
+dates <- seq(as.Date("2015-01-01"), as.Date("2025-12-01"), by = "month")
+
+# common policy path (stylized): flat, hike, plateau, cut, flat
+knots <- as.Date(c("2015-01-01", "2022-07-01", "2023-09-01",
+                   "2024-06-01", "2025-06-01", "2025-12-01"))
+dfr <- approx(x = as.numeric(knots),
+              y = c(-0.5, -0.5, 4, 4, 2, 2),
+              xout = as.numeric(dates))$y
+policy <- tibble(date = dates, dfr = dfr)
+
+# common inflation shock peaking late 2022
+infl_common <- 1.2 + 8 * exp(-((as.numeric(dates - as.Date("2022-10-01")) / 240)^2))
+
+panel <- expand_grid(country = countries, date = dates) |>
+  left_join(policy, by = "date") |>
+  group_by(country) |>
+  mutate(
+    shock_sens    = runif(1, 0.6, 1.8),     # countries differ in exposure
+    passthrough   = runif(1, 0.5, 0.9),     # and in rate pass-through
+    inflation     = infl_common[match(date, dates)] * shock_sens + rnorm(n(), 0, 0.4),
+    mortgage_rate = 1.5 + passthrough * (dfr + 0.5) + rnorm(n(), 0, 0.15),
+    unemployment  = runif(1, 4, 12) - 0.15 * inflation + rnorm(n(), 0, 0.3)
+  ) |>
+  ungroup() |>
+  mutate(period = case_when(
+    date < as.Date("2022-01-01") ~ "Negative rates",
+    date < as.Date("2024-01-01") ~ "Tightening",
+    TRUE ~ "Easing"
+  ) |> factor(levels = c("Negative rates", "Tightening", "Easing"))) |>
+  select(date, country, period, dfr, inflation, mortgage_rate, unemployment)
+```
+
+## geom_bar
+
+```{r}
+#| label: plot-geombar
+#| fig-cap: "Bar Charts for comparing mean inflation rates between countries."
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-format: svg
+#| fig-width: 6
+#| fig-height: 4.2
+#| fig-align: center
+
+panel |> 
+  group_by(country) |> 
+  summarize(inflation=mean(inflation, na.rm=TRUE)) |> 
+  mutate(country=fct_reorder(country, inflation)) |> 
+  ggplot() +
+  geom_col(aes(y=country, x=inflation, 
+               fill=(country=="AT"))) +
+  geom_text(aes(y=country, 
+                x=inflation + .5, 
+                label=sprintf("%.2f%%", inflation)),
+            family="robotoslab",
+            color=pal[["grey800"]],
+            size=3.2) +
+  geom_vline(xintercept=mean(panel$inflation, na.rm=TRUE), 
+             linetype=3, 
+             color=pal[["grey600"]]) +
+  scale_fill_manual(values=c("FALSE"=pal[["blue"]], "TRUE"=pal[["dred"]]),
+                    guide="none") +
+  theme_econpol(text_x=FALSE, text_y=FALSE, title_x=FALSE, title_y=FALSE)
+```
+
+## geom_bar
+
+```{r ref.label="plot-geombar", echo=TRUE, eval=FALSE}
+```
+
+## geom_line
+
+```{r}
+#| label: plot-geomline
+#| fig-cap: "Line Plot to illustrate the development of inflation and the deposit facility rate in Austria."
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-format: svg
+#| fig-width: 6
+#| fig-height: 4.2
+#| fig-align: center
+
+panel |> 
+  filter(country=="AT") |> 
+  ggplot() +
+  geom_line(aes(x=date, y=dfr), color=pal[["blue"]], linewidth = 1) +
+  geom_line(aes(x=date, y=inflation), color=pal[["red"]], linewidth = 1) +
+  annotate("text",
+           x=as.Date("2020-01-01"), 
+           y=3, 
+           label="Inflation", 
+           color=pal[["red"]],
+           family="ubuntu") +
+  annotate("text", 
+           x=as.Date("2024-10-01"), 
+           y=1, 
+           label="Deposit Facility Rate", 
+           color=pal[["blue"]],
+           family="ubuntu") +
+  annotate("text", 
+           y=(panel |> 
+                filter(country=="AT") |> 
+                filter(inflation==max(inflation)) |> 
+                pull(inflation) |> 
+                max()) 
+           + .5,
+           x=(panel |>
+                filter(country=="AT") |> 
+                filter(inflation==max(inflation)) |>
+                pull(date) |> 
+                min()),
+           label=sprintf("%.1f%%", panel |> 
+                           filter(country=="AT") |> 
+                           filter(inflation==max(inflation)) |> 
+                           pull(inflation) |> 
+                           max()),
+           color=pal[["red"]],
+           family="robotoslab"
+  ) +
+    annotate("text", 
+           y=(panel |> 
+                filter(country=="AT") |> 
+                filter(date==min(date)) |> 
+                pull(inflation) |> 
+                max()) 
+           + 1.5,
+           x=(panel |>
+                filter(country=="AT") |> 
+                filter(date==min(date)) |>
+                pull(date) |> 
+                min()),
+           label=sprintf("%.1f%%", panel |> 
+                           filter(country=="AT") |> 
+                           filter(date==min(date)) |> 
+                           pull(inflation) |> 
+                           max()),
+           color=pal[["red"]],
+           family="robotoslab"
+  ) +
+  annotate("text", 
+           y=(panel |> 
+                filter(country=="AT") |> 
+                filter(dfr==max(dfr)) |> 
+                pull(dfr) |> 
+                max()) + .5,
+           x=(panel |> 
+                filter(country=="AT") |> 
+                filter(dfr==max(dfr)) |> 
+                pull(date) |> 
+                max()),
+           label=sprintf("%.1f%%", 
+                         panel |> 
+                           filter(country=="AT") |> 
+                           filter(dfr==max(dfr)) |> 
+                           pull(dfr) |> 
+                           max()),
+           color=pal[["blue"]],
+           family="robotoslab"
+  ) +
+    annotate("text", 
+           y=(panel |> 
+                filter(country=="AT") |> 
+                filter(date==min(date)) |> 
+                pull(dfr) |> 
+                max()) + .5,
+           x=(panel |> 
+                filter(country=="AT") |> 
+                filter(date==min(date)) |> 
+                pull(date) |> 
+                max()),
+           label=sprintf("%.1f%%", 
+                         panel |> 
+                           filter(country=="AT") |> 
+                           filter(date==min(date)) |> 
+                           pull(dfr) |> 
+                           max()),
+           color=pal[["blue"]],
+           family="robotoslab"
+  ) +
+  theme_econpol(text_y=FALSE, title_x=FALSE, title_y=FALSE) +
+  theme(axis.line.x=element_line(color=pal[["grey500"]]))
+```
+
+## geom_line
+
+```{r ref.label="plot-geomline", echo=TRUE, eval=FALSE}
+```
+
+## geom_point
+
+```{r}
+#| label: plot-geompoint
+#| fig-cap: "Scatter Plot to illustrate the relationship of deposit facility rates and mortgage rates."
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-format: svg
+#| fig-width: 6
+#| fig-height: 4.2
+#| fig-align: center
+
+panel |> 
+  mutate(country=fct_reorder(country, mortgage_rate, .fun=mean, na.rm=TRUE)) |> 
+  ggplot() +
+  geom_point(aes(x=dfr, y=mortgage_rate, color=country), 
+             alpha=0.3, 
+             size=4) +
+  scale_color_manual(values=pal_ramp(n_distinct(panel$country))) +
+  guides(color = guide_legend(nrow = 2,
+         override.aes = list(alpha = 1)
+          )
+         ) +
+  labs(x="Deposit Facility Rate", y="Mortgage Rate") +
+  scale_y_continuous(breaks=c(1,3,5)) +
+  theme_econpol()
+```
+
+## geom_point
+
+```{r ref.label="plot-geompoint", echo=TRUE, eval=FALSE}
+```
+
+## geom_density
+
+```{r}
+#| label: plot-geomdensity
+#| fig-cap: "Density Plot to illustrate the differences of country inflation rates under the same regime."
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-format: svg
+#| fig-width: 6
+#| fig-height: 4.2
+#| fig-align: center
+
+panel |> 
+  ggplot() +
+  geom_density(aes(x=inflation, fill=period), alpha=0.6, color=NA) +
+  scale_fill_manual(values=c("Negative rates"=pal[["blue"]],
+                             "Tightening"=pal[["red"]],
+                             "Easing"=pal[["grey500"]])) +
+  labs(x="Inflation") +
+  theme_econpol(text_y=FALSE, title_y=FALSE)
+```
+
+## geom_density
+
+```{r ref.label="plot-geomdensity", echo=TRUE, eval=FALSE}
+```
