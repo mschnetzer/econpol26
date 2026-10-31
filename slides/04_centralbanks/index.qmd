@@ -508,39 +508,61 @@ In this course, we mainly work with the [ggplot2]{.marker-hl} R package. The **g
 #| echo: true
 #| warning: false
 #| message: false
-library(tidyverse)
-set.seed(42)
-countries <- c("AT","BE","DE","ES","FR","IT","NL","PT","GR","SK","EE","HR")
-dates <- seq(as.Date("2015-01-01"), as.Date("2025-12-01"), by = "month")
+library(tidyverse)   # includes lubridate
+library(eurostat)    # install.packages("eurostat")
 
-# common policy path (stylized): flat, hike, plateau, cut, flat
-knots <- as.Date(c("2015-01-01", "2022-07-01", "2023-09-01",
-                   "2024-06-01", "2025-06-01", "2025-12-01"))
-dfr <- approx(x = as.numeric(knots),
-              y = c(-0.5, -0.5, 4, 4, 2, 2),
-              xout = as.numeric(dates))$y
-policy <- tibble(date = dates, dfr = dfr)
+# euro area members (ECB country codes)
+ea    <- c("AT","BE","BG","CY","DE","EE","ES","FI","FR","GR","HR",
+           "IE","IT","LT","LU","LV","MT","NL","PT","SI","SK")
+cc    <- paste(ea, collapse = "+")
+start <- "2015-01"
 
-# common inflation shock peaking late 2022
-infl_common <- 1.2 + 8 * exp(-((as.numeric(dates - as.Date("2022-10-01")) / 240)^2))
+# helper: ECB Data Portal API -> tibble
+ecb_get <- function(flow, key, start = "2015-01") {
+  url <- paste0("https://data-api.ecb.europa.eu/service/data/", flow, "/", key,
+                "?format=csvdata&startPeriod=", start)
+  read_csv(url, show_col_types = FALSE) |>
+    select(REF_AREA, TIME_PERIOD, OBS_VALUE)
+}
 
-panel <- expand_grid(country = countries, date = dates) |>
-  left_join(policy, by = "date") |>
-  group_by(country) |>
-  mutate(
-    shock_sens    = runif(1, 0.6, 1.8),     # countries differ in exposure
-    passthrough   = runif(1, 0.5, 0.9),     # and in rate pass-through
-    inflation     = infl_common[match(date, dates)] * shock_sens + rnorm(n(), 0, 0.4),
-    mortgage_rate = 1.5 + passthrough * (dfr + 0.5) + rnorm(n(), 0, 0.15),
-    unemployment  = runif(1, 4, 12) - 0.15 * inflation + rnorm(n(), 0, 0.3)
-  ) |>
-  ungroup() |>
+# 1. ECB deposit facility rate (daily -> monthly average)
+dfr <- ecb_get("FM", "D.U2.EUR.4F.KR.DFR.LEV", start) |>
+  mutate(date = floor_date(as.Date(TIME_PERIOD), "month")) |>
+  group_by(date) |>
+  summarise(dfr = mean(OBS_VALUE, na.rm = TRUE), .groups = "drop")
+
+# 2. HICP inflation, annual rate of change
+inflation <- ecb_get("HICP", paste0("M.", cc, ".N.000000.4D0.ANR"), start) |>
+  transmute(country = REF_AREA, date = ym(TIME_PERIOD), inflation = OBS_VALUE)
+
+# 3. Cost of borrowing for house purchase, new business
+mortgage <- ecb_get("MIR", paste0("M.", cc, ".B.A2C.AM.R.A.2250.EUR.N"), start) |>
+  transmute(country = REF_AREA, date = ym(TIME_PERIOD), mortgage_rate = OBS_VALUE)
+
+# 4. Unemployment rate, seasonally adjusted (Eurostat uses EL for Greece)
+unemployment <- get_eurostat(
+    "une_rt_m",
+    filters = list(geo = recode(ea, GR = "EL"), s_adj = "SA",
+                   age = "TOTAL", sex = "T", unit = "PC_ACT"),
+    time_format = "date") |>
+  rename_with(~ "date", any_of(c("time", "TIME_PERIOD"))) |>
+  transmute(country = recode(geo, EL = "GR"), date, unemployment = values) |>
+  filter(date >= ym(start))
+
+# combine into one panel
+panel <- inflation |>
+  left_join(mortgage,     by = c("country", "date")) |>
+  left_join(unemployment, by = c("country", "date")) |>
+  left_join(dfr,          by = "date") |>
   mutate(period = case_when(
-    date < as.Date("2022-01-01") ~ "Negative rates",
-    date < as.Date("2024-01-01") ~ "Tightening",
-    TRUE ~ "Easing"
+    date < as.Date("2022-07-01") ~ "Negative rates",   # first hike July 2022
+    date < as.Date("2024-06-01") ~ "Tightening",       # first cut June 2024
+    TRUE                         ~ "Easing"
   ) |> factor(levels = c("Negative rates", "Tightening", "Easing"))) |>
-  select(date, country, period, dfr, inflation, mortgage_rate, unemployment)
+  select(date, country, period, dfr, inflation, mortgage_rate, unemployment) |>
+  arrange(country, date)
+
+write_csv(panel, "ea_panel.csv")   # saves a copy so you don't re-download each render
 ```
 
 ## geom_bar
