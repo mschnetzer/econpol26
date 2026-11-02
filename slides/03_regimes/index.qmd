@@ -542,24 +542,26 @@ data <- tribble(~area, ~inflation,
 "New York", 1.8,
 "Anchorage", 1.1,
 "Pittsburgh", 0.8)
-data |> ggplot(aes(x = reorder(area, inflation), y = inflation)) +
-geom_hline(yintercept = 2.4, linewidth=0.3) +
-geom_bar(stat = "identity", width=0.7, aes(fill = inflation > 2.4)) +
-annotate("text",y=2.45,x=1, label="National\nAverage: 2.4%", hjust = 0, family="Roboto", size=3) +
-geom_text(aes(y = 0.05, label = paste0(inflation,"%")), size = 3, family = "Roboto", hjust=0, color="white", fontface="bold") +
-scale_fill_manual(values = c(MetBrewer::met.brewer("Lakota")[c(1,3)])) +
-coord_flip() +
-labs(x = NULL, y = NULL,
-title = "Highest food price inflation in St. Louis and Seattle",
-subtitle = "Annual grocery store inflation, 2014") +
-theme_minimal() +
-theme(panel.grid = element_blank(),
-axis.text.y = element_text(family="Roboto", face="bold",size=10),
-axis.text.x = element_blank(),
-legend.position="none",
-plot.title = element_text(family="Roboto", face="bold"),
-plot.subtitle = element_text(family="Roboto"),
-plot.title.position = "plot")
+
+data |> 
+  ggplot(aes(x = reorder(area, inflation), y = inflation)) +
+  geom_hline(yintercept = 2.4, linewidth=0.3) +
+  geom_bar(stat = "identity", width=0.7, aes(fill = inflation > 2.4)) +
+  annotate("text",y=2.45,x=1, label="National\nAverage: 2.4%", hjust = 0, family="Roboto", size=3) +
+  geom_text(aes(y = 0.05, label = paste0(inflation,"%")), size = 3, family = "Roboto", hjust=0, color="white", fontface="bold") +
+  scale_fill_manual(values = c(MetBrewer::met.brewer("Lakota")[c(1,3)])) +
+  coord_flip() +
+  labs(x = NULL, y = NULL,
+  title = "Highest food price inflation in St. Louis and Seattle",
+  subtitle = "Annual grocery store inflation, 2014") +
+    theme_minimal() +
+    theme(panel.grid = element_blank(),
+    axis.text.y = element_text(family="Roboto", face="bold",size=10),
+    axis.text.x = element_blank(),
+    legend.position="none",
+    plot.title = element_text(family="Roboto", face="bold"),
+    plot.subtitle = element_text(family="Roboto"),
+    plot.title.position = "plot")
 ```
 :::
 
