@@ -586,9 +586,10 @@ panel |>
   geom_col(aes(y=country, x=inflation, 
                fill=(country=="AT"))) +
   geom_text(aes(y=country, 
-                x=inflation + .5, 
+                x=inflation + .1, 
                 label=sprintf("%.2f%%", inflation)),
             family="robotoslab",
+            hjust = 0,
             color=pal[["grey800"]],
             size=3.2) +
   geom_vline(xintercept=mean(panel$inflation, na.rm=TRUE), 
