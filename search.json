@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "In this table you find the dates and contents of all classes.\n\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\nDate\nTime\nRoom\nContent\nSlides\nCode\nData\nAssignment\n\n\n\n\nOct 05, 2026\n10:00-12:00\nTC.5.05\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2026\n10:00-12:00\nTC.5.05\nMoney · Data handling\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOct 19, 2026\n10:00-12:00\nTC.5.05\nMonetary Regimes · Geometries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 02, 2026\n10:00-12:00\nTC.5.05\nQuantitative Easing · Scales\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 09, 2026\n10:00-12:00\nTC.5.05\nEffects of Monetary Policy · Colors\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 16, 2026\n10:00-12:00\nTC.5.05\nFinancialization and Debt · Labels\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 23, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 30, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDec 14, 2026\n10:00-12:00\nTC.5.03\nMonetary inequalities · Maps\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 11, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 18, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 25, 2027\n10:00-12:00\nTC.5.05\nAward ceremony at OeNB\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignments\nAssignment [1] provides the setup of the R infrastructure that is required in this course. There are no points for this assignment. Assignments [2] to [4] are recreations of examplary figures provided below. These examples are related to figures that are discussed in class. Students should then try to reproduce the plots at home and improve their individual coding skills. The raw data for the figures are available as *.csv files below.\n\nHomework 1\n\n\n\n\n\n\n\nInstall the latest R version (&gt; v4.6.0)\nInstall the latest version of RStudio Desktop\nOpen RStudio, copy the following code into the console and execute: install.packages(c(\"tidyverse\", \"rmarkdown\", \"scales\", \"lubridate\", \"colorspace\", \"devtools\")); sessionInfo()\nClick on Help &gt; About RStudio\nMake sure that both the R version (Console) and the RStudio version are visible, take a screenshot and upload it to Canvas before October 12, 2026 at 9 a.m.\n\n\n\n\n\nHomework 2\n\n\n\n\n\n\nPlease submit your chart before November 09, 2026 at 9 a.m. The data for this assignment is available here: \n\n\n\n\nHomework 3\n\n\n\n\n\n\nPlease submit your chart before November 23, 2026 at 9 a.m. The data for this assignment is available here: \n\n\n\n\nHomework 4\n\n\n\n\n\n\nPlease submit your chart before December 14, 2026 at 9 a.m. The data for this assignment is available here:"
+    "text": "In this table you find the dates and contents of all classes.\n\n  \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\nDate\nTime\nRoom\nContent\nSlides\nCode\nData\nAssignment\n\n\n\n\nOct 05, 2026\n10:00-12:00\nTC.5.05\nIntroduction\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOct 12, 2026\n10:00-12:00\nTC.5.05\nMoney · Data handling\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOct 19, 2026\n10:00-12:00\nTC.5.05\nMonetary Regimes · Visualization\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 02, 2026\n10:00-12:00\nTC.5.05\nCentral Banks · Geometries\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 09, 2026\n10:00-12:00\nTC.5.05\nDistributional Effects · Scales\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 16, 2026\n10:00-12:00\nTC.5.05\nFinancialization and Debt · Labels\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 23, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNov 30, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDec 14, 2026\n10:00-12:00\nTC.5.03\nMonetary inequalities · Maps\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 11, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 18, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJan 25, 2027\n10:00-12:00\nTC.5.05\nAward ceremony at OeNB\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignments\nAssignment [1] provides the setup of the R infrastructure that is required in this course. There are no points for this assignment. Assignments [2] to [4] are recreations of examplary figures provided below. These examples are related to figures that are discussed in class. Students should then try to reproduce the plots at home and improve their individual coding skills. The raw data for the figures are available as *.csv files below.\n\nHomework 1\n\n\n\n\n\n\n\nInstall the latest R version (&gt; v4.6.0)\nInstall the latest version of RStudio Desktop\nOpen RStudio, copy the following code into the console and execute: install.packages(c(\"tidyverse\", \"rmarkdown\", \"scales\", \"lubridate\", \"colorspace\", \"devtools\")); sessionInfo()\nClick on Help &gt; About RStudio\nMake sure that both the R version (Console) and the RStudio version are visible, take a screenshot and upload it to Canvas before October 12, 2026 at 9 a.m.\n\n\n\n\n\nHomework 2\n\n\n\n\n\n\nPlease submit your chart before November 09, 2026 at 9 a.m. The data for this assignment is available here: \n\n\n\n\nHomework 3\n\n\n\n\n\n\nPlease submit your chart before November 23, 2026 at 9 a.m. The data for this assignment is available here: \n\n\n\n\nHomework 4\n\n\n\n\n\n\nPlease submit your chart before December 14, 2026 at 9 a.m. The data for this assignment is available here:"
   },
   {
     "objectID": "visualization.html",
@@ -46,7 +46,7 @@
     "href": "slides/01_introduction/index.html#schedule",
     "title": "    Monetary Policy Visualization",
     "section": "Schedule",
-    "text": "Schedule\n\n  \n  \n\n\n\n\n\n\n\n\n\n\nDate\nTime\nRoom\nContent\nAssignment\n\n\n\n\nOct 05, 2026\n10:00-12:00\nTC.5.05\nIntroduction\n\n\n\nCircle Xmark\n\n\n\n\n\n\nOct 12, 2026\n10:00-12:00\nTC.5.05\nMoney · Data handling\n\n\n\nPen\n\n\n\n\n\n\nOct 19, 2026\n10:00-12:00\nTC.5.05\nMonetary Regimes · Geometries\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 02, 2026\n10:00-12:00\nTC.5.05\nQuantitative Easing · Scales\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 09, 2026\n10:00-12:00\nTC.5.05\nEffects of Monetary Policy · Colors\n\n\n\nPen\n\n\n\n\n\n\nNov 16, 2026\n10:00-12:00\nTC.5.05\nFinancialization and Debt · Labels\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 23, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\nPen\n\n\n\n\n\n\nNov 30, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\nCircle Xmark\n\n\n\n\n\n\nDec 14, 2026\n10:00-12:00\nTC.5.03\nMonetary inequalities · Maps\n\n\n\nPen\n\n\n\n\n\n\nJan 11, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\nCircle Xmark\n\n\n\n\n\n\nJan 18, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\nCircle Xmark\n\n\n\n\n\n\nJan 25, 2027\n10:00-12:00\nTC.5.05\nAward ceremony at OeNB\n\n\n\nCircle Xmark"
+    "text": "Schedule\n\n  \n  \n\n\n\n\n\n\n\n\n\n\nDate\nTime\nRoom\nContent\nAssignment\n\n\n\n\nOct 05, 2026\n10:00-12:00\nTC.5.05\nIntroduction\n\n\n\nCircle Xmark\n\n\n\n\n\n\nOct 12, 2026\n10:00-12:00\nTC.5.05\nMoney · Data handling\n\n\n\nPen\n\n\n\n\n\n\nOct 19, 2026\n10:00-12:00\nTC.5.05\nMonetary Regimes · Visualization\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 02, 2026\n10:00-12:00\nTC.5.05\nCentral Banks · Geometries\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 09, 2026\n10:00-12:00\nTC.5.05\nDistributional Effects · Scales\n\n\n\nPen\n\n\n\n\n\n\nNov 16, 2026\n10:00-12:00\nTC.5.05\nFinancialization and Debt · Labels\n\n\n\nCircle Xmark\n\n\n\n\n\n\nNov 23, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\nPen\n\n\n\n\n\n\nNov 30, 2026\n10:00-12:00\nTC.5.05\nIntroduction into data by OeNB\n\n\n\nCircle Xmark\n\n\n\n\n\n\nDec 14, 2026\n10:00-12:00\nTC.5.03\nMonetary inequalities · Maps\n\n\n\nPen\n\n\n\n\n\n\nJan 11, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\nCircle Xmark\n\n\n\n\n\n\nJan 18, 2027\n10:00-12:00\nTC.5.05\nStudent presentations\n\n\n\nCircle Xmark\n\n\n\n\n\n\nJan 25, 2027\n10:00-12:00\nTC.5.05\nAward ceremony at OeNB\n\n\n\nCircle Xmark"
   },
   {
     "objectID": "slides/01_introduction/index.html#assignments",
@@ -875,13 +875,6 @@
     "text": "Effects of fiscal policy on distribution\nStudies typically find that inequality increases in periods of restrictive fiscal policy:\n\nBall et al. (2013): 17 OECD countries from 1978 to 2009\nAgnello/Sousa (2014): 18 industrialized countries from 1978 to 2009\nWoo et al. (2016): 17 OECD countries from 1980 to 2010\nHeimberger (2020): 17 OECD countries from 1978 to 2013\n\nMethodology: Impulse response functions (IRF) from local projections as proposed by Jordà (2005)."
   },
   {
-    "objectID": "slides/05_effects/index.html#fiscal-consolidation-has-dampened-growth-in-europe",
-    "href": "slides/05_effects/index.html#fiscal-consolidation-has-dampened-growth-in-europe",
-    "title": "    Monetary Policy Visualization",
-    "section": "Fiscal consolidation has dampened growth in Europe",
-    "text": "Fiscal consolidation has dampened growth in Europe"
-  },
-  {
     "objectID": "slides/05_effects/index.html#fiscal-consolidation-increases-inequality",
     "href": "slides/05_effects/index.html#fiscal-consolidation-increases-inequality",
     "title": "    Monetary Policy Visualization",
@@ -889,11 +882,11 @@
     "text": "Fiscal consolidation increases inequality\n\n\n\n\n\n\n\nSource: Ball et al. (2013)"
   },
   {
-    "objectID": "slides/05_effects/index.html#fiscal-consolidation-spending-versus-taxes",
-    "href": "slides/05_effects/index.html#fiscal-consolidation-spending-versus-taxes",
+    "objectID": "slides/05_effects/index.html#effect-on-inequality-spending-vs.-taxes",
+    "href": "slides/05_effects/index.html#effect-on-inequality-spending-vs.-taxes",
     "title": "    Monetary Policy Visualization",
-    "section": "Fiscal consolidation: Spending versus taxes",
-    "text": "Fiscal consolidation: Spending versus taxes\n\n\n\n\n\n\n\nSource: Ball et al. (2013)"
+    "section": "Effect on inequality: Spending vs. taxes",
+    "text": "Effect on inequality: Spending vs. taxes\n\n\n\n\n\n\n\nSource: Ball et al. (2013)"
   },
   {
     "objectID": "slides/05_effects/index.html#larger-effect-for-spending-based-consolidation",
@@ -959,6 +952,34 @@
     "text": "ECB policy and bank profits\nRapid policy rate hikes since 2022 also raised commercial bank profits:\n\nbanks hold large excess reserves at the ECB (built up through years of quantitative easing) which are remunerated at the deposit facility rate\nas the ECB raised the deposit rate from -0.5% to 4% (2022-2023), banks earned sharply higher interest income on these reserves\nmeanwhile, banks were slow to pass the higher rates on to retail deposit rates, widening the “arbitrage” margin between what banks earn from the ECB and what they pay savers\nKoukouridis (2025) shows that bank profitability was shaped by central bank reserve remuneration\nthis windfall contributed to record bank profits across the euro area and sparked debate about windfall taxes"
   },
   {
+    "objectID": "slides/05_effects/index.html#axes",
+    "href": "slides/05_effects/index.html#axes",
+    "title": "    Monetary Policy Visualization",
+    "section": "Axes",
+    "text": "Axes\nContinuous\n\nggplot(aes(x = life_expectancy, y = poverty_rate)) +\n  geom_point() +\n  scale_x_continuous(limits = c(40, 100),\n                     breaks = seq(40, 100, 20),\n                     labels = scales::number_format(suffix = \"years\")) +\n  scale_y_continuous(labels = scales::percent)\n\nDates\n\nggplot(aes(x = year, y = poverty_rate)) +\n  geom_line() +\n  scale_x_date(limits = c(as.Date(\"2020-01-01\"), as.Date(\"2024-01-01\")),\n                breaks = date_breaks = \"2 years\",\n                labels = date_labels = \"%Y\")\n\nOthers\nscale_x_discrete(), scale_x_log10(), scale_x_reverse(), scale_x_sqrt(), …"
+  },
+  {
+    "objectID": "slides/05_effects/index.html#shape-size-and-alpha",
+    "href": "slides/05_effects/index.html#shape-size-and-alpha",
+    "title": "    Monetary Policy Visualization",
+    "section": "Shape, size and alpha",
+    "text": "Shape, size and alpha\n\nlibrary(tidyverse)\ntribble(~x, ~y, ~significance, ~gdp, ~continent,\n        0.5, 0.5, \"yes\", 140, \"Asia\",\n        1.0, 0.5, \"yes\", 100, \"Africa\",\n        1.5, 0.5, \"no\",  250, \"Europe\") |&gt; \n  ggplot(aes(x = x, y = y)) +\n  geom_point(aes(alpha = significance, size = gdp, shape = continent)) +\n  scale_alpha_discrete(range = c(0.5, 1), guide = guide_none()) +\n  scale_size_continuous(range = c(5, 12), guide = guide_none()) +\n  scale_shape_manual(values = c(17, 19, 15),\n                     guide = guide_legend(title = \"Continent\", \n                                          override.aes = list(size = 5))) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/05_effects/index.html#color-scales",
+    "href": "slides/05_effects/index.html#color-scales",
+    "title": "    Monetary Policy Visualization",
+    "section": "Color scales",
+    "text": "Color scales\n\nscale_color_*  scale_fill_*\n\n\n\nContinuous:\n\ncontinuous(type)\ndistiller(palette)\ngradient(high, low)\ngradient2(high, mid, low)\ngradientn(colours)\nviridis_c(option)\n\n\nDiscrete:\n\nmanual(values)\nbrewer(palette)\ngrey(start, end)\nviridis_d(option)"
+  },
+  {
+    "objectID": "slides/05_effects/index.html#colors",
+    "href": "slides/05_effects/index.html#colors",
+    "title": "    Monetary Policy Visualization",
+    "section": "Colors",
+    "text": "Colors\nManual\n\nggplot(aes(x = year, y = poverty_rate, color = country)) +\n  geom_line() +\n  scale_color_manual(values = c(\"red\", \"blue\", \"green\"))\n\nGradient\n\nggplot(aes(x = gdp, y = life_expectancy, color = poverty_rate)) +\n  geom_point() +\n  scale_color_gradient(low = \"green\", high = \"red\", na.value = \"gray80\")\n\nBrewer\n\nggplot(aes(x = year, y = poverty_rate, fill = country)) +\n  geom_area() +\n  scale_fill_brewer(palette = \"Set1\")\n\nOthers\nscale_color_binned(), scale_color_distiller(), scale_color_grey(), …"
+  },
+  {
     "objectID": "slides/05_effects/index.html#colors-in-r",
     "href": "slides/05_effects/index.html#colors-in-r",
     "title": "    Monetary Policy Visualization",
@@ -985,13 +1006,6 @@
     "title": "    Monetary Policy Visualization",
     "section": "Fancy palettes",
     "text": "Fancy palettes\n\n\n{MetBrewer}\n\n\n\n\n\n\n\n\n\n\n{wesanderson}"
-  },
-  {
-    "objectID": "slides/05_effects/index.html#color-scales-in-ggplot",
-    "href": "slides/05_effects/index.html#color-scales-in-ggplot",
-    "title": "    Monetary Policy Visualization",
-    "section": "Color scales in {ggplot}",
-    "text": "Color scales in {ggplot}\n\nscale_color_*  scale_fill_*\n\n\n\nContinuous:\n\ncontinuous(type)\ndistiller(palette)\ngradient(high, low)\ngradient2(high, mid, low)\ngradientn(colours)\nviridis_c(option)\n\n\nDiscrete:\n\nmanual(values)\nbrewer(palette)\ngrey(start, end)\nviridis_d(option)"
   },
   {
     "objectID": "slides/05_effects/index.html#bibliography",
