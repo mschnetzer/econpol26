@@ -8,7 +8,7 @@ title: |
       </span><br>
     {{< var course.subtitle >}}
 author: '{{< var instructor1.name >}}'
-subtitle: Effects of Monetary Policy
+subtitle: Distributional Effects of Monetary Policy
 date: November 09, 2026
 date-format: long
 from: markdown+emoji
@@ -55,10 +55,6 @@ Studies typically find that [inequality increases]{.marker-hl} in periods of res
 
 Methodology: Impulse response functions (IRF) from local projections as proposed by @jorda:2005.
 
-## Fiscal consolidation has dampened growth in Europe
-
-![](img/austerity.png){fig-align="center" height="500px"}
-
 
 ## Fiscal consolidation increases inequality {.smaller}
 
@@ -69,7 +65,7 @@ Source: @ball:2013
 :::
 
 
-## Fiscal consolidation: Spending versus taxes {.smaller}
+## Effect on inequality: Spending vs. taxes {.smaller}
 
 ![](img/spending_tax.png){fig-align="center"}
 
@@ -169,6 +165,136 @@ Rapid policy rate hikes since 2022 also raised commercial bank profits:
 - this windfall contributed to record bank profits across the euro area and sparked debate about windfall taxes
 
 
+# Scales
+
+![](../../data/img/avatar_point.png){fig-align="center" height=350}
+
+::: footer
+:::
+
+## Axes {.medium}
+
+[Continuous]{.secfont}
+
+```{r axescont}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1,2|3,4,5,6"
+ggplot(aes(x = life_expectancy, y = poverty_rate)) +
+  geom_point() +
+  scale_x_continuous(limits = c(40, 100),
+                     breaks = seq(40, 100, 20),
+                     labels = scales::number_format(suffix = "years")) +
+  scale_y_continuous(labels = scales::percent)
+```
+
+[Dates]{.secfont}
+
+```{r axesdate}
+#| echo: true
+#| eval: false
+ggplot(aes(x = year, y = poverty_rate)) +
+  geom_line() +
+  scale_x_date(limits = c(as.Date("2020-01-01"), as.Date("2024-01-01")),
+                breaks = date_breaks = "2 years",
+                labels = date_labels = "%Y")
+```
+
+[Others]{.secfont}
+
+[scale_x_discrete(), scale_x_log10(), scale_x_reverse(), scale_x_sqrt(), ...]{.secfont style="font-size:1.5rem;"}
+
+## Shape, size and alpha {.smaller}
+
+```{r alphaxmpl}
+#| echo: true
+#| eval: true
+#| fig-width: 6
+#| fig-height: 3
+#| fig-align: center
+library(tidyverse)
+tribble(~x, ~y, ~significance, ~gdp, ~continent,
+        0.5, 0.5, "yes", 140, "Asia",
+        1.0, 0.5, "yes", 100, "Africa",
+        1.5, 0.5, "no",  250, "Europe") |> 
+  ggplot(aes(x = x, y = y)) +
+  geom_point(aes(alpha = significance, size = gdp, shape = continent)) +
+  scale_alpha_discrete(range = c(0.5, 1), guide = guide_none()) +
+  scale_size_continuous(range = c(5, 12), guide = guide_none()) +
+  scale_shape_manual(values = c(17, 19, 15),
+                     guide = guide_legend(title = "Continent", 
+                                          override.aes = list(size = 5))) +
+  theme_minimal()
+```
+
+
+## Color scales {.smaller}
+
+::: {.center .secfont style="font-size:2.5rem;"}
+scale_color_\* <br> scale_fill_\*
+:::
+
+::: {.columns}
+::: {.column .center}
+Continuous: 
+
+- [ continuous(type)]{.secfont}
+- [distiller(palette)]{.secfont}
+- [gradient(high, low)]{.secfont}
+- [gradient2(high, mid, low)]{.secfont}
+- [gradientn(colours)]{.secfont}
+- [viridis_c(option)]{.secfont}
+:::
+::: {.column .center}
+Discrete:
+
+- [manual(values)]{.secfont}
+- [brewer(palette)]{.secfont}
+- [grey(start, end)]{.secfont}
+- [viridis_d(option)]{.secfont}
+:::
+:::
+
+
+## Colors {.smaller}
+
+[Manual]{.secfont}
+
+```{r colman}
+#| echo: true
+#| eval: false
+ggplot(aes(x = year, y = poverty_rate, color = country)) +
+  geom_line() +
+  scale_color_manual(values = c("red", "blue", "green"))
+```
+
+[Gradient]{.secfont}
+
+```{r colgrad}
+#| echo: true
+#| eval: false
+ggplot(aes(x = gdp, y = life_expectancy, color = poverty_rate)) +
+  geom_point() +
+  scale_color_gradient(low = "green", high = "red", na.value = "gray80")
+```
+
+
+[Brewer]{.secfont}
+
+```{r fillbrew}
+#| echo: true
+#| eval: false
+ggplot(aes(x = year, y = poverty_rate, fill = country)) +
+  geom_area() +
+  scale_fill_brewer(palette = "Set1")
+```
+
+[Others]{.secfont}
+
+[scale_color_binned(), scale_color_distiller(), scale_color_grey(), ...]{.secfont style="font-size:1.5rem;"}
+
+
+
 # All colours are beautiful
 
 <center>
@@ -251,7 +377,6 @@ You may check whether the color scale works for people who can distinguish fewer
 #| echo: false
 #| warning: false
 #| fig-height: 4
-library(tidyverse)
 library(colorBlindness)
 colorBlindness::displayAllColors(rainbow(6)) +
 	labs(x = NULL, y = NULL) +
@@ -296,34 +421,6 @@ wes_palette("Cavalcanti1"), wes_palette("FantasticFox1"), wes_palette("Moonrise3
 pal_names = c("Zissou1","Darjeeling1","Cavalcanti1","FantasticFox1","Moonrise3"),
 title = "", grid=F)
 ```
-:::
-:::
-
-
-## Color scales in {ggplot} {.smaller}
-
-::: {.center .secfont style="font-size:2.5rem;"}
-scale_color_\* <br> scale_fill_\*
-:::
-
-::: {.columns}
-::: {.column .center}
-Continuous: 
-
-- [ continuous(type)]{.secfont}
-- [distiller(palette)]{.secfont}
-- [gradient(high, low)]{.secfont}
-- [gradient2(high, mid, low)]{.secfont}
-- [gradientn(colours)]{.secfont}
-- [viridis_c(option)]{.secfont}
-:::
-::: {.column .center}
-Discrete:
-
-- [manual(values)]{.secfont}
-- [brewer(palette)]{.secfont}
-- [grey(start, end)]{.secfont}
-- [viridis_d(option)]{.secfont}
 :::
 :::
 
