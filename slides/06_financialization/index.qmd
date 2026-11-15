@@ -9,7 +9,7 @@ title: |
     {{< var course.subtitle >}}
 author: '{{< var instructor2.name-wo-title >}}'
 subtitle: Financialization and Household Debt
-date: November 2, 2026
+date: November 16, 2026
 date-format: long
 from: markdown+emoji
 bibliography: ../../data/lit/wipol_advanced.bib
