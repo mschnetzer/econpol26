@@ -89,12 +89,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,AT,Negative rates,-0.5,7.1,1.33,4.5
 2022-05-01,AT,Negative rates,-0.5,7.7,1.47,4.5
 2022-06-01,AT,Negative rates,-0.5,8.7,1.65,4.4
-2022-07-01,AT,Tightening,-0.41935483870967744,9.4,1.83,4.5
+2022-07-01,AT,Tightening,-0.4193548387096774,9.4,1.83,4.5
 2022-08-01,AT,Tightening,0,9.2,2,4.9
-2022-09-01,AT,Tightening,0.425,11,2.17,5.2
+2022-09-01,AT,Tightening,0.4250000000000001,11,2.17,5.2
 2022-10-01,AT,Tightening,0.75,11.6,2.65,4.7
 2022-11-01,AT,Tightening,1.475,11.2,2.98,5.2
-2022-12-01,AT,Tightening,1.6774193548387097,10.5,2.84,4.9
+2022-12-01,AT,Tightening,1.6774193548387095,10.5,2.84,4.9
 2023-01-01,AT,Tightening,2,11.6,3.25,5.3
 2023-02-01,AT,Tightening,2.375,11,3.46,5.1
 2023-03-01,AT,Tightening,2.661290322580645,9.2,3.59,4.6
@@ -139,7 +139,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,AT,Easing,2.1166666666666667,3.2,3.54,5.8
 2026-07-01,AT,Easing,2.25,2.7,3.54,6.2
 2026-08-01,AT,Easing,2.25,2.9,3.61,6.7
-2026-09-01,AT,Easing,2.375,3.6,NA,6.3
+2026-09-01,AT,Easing,2.375,3.6,3.63,6.3
 2015-01-01,BE,Negative rates,-0.2,-0.6,2.69,8.8
 2015-02-01,BE,Negative rates,-0.2,-0.4,2.61,8.8
 2015-03-01,BE,Negative rates,-0.2,-0.1,2.54,8.9
@@ -230,12 +230,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,BE,Negative rates,-0.5,9.3,1.65,5.8
 2022-05-01,BE,Negative rates,-0.5,9.9,1.78,5.9
 2022-06-01,BE,Negative rates,-0.5,10.5,1.94,5.8
-2022-07-01,BE,Tightening,-0.41935483870967744,10.4,2.16,5.5
+2022-07-01,BE,Tightening,-0.4193548387096774,10.4,2.16,5.5
 2022-08-01,BE,Tightening,0,10.5,2.35,5.4
-2022-09-01,BE,Tightening,0.425,12.1,2.54,5.4
+2022-09-01,BE,Tightening,0.4250000000000001,12.1,2.54,5.4
 2022-10-01,BE,Tightening,0.75,13.1,2.72,5.6
 2022-11-01,BE,Tightening,1.475,10.5,2.88,5.7
-2022-12-01,BE,Tightening,1.6774193548387097,10.2,3.06,5.7
+2022-12-01,BE,Tightening,1.6774193548387095,10.2,3.06,5.7
 2023-01-01,BE,Tightening,2,7.4,3.15,5.6
 2023-02-01,BE,Tightening,2.375,5.4,3.32,5.6
 2023-03-01,BE,Tightening,2.661290322580645,4.9,3.43,5.6
@@ -280,7 +280,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,BE,Easing,2.1166666666666667,3.3,3.6,6.3
 2026-07-01,BE,Easing,2.25,3.6,3.65,6
 2026-08-01,BE,Easing,2.25,4.2,3.7,5.9
-2026-09-01,BE,Easing,2.375,4.5,NA,6
+2026-09-01,BE,Easing,2.375,4.5,3.77,6
 2015-01-01,BG,Negative rates,-0.2,-2.4,NA,11.1
 2015-02-01,BG,Negative rates,-0.2,-1.7,NA,10.9
 2015-03-01,BG,Negative rates,-0.2,-1.1,NA,11
@@ -371,12 +371,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,BG,Negative rates,-0.5,12.1,NA,4.4
 2022-05-01,BG,Negative rates,-0.5,13.4,NA,4.4
 2022-06-01,BG,Negative rates,-0.5,14.8,NA,4.2
-2022-07-01,BG,Tightening,-0.41935483870967744,14.9,NA,4
+2022-07-01,BG,Tightening,-0.4193548387096774,14.9,NA,4
 2022-08-01,BG,Tightening,0,15,NA,3.9
-2022-09-01,BG,Tightening,0.425,15.6,NA,3.9
+2022-09-01,BG,Tightening,0.4250000000000001,15.6,NA,3.9
 2022-10-01,BG,Tightening,0.75,14.8,NA,3.8
 2022-11-01,BG,Tightening,1.475,14.3,NA,3.8
-2022-12-01,BG,Tightening,1.6774193548387097,14.3,NA,4
+2022-12-01,BG,Tightening,1.6774193548387095,14.3,NA,4
 2023-01-01,BG,Tightening,2,14.3,NA,4
 2023-02-01,BG,Tightening,2.375,13.7,NA,4.1
 2023-03-01,BG,Tightening,2.661290322580645,12.1,NA,4.2
@@ -421,7 +421,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,BG,Easing,2.1166666666666667,5.2,2.41,3.5
 2026-07-01,BG,Easing,2.25,4.4,2.43,3.5
 2026-08-01,BG,Easing,2.25,5,2.42,3.5
-2026-09-01,BG,Easing,2.375,5.6,NA,3.4
+2026-09-01,BG,Easing,2.375,5.6,2.41,3.4
 2015-01-01,CY,Negative rates,-0.2,-0.7,4.47,16.6
 2015-02-01,CY,Negative rates,-0.2,-0.8,4.44,16.6
 2015-03-01,CY,Negative rates,-0.2,-1.4,3.81,16.2
@@ -512,12 +512,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,CY,Negative rates,-0.5,8.6,2.2,6.4
 2022-05-01,CY,Negative rates,-0.5,8.8,2.27,6.4
 2022-06-01,CY,Negative rates,-0.5,9,2.31,6.5
-2022-07-01,CY,Tightening,-0.41935483870967744,10.6,2.54,6.4
+2022-07-01,CY,Tightening,-0.4193548387096774,10.6,2.54,6.4
 2022-08-01,CY,Tightening,0,9.6,2.54,6.3
-2022-09-01,CY,Tightening,0.425,9,3.03,6.3
+2022-09-01,CY,Tightening,0.4250000000000001,9,3.03,6.3
 2022-10-01,CY,Tightening,0.75,8.6,2.94,6.4
 2022-11-01,CY,Tightening,1.475,8.1,2.98,6.6
-2022-12-01,CY,Tightening,1.6774193548387097,7.6,3.35,6.6
+2022-12-01,CY,Tightening,1.6774193548387095,7.6,3.35,6.6
 2023-01-01,CY,Tightening,2,6.8,3.15,6.4
 2023-02-01,CY,Tightening,2.375,6.7,3.45,6.3
 2023-03-01,CY,Tightening,2.661290322580645,6.1,4.02,6
@@ -562,7 +562,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,CY,Easing,2.1166666666666667,4.1,3.33,3.8
 2026-07-01,CY,Easing,2.25,4.4,3.29,3.9
 2026-08-01,CY,Easing,2.25,5.2,3.39,4
-2026-09-01,CY,Easing,2.375,5.2,NA,4
+2026-09-01,CY,Easing,2.375,5.2,3.32,4
 2015-01-01,DE,Negative rates,-0.2,-0.5,1.97,4.5
 2015-02-01,DE,Negative rates,-0.2,-0.1,1.97,4.5
 2015-03-01,DE,Negative rates,-0.2,0.2,1.89,4.5
@@ -653,12 +653,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,DE,Negative rates,-0.5,7.9,1.94,3.1
 2022-05-01,DE,Negative rates,-0.5,8.6,2.25,3.1
 2022-06-01,DE,Negative rates,-0.5,8.3,2.57,3.1
-2022-07-01,DE,Tightening,-0.41935483870967744,8.4,2.82,3.1
+2022-07-01,DE,Tightening,-0.4193548387096774,8.4,2.82,3.1
 2022-08-01,DE,Tightening,0,8.8,2.85,3.1
-2022-09-01,DE,Tightening,0.425,11,3.03,3.1
+2022-09-01,DE,Tightening,0.4250000000000001,11,3.03,3.1
 2022-10-01,DE,Tightening,0.75,11.6,3.28,3.1
 2022-11-01,DE,Tightening,1.475,11.3,3.62,3.1
-2022-12-01,DE,Tightening,1.6774193548387097,9.6,3.52,3.1
+2022-12-01,DE,Tightening,1.6774193548387095,9.6,3.52,3.1
 2023-01-01,DE,Tightening,2,9.2,3.64,3.1
 2023-02-01,DE,Tightening,2.375,9.3,3.76,3
 2023-03-01,DE,Tightening,2.661290322580645,7.7,3.85,3
@@ -703,7 +703,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,DE,Easing,2.1166666666666667,2.4,3.95,4
 2026-07-01,DE,Easing,2.25,2.8,3.93,4
 2026-08-01,DE,Easing,2.25,2.9,4,4.1
-2026-09-01,DE,Easing,2.375,3.3,NA,4.1
+2026-09-01,DE,Easing,2.375,3.3,4.09,4.1
 2015-01-01,EE,Negative rates,-0.2,-0.5,2.3,6.8
 2015-02-01,EE,Negative rates,-0.2,-0.2,2.26,6.6
 2015-03-01,EE,Negative rates,-0.2,0,2.26,6.8
@@ -794,12 +794,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,EE,Negative rates,-0.5,19.1,2.14,5.6
 2022-05-01,EE,Negative rates,-0.5,20.1,2.18,5.8
 2022-06-01,EE,Negative rates,-0.5,22,2.24,5.8
-2022-07-01,EE,Tightening,-0.41935483870967744,23.2,2.49,5.7
+2022-07-01,EE,Tightening,-0.4193548387096774,23.2,2.49,5.7
 2022-08-01,EE,Tightening,0,25.2,2.82,5.6
-2022-09-01,EE,Tightening,0.425,24.1,3.25,5.3
+2022-09-01,EE,Tightening,0.4250000000000001,24.1,3.25,5.3
 2022-10-01,EE,Tightening,0.75,22.5,3.66,5.4
 2022-11-01,EE,Tightening,1.475,21.4,4.05,5.4
-2022-12-01,EE,Tightening,1.6774193548387097,17.5,4.18,5.3
+2022-12-01,EE,Tightening,1.6774193548387095,17.5,4.18,5.3
 2023-01-01,EE,Tightening,2,18.6,4.66,5.3
 2023-02-01,EE,Tightening,2.375,17.8,4.92,5.3
 2023-03-01,EE,Tightening,2.661290322580645,15.6,4.96,6
@@ -844,7 +844,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,EE,Easing,2.1166666666666667,2,4.15,6.7
 2026-07-01,EE,Easing,2.25,2,4.24,7.7
 2026-08-01,EE,Easing,2.25,1.3,4.27,7.8
-2026-09-01,EE,Easing,2.375,3.1,NA,8
+2026-09-01,EE,Easing,2.375,3.1,4.45,8
 2015-01-01,ES,Negative rates,-0.2,-1.5,2.58,23.4
 2015-02-01,ES,Negative rates,-0.2,-1.2,2.49,23.1
 2015-03-01,ES,Negative rates,-0.2,-0.8,2.33,22.9
@@ -935,12 +935,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,ES,Negative rates,-0.5,8.3,1.53,13.2
 2022-05-01,ES,Negative rates,-0.5,8.5,1.63,12.9
 2022-06-01,ES,Negative rates,-0.5,10,1.69,12.9
-2022-07-01,ES,Tightening,-0.41935483870967744,10.7,1.81,12.7
+2022-07-01,ES,Tightening,-0.4193548387096774,10.7,1.81,12.7
 2022-08-01,ES,Tightening,0,10.5,2.03,12.8
-2022-09-01,ES,Tightening,0.425,9,2.22,12.9
+2022-09-01,ES,Tightening,0.4250000000000001,9,2.22,12.9
 2022-10-01,ES,Tightening,0.75,7.3,2.54,13.1
 2022-11-01,ES,Tightening,1.475,6.7,2.73,13.2
-2022-12-01,ES,Tightening,1.6774193548387097,5.5,2.96,13.2
+2022-12-01,ES,Tightening,1.6774193548387095,5.5,2.96,13.2
 2023-01-01,ES,Tightening,2,5.9,3.26,13.1
 2023-02-01,ES,Tightening,2.375,6,3.52,12.9
 2023-03-01,ES,Tightening,2.661290322580645,3.1,3.64,12.5
@@ -985,7 +985,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,ES,Easing,2.1166666666666667,3.6,2.89,10.2
 2026-07-01,ES,Easing,2.25,3.9,2.89,10.2
 2026-08-01,ES,Easing,2.25,4.6,3.04,10.2
-2026-09-01,ES,Easing,2.375,5,NA,10.3
+2026-09-01,ES,Easing,2.375,5,2.99,10.3
 2015-01-01,FI,Negative rates,-0.2,-0.1,1.56,8.6
 2015-02-01,FI,Negative rates,-0.2,-0.1,1.32,9.7
 2015-03-01,FI,Negative rates,-0.2,0,1.37,9.6
@@ -1076,12 +1076,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,FI,Negative rates,-0.5,5.8,0.96,6.1
 2022-05-01,FI,Negative rates,-0.5,7.1,1.13,5.8
 2022-06-01,FI,Negative rates,-0.5,8.1,1.58,6.8
-2022-07-01,FI,Tightening,-0.41935483870967744,8,1.66,7.2
+2022-07-01,FI,Tightening,-0.4193548387096774,8,1.66,7.2
 2022-08-01,FI,Tightening,0,7.9,1.85,7.5
-2022-09-01,FI,Tightening,0.425,8.4,2.54,7.3
+2022-09-01,FI,Tightening,0.4250000000000001,8.4,2.54,7.3
 2022-10-01,FI,Tightening,0.75,8.4,2.75,6.5
 2022-11-01,FI,Tightening,1.475,9.1,2.83,6.7
-2022-12-01,FI,Tightening,1.6774193548387097,8.8,2.94,7.2
+2022-12-01,FI,Tightening,1.6774193548387095,8.8,2.94,7.2
 2023-01-01,FI,Tightening,2,7.9,3.02,7.2
 2023-02-01,FI,Tightening,2.375,7.9,3.28,6.6
 2023-03-01,FI,Tightening,2.661290322580645,6.7,3.48,6.4
@@ -1126,7 +1126,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,FI,Easing,2.1166666666666667,2.7,3.1,10.2
 2026-07-01,FI,Easing,2.25,2.5,3.18,10.5
 2026-08-01,FI,Easing,2.25,2.4,3.24,9.9
-2026-09-01,FI,Easing,2.375,2.7,NA,11
+2026-09-01,FI,Easing,2.375,2.7,3.39,11
 2015-01-01,FR,Negative rates,-0.2,-0.4,2.55,10.4
 2015-02-01,FR,Negative rates,-0.2,-0.3,2.51,10.4
 2015-03-01,FR,Negative rates,-0.2,0,2.42,10.4
@@ -1217,12 +1217,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,FR,Negative rates,-0.5,5.4,1.19,7.6
 2022-05-01,FR,Negative rates,-0.5,5.8,1.26,7.5
 2022-06-01,FR,Negative rates,-0.5,6.5,1.35,7.5
-2022-07-01,FR,Tightening,-0.41935483870967744,6.8,1.45,7.4
+2022-07-01,FR,Tightening,-0.4193548387096774,6.8,1.45,7.4
 2022-08-01,FR,Tightening,0,6.6,1.58,7.3
-2022-09-01,FR,Tightening,0.425,6.2,1.68,7.1
+2022-09-01,FR,Tightening,0.4250000000000001,6.2,1.68,7.1
 2022-10-01,FR,Tightening,0.75,7.1,1.77,7.2
 2022-11-01,FR,Tightening,1.475,7.1,1.91,7.2
-2022-12-01,FR,Tightening,1.6774193548387097,6.7,2.05,7.2
+2022-12-01,FR,Tightening,1.6774193548387095,6.7,2.05,7.2
 2023-01-01,FR,Tightening,2,7,2.2,7.1
 2023-02-01,FR,Tightening,2.375,7.3,2.35,7.1
 2023-03-01,FR,Tightening,2.661290322580645,6.7,2.54,7.1
@@ -1267,7 +1267,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,FR,Easing,2.1166666666666667,2,3.16,8.3
 2026-07-01,FR,Easing,2.25,2.4,3.18,8.3
 2026-08-01,FR,Easing,2.25,2.6,3.2,8.3
-2026-09-01,FR,Easing,2.375,3.4,NA,8.5
+2026-09-01,FR,Easing,2.375,3.4,3.19,8.5
 2015-01-01,GR,Negative rates,-0.2,-2.8,2.59,25.6
 2015-02-01,GR,Negative rates,-0.2,-1.9,2.45,25.7
 2015-03-01,GR,Negative rates,-0.2,-1.9,2.76,26.2
@@ -1358,12 +1358,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,GR,Negative rates,-0.5,9.1,2.77,12.5
 2022-05-01,GR,Negative rates,-0.5,10.5,2.88,12.9
 2022-06-01,GR,Negative rates,-0.5,11.6,3.07,12.5
-2022-07-01,GR,Tightening,-0.41935483870967744,11.3,2.99,12.8
+2022-07-01,GR,Tightening,-0.4193548387096774,11.3,2.99,12.8
 2022-08-01,GR,Tightening,0,11.2,3.11,12.4
-2022-09-01,GR,Tightening,0.425,12.1,3.39,12.1
+2022-09-01,GR,Tightening,0.4250000000000001,12.1,3.39,12.1
 2022-10-01,GR,Tightening,0.75,9.5,3.7,11.8
 2022-11-01,GR,Tightening,1.475,8.8,3.54,11.6
-2022-12-01,GR,Tightening,1.6774193548387097,7.6,3.65,12.1
+2022-12-01,GR,Tightening,1.6774193548387095,7.6,3.65,12.1
 2023-01-01,GR,Tightening,2,7.3,3.77,10.5
 2023-02-01,GR,Tightening,2.375,6.5,3.83,11.1
 2023-03-01,GR,Tightening,2.661290322580645,5.4,3.79,11.3
@@ -1408,7 +1408,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,GR,Easing,2.1166666666666667,3.9,3.26,8
 2026-07-01,GR,Easing,2.25,2.7,3.27,7.9
 2026-08-01,GR,Easing,2.25,3.7,3.3,7.4
-2026-09-01,GR,Easing,2.375,5.1,NA,7.6
+2026-09-01,GR,Easing,2.375,5.1,3.31,7.6
 2015-01-01,HR,Negative rates,-0.2,-0.6,NA,17
 2015-02-01,HR,Negative rates,-0.2,-0.4,NA,17
 2015-03-01,HR,Negative rates,-0.2,0,NA,16.8
@@ -1499,12 +1499,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,HR,Negative rates,-0.5,9.6,NA,6.7
 2022-05-01,HR,Negative rates,-0.5,10.7,NA,6.7
 2022-06-01,HR,Negative rates,-0.5,12.1,NA,6.8
-2022-07-01,HR,Tightening,-0.41935483870967744,12.7,NA,6.9
+2022-07-01,HR,Tightening,-0.4193548387096774,12.7,NA,6.9
 2022-08-01,HR,Tightening,0,12.6,NA,6.9
-2022-09-01,HR,Tightening,0.425,12.5,NA,6.8
+2022-09-01,HR,Tightening,0.4250000000000001,12.5,NA,6.8
 2022-10-01,HR,Tightening,0.75,12.7,NA,6.8
 2022-11-01,HR,Tightening,1.475,12.9,NA,6.8
-2022-12-01,HR,Tightening,1.6774193548387097,12.7,NA,6.7
+2022-12-01,HR,Tightening,1.6774193548387095,12.7,NA,6.7
 2023-01-01,HR,Tightening,2,12.5,2.89,6.5
 2023-02-01,HR,Tightening,2.375,11.7,2.97,6.3
 2023-03-01,HR,Tightening,2.661290322580645,10.6,2.93,6.2
@@ -1549,7 +1549,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,HR,Easing,2.1166666666666667,4.2,2.9,4.4
 2026-07-01,HR,Easing,2.25,3.6,2.91,4.4
 2026-08-01,HR,Easing,2.25,3.7,2.91,4.3
-2026-09-01,HR,Easing,2.375,4.3,NA,4.3
+2026-09-01,HR,Easing,2.375,4.3,2.94,4.3
 2015-01-01,IE,Negative rates,-0.2,-0.4,3.36,10.7
 2015-02-01,IE,Negative rates,-0.2,-0.4,3.46,10.7
 2015-03-01,IE,Negative rates,-0.2,-0.2,3.53,10.5
@@ -1640,12 +1640,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,IE,Negative rates,-0.5,7.3,2.72,4.5
 2022-05-01,IE,Negative rates,-0.5,8.2,2.82,4.2
 2022-06-01,IE,Negative rates,-0.5,9.5,2.81,4.2
-2022-07-01,IE,Tightening,-0.41935483870967744,9.7,2.76,4.1
+2022-07-01,IE,Tightening,-0.4193548387096774,9.7,2.76,4.1
 2022-08-01,IE,Tightening,0,9.1,2.77,4.3
-2022-09-01,IE,Tightening,0.425,8.6,2.78,4.2
+2022-09-01,IE,Tightening,0.4250000000000001,8.6,2.78,4.2
 2022-10-01,IE,Tightening,0.75,9.4,2.74,4.4
 2022-11-01,IE,Tightening,1.475,9,2.78,4.5
-2022-12-01,IE,Tightening,1.6774193548387097,8.2,2.84,4.3
+2022-12-01,IE,Tightening,1.6774193548387095,8.2,2.84,4.3
 2023-01-01,IE,Tightening,2,7.5,3,4.3
 2023-02-01,IE,Tightening,2.375,8.1,3.1,4.2
 2023-03-01,IE,Tightening,2.661290322580645,7,3.46,4.1
@@ -1690,7 +1690,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,IE,Easing,2.1166666666666667,3.2,3.5,4.9
 2026-07-01,IE,Easing,2.25,3.1,3.52,5
 2026-08-01,IE,Easing,2.25,3.4,3.52,5
-2026-09-01,IE,Easing,2.375,3.8,NA,5
+2026-09-01,IE,Easing,2.375,3.8,3.51,5
 2015-01-01,IT,Negative rates,-0.2,-0.4,2.76,12.4
 2015-02-01,IT,Negative rates,-0.2,0.1,2.68,12.4
 2015-03-01,IT,Negative rates,-0.2,0,2.58,12.5
@@ -1781,12 +1781,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,IT,Negative rates,-0.5,6.4,1.83,8.1
 2022-05-01,IT,Negative rates,-0.5,7.3,1.97,8.1
 2022-06-01,IT,Negative rates,-0.5,8.5,2.18,8.2
-2022-07-01,IT,Tightening,-0.41935483870967744,8.4,2.41,8
+2022-07-01,IT,Tightening,-0.4193548387096774,8.4,2.41,8
 2022-08-01,IT,Tightening,0,9.1,2.27,8.2
-2022-09-01,IT,Tightening,0.425,9.5,2.64,8
+2022-09-01,IT,Tightening,0.4250000000000001,9.5,2.64,8
 2022-10-01,IT,Tightening,0.75,12.6,3.11,7.8
 2022-11-01,IT,Tightening,1.475,12.5,3.4,7.8
-2022-12-01,IT,Tightening,1.6774193548387097,12.2,3.34,7.9
+2022-12-01,IT,Tightening,1.6774193548387095,12.2,3.34,7.9
 2023-01-01,IT,Tightening,2,10.7,3.68,7.9
 2023-02-01,IT,Tightening,2.375,9.8,3.79,7.8
 2023-03-01,IT,Tightening,2.661290322580645,8,4.02,7.9
@@ -1831,7 +1831,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,IT,Easing,2.1166666666666667,3,3.54,6.1
 2026-07-01,IT,Easing,2.25,2.9,3.49,6.1
 2026-08-01,IT,Easing,2.25,3.2,3.58,6.2
-2026-09-01,IT,Easing,2.375,4.2,NA,6.3
+2026-09-01,IT,Easing,2.375,4.2,3.61,6.3
 2015-01-01,LT,Negative rates,-0.2,-1.4,1.91,9.6
 2015-02-01,LT,Negative rates,-0.2,-1.5,1.99,9.3
 2015-03-01,LT,Negative rates,-0.2,-1.1,1.99,9
@@ -1922,12 +1922,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,LT,Negative rates,-0.5,16.6,2.02,6
 2022-05-01,LT,Negative rates,-0.5,18.5,2.01,5.9
 2022-06-01,LT,Negative rates,-0.5,20.5,2.12,5.9
-2022-07-01,LT,Tightening,-0.41935483870967744,20.9,2.42,6
+2022-07-01,LT,Tightening,-0.4193548387096774,20.9,2.42,6
 2022-08-01,LT,Tightening,0,21.1,2.76,6.1
-2022-09-01,LT,Tightening,0.425,22.5,3.45,6.2
+2022-09-01,LT,Tightening,0.4250000000000001,22.5,3.45,6.2
 2022-10-01,LT,Tightening,0.75,22.1,3.83,6.1
 2022-11-01,LT,Tightening,1.475,21.4,4.08,6.2
-2022-12-01,LT,Tightening,1.6774193548387097,20,4.35,6.2
+2022-12-01,LT,Tightening,1.6774193548387095,20,4.35,6.2
 2023-01-01,LT,Tightening,2,18.5,4.6,6.7
 2023-02-01,LT,Tightening,2.375,17.2,4.87,6.7
 2023-03-01,LT,Tightening,2.661290322580645,15.2,5.03,6.8
@@ -1972,7 +1972,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,LT,Easing,2.1166666666666667,5.4,4.03,6.2
 2026-07-01,LT,Easing,2.25,5.4,4.1,6.2
 2026-08-01,LT,Easing,2.25,5.6,4.16,6.1
-2026-09-01,LT,Easing,2.375,6.1,NA,6.2
+2026-09-01,LT,Easing,2.375,6.1,4.32,6.2
 2015-01-01,LU,Negative rates,-0.2,-1.2,1.94,6.3
 2015-02-01,LU,Negative rates,-0.2,-0.3,1.89,6.4
 2015-03-01,LU,Negative rates,-0.2,0.1,1.86,6.4
@@ -2063,12 +2063,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,LU,Negative rates,-0.5,9,1.66,4.4
 2022-05-01,LU,Negative rates,-0.5,9.1,1.81,4.4
 2022-06-01,LU,Negative rates,-0.5,10.3,1.94,4.5
-2022-07-01,LU,Tightening,-0.41935483870967744,9.3,2.12,4.5
+2022-07-01,LU,Tightening,-0.4193548387096774,9.3,2.12,4.5
 2022-08-01,LU,Tightening,0,8.6,2.27,4.7
-2022-09-01,LU,Tightening,0.425,8.8,2.3,4.7
+2022-09-01,LU,Tightening,0.4250000000000001,8.8,2.3,4.7
 2022-10-01,LU,Tightening,0.75,8.8,2.81,4.8
 2022-11-01,LU,Tightening,1.475,7.3,3.01,4.8
-2022-12-01,LU,Tightening,1.6774193548387097,6.2,3.14,4.8
+2022-12-01,LU,Tightening,1.6774193548387095,6.2,3.14,4.8
 2023-01-01,LU,Tightening,2,5.8,3.57,4.9
 2023-02-01,LU,Tightening,2.375,4.8,3.68,4.9
 2023-03-01,LU,Tightening,2.661290322580645,2.9,3.83,4.9
@@ -2113,7 +2113,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,LU,Easing,2.1166666666666667,3.7,3.59,7.1
 2026-07-01,LU,Easing,2.25,3.4,3.56,7.1
 2026-08-01,LU,Easing,2.25,4,3.63,7.3
-2026-09-01,LU,Easing,2.375,5.2,NA,7.3
+2026-09-01,LU,Easing,2.375,5.2,3.61,7.3
 2015-01-01,LV,Negative rates,-0.2,-0.3,3.44,9.7
 2015-02-01,LV,Negative rates,-0.2,0,3.18,9.8
 2015-03-01,LV,Negative rates,-0.2,0.5,3.13,9.9
@@ -2204,12 +2204,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,LV,Negative rates,-0.5,13,2.36,6.7
 2022-05-01,LV,Negative rates,-0.5,16.8,2.42,6.6
 2022-06-01,LV,Negative rates,-0.5,19.2,2.48,6.6
-2022-07-01,LV,Tightening,-0.41935483870967744,21.3,2.63,6.9
+2022-07-01,LV,Tightening,-0.4193548387096774,21.3,2.63,6.9
 2022-08-01,LV,Tightening,0,21.4,2.89,7
-2022-09-01,LV,Tightening,0.425,22,3.34,7
+2022-09-01,LV,Tightening,0.4250000000000001,22,3.34,7
 2022-10-01,LV,Tightening,0.75,21.7,3.66,6.9
 2022-11-01,LV,Tightening,1.475,21.7,3.99,6.8
-2022-12-01,LV,Tightening,1.6774193548387097,20.7,4.32,6.7
+2022-12-01,LV,Tightening,1.6774193548387095,20.7,4.32,6.7
 2023-01-01,LV,Tightening,2,21.3,4.62,6.3
 2023-02-01,LV,Tightening,2.375,20.1,4.95,6.1
 2023-03-01,LV,Tightening,2.661290322580645,17.2,5.06,6
@@ -2254,7 +2254,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,LV,Easing,2.1166666666666667,3.3,4.28,7.1
 2026-07-01,LV,Easing,2.25,2.5,4.34,7.3
 2026-08-01,LV,Easing,2.25,3,4.35,7.3
-2026-09-01,LV,Easing,2.375,3,NA,7.3
+2026-09-01,LV,Easing,2.375,3,4.53,7.3
 2015-01-01,MT,Negative rates,-0.2,0.8,2.94,5.5
 2015-02-01,MT,Negative rates,-0.2,0.5,2.76,5.5
 2015-03-01,MT,Negative rates,-0.2,0.5,2.72,5.5
@@ -2345,12 +2345,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,MT,Negative rates,-0.5,5.4,1.88,3.7
 2022-05-01,MT,Negative rates,-0.5,5.8,2,3.8
 2022-06-01,MT,Negative rates,-0.5,6.1,2.13,3.8
-2022-07-01,MT,Tightening,-0.41935483870967744,6.8,1.95,3.5
+2022-07-01,MT,Tightening,-0.4193548387096774,6.8,1.95,3.5
 2022-08-01,MT,Tightening,0,7,2.07,3.4
-2022-09-01,MT,Tightening,0.425,7.4,1.98,3.3
+2022-09-01,MT,Tightening,0.4250000000000001,7.4,1.98,3.3
 2022-10-01,MT,Tightening,0.75,7.4,2.23,3.2
 2022-11-01,MT,Tightening,1.475,7.2,2.32,3.2
-2022-12-01,MT,Tightening,1.6774193548387097,7.3,2.31,3.2
+2022-12-01,MT,Tightening,1.6774193548387095,7.3,2.31,3.2
 2023-01-01,MT,Tightening,2,6.8,2.3,3.2
 2023-02-01,MT,Tightening,2.375,7,2.37,3.2
 2023-03-01,MT,Tightening,2.661290322580645,7.1,2.14,3.4
@@ -2390,12 +2390,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-01-01,MT,Easing,2,2.3,1.99,3.5
 2026-02-01,MT,Easing,2,2.3,2.06,3.5
 2026-03-01,MT,Easing,2,2.3,2.02,3.5
-2026-04-01,MT,Easing,2,2.5,2.04,3.6
+2026-04-01,MT,Easing,2,2.5,2.05,3.6
 2026-05-01,MT,Easing,2,2.1,2.03,3.6
 2026-06-01,MT,Easing,2.1166666666666667,2,1.99,3.5
 2026-07-01,MT,Easing,2.25,2.1,1.94,3.4
 2026-08-01,MT,Easing,2.25,2,1.94,3.5
-2026-09-01,MT,Easing,2.375,2.4,NA,3.4
+2026-09-01,MT,Easing,2.375,2.4,1.93,3.4
 2015-01-01,NL,Negative rates,-0.2,-0.7,3.11,8.3
 2015-02-01,NL,Negative rates,-0.2,-0.5,3.13,8.1
 2015-03-01,NL,Negative rates,-0.2,-0.3,2.98,8.1
@@ -2486,12 +2486,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,NL,Negative rates,-0.5,11.2,1.88,3.2
 2022-05-01,NL,Negative rates,-0.5,10.2,2.03,3.3
 2022-06-01,NL,Negative rates,-0.5,9.9,2.21,3.4
-2022-07-01,NL,Tightening,-0.41935483870967744,11.6,2.43,3.6
+2022-07-01,NL,Tightening,-0.4193548387096774,11.6,2.43,3.6
 2022-08-01,NL,Tightening,0,13.7,2.66,3.8
-2022-09-01,NL,Tightening,0.425,17.1,2.85,3.8
+2022-09-01,NL,Tightening,0.4250000000000001,17.1,2.85,3.8
 2022-10-01,NL,Tightening,0.75,16.8,3.06,3.7
 2022-11-01,NL,Tightening,1.475,11.3,3.22,3.6
-2022-12-01,NL,Tightening,1.6774193548387097,11,3.38,3.5
+2022-12-01,NL,Tightening,1.6774193548387095,11,3.38,3.5
 2023-01-01,NL,Tightening,2,8.4,3.46,3.6
 2023-02-01,NL,Tightening,2.375,8.9,3.52,3.5
 2023-03-01,NL,Tightening,2.661290322580645,4.5,3.5,3.5
@@ -2536,7 +2536,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,NL,Easing,2.1166666666666667,2.5,3.71,3.8
 2026-07-01,NL,Easing,2.25,3,3.85,4
 2026-08-01,NL,Easing,2.25,2.8,3.91,4
-2026-09-01,NL,Easing,2.375,3,NA,4
+2026-09-01,NL,Easing,2.375,3,3.87,4
 2015-01-01,PT,Negative rates,-0.2,-0.4,2.78,14.2
 2015-02-01,PT,Negative rates,-0.2,-0.1,2.8,14.1
 2015-03-01,PT,Negative rates,-0.2,0.4,2.73,13.7
@@ -2627,12 +2627,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,PT,Negative rates,-0.5,7.4,1.09,6.2
 2022-05-01,PT,Negative rates,-0.5,8.1,1.29,6.2
 2022-06-01,PT,Negative rates,-0.5,9,1.44,6.1
-2022-07-01,PT,Tightening,-0.41935483870967744,9.4,1.82,6
+2022-07-01,PT,Tightening,-0.4193548387096774,9.4,1.82,6
 2022-08-01,PT,Tightening,0,9.3,1.94,6
-2022-09-01,PT,Tightening,0.425,9.8,2.17,6.1
+2022-09-01,PT,Tightening,0.4250000000000001,9.8,2.17,6.1
 2022-10-01,PT,Tightening,0.75,10.6,2.74,6.1
 2022-11-01,PT,Tightening,1.475,10.2,2.97,6.6
-2022-12-01,PT,Tightening,1.6774193548387097,9.8,3.16,6.9
+2022-12-01,PT,Tightening,1.6774193548387095,9.8,3.16,6.9
 2023-01-01,PT,Tightening,2,8.7,3.28,7.1
 2023-02-01,PT,Tightening,2.375,8.6,3.49,7
 2023-03-01,PT,Tightening,2.661290322580645,8,3.78,6.9
@@ -2676,8 +2676,8 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-05-01,PT,Easing,2,3.1,2.91,5.6
 2026-06-01,PT,Easing,2.1166666666666667,3.1,2.96,5.7
 2026-07-01,PT,Easing,2.25,3.1,2.99,5.7
-2026-08-01,PT,Easing,2.25,3.6,3.03,5.6
-2026-09-01,PT,Easing,2.375,3.6,NA,5.6
+2026-08-01,PT,Easing,2.25,3.6,3.04,5.6
+2026-09-01,PT,Easing,2.375,3.6,3.09,5.6
 2015-01-01,SI,Negative rates,-0.2,-0.7,2.83,9.3
 2015-02-01,SI,Negative rates,-0.2,-0.5,2.62,9.2
 2015-03-01,SI,Negative rates,-0.2,-0.4,2.63,9.2
@@ -2768,12 +2768,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,SI,Negative rates,-0.5,7.3,1.71,4.5
 2022-05-01,SI,Negative rates,-0.5,8.7,1.78,4.5
 2022-06-01,SI,Negative rates,-0.5,10.8,1.94,4.3
-2022-07-01,SI,Tightening,-0.41935483870967744,11.7,2.17,4.1
+2022-07-01,SI,Tightening,-0.4193548387096774,11.7,2.17,4.1
 2022-08-01,SI,Tightening,0,11.5,2.44,3.9
-2022-09-01,SI,Tightening,0.425,10.6,2.72,3.7
+2022-09-01,SI,Tightening,0.4250000000000001,10.6,2.72,3.7
 2022-10-01,SI,Tightening,0.75,10.3,3.08,3.7
 2022-11-01,SI,Tightening,1.475,10.8,3.39,3.6
-2022-12-01,SI,Tightening,1.6774193548387097,10.8,3.66,3.6
+2022-12-01,SI,Tightening,1.6774193548387095,10.8,3.66,3.6
 2023-01-01,SI,Tightening,2,10,3.89,3.5
 2023-02-01,SI,Tightening,2.375,9.4,4.05,3.6
 2023-03-01,SI,Tightening,2.661290322580645,10.4,4.09,3.7
@@ -2818,7 +2818,7 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,SI,Easing,2.1166666666666667,3.7,3.15,3.8
 2026-07-01,SI,Easing,2.25,3,3.2,3.5
 2026-08-01,SI,Easing,2.25,3.4,3.22,3.4
-2026-09-01,SI,Easing,2.375,3.7,NA,3.6
+2026-09-01,SI,Easing,2.375,3.7,3.24,3.6
 2015-01-01,SK,Negative rates,-0.2,-0.5,2.97,12.4
 2015-02-01,SK,Negative rates,-0.2,-0.6,2.95,12.2
 2015-03-01,SK,Negative rates,-0.2,-0.4,2.87,12
@@ -2909,12 +2909,12 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2022-04-01,SK,Negative rates,-0.5,10.9,1.34,6.3
 2022-05-01,SK,Negative rates,-0.5,11.8,1.63,6.2
 2022-06-01,SK,Negative rates,-0.5,12.6,1.83,6.1
-2022-07-01,SK,Tightening,-0.41935483870967744,12.8,2.15,6
+2022-07-01,SK,Tightening,-0.4193548387096774,12.8,2.15,6
 2022-08-01,SK,Tightening,0,13.4,2.44,6
-2022-09-01,SK,Tightening,0.425,13.6,2.53,6
+2022-09-01,SK,Tightening,0.4250000000000001,13.6,2.53,6
 2022-10-01,SK,Tightening,0.75,14.5,2.83,6
 2022-11-01,SK,Tightening,1.475,15.1,2.96,6.1
-2022-12-01,SK,Tightening,1.6774193548387097,15,3.07,6.1
+2022-12-01,SK,Tightening,1.6774193548387095,15,3.07,6.1
 2023-01-01,SK,Tightening,2,15.1,3.22,6.1
 2023-02-01,SK,Tightening,2.375,15.4,3.42,6.1
 2023-03-01,SK,Tightening,2.661290322580645,14.8,3.67,6
@@ -2959,4 +2959,4 @@ date,country,period,dfr,inflation,mortgage_rate,unemployment
 2026-06-01,SK,Easing,2.1166666666666667,3.5,3.66,5.7
 2026-07-01,SK,Easing,2.25,3.2,3.7,5.7
 2026-08-01,SK,Easing,2.25,3.1,3.73,5.7
-2026-09-01,SK,Easing,2.375,3,NA,5.7
+2026-09-01,SK,Easing,2.375,3,3.74,5.7
